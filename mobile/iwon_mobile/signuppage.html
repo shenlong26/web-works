@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>signup-step1</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img class="logo" src="./image/logo.png" alt="">
+            <div class="foot"></div>
+        </div>
+    </header>
+
+    <div class="signuppage">
+        <div class="container">
+            <p class="title">注册</p>
+            <div class="lightbar">
+                <img src="./image/title-signup.png" alt="">
+            </div>
+            <div class="step">
+                <span class="number active">1</span>
+                <span class="line"></span>
+                <span class="number number2">2</span>
+                <span class="line"></span>
+                <span class="number number3">3</span>
+            </div>
+            <div class="step-text">
+                <p>账户信息</p>
+                <p>用户信息</p>
+                <p>注册成功</p>
+            </div>
+
+            <div class="signup-slick-wrapper">
+                <form action="" class="step1">
+                    <input type="email" placeholder="输入电子信箱">
+                    <input type="text" placeholder=" 输入用户名">
+                    <input type="password" placeholder=" 输入密码">
+                    <input type="password" placeholder=" 确认密码">
+                    <a id="signup_goto_step2" class="confirm">下一步</a>
+                </form>
+
+                <form action="" class="step2">
+                    <div class="gender">
+                        <label for="" class="">
+                            男
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="" class="keep-login">
+                            女
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <input type="text" placeholder="姓名">
+                    <div class="flex-wrap">
+                        <input type="tel" placeholder=" 手機">
+                        <input type="text" class="qq" placeholder=" ＱＱ號碼">
+                    </div>
+                    <input type="input" class="date-of-birth" placeholder=" 生日">
+                    <input type="password" placeholder=" 请输入取款密​​码">
+                    <input type="password" placeholder=" 再次输入取款密​​码">
+
+                    <label for="" class="accepted">
+                        我接受「条款与条件」and Privacy Policy
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <a id="signup_goto_step3" class="confirm">建立新賬户</a>
+
+                    <a id="signup_back_to_step1" class="back">上一步</a>
+
+                </form>
+
+                <div class="step3">
+                    <img src="./image/success.png" alt="">
+                    <a href="loginpage.html" class="confirm">回登录页面</a>
+                </div>
+
+            </div>
+
+            <img src="./image/signup-bottom-light.png" class="bottom-light" alt="">
+        </div>
+    </div>
+
+    <footer>
+        <ul class="container">
+            <li><a href="" class="service">客服</a></li>
+            <li><a href="all-event.html" class="promotion">优惠</a></li>
+            <li><a href="index.html" class="home">首页</a></li>
+            <li><a href="loginpage.html" class="login">登入</a></li>
+            <li><a href="signuppage.html" class="signup">注册</a></li>
+        </ul>
+    </footer>
+
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    <script>
+        var slick = $('.signup-slick-wrapper').slick({ "arrows": false, "infinite": false, "swipe":false });
+
+        // Go to step2
+        $('#signup_goto_step2').click(function () {
+            event.preventDefault();
+            slick.slick('slickNext');
+            $('.step .number2').addClass('active');
+        });
+
+        // Go to step3
+        $('#signup_goto_step3').click(function () {
+            event.preventDefault();
+            slick.slick('slickNext');
+            $('.step .number3').addClass('active');
+        });
+
+        $('#signup_back_to_step1').click(function () {
+            event.preventDefault();
+            slick.slick('slickPrev');
+            $('.step .number1').addClass('active');
+            $('.step .number2').removeClass('active');
+            $('.step .number3').removeClass('active');
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2369 @@
+:root{
+    --primary: #ffa326;
+    --member-color: #e0ba89;
+    --member-gradient: linear-gradient(to right, #e0ba89, #b59662);
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-size: 12px;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft YaHei", sans-serif !important;
+}
+
+button,
+input,
+select {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft YaHei", sans-serif !important;
+}
+
+a, span, input, select, div, button, img, i {
+    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*index*/
+header{
+    background: url(../image/header-bg.jpg) center / cover no-repeat;
+}
+
+header .container {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header .container .logo{
+    width: 90px;
+    height: auto;
+}
+
+header .container .foot{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 12px;
+    width: 100%;
+    background: url(../image/header-foot.png) center / cover no-repeat;
+    z-index: 10;
+}
+
+.carousel{
+    position: relative;
+}
+
+.carousel .container{
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel .container .banner{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 211px;
+}
+
+.carousel .slick-prev,
+.carousel .slick-next{
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel .slick-prev::before,
+.carousel .slick-next::before{
+    content: '';
+    position: absolute;
+    border: solid rgba(255,255,255,0.85);
+    border-width: 2px 2px 0 0 ;
+    padding: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .slick-prev{
+    left: 11px;
+}
+
+.carousel .slick-prev::before{
+    transform: translateY(-50%) rotate(-135deg);
+    left: 40%;
+}
+
+.carousel .slick-next{
+    right: 11px;
+}
+
+.carousel .slick-next::before{
+    transform: translateY(-50%) rotate(45deg);
+    right: 40%;
+}
+
+.carousel .foot{
+    width: 100%;
+    height: 27px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(../image/carousel-foot.png) center / cover no-repeat;
+}
+
+.navbar-marq{
+    height: 115px;
+    background: url(../image/navbar-marq-bg.png) center / cover no-repeat;
+    padding: 5px 11px 0px 11px;
+    position: relative;
+}
+
+.navbar-marq .marq{
+    height: 20px;
+    background: url(../image/marq-bg.png) center / 100% 100% no-repeat;
+    padding: 0 10px;
+}
+
+.navbar-marq .marq marquee {
+    font-size: 14px;
+    color: var(--primary);
+    display: block;
+}
+
+.navbar-marq .marq marquee p{
+    line-height: 20px;
+}
+
+.navbar-marq nav{
+    margin-top: 13px;
+}
+
+.navbar-marq nav .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-marq nav .container a{
+    display: block;
+    width: 16%;
+    height: 55px;
+    font-size: 12px;
+    color: #fff;
+    background-position: center;
+    background-size: 58px auto;
+    background-repeat: no-repeat;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.navbar-marq nav .container .sport{
+    background-image: url(../image/nav-sport.png);
+}
+
+.navbar-marq nav .container .esport{
+    background-image: url(../image/nav-esport.png);
+}
+
+.navbar-marq nav .container .livecasino{
+    background-image: url(../image/nav-livecasino.png);
+}
+
+.navbar-marq nav .container .bingo{
+    background-image: url(../image/nav-bingo.png);
+}
+
+.navbar-marq nav .container .chess{
+    background-image: url(../image/nav-chess.png);
+}
+
+.navbar-marq nav .container .slot{
+    background-image: url(../image/nav-slot.png);
+}
+
+.navbar-marq nav .container .sport.active{
+    background-image: url(../image/nav-sport-active.png);
+}
+
+.navbar-marq nav .container .esport.active{
+    background-image: url(../image/nav-esport-active.png);
+}
+
+.navbar-marq nav .container .livecasino.active{
+    background-image: url(../image/nav-livecasino-active.png);
+}
+
+.navbar-marq nav .container .bingo.active{
+    background-image: url(../image/nav-bingo-active.png);
+}
+
+.navbar-marq nav .container .chess.active{
+    background-image: url(../image/nav-chess-active.png);
+}
+
+.navbar-marq nav .container .slot.active{
+    background-image: url(../image/nav-slot-active.png);
+}
+
+.navbar-marq nav .container a p{
+    position: absolute;
+    left: 12px;
+    top: -3px;
+    width: 100%;
+    text-shadow: 0 3px 2px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-marq .foot{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(../image/navbar-marq-foot.png) center / cover no-repeat;
+    height: 18px;
+    width: 100%;
+}
+
+.wrapper-content{
+    background: url(../image/wrapper-bg.png) center / auto 37px repeat;
+    margin-top: -1px;
+}
+
+.event .container {
+    padding: 15px 11px 0 11px;
+}
+
+.event .container a .title{
+    font-size: 12px;
+    color: var(--primary);
+    position: absolute;
+    left: 17px;
+    top: 14px;
+}
+
+.event .container .promotion{
+    position: relative;
+    display: block;
+}
+
+.event .container .classified{
+    margin-top: 10px;
+}
+
+.event .container .promotion:first-child.classified{
+    margin-top: 0;
+}
+
+.event .container .promotion img{
+    width: 100%;
+    height: auto;
+} 
+
+.brand-nav{
+    margin: 30px 0 15px 0;
+}
+
+.brand-nav .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 11px;
+}
+
+.brand-nav .container a{
+    width: 23%;
+    height: 35px;
+    display: block;
+    color: var(--primary);
+    text-align: center;
+    line-height: 35px;
+    background: url(../image/brand-nav-option.png) center / 100% 100% no-repeat;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.toc{
+    background: url(../image/gamelobby-bg.png) center / auto 37px repeat;
+    background: rgba(255, 160, 38, 0.15);
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.toc .mga{
+    margin: 15px 0 7px 0;
+    width: 60px;
+    height: auto;
+}
+
+.toc p{
+    color: #ffffff73;
+    width: 80%;
+    margin: auto;
+    font-size: 12px;
+    padding-bottom: 25px;
+    line-height: 1.2;
+}
+
+footer .container{
+    padding: 0 11px;
+    width: 100%;
+    height: 50px;
+    background: #0a0400;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--primary);
+    box-shadow: 0 -2px 5px rgba(255, 163, 38, 0.6);
+    z-index: 20;
+}
+
+footer .container a{
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding-top: 25px;
+    background-size: 22px auto;
+    background-position: center 0px, center;
+    background-repeat: no-repeat;
+    letter-spacing: 1px;
+}
+
+footer ul.container li {
+    width: 20%;
+}
+
+footer .container .service{
+    background-image: url(../image/footer-service.png);
+}
+
+footer .container .promotion{
+    background-image: url(../image/footer-promotion.png);
+}
+
+footer .container .home{
+    background-image: url(../image/footer-home.png);
+    background-size: 43px auto;
+    height: 67px;
+    padding-top: 40px;
+}
+
+footer .container .login{
+    background-image: url(../image/footer-login.png);
+}
+
+footer .container .signup{
+    background-image: url(../image/footer-signup.png);
+}
+
+footer .container .deposit{
+    background-image: url(../image/footer-deposit.png);
+}
+
+footer .container .active{
+    color: var(--primary);
+}
+
+footer .container .service.active{
+    background-image: url(../image/footer-service-active.png);
+}
+
+footer .container .promotion.active{
+    background-image: url(../image/footer-promotion-active.png);
+}
+
+footer .container .login.active{
+    background-image: url(../image/footer-login-active.png);
+}
+
+footer .container .signup.active{
+    background-image: url(../image/footer-signup-active.png);
+}
+
+footer .container .deposit.active{
+    background-image: url(../image/footer-deposit-active.png);
+}
+
+/* loginpage */
+.loginpage{
+    background: url(../image/login-bg.jpg) center / cover no-repeat;
+    min-height: 730px;
+    padding: 100px 25px 0px 25px;
+}
+
+.loginpage .container .heading{
+    display: flex;
+    height: 40px;
+    position: relative;
+}
+
+.loginpage .container .heading a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--primary);
+    width: 50%;
+    position: relative;
+}
+
+.loginpage .container .heading .signin{
+    border-top: 1px solid var(--primary);
+    border-right: 1px solid var(--primary);
+    border-left: 1px solid var(--primary);
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-clip-path:polygon(0% 0%, 0% 100%,100% 100%,100% 0%);
+    position: relative;
+}
+
+.loginpage .container .heading .signup{
+    border-bottom: 1px solid var(--primary);
+    background-image: linear-gradient(to left, rgba(79,54,21,0.5) 0%, 
+    rgba(79,54,21,0.3) 30%, rgba(255,168,41,0.75) 100%);
+}
+
+.loginpage .container .heading .signin .foot{
+    width: 65px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.loginpage .container .heading .signin .icon-signin{
+    width: auto;
+    height: 15px;
+}
+
+.loginpage .container .heading .signup .icon-signup{
+    width: 17px;
+    height: auto;
+}
+
+.loginpage .container form{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px 30px 60px 30px;
+    border-right: 1px solid var(--primary);
+    border-bottom: 1px solid var(--primary);
+    border-left: 1px solid var(--primary);
+    position: relative;
+}
+
+.loginpage .container form input{
+    display: block;
+    border: 1px solid var(--primary);
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    text-indent: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.loginpage .container form input::placeholder{
+    color: #808080;
+}
+
+.loginpage .container form .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #808080;
+    margin-top: 14px;
+}
+
+.loginpage .container form .content .keep-login{
+    display: block;
+    position: relative;
+    padding-left: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.loginpage .container form .content .keep-login input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 15px;
+    width: 100%;
+    left: 0;
+    top: -4px;
+    z-index: 10;
+}
+
+.loginpage .container form .content .keep-login .checkmark{
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #808080;
+    border-radius: 50%;
+}
+
+.loginpage .container form .content .keep-login .checkmark::after{
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.loginpage .container form .content .keep-login input:checked ~ .checkmark::after{
+    display: block;
+}
+
+.loginpage .container form .content .keep-login .checkmark::after{
+    left: 5px;
+    top: 1px;
+    width: 3px;
+    height: 7px;
+    border: solid var(--primary);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); 
+}
+
+.loginpage .container form .forgot-password{
+    color: #808080;
+}
+
+.loginpage .container form .confirm {
+    display: block;
+    width: 100%;
+    background: url(../image/confirm-bg.png) center / 100% 35px no-repeat;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 30px;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.loginpage .container form .bottom-light{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.loginpage .container .shadow{
+    width: 100%;
+    background: url(../image/signin-shadow.png) center / cover no-repeat;
+}
+
+.loginpage .container .apps-download{
+    width: 100%;
+    height: 35px;
+    display: block;
+    background: url(../image/apps-download.png);
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 35px;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+/* signuppage */
+.signuppage{
+    background: url(../image/login-bg.jpg) center / cover no-repeat;
+    min-height: 730px;
+    padding: 25px 25px 0px 25px;
+}
+
+.signuppage .container{
+    padding: 20px 30px;
+    border: 1px solid var(--primary);
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+    min-height: 570px;
+}
+
+.signuppage .container .title{
+    text-align: center;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.signuppage .container .lightbar{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signuppage .container .lightbar img{
+    width: 63px;
+    height: auto;
+}
+
+.signuppage .container .step{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signuppage .container .step .number{
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    line-height: 27px;
+    text-align: center;
+}
+
+.signuppage .container .step .number:first-child{
+    margin-left: 10px;
+}
+
+.signuppage .container .step .number:last-child{
+    margin-right: 10px;
+}
+
+.signuppage .container .step .active{
+    background: var(--primary);
+    color: #000;
+}
+
+.signuppage .container .step .line{
+    height: 1px;
+    width: 24%;
+    background: var(--primary);
+}
+
+.signuppage .container .step-text{
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    font-size: 12px;
+}
+
+.signuppage .container .bottom-light{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.signuppage .container .confirm {
+    display: block;
+    width: 100%;
+    background: url(../image/confirm-bg.png) center / 100% 35px no-repeat;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 30px;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.signuppage .container .back {
+    color: #ccc9c1;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 0.5rem;
+    line-height: 1.5rem;
+}
+
+/*signup-step1*/
+.signuppage .container .step1 input{
+    display: block;
+    border: 1px solid var(--primary);
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    text-indent: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.signuppage .container .step1 input::placeholder{
+    color: #808080;
+}
+
+/*signup-step2*/
+.signuppage .container .step2  .gender ~ input,
+.signuppage .container .step2 .flex-wrap input{
+    display: block;
+    border: 1px solid var(--primary);
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    text-indent: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.signuppage .container .step2  .gender ~ input::placeholder,
+.signuppage .container .step2 .flex-wrap input::placeholder{
+    color: #808080;
+}
+
+.signuppage .container .step2 .gender{
+    display: flex;
+    align-items: center;
+    color: #808080;
+    margin-top: 14px;
+    margin-bottom: 10px;
+}
+
+.signuppage .container .step2 .gender label{
+    display: block;
+    position: relative;
+    padding-left: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 50%;
+}
+
+.signuppage .container .step2 .gender label input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 15px;
+    width: 100%;
+    left: 0;
+    top: -4px;
+    z-index: 10;
+}
+
+.signuppage .container .step2 .gender label .checkmark{
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.signuppage .container .step2 .gender label .checkmark::after{
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.signuppage .container .step2 .gender label input:checked ~ .checkmark::after{
+    display: block;
+}
+
+.signuppage .container .step2 .gender label .checkmark::after{
+    left: 5px;
+    top: 3px;
+    width: 3px;
+    height: 7px;
+    border: solid var(--primary);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); 
+}
+
+.signuppage .container .step2 .flex-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signuppage .container .step2 input[type="tel"],
+.signuppage .container .step2 input.qq{
+    width: 48.5%;
+}
+
+.signuppage .container .step2 .date-of-birth{
+    text-indent: 8px;
+    padding-right: 10px;
+}
+
+.signuppage .container form .accepted{
+    display: block;
+    position: relative;
+    padding-left: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #808080;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.signuppage .container form .accepted input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 15px;
+    width: 100%;
+    left: 0;
+    top: -4px;
+    z-index: 10;
+}
+
+.signuppage .container form .accepted .checkmark{
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+}
+
+.signuppage .container form .accepted .checkmark::after{
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.signuppage .container form .accepted input:checked ~ .checkmark::after{
+    display: block;
+}
+
+.signuppage .container form .accepted .checkmark::after{
+    left: 5px;
+    top: 2px;
+    width: 3px;
+    height: 7px;
+    border: solid var(--primary);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); 
+}
+
+/*signup-step3*/
+.signuppage .container .step3{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.signuppage .container .step3 img{
+    width: 66px;
+    height: auto;
+    margin: auto;
+}
+
+/*password-reset*/
+.password-reset{
+    background: url(../image/login-bg.jpg) center / cover no-repeat;
+    min-height: 730px;
+    padding: 75px 25px 0px 25px;
+}
+
+.password-reset .container{
+    padding: 20px 30px 70px 30px;
+    border: 1px solid var(--primary);
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.password-reset .container .title{
+    text-align: center;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.password-reset .container .lightbar{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 13px;
+}
+
+.password-reset .container .lightbar img{
+    width: 100%;
+    height: auto;
+}
+
+.password-reset .container input{
+    display: block;
+    border: 1px solid var(--primary);
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    text-indent: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.password-reset .container .bottom-light{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.password-reset .container .confirm {
+    display: block;
+    width: 100%;
+    background: url(../image/confirm-bg.png) center / 100% 35px no-repeat;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 30px;
+    color: #000;
+}
+
+.password-reset .container .success {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.password-reset .container .success img{
+    width: 66px;
+    height: auto;
+    margin: auto;
+}
+
+/*ios & android*/
+.ios-android{
+    background: url(../image/login-bg.jpg) center / cover no-repeat;
+    min-height: 730px;
+    padding: 75px 25px 0px 25px;
+}
+
+.ios-android .container{
+    padding: 20px 0px 70px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ios-android .container a{
+    display: block;
+    width: 47.5%;
+    border: 1px solid var(--primary);
+    text-align: center;
+    background-image: linear-gradient(to top, rgba(255,168,41,0.4), rgba(255,168,41,0));
+    color: var(--primary);
+    padding: 18px 0 13px 0;
+}
+
+.ios-android .container a img{
+    width: 90px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+/*all-event*/
+.all-event-header{
+    height: 50px;
+    background: #000;
+}
+
+.all-event-header .container{
+    position: relative;
+}
+
+.all-event-header .container .title{
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.all-event-header .container .collapse{
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 8px 6px 0px 6px;
+    border-color: var(--primary) transparent transparent transparent;
+}
+
+.all-event-header .container .collapse.active{
+    border-width: 8px 6px 0 6px;
+    border-color: var(--primary) transparent transparent transparent;
+}
+
+.all-event-header .container img{
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.all-event-header .container .drop-select{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    left: 0;
+    top: 50px;
+    opacity: 1;
+    z-index: 10;
+}
+
+.all-event-header .container .drop-select li{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.all-event-header .container .drop-select li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url(../image/all-event-dropnav-line.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1px;
+    width: 100%;
+}
+
+.all-event-header .container .drop-select li:last-child::after{
+    background-image: url(../image/all-event-line.png);
+}
+
+.all-event{
+    padding: 30px 15px 50px 15px;
+    background: #000;
+    min-height: 750px;
+}
+
+.all-event .container .content{
+    border: 1px solid var(--primary);
+    margin-bottom: 27px;
+    position: relative;
+    display: block;
+}
+
+.all-event .container .content::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    background-image: url(../image/all-event-line.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1px;
+    width: 100%;
+}
+
+.all-event .container .content:last-child::after{
+    background: none;
+}
+
+.all-event .container .content .banner{
+    height: 100px;
+    background: url(../image/event-banner.jpg) center / cover no-repeat
+}
+
+.all-event .container .content .foot{
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-event .container .content .foot .title .date{
+    margin-top: 5px;
+    color: #808080;;
+}
+
+.all-event .container .content .foot .more{
+    color: var(--primary);
+    position: relative;
+    padding-right: 23px;
+}
+
+.all-event .container .content .foot .more::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-style: solid;
+    border-width: 6px 0px 6px 8px;
+    border-color: transparent transparent transparent var(--primary);
+}
+
+/*event-detail*/
+.event-detail-header{
+    height: 50px;
+    background: #000;
+}
+
+.event-detail-header .container{
+    position: relative;
+}
+
+.event-detail-header .container .title{
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--primary);
+}
+
+.event-detail-header .container .back{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background:url(../image/event-detail-icon-back.png) center / 14px auto no-repeat ;
+}
+
+.event-detail-header .container .foot{
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.event-detail-content{
+    background: #000;
+    min-height: 750px;
+    padding: 30px 15px 50px 15px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.event-detail-content .banner{
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.event-detail-content .title{
+    padding: 0 15px;
+    margin-top: 23px;
+    margin-bottom: 18px;
+}
+
+.event-detail-content .text{
+    padding: 0 15px;
+    line-height: 1.3;
+}
+
+.event-detail-content .list{
+    padding: 0 15px;
+}
+
+.event-detail-content .list li{
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.event-detail-content .list li p:first-child{
+    color: var(--primary);
+    margin-right: 22px;
+}
+
+.event-detail-content .notice{
+    padding: 0 15px;
+    color: var(--primary);
+}
+
+.event-detail-content .reward{
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+    padding: 9px 46px 9px 30px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.event-detail-content .reward .content .heading{
+    letter-spacing: 2px;
+}
+
+.event-detail-content .reward .content .code{
+    font-size: 20px;
+    color: var(--primary);
+    margin-top: 8px;
+}
+
+.event-detail-content .reward .collect{
+    position: relative;
+}
+
+.event-detail-content .reward .collect::after{
+    content: '';
+    position: absolute;
+    right: -16px;
+    top: 0;
+    border-style: solid;
+    border-width: 6px 0px 6px 8px;
+    border-color: transparent transparent transparent #fff;
+}
+
+/*member center*/
+.member-wrapper{
+    background-image: linear-gradient(to top, #232029 0%, #232029 70%, #121114 100%);
+    min-height: 812px;
+}
+
+.member-header .container{
+    text-align: center;
+    position: relative;
+    height: 90px;
+    padding: 0 20px 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member-header .container .back{
+    border: solid var(--member-color);
+    border-width:  0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+}
+
+.member-header .container .header-icon{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.member-header .container .logout{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--member-color);
+    color: var(--member-color);
+}
+
+.member-center{
+    font-size: 12px;
+}
+
+.member-center .profile{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0 40px;
+}
+
+.member-center .profile .left .avator{
+    width: 30px;
+    height: auto;
+    margin-right: 12px;
+}
+
+.member-center .profile .left .name{
+    margin-right: 9px;
+    font-size: 12px;
+}
+
+.member-center .profile .left .level{
+    width: 32px;
+    height: auto;
+    align-items: middle;
+}
+
+.member-center .profile .right .message{
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+
+.member-center .profile .right .message img{
+    width: 23px;
+    height: auto;
+}
+
+.member-center .profile .right .message .dot{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+    top: -5px;
+}
+
+.member-center .profile .right .bonus{
+    display: inline-block;
+    position: relative;
+}
+
+.member-center .profile .right .bonus img{
+    width: 25px;
+    height: auto;
+}
+
+.member-center .profile .right .bonus .dot{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+    top: -5px;
+}
+
+.member-center .summary{
+    padding: 0 40px;
+}
+
+.member-center .summary .total{
+    height: 50px;
+    background-image: var(--member-gradient);
+    border-radius: 5px;
+    padding-left: 15px;
+    color: #29262d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.member-center .summary .total .balance{
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.member-center .summary .content{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.member-center .summary .main-account{
+    background-color: #3b393e;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: var(--member-color);
+    display: inline-block;
+    width: 48.5%;
+    letter-spacing: 1px;
+}
+
+.member-center .summary .main-account .title{
+    margin-top: 9px;
+}
+
+.member-center .summary .main-account .balance{
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.member-center .summary .third{
+    background-color: #3b393e;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: var(--member-color);
+    width: 48.5%;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.member-center .summary .third .title{
+    margin-top: 9px;
+}
+
+.member-center .summary .third .balance{
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.member-center .funds-management{
+    margin-top: 28px;
+    padding: 20px 40px 0 40px;
+    background-image: linear-gradient(to top, rgba(35,32,41,0.5), rgba(18,17,20,0.5));
+}
+
+.member-center .funds-management .title,
+.member-center .tools .title{
+    font-size: 14px;
+    color: #fff;
+}
+
+.member-center .funds-management .container,
+.member-center .tools .container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.member-center .funds-management .container a,
+.member-center .tools .container a{
+    display: block;
+    text-align: center;
+    color: #e3cfb1;
+    letter-spacing: 1px;
+}
+
+.member-center .funds-management .container a .img-wrapper,
+.member-center .tools .container a .img-wrapper{
+    width: 47px;
+    height: 47px;
+    background: rgba(53, 51, 54, 0.4);
+    border-radius: 50%;
+}
+
+.member-center .funds-management .container a .img-wrapper img,
+.member-center .tools .container a .img-wrapper img{
+    width: 47px;
+    height: auto;
+}
+
+.member-center .funds-management .container a .text,
+.member-center .tools .container a .text{
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.member-center .tools{
+    margin-top: 35px;
+    padding: 0 40px;
+}
+
+.member-center .tools .container .hidden-item{
+    width: 47px;
+}
+
+/*member-deposit*/
+.member-deposit{
+    padding: 0 40px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.member-deposit .payment h6{
+    margin-bottom: 9px;
+}
+
+.member-deposit .payment .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.member-deposit .payment .container .active{
+    background-image: var(--member-gradient);
+    border: none;
+    color: #121114;
+}
+
+.member-deposit .payment .container a{
+    width: 32%;
+    height: 39px;
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), rgba(35,32,41,0.5));
+    color: var(--member-color);
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-deposit .payment .container a:last-child{
+    border: none;
+    background: none;
+}
+
+.member-deposit .payment .container a i{
+    width: 22px;
+    height: 20px;
+    background-position: center;
+    background-size: 22px auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.member-deposit .payment .container .wechat i{
+    background-image: url(../image/member-deposit-wechat.png);
+}
+
+.member-deposit .payment .container .alipay i{
+    background-image: url(../image/member-deposit-alipay.png);
+}
+
+.member-deposit .payment .container .quickpass i{
+    background-image: url(../image/member-deposit-quickpass.png);
+    width: 28px;
+    height: 20px;
+    background-size: 28px auto;
+}
+
+.member-deposit .payment .container .bank i{
+    background-image: url(../image/member-deposit-bank.png);
+}
+
+.member-deposit .payment .container .internet-bank i{
+    background-image: url(../image/member-deposit-internet-banking.png);
+}
+
+.member-deposit .payment .container .wechat.active i{
+    background-image: url(../image/member-deposit-wechat-active.png);
+}
+
+.member-deposit .payment .container .alipay.active i{
+    background-image: url(../image/member-deposit-alipay-active.png);
+}
+
+.member-deposit .payment .container .quickpass.active i{
+    background-image: url(../image/member-deposit-quickpass-active.png);
+    width: 28px;
+    height: 20px;
+    background-size: 28px auto;
+}
+
+.member-deposit .payment .container .bank.active i{
+    background-image: url(../image/member-deposit-bank-active.png);
+}
+
+.member-deposit .payment .container .internet-bank.active i{
+    background-image: url(../image/member-deposit-internet-banking-active.png);
+}
+
+.member-deposit form {
+    margin-top: 30px;
+}
+
+.member-deposit form .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.member-deposit form .content label{
+    display: inline-block;
+    width: 33%;
+    font-size: 13px;
+}
+
+.member-deposit form .content select{
+    width: 66%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    -webkit-appearance: none;
+    text-indent: 12px;
+    display: block;
+    background: none;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+.member-deposit form .content i{
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: var(--member-color) transparent transparent transparent ;
+    right: 10px;
+}
+
+.member-deposit form .content input{
+    width: 66%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    text-indent: 12px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.member-deposit form .content input::placeholder{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.member-deposit form .confirm{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.member-deposit form .confirm input{
+    background-image: var(--member-gradient);
+    display: block;
+    width: 66%;
+    border-radius: 5px;
+    height: 37px;
+    font-size: 13px;
+}
+
+.member-deposit .remind{
+    font-size: 12px;
+    line-height: 1.2;
+    margin-top: 10px;
+    color: var(--member-color);
+    text-align: center;
+}
+
+/*member-transfer*/
+.member-transfer{
+    color: #fff;
+}
+
+.member-transfer form{
+    padding: 0 40px;
+}
+
+.member-transfer form .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.member-transfer form .content label{
+    display: inline-block;
+    width: 30%;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.member-transfer form .content select{
+    width: 69%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    -webkit-appearance: none;
+    text-indent: 12px;
+    display: block;
+    background: none;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+.member-transfer form .content i{
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: var(--member-color) transparent transparent transparent ;
+    right: 10px;
+}
+
+.member-transfer form .content input{
+    width: 69%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    text-indent: 12px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.member-transfer form .content input::placeholder{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.member-transfer form .confirm{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.member-transfer form .confirm .confirm-btn{
+    background-image: var(--member-gradient);
+    display: block;
+    width: 69%;
+    border-radius: 5px;
+    height: 37px;
+    font-size: 13px;
+    color: #232029;
+}
+
+.member-transfer .list{
+    padding: 0 7px;
+    margin-top: 25px;
+    padding-bottom: 100px;
+}
+
+.member-transfer .list .container .item{
+    border-bottom: 1px solid var(--member-color);
+    padding: 16px 31px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--member-color);
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.member-transfer .list .container .item:first-child{
+    border-top: 1px solid var(--member-color);
+}
+
+/*member withdraw*/
+.member-withdraw{
+    color: #fff;
+    padding: 0 40px;
+}
+
+.member-withdraw .funds{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.member-withdraw .funds .available,
+.member-withdraw .funds .limit{
+    width: 48.5%;
+}
+
+.member-withdraw .funds .available .amount,
+.member-withdraw .funds .limit .amount{
+    width: 100%;
+    height: 40px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    margin-top: 8px;
+    line-height: 40px;
+}
+
+.member-withdraw .funds .available .amount p,
+.member-withdraw .funds .limit .amount p{
+    font-size: 17px;
+    padding-left: 12px;
+}
+
+.member-withdraw .reminds{
+    font-size: 12px;
+    text-align: center;
+    margin: 30px 0;
+    line-height: 1.5;
+}
+
+.member-withdraw form .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.member-withdraw form .content label{
+    display: inline-block;
+    width: 30%;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.member-withdraw form .content select{
+    width: 69%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    -webkit-appearance: none;
+    text-indent: 12px;
+    display: block;
+    background: none;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+.member-withdraw form .content i{
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: var(--member-color) transparent transparent transparent ;
+    right: 10px;
+}
+
+.member-withdraw form .content input{
+    width: 69%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    text-indent: 12px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.member-withdraw form .content input::placeholder{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.member-withdraw form .confirm{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.member-withdraw form .confirm input{
+    background-image: var(--member-gradient);
+    display: block;
+    width: 69%;
+    border-radius: 5px;
+    height: 37px;
+    font-size: 13px;
+}
+
+/*member-bonus-active*/
+.member-bonus-active{
+    padding: 0 23px 100px 23px;
+    font-size: 12px;
+}
+
+.member-bonus-active .activate-bonus{
+    width: 45%;
+    height: 40px;
+    display: block;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    border-radius: 5px;
+    border: 1px solid var(--member-color);
+    line-height: 40px;
+    text-align: center;
+    color: var(--member-color);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0 auto 7px auto;
+}
+
+.member-bonus-active .ongoing h5{
+    color: #fff;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.member-bonus-active .item{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 35px;
+}
+
+.member-bonus-active .item:last-child{
+    margin-bottom: 0;
+}
+
+.member-bonus-active .item .collect{
+    width: 22%;
+    background-image: var(--member-gradient);
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    color: #121114;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-bonus-active .item .collect .content img{
+    width: 17px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.member-bonus-active .item .collect .content .bonus{
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.member-bonus-active .item .detail{
+    width: 78%;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    border-radius: 0 5px 5px 0;
+    border-top: 1px solid var(--member-color);
+    border-right: 1px solid var(--member-color);
+    border-bottom: 1px solid var(--member-color);
+    padding: 10px;
+    position: relative;
+}
+
+.member-bonus-active .item .detail .title{
+    font-size: 13px;
+    width: 70%;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.member-bonus-active .item .detail .number{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+}
+
+.member-bonus-active .item .detail .bonus-to-go{
+    color: var(--member-color);
+    text-align: right;
+}
+
+.member-bonus-active .item .detail .progress-bar{
+    border-radius: 5px;
+    border: 1px solid var(--member-color);
+    margin-top: 8px;
+}
+
+.member-bonus-active .item .detail .progress-bar .progress{
+    width: 70%;
+    background-image: var(--member-gradient);
+    padding: 3px;
+}
+
+.member-bonus-active .item .date{
+    position: absolute;
+    bottom: -20px;
+    right: 5px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.member-bonus-active .item.collected .collect{
+    width: 19%;
+    border-top: 1px solid var(--member-color);
+    border-bottom: 1px solid var(--member-color);
+    border-left: 1px solid var(--member-color);
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--member-color);
+    background: url(../image/member-bonus-active-icon-collected.png) center / cover no-repeat;
+}
+
+.member-bonus-active .item.collected .detail .title{
+    margin-bottom: 33px;
+}
+
+.member-bonus-active .expired{
+    margin-top: 50px;
+}
+
+.member-bonus-active .expired h5{
+    color: #fff;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+/*member-transaction*/
+.member-transaction{
+    font-size: 12px;
+}
+
+.member-transaction .container .filter{
+    padding: 0 40px;
+    letter-spacing: 1px;
+}
+
+.member-transaction .container .filter .head,
+.member-transaction .container .filter .duration{
+    display: flex;
+    justify-content: space-between;
+}
+
+.member-transaction .container .filter .head button{
+    width: 48.5%;
+    height: 40px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    color: var(--member-color);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.member-transaction .container .filter .head button.active,
+.member-transaction .container .filter .duration button.active{
+    background-image: linear-gradient(to right, #e0ba89, 
+    #b59662);
+    color: #232029;
+}
+
+.member-transaction .container .filter .duration button{
+    width: 31.5%;
+    height: 40px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    color: var(--member-color);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.member-transaction .container .filter .duration{
+    margin-top: 20px;
+}
+
+.member-transaction .container .filter .date,
+.member-transaction .container .filter .type,
+.member-transaction .container .filter .condition{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.member-transaction .container .filter .date input{
+    width: 47%;
+    height: 40px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), 
+    rgba(14, 13, 15, 0.5));
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.member-transaction .container .filter .date .line{
+    width: 3%;
+    height: 1px;
+    background: var(--member-color);
+}
+
+.member-transaction .container .filter .type label,
+.member-transaction .container .filter .condition label{
+    display: inline-block;
+    width: 27%;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.member-transaction .container .filter .type select,
+.member-transaction .container .filter .condition select{
+    width: 72%;
+    height: 37px;
+    border: 1px solid var(--member-color);
+    -webkit-appearance: none;
+    text-indent: 12px;
+    display: block;
+    background: none;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.5), rgba(14, 13, 15, 0.5));
+    color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+.member-transaction .container .filter .type i,
+.member-transaction .container .filter .condition i{
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: var(--member-color) transparent transparent transparent;
+    right: 10px;
+}
+
+.member-transaction .container .listing{
+    color: var(--member-color);
+    margin-top: 30px;
+    letter-spacing: 1px;
+    padding: 0 7px 100px 7px;
+}
+
+.member-transaction .container .listing .head{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 31px 10px 19px;
+    border-bottom: 1px solid var(--member-color);
+    font-size: 13px;
+}
+
+.member-transaction .container .listing .head .date,
+.member-transaction .container .listing .head .type,
+.member-transaction .container .listing .head .amount{
+    width: 33%;
+}
+
+.member-transaction .container .listing .head .date,
+.member-transaction .container .listing .head .type{
+    text-align: center;
+}
+
+.member-transaction .container .listing .head .type{
+    margin-left: 40px;
+}
+
+.member-transaction .container .listing .head .amount{
+    text-align: right;
+}
+
+.member-transaction .container .listing .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    padding: 0 31px 0 19px;
+    position: relative;
+    border-bottom: 1px solid var(--member-color);
+}
+
+.member-transaction .container .listing .item:last-child{
+    border: none;
+}
+
+.member-transaction .container .listing .item::after{
+    content: '';
+    position: absolute;
+    right: 10px;
+    border: solid var(--member-color);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.member-transaction .container .listing .item .date,
+.member-transaction .container .listing .item .type{
+    text-align: center;
+    width: 33%;
+}
+
+.member-transaction .container .listing .item .date h5{
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.member-transaction .container .listing .item .type{
+    margin-left: 40px;
+}
+
+.member-transaction .container .listing .item .amount{
+    width: 33%;
+    text-align: right;
+}
+
+/*popup-transfer*/
+.modaloverlay{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(35,32,41,0.95) 0%,
+    rgba(18,17,20,0.95) 100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    transition: opacity .4s ease-in;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal .container{
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    width: 80%;
+    padding: 30px 0;
+    min-height: 225px;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.9), 
+    rgba(35, 32, 41, 0.9));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal .container .close{
+    width: 26px;
+    height: 26px;
+    background: #b59662;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(18,17,20,0.5);
+}
+
+.modal .container .close::before,
+.modal .container .close::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 14px;
+    background: #1a1c21;
+    left: 13px;
+    top: 6px;
+}
+
+.modal .container .close::before{
+    transform: rotate(45deg);
+}
+
+.modal .container .close::after{
+    transform: rotate(-45deg);
+}
+
+.modal .container .item{
+    font-size: 17px;
+    color: var(--member-color);
+    text-align: center;
+    letter-spacing: 1px;
+    width: 65%;
+}
+
+.modal .container .item img{
+    width: 100px;
+    height: auto;
+}
+
+.modal .container .item input{
+    width: 100%;
+    border: 1px solid var(--member-color);
+    border-radius: 5px;
+    height: 37px;
+    text-indent: 12px;
+    margin-top: 8px ;
+    background-image: linear-gradient(to right, rgba(75,71,79,0.55), 
+    rgba(35, 32, 41, 0.55));
+    color: #fff;
+}
+
+.modal .container .item .confirm{
+    text-indent: 0;
+    background-image: none;
+    background-color: var(--member-color);
+    border: none;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.modal-hide{
+    display: none;
+}
+
+
+
+/*games*/
+.game-carousel .container{
+    height: 210px;
+    position: relative;
+}
+
+.game-carousel .container .banner{
+    height: 210px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-carousel .container .foot{
+    width: 100%;
+    height: 27px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(../image/carousel-foot.png) center / cover no-repeat;
+}
+
+.game-entry .container {
+    padding: 15px 11px 100px 11px;
+}
+
+.game-entry .container a .title{
+    font-size: 12px;
+    color: var(--primary);
+    position: absolute;
+    left: 17px;
+    top: 14px;
+}
+
+.game-entry .container .brand{
+    position: relative;
+    display: block;
+}
+
+.game-entry .container .classified{
+    margin-top: 10px;
+}
+
+.game-entry .container .brand:first-child.classified{
+    margin-top: 0;
+}
+
+.game-entry .container .brand img{
+    width: 100%;
+    height: auto;
+} 
+
+.game-carousel .container .banner-lottery{
+    background-image: url(../image/banner-lottery-page.jpg);
+}
+
+.game-carousel .container .banner-esport{
+    background-image: url(../image/banner-esport-page.jpg);
+}
+
+.game-carousel .container .banner-sport{
+    background-image: url(../image/banner-sport-page.jpg);
+}
+
+
+/*media quries*/
+@media screen and (max-width: 375px){
+    .navbar-marq nav .container a p {
+        left: 8px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .navbar-marq{
+        height: 110px;
+    }
+    .navbar-marq nav {
+        margin-top: 10px;
+    }
+    .navbar-marq nav .container a {
+        background-size: 48px auto;
+    }
+    .navbar-marq nav .container a p {
+        top: -1px; 
+    }
+    .member-deposit .payment .container a{
+        width: 49%;
+    }
+}

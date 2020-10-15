@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>member-bonus-popup</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <!-- 輸入代碼彈窗 -->
+    <div class="modaloverlay modal-hide" id="bonus-pin-modal">
+        <div class="modal">
+            <div class="container">
+                <span class="close"></span>
+                <div class="item">
+                    <img src="./image/popup-bonus-code.png" alt="">
+                    <p>输入优惠码</p>
+                    <input type="text" placeholder="输入优惠码">
+                    <input type="submit" class="confirm" value="确认">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 輸入代碼成功彈窗 -->
+    <div class="modaloverlay modal-hide" id="bonus-success-modal">
+        <div class="modal">
+            <div class="container">
+                <span class="close"></span>
+                <div class="item">
+                    <img src="./image/popup-bonus-success.png" alt="">
+                    <p>申请成功</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="member-wrapper">
+        <div class="member-header">
+            <div class="container">
+                <a  href="loginpage.html" class="back"></a>
+                <img src="./image/member-header-bonus.png" class="header-icon" alt="">
+            </div>
+        </div>
+
+        <div class="member-bonus-active">
+            <a href="" class="activate-bonus">激活优惠卷</a>
+            <div class="ongoing">
+                <h5>进行中</h5>
+                <div class="item">
+                    <div class="collect">
+                        <div class="content">
+                            <img src="./image/member-bonus-active-icon-rmb.png" alt="">
+                            <p class="bonus">60</p>
+                            <p>立即领取</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <p class="title">25%前置再存送红利周周送
+                            (不限游戏平台)</p>
+                        <span class="number">WD0001</span>
+                        <p class="bonus-to-go">剩余流水：13,184.00</p>
+                        <div class="progress-bar">
+                            <div class="progress">
+                                <span>(6,251/10,000)</span>
+                            </div>
+                        </div>
+                        <p class="date">过期：2019-11-22 15:05:32</p>
+                    </div>
+                </div>
+                <div class="item collected">
+                    <div class="collect">
+                        <p>已领取</p>
+                    </div>
+                    <div class="detail">
+                        <p class="title">25%前置再存送红利周周送
+                            (不限游戏平台)</p>
+                        <span class="number">WD0001</span>
+                        <div class="progress-bar">
+                            <div class="progress">
+                                <span>(6,251/10,000)</span>
+                            </div>
+                        </div>
+                        <p class="date">过期：2019-11-22 15:05:32</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="collect">
+                        <div class="content">
+                            <img src="./image/member-bonus-active-icon-rmb.png" alt="">
+                            <p class="bonus">80</p>
+                            <p>立即领取</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <p class="title">25%前置再存送红利周周送
+                            (不限游戏平台)</p>
+                        <span class="number">WD0001</span>
+                        <p class="bonus-to-go">剩余流水：13,184.00</p>
+                        <div class="progress-bar">
+                            <div class="progress">
+                                <span>(6,251/10,000)</span>
+                            </div>
+                        </div>
+                        <p class="date">过期：2019-11-22 15:05:32</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expired">
+                <h5>已过期</h5>
+                <div class="item collected">
+                    <div class="collect">
+                        <p>已领取</p>
+                    </div>
+                    <div class="detail">
+                        <p class="title">25%前置再存送红利周周送
+                            (不限游戏平台)</p>
+                        <span class="number">WD0001</span>
+                        <div class="progress-bar">
+                            <div class="progress">
+                                <span>(6,251/10,000)</span>
+                            </div>
+                        </div>
+                        <p class="date">过期：2019-11-22 15:05:32</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="collect">
+                        <div class="content">
+                            <img src="./image/member-bonus-active-icon-rmb.png" alt="">
+                            <p class="bonus">60</p>
+                            <p>立即领取</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <p class="title">25%前置再存送红利周周送
+                            (不限游戏平台)</p>
+                        <span class="number">WD0001</span>
+                        <p class="bonus-to-go">剩余流水：13,184.00</p>
+                        <div class="progress-bar">
+                            <div class="progress">
+                                <span>(6,251/10,000)</span>
+                            </div>
+                        </div>
+                        <p class="date">过期：2019-11-22 15:05:32</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <ul class="container">
+            <li><a href="" class="service">客服</a></li>
+            <li><a href="all-event.html" class="promotion ">优惠</a></li>
+            <li><a href="index-logined.html" class="home ">首页</a></li>
+            <li><a href="member-deposit.html" class="deposit">存款</a></li>
+            <li><a href="member-center.html" class="signup ">我的</a></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $('.activate-bonus').on('click', function(){
+                event.preventDefault();
+                $('#bonus-pin-modal').removeClass('modal-hide');
+            });
+
+            $('#bonus-pin-modal .close').on('click', function(){
+                event.preventDefault();
+                $('#bonus-pin-modal').addClass('modal-hide');
+            })
+
+            $('#bonus-pin-modal .confirm').on('click', function(){
+                event.preventDefault();
+                $('#bonus-pin-modal').addClass('modal-hide');
+                $('#bonus-success-modal').removeClass('modal-hide');
+            })
+
+            $('#bonus-success-modal .close').on('click', function(){
+                event.preventDefault();
+                $('#bonus-success-modal').addClass('modal-hide');
+            })
+        })
+    
+    </script>
+
+</body>
+
+</html>
