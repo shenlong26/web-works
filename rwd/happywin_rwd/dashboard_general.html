@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dashboard_general</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <!-- 新增渠道彈窗 -->
+    <div class="modaloverlay new-tunnel hide-modal">
+        <div class="modal-new-tunnel">
+            <h3>Generate share link</h3>
+            <span class="close"></span>
+            <input type="text" placeholder="Link name">
+            <button type="button">Sumbit</button>
+            <p>You can generate your own share link here(up to 5 links). Please enter your link name and submit.
+            </p>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="contact">
+                <span class="phone">+4646964459</span>
+                <span class="whatsapp">+73496349866932</span>
+                <span class="wechat">wechattttt</span>
+                <span class="email">happywin118@m,m,m</span>
+            </div>
+            <a href="#" class="region">
+                <ul class="contry">
+                    <li class="CN ">简体中文</li>
+                    <li class="SG active">English</li>
+                </ul>
+                <ul class="drop">
+                    <li class="">简体中文</li>
+                    <li class="">English</li>
+                </ul>
+            </a>
+        </div>
+    </header>
+
+    <!-- 桌機navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-section">
+                <a href="index.html" class="logo">
+                    <span class="logo-img"></span>
+                    <span class="logo-text">Affiliate Center</span>
+                </a>
+                <a href="plan.html" class="link">Affiliate Plan</a>
+                <a href="dashboard_general.html" class="link">Dashboard</a>
+                <a href="" class="link">Report</a>
+            </div>
+            <div class="login-section">
+                <a href="login.html" class="login">Log in</a>
+                <a href="login.html" class="signup">Sign up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 手機navbar -->
+    <div class="mobile-nav">
+        <div class="container">
+            <div class="burger" onclick="openSidenav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html" class="logo">
+                <span class="logo-img"></span>
+                <p>Affiliate
+                    <br>
+                    Center</p>
+            </a>
+            <div class="region-login">
+                <a href="" class="region">
+                    <span class="contry SG"></span>
+                    <ul class="drop-mb">
+                        <li class="cn">简体中文</li>
+                        <li class="en">English</li>
+                    </ul>
+                </a>
+                <a href="login.html" class="login">
+                    <img src="./images/mobile-nav-avatar" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 手機側邊欄 -->
+    <div class="modaloverlay sidenav-overlay">
+        <div class="sidenav" id="sidebar">
+            <div class="container">
+                <div class="heading">
+                    <img src="./images/mobile-nav-logo.png" alt="">
+                    <span>Affiliate Center</span>
+                    <span class="close" onclick="closeSidenav()"></span>
+                </div>
+                <a href="plan.html">Affiliate Plan</a>
+                <a href="dashboard_premier.html">Dashboard</a>
+                <a href="">Report</a>
+                <ul class="contact">
+                    <li class="mobile"></li>
+                    <li class="whatsapp">123456789</li>
+                    <li class="wechat">happywin118</li>
+                    <li class="email">help@happywin118.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 情境圖 -->
+    <div class="dashboard-banner">
+        <div class="container">
+            <h1>Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="container">
+            <div class="heading">
+                <p class="title">Hi Ruby001</p>
+
+            </div>
+
+            <div class="general-affi">
+                <p>
+                    You are not our Premier Affiliate yet. <br>
+                    To know more details about our affiliate plan, please click <span class="link-plan">Affiliate Plan</span>, or contact
+                    us directly. <br>
+                    To upgrade immediately, please provide your info to us. Our staff will reply you soon. <br>
+                    Thank you for your applying.
+                </p>
+                <form action="" class="form-general">
+                    <p class="title">Become Premier Affiliate</p>
+                    <input type="text" placeholder="Mobile">
+                    <input type="email" placeholder="Email">
+                    <button type="button" class="apply">submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="index-footer">
+        <div class="container">
+            <p>Copyright © 2019 Happywin118 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        /* 新增渠道 */
+        $(function () {
+            $('.generate').on('click', function () {
+                event.preventDefault();
+                $('.new-tunnel').removeClass('hide-modal');
+            })
+            $('.modal-new-tunnel .close').on('click', function () {
+                $('.new-tunnel').addClass('hide-modal');
+            })
+        })
+
+        /* 手機側邊欄 */
+        $(function () {
+            $('.sidenav-overlay').css('display', 'none');
+            $('.burger').on('click', function () {
+                $('.sidenav-overlay').css('display', 'block');
+                $('#sidebar').css('left', '0');
+            });
+            $('.sidenav .close').on('click', function () {
+                $('#sidebar').css('left', '-400px');
+                $('.sidenav-overlay').css('display', 'none');
+            });
+        })
+    </script>
+</body>
+
+</html>

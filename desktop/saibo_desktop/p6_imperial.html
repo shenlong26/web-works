@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sportsbet</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main_saibo_min.css" />
+
+</head>
+
+<body>
+    <div>
+        <style>
+            /*bootstrap3 starts*/
+            .container-fluid {
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .container-fluid:after,
+            .container-fluid:before {
+                display: table;
+                content: "";
+            }
+
+            .container-fluid:after {
+                clear: both;
+            }
+
+            .col-md-2,
+            .col-md-4,
+            .col-md-6,
+            .col-sm-4,
+            .col-sm-6,
+            .col-sm-12,
+            .col-xs-12,
+            .col-xs-6 {
+                position: relative;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+
+            .col-xs-6 {
+                float: left;
+                width: 50%;
+            }
+
+            .col-xs-12 {
+                width: 100%;
+                float: left;
+            }
+
+            .embed-responsive {
+                position: relative;
+                display: block;
+                height: 0;
+                padding: 0;
+                overflow: hidden
+            }
+
+            .embed-responsive .embed-responsive-item,
+            .embed-responsive embed,
+            .embed-responsive iframe,
+            .embed-responsive object,
+            .embed-responsive video {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0
+            }
+
+            .embed-responsive-16by9 {
+                padding-bottom: 56.25%
+            }
+
+            .embed-responsive-4by3 {
+                padding-bottom: 75%
+            }
+
+            @media (min-width:768px) {
+
+                .col-sm-4,
+                .col-sm-6,
+                .col-sm-12 {
+                    float: left;
+                }
+
+                .col-sm-4 {
+                    width: 33.3%;
+                }
+
+                .col-sm-6 {
+                    width: 50%
+                }
+
+                .col-sm-12 {
+                    width: 100%;
+                }
+            }
+
+            @media (min-width:992px) {
+
+                .col-md-2,
+                .col-md-4,
+                .col-md-6 {
+                    float: left;
+                }
+
+                .col-md-2 {
+                    width: 16.66666667%
+                }
+
+                .col-md-4 {
+                    width: 33.3%;
+                }
+
+                .col-md-6 {
+                    width: 50%;
+                }
+            }
+
+            /*bootstrap3 ends*/
+
+            /* additional starts*/
+            .page3F h1,
+            .page4F h1 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            /* additional ends*/
+            @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional");
+
+
+            .cN {
+                max-width: 1200px;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+
+            .row2 {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            ul,
+            li {
+                list-style: none;
+            }
+
+            /* page0 */
+
+            .page0F {
+                position: relative;
+                display: block;
+                width: 100%;
+                min-width: 550px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                overflow: hidden;
+                background: url("images/bg0_s6.jpg") no-repeat top center/ contain;
+
+            }
+
+            .page0F .page0PIC {
+                position: relative;
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin: auto;
+                padding: auto;
+            }
+
+            .allPic {
+                position: relative;
+                display: block;
+                width: 100%;
+                margin: auto;
+                padding: auto;
+
+            }
+
+            /* page1 */
+
+            .page1F {
+                position: relative;
+                display: block;
+                width: 100%;
+                background: url("http://help.saibo.io/assets/images/bg1.jpg") no-repeat top center/ cover;
+
+            }
+
+            .page1F .piccF {
+                margin-top: 50px;
+
+            }
+
+            .page1F .s1p1title {
+                max-width: 904px;
+
+            }
+
+            .Titlegreebg3 {
+                width: 245px;
+                height: 27px;
+                position: relative;
+                display: block;
+                background: url("http://help.saibo.io/assets/images/txt_decbg3.png") no-repeat top left;
+                color: #fff;
+                font-size: 16px;
+                line-height: 27px;
+                margin: 40px 0px 5px 0px;
+                padding-left: 15px;
+            }
+
+
+            /* page2 */
+
+            .page2F {
+                position: relative;
+                display: block;
+                width: 100%;
+                background: url("http://help.saibo.io/assets/images/bg2.jpg") no-repeat bottom center/ cover;
+
+            }
+
+            .page2F .s1p1title {
+                max-width: 702px;
+
+            }
+
+            .page2F .piccF {
+                margin-top: 50px;
+
+            }
+
+            .picc {
+                height: 100%;
+                border: 5px solid #0eaa50;
+                overflow: hidden;
+                margin-bottom: 15px;
+            }
+
+            /* page3 */
+
+            .page3F {
+                position: relative;
+                display: block;
+                width: 100%;
+                background: url("http://help.saibo.io/assets/images/bg2.jpg") no-repeat bottom center/ cover;
+
+            }
+
+            .page3F .piccF {
+
+                margin-top: 50px;
+
+            }
+
+            .page3F .s1p1title {
+                max-width: 702px;
+            }
+
+            .page3F .iconBg {
+                height: 156px;
+                background: rgba(255, 255, 255, 0.3);
+                box-shadow: 1px 1px 2px rgb(155, 155, 155);
+                -webkit-box-shadow: 1px 1px 2px rgb(155, 155, 155);
+                -moz-box-shadow: 1px 1px 2px rgb(155, 155, 155);
+                border-radius: 20px;
+                text-align: center;
+                padding-top: 15px;
+                margin-bottom: 15px;
+
+            }
+
+            .page3F .iconcup {
+                width: 59px;
+                margin: auto;
+                padding: auto;
+            }
+
+            .page3F h3 {
+                font-size: 12px;
+                color: #626262;
+                margin-top: 15px;
+            }
+
+            .page3F h2 {
+                font-size: 16px;
+                font-weight: 400;
+                color: #0eaa50;
+                margin-top: 10px;
+            }
+
+
+            .spaceW {
+
+                padding: auto;
+                margin: auto;
+            }
+
+
+
+            /* 4F */
+
+            .page4F {
+                position: relative;
+                display: block;
+                width: 100%;
+                background: url("http://help.saibo.io/assets/images/bg3.jpg") no-repeat bottom center/ cover;
+
+            }
+
+            .mobilepic {
+                /* padding: 60px 0px; */
+                padding-top: 60px;
+                max-width: 830px;
+            }
+
+            .page4F .piccF {
+
+                width: 100%;
+                background: rgba(255, 255, 255, 0.3);
+                box-shadow: 0px 0px 10px rgb(216, 216, 216);
+                -webkit-box-shadow: 0px 0px 10px rgb(216, 216, 216);
+                -moz-box-shadow: 0px 0px 10px rgb(216, 216, 216);
+                border-radius: 20px;
+                padding-bottom: 30px;
+
+            }
+
+            .page4F .s1p1title {
+                padding-top: 60px;
+                max-width: 585px;
+            }
+
+
+
+            .page4F .iconpic {
+                max-width: 60px;
+                padding: 30px 0px;
+                margin-right: 15px;
+                float: left;
+
+            }
+
+
+
+            .page4F h1 {
+                padding-top: 15px;
+                font-size: 20px;
+                font-weight: 300;
+                color: #0eaa50;
+            }
+
+            @media (max-width: 1920px) {}
+
+
+
+
+            @media (max-width: 1138px) {}
+
+
+
+            @media (max-width: 767px) {}
+        </style>
+    </div>
+
+    <div id="">
+        <header style="padding-top: env(safe-area-inset-top) constant(safe-area-inset-top);">
+            <div class="container">
+                <div><span class="default cn">
+                        <ul class="region" style="display: none;">
+                            <li>简体中文</li>
+                        </ul>
+                    </span><span>GMT+8</span><span>2020-05-21</span><span>14:15:10</span><a class="service">代理中心</a><a
+                        class="aff-link">代理中心</a><a class="service">在线客服</a>
+                    <div class="mobile-view" style="visibility: hidden;">手机版</div>
+                </div><span class="logo"></span>
+                <div id="loginSection" style="display: block;"><input type="text" placeholder="账号" value=""><input
+                        type="password" placeholder="密码" autocomplete="new-password"><span class="forget">忘记
+                        ?</span><button type="button" class="signin">登录</button><button type="button"
+                        class="signin">登录</button><button type="button" class="signup">注册</button></div>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <div><a class="">体育赛事</a><i></i></div>
+                <div><a class="">电子竞技</a><i></i></div>
+                <div><a class="">真人娱乐</a><i></i></div>
+                <div><a class="">电子游戏</a><i></i></div>
+                <div><a class="">彩票投注</a></div>
+                <div><a class="">棋牌游戏</a></div>
+                <div><a class="">最新优惠</a></div>
+                <div><a class=""> 赞助专题</a><i></i></div>
+                <div><a class="">合营计划</a></div>
+            </div>
+        </nav>
+        <div class="panel" id="panel-sports">
+            <div class="container"><a><span class="sbSport"></span>
+                    <p>SB</p><span></span>
+                </a><a><span class="gbSport"></span>
+                    <p>GB</p><span></span>
+                </a><a><span class="pinacleSport"></span>
+                    <p>PIN</p><span></span>
+                </a></div>
+        </div>
+        <div class="panel" id="panel-esports">
+            <div class="container"><a>
+                    <h2>IMOne电竞</h2>
+                    <p>最佳陪率，专业品牌</p><span></span>
+                </a>
+                <div>
+                    <p>ELECTRONIC</p>
+                    <p>SPORTS</p>
+                    <p class="refund">返水最高可达</p><span class="rate"></span>
+                </div>
+            </div>
+        </div>
+        <div class="panel" id="panel-livecasino">
+            <div class="container"><a><span class="logo-ag"></span>
+                    <p>AG钻石谷</p><span></span>
+                </a><a><span class="logo-mg"></span>
+                    <p>MG鉑金館娱乐场</p><span></span>
+                </a><a><span class="logo-bbin"></span>
+                    <p>BBIN隐月塔</p><span></span>
+                </a><a><span class="logo-ebet"></span>
+                    <p></p><span></span>
+                </a>
+                <div>
+                    <h3>真人视讯</h3>
+                    <p>LIVE</p>
+                    <p>CASINO</p>
+                    <p class="refund">返水最高可达</p><span class="rate"></span>
+                </div>
+            </div>
+        </div>
+        <div class="panel" id="panel-slotgame">
+            <div class="container"><a><span class="logo-pt"></span>
+                    <p>PT电子</p><span></span>
+                </a><a><span class="logo-mg"></span>
+                    <p>MG电子</p><span></span>
+                </a><a><span class="logo-ag"></span>
+                    <p>AG电子</p><span></span>
+                </a>
+                <div>
+                    <h3>电子游戏</h3>
+                    <p>RNG</p>
+                    <p>GAME</p>
+                    <p class="refund">返水最高可达</p><span class="rate"></span>
+                </div>
+            </div>
+        </div>
+        <div class="panel" id="panel-sponser">
+            <div class="container"><a><span class=""></span>
+                    <div class="item">
+                        <h3>WATFORD</h3>
+                        <p>全球赞助商</p>
+                    </div>
+                </a><a><span class=""></span>
+                    <div class="item">
+                        <h3>FLAMENGO</h3>
+                        <p> 全球赞助商</p>
+                    </div>
+                </a><a><span class=""></span>
+                    <div class="item">
+                        <h3>ROSARIO</h3>
+                        <p> 官方合作伙伴</p>
+                    </div>
+                </a><a><span class=""></span>
+                    <div class="item">
+                        <h3>CONIFA</h3>
+                        <p>主赞助商</p>
+                    </div>
+                </a><a><span class=""></span>
+                    <div class="item">
+                        <h3>DENILSON</h3>
+                        <p>代言人</p>
+                    </div>
+                </a></div>
+        </div>
+    </div>
+
+    <div>
+        <!-- page0F-->
+        <div class="page0F">
+            <img class="page0PIC" src="http://help.saibo.io/assets/images/w.png">
+        </div>
+
+        <!-- page1F-->
+        <div class="page1F">
+            <div class="container-fluid cN">
+                <div>
+                    <img class="allPic s1p1title" src="images/s6title_1.png">
+                    <div class="Titlegreebg3">电竞好伙伴！</div>
+                    <p>Sportsbet.io 骄傲地成为Imperial Esports俱乐部的主要赞助商!</p>
+
+                    <p>我们现在最新成为巴甲电竞Imperial Esports的主赞助方，现在，Sportsbet.io徽标出现在Imperial
+                        Esports的肩胛骨上，此次合作将互相推动各自品牌的影响力，一起推动电竞事业的发展。
+                        <br>我们很高兴找到一个与我们有共同精神追求的合作伙伴，以寻求颠覆博彩业，并为他们的客户提供有趣，快速和公平的体验。联手Imperial
+                        Esport，看出赛博体育在未来推动品牌全球化的信心和决心。
+
+                    </p>
+                    <div class="piccF">
+                        <div class="col-md-6 col-sm-6 col-xs-12"><img class="allPic picc" src="images/imperial1.jpg">
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12"><img class="allPic picc" src="images/imperial2.jpg">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="page2F">
+            <div class="container-fluid cN">
+                <img class="allPic s1p1title" src="images/s2title_3.png">
+                <div class="col-md-12 col-sm-12 col-xs-12 piccF " >
+                    <div>			          
+                         <div class="picc">				 
+                         <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/pTjZqEUNpjY" frameborder="0" allowfullscreen></iframe>
+                         </div>
+                         </div>
+                    </div> 		 
+                </div>
+            </div>    
+        </div> -->
+
+        <div class="page3F">
+            <div class="container-fluid cN">
+                <div>
+                    <img class="allPic s1p1title" src="images/s6title_2.png">
+                    <div class="Titlegreebg3">Imperial Esports俱乐部</div>
+                    <p>Imperial Esports俱乐部在巴西十分有名，在国内拥有非常多的电竞支持者。是一只非常年轻的电竞战队，出道即巅峰，在2018年成立，荣获WESG 2018
+                        Brazil站冠军，在全球CSGO电竞职业圈中排名前100 。2020年04月26日Imperial Esports获得ESL One: Road to Rio - South
+                        America季军。
+                    </p>
+                    <div class="Titlegreebg3">历史荣誉</div>
+                    <div class="piccF">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="iconBg">
+                                <img class="iconcup" src="http://help.saibo.io/assets/images/icon_champion.png">
+                                <h3>WESG 2018 Brazil</h3>
+                                <h2>冠军</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="iconBg">
+                                <img class="iconcup" src="http://help.saibo.io/assets/images/icon_secondplace.png">
+                                <h3>Gamers Club Liga Profissional 2018</h3>
+                                <h2>季军</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="iconBg">
+                                <img class="iconcup" src="http://help.saibo.io/assets/images/icon_secondplace.png">
+                                <h3>DreamHack Open Rio de Janeiro 2019</h3>
+                                <h2>季军</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="iconBg">
+                                <img class="iconcup" src="http://help.saibo.io/assets/images/icon_secondplace.png">
+                                <h3>ESL One: Road to Rio - South America</h3>
+                                <h2>季军</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="page4F">
+            <div class="container-fluid cN">
+                <div class="col-md-12 col-sm-12 col-xs-12 piccF">
+                    <div class="col-md-6 col-sm-6 col-xs-12 "><img class="allPic mobilepic "
+                            src="http://help.saibo.io/assets/images/mobilepic.png"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 ">
+                        <img class="allPic s1p1title" src="http://help.saibo.io/assets/images/s1title_s.png">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <img class="allPic iconpic" src="http://help.saibo.io/assets/images/icon1.png">
+                            <div>
+                                <h1>更专业</h1>
+                                <p>多元选择，完美游戏体验</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <img class="allPic iconpic" src="http://help.saibo.io/assets/images/icon2.png">
+                            <div>
+                                <h1>更安全</h1>
+                                <p>独家开发技术，保障完善</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <img class="allPic iconpic" src="http://help.saibo.io/assets/images/icon3.png">
+                            <div>
+                                <h1>更便捷</h1>
+                                <p>卓越技术，最优质服务</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <img class="allPic iconpic" src="http://help.saibo.io/assets/images/icon4.png">
+                            <div>
+                                <h1>更快速</h1>
+                                <p>多元选择，完美游戏体验</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="intro">
+                <span class="logo"></span>
+                <p>Sportsbet.io 由mBet Solutions NV (Kaya Richard J. Beaujon Z/N Landhuis Joonchi II
+                    Curaçao)所拥有并进行运营。它由库拉索政府颁发1668/JAZ 执照并受库拉索政府监管。</p>
+            </div>
+            <ul class="link-wrapper">
+                <li class="title">
+                    <p>体育</p>
+                </li>
+                <li class="link"><a href="javascript:void(0)"
+                        onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/promotion'} }))">优惠活动</a>
+                </li>
+                <li class="link"><a href="javascript:void(0)"
+                        onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/gb_sport'} }))">滚球</a>
+                </li>
+            </ul>
+            <ul class="link-wrapper">
+                <li class="title">
+                    <p>娱乐场</p>
+                </li>
+                <li class="link"><a href="javascript:void(0)"
+                        onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/casino'} }))">真人娱乐场</a>
+                </li>
+            </ul>
+            <ul class="link-wrapper">
+                <li class="title">
+                    <p>在线客服</p>
+                </li>
+                <li class="link"><a href="javascript:vod(0)"
+                        onclick="window.open('https://feiniaohuafeng.com/chat/text/chat_08ghEV.html', 'newwindow', 'width=500,height=600');">在线客服</a>
+                </li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/member_maintain/seq4.html"
+                        target="_blank">负责任的博彩</a></li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/" target="_blank">基本下注规则</a></li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/cooperation_share/seq5.html"
+                        target="_blank">代理常见问题</a></li>
+                <li class="link"><a href="http://help.saibovip888.io/saibo_VIP/" target="_blank">赛博VIP</a></li>
+            </ul>
+            <ul class="link-wrapper">
+                <li class="title">
+                    <p>关于</p>
+                </li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/member_maintain/seq3.html"
+                        target="_blank">隐私条款</a></li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/member_maintain/seq1_aboutus.html"
+                        target="_blank">关于我们</a></li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/member_maintain/seq1.html"
+                        target="_blank">使用规则与条款</a></li>
+                <li class="link"><a href="https://affiliates.saibo.io/cn/" target="_blank">代理中心</a></li>
+                <li class="link"><a href="http://help.saibovip888.io/help_sportsbet/cooperation_share/seq1.html"
+                        target="_blank">代理规则与条款</a></li>
+            </ul>
+            <div class="follow-us">
+                <p class="title">关注我们</p>
+                <ul class="social-media">
+                    <li><a href="https://twitter.com/Sportsbetio" class="twitter" title="twitter" target="_blank"></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/Sportsbet.io/" class="facebook" title="facebook"
+                            target="_blank"></a></li>
+                    <li><a href="https://www.youtube.com/channel/UClgXWroAXKhtK9Z9-YqHfTg?sub_confirmation=1"
+                            class="youtube" title="youtube" target="_blank"></a></li>
+                    <li><a href="https://bitcointalk.org/index.php?topic=1458034" class="bitcoin" title="bitcoin"
+                            target="_blank"></a></li>
+                    <li><a href="https://www.instagram.com/sportsbet.io/" class="instagram" title="instagram"
+                            target="_blank"></a></li>
+                </ul>
+                <ul class="wechat-weibo">
+                    <li>
+                        <span class="qrcode weibo"></span>
+                        <p>关注微博</p>
+                    </li>
+                    <li>
+                        <span class="qrcode wechat"></span>
+                        <p>加入微信</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="partners">
+            <li class=""><a
+                    href="https://validator.curacao-egaming.com/validate?domain=sportsbet.io&amp;seal_id=ce1fe30eb692473c751d3737d65bd753108999a1eeb9896d4b649466f328bfbb8a2c126253365800bea988199489b315&amp;stamp=0d0da704bf701cfabd6a6d91a58e720a"
+                    class="ceg" target="_blank"></a></li>
+            <li class=""><a class="res"></a></li>
+            <li class=""><a class="bit"></a></li>
+            <li class=""><a class="ethe"></a></li>
+            <li class=""><a class="L-payment"></a></li>
+            <li class=""><a class="tron"></a></li>
+            <li class=""><a class="watford"></a></li>
+            <li class=""><a href="https://sportsbet.io/sports/soccer/news/joga-junto-com-o-clube-de-futebol-flamengo"
+                    class="flamengo" target="_blank"></a></li>
+        </ul>
+    </footer>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>

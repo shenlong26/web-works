@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ANVO </title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main_b88.css">
+</head>
+
+<body>
+    <!-- 登入 -->
+    <header>
+        <div class="container">
+            <div>
+                <span class="default cn vn">
+                    <ul class="region" style="display: block;">
+                        <li>简体中文</li>
+                        <li>English</li>
+                    </ul>
+                </span>
+                <span>GMT+8</span>
+                <span>2019-06-27</span>
+                <span>16:37:05</span>
+                <a href="" class="service">AFFILIATES</a>
+                <a href="" class="service"style="display:none">LIVE CHAT</a>
+            </div>
+            <span class="logo"></span>
+            <div>
+                <input type="text" placeholder="ACCOUNT">
+                <input type="password" placeholder="PASSWORD">
+                <span class="forget">Forget?</span>
+                <button type="button" class="signin">LOGIN</button>
+                <button type="button" class="signup">SIGNUP</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 登入後header -->
+    <div class="logined-header" style="display:none;">
+        <div class="container">
+            <div>
+                <span>GMT+8</span>
+                <span>2019-06-27</span>
+                <span>16:37:05</span>
+                <a href="" class="home">网站首页</a>
+                <a href="" class="service">在线客服</a>
+            </div>
+            <span class="logo"></span>
+            <div>
+                <span class="welcome">歡迎你, </span>
+                <span class="name"> kevinCK</span>
+                <span class="line"></span>
+                <p><span class="balance">0.00</span> 元</p>
+                <span class="deposit">存款</span>
+                <span class="withdraw">取款</span>
+                <!-- <span class="transfer">轉帳</span> -->
+                <!-- <span class="line"></span> -->
+                <!-- <p>消息 : <span class="message">0</span></p> -->
+                <span class="logout">退出登錄</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 導覽列 -->
+    <nav>
+        <div class="container">
+            <div>
+                <a href="">SPORTBOOKS<i></i></a>
+            </div>
+            <div>
+                <a href="">ESPORTS<i></i></a>
+            </div>
+            <div>
+                <a href="">LIVE CASINO<i></i></a>
+            </div>
+
+            <div>
+                <a href="">E-GAMES<i></i></a>
+            </div>
+            <div>
+                <a href="">LOTTERY<i></i></a>
+            </div>
+            <div>
+                <a href="">CHESS<i></i></a>
+            </div>
+            <div>
+                <a href="">PROMOTIONS<i></i></a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 下拉選單 體育-->
+    <div class="panel" id="panel-sports" style="display:none;">
+        <div class="container">
+            <div></div>
+            <div>
+                <p>扫一扫直接连结</p>
+                <i class="QR-code"></i>
+                <a href="" title="www.saibo.app">www.saibo.com</a>
+            </div>
+            <div>
+                <h2>Saibo体育</h2>
+                <p>每月提供上万场体育赛事投注</p>
+                <button type="button">立即進入</button>
+            </div>
+            <div>
+                <p>Saibo</p>
+                <p>SPORTS</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 電競-->
+    <div class="panel" id="panel-esports" style="display:none;">
+        <div class="container">
+            <a href="">
+                <h2>Saibo電競</h2>
+                <p>所有賽事一應俱全</p>
+                <span></span>
+            </a>
+            <div>
+                <p>ELECTRONIC</p>
+                <p>SPORTS</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 真人娛樂-->
+    <div class="panel hovered" id="panel-livecasino" style="display:none;">
+        <div class="container">
+            <a href="">
+                <span class="logo-bbin"></span>
+                <p>AG真人</p>
+                <span class=""></span>
+            </a>
+            <a href="">
+                <span class="logo-ag"></span>
+                <p>EBET真人</p>
+                <span class=""></span>
+            </a>
+            <a href="">
+                <span class="logo-pt"></span>
+                <p>OG真人</p>
+                <span class=""></span>
+            </a>
+            <a href="">
+                <span class="logo-mg"></span>
+                <p>GD真人</p>
+                <span class=""></span>
+            </a>
+            <a href="">
+                <span class="logo-hb"></span>
+                <p>GD真人</p>
+                <span class=""></span>
+            </a>
+            <div>
+                <h3>真人视讯</h3>
+                <p>LIVE</p>
+                <p>CASINO</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 彩票遊戲-->
+    <div class="panel" id="panel-lottery" style="display:none;">
+        <div class="container">
+            <a href="">
+                <span class="logo-01"></span>
+                <p>双赢彩票</p>
+                <img src="./images/panel-lottery01.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-02"></span>
+                <p>LB彩票</p>
+                <img src="./images/panel-lottery02.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-03"></span>
+                <p>KG彩票</p>
+                <img src="./images/panel-lottery03.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-04"></span>
+                <p>BBIN彩票</p>
+                <img src="./images/panel-lottery04.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-05"></span>
+                <p>TCG彩票</p>
+                <img src="./images/panel-lottery05.png" alt="">
+            </a>
+            <div>
+                <h3>彩票游戏</h3>
+                <p>LOTTERY</p>
+                <p>GAME</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 電子遊戲-->
+    <div class="panel" id="panel-slotgame" style="display:none;;">
+        <div class="container">
+            <a href="">
+                <span class="logo-bbin"></span>
+                <p>PG電子</p>
+                <span></span>
+            </a>
+            <a href="">
+                <span class="logo-pt"></span>
+                <p>PT電子</p>
+                <span></span>
+            </a>
+            <a href="">
+                <span class="logo-mg"></span>
+                <p>MG電子</p>
+                <span></span>
+            </a>
+            <a href="">
+                <span class="logo-hb"></span>
+                <p>PP电子</p>
+                <span></span>
+            </a>
+            <a href="">
+                <span class="logo-ag"></span>
+                <p>DT电子</p>
+                <span></span>
+            </a>
+            <div>
+                <h3>电子游戏</h3>
+                <p>SLOT</p>
+                <p>GAME</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 棋牌-->
+    <div class="panel" id="panel-chessgame" style="display:none;">
+        <div class="container">
+            <a href="">
+                <span></span>
+                <div class="item">
+                    <h3>高登棋牌</h3>
+                    <p>玩出运气 赢得惊喜</p>
+                    <p>CHESS GAME</p>
+                </div>
+            </a>
+            <a href="">
+                <span></span>
+                <div class="item">
+                    <h3>双赢棋牌</h3>
+                    <p>真金白银斗阵 其乐无穷</p>
+                    <p>CHESS GAME</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 下拉選單 贊助-->
+    <div class="panel" id="panel-sponser" style="display:block;">
+        <div class="container">
+            <a href="">
+                <p class="title">沃特福德</p>
+                <p>赞助商</p>
+                <span></span>
+            </a>
+            <a href="">
+                <p class="title">弗拉门戈</p>
+                <p>全球赞助商</p>
+                <span></span>
+            </a>
+            <a href="">
+                <p class="title">罗萨里奥中央</p>
+                <p>官方合作伙伴</p>
+                <span></span>
+            </a>
+            <a href="">
+                <p class="title">CONIFA欧洲足球杯</p>
+                <p>主赞助商</p>
+                <span></span>
+            </a>
+            <a href="">
+                <p class="title">德尼尔森</p>
+                <p>代言人</p>
+                <span></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 下拉選單 APP-->
+    <div class="panel" id="panel-app" style="display:none;">
+        <div class="container">
+            <div class="pic"></div>
+            <div class="item">
+                <h4>体育APP</h4>
+                <img class="QR-code" src="./images/panel-qrcode-sport.png" alt="">
+                <p>扫一扫下载体育APP</p>
+                <p>支持IOS & Android等全部移动投资</p>
+                <a href="" title="www.saibo.app">www.saibo.app</a>
+            </div>
+            <div class="pic"></div>
+            <div class="item">
+                <h4>全站APP</h4>
+                <img class="QR-code" src="./images/panel-qrcode-home.png" alt="">
+                <p>扫一扫下载体育APP</p>
+                <p>支持IOS & Android等全部移动投资</p>
+                <a href="" title="www.saibo.app">www.saibo.app</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 輪播器 -->
+    <div class="carousel">
+        <div class="slide">
+        </div>
+        <div class="indicates">
+            <span class="square"></span>
+            <span class="square active"></span>
+            <span class="square"></span>
+        </div>
+        <span class="prev"></span>
+        <span class="next"></span>
+        <!-- <div class="banner"></div>
+        <div class="indicate">
+            <div class="slide active"></div>
+        </div> -->
+    </div>
+
+    <!-- 跑馬燈 -->
+    <div class="marq">
+        <div class="container">
+            <i class="icon-speaker"></i>
+            <span>公告：</span>
+            <div class="message">
+                <marquee behavior="" direction="">
+                    <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, delectus </a>
+                </marquee>
+            </div>
+            <i class="icon-service"></i>
+            <span class="online-service">在線客服</span>
+        </div>
+    </div>
+
+
+    <!-- 球投 -->
+    <div class="latest-match">
+        <div class="container">
+            <p class="title">Trận Đấu Mới Nhất</p>
+            <div class="item">
+                <div class="left">
+                    <span class="logo logo1"></span>
+                    <p class="name">LIVERPOOL</p>
+                </div>
+                <div class="mid">
+                    <p>7th March 20:30</p>
+                    <span class="score">1</span>
+                    <span class="colon">:</span>
+                    <span class="score">3</span>
+                    <p>England Premier League</p>
+                </div>
+                <div class="right">
+                    <p class="name">AFC BOURNEMOUTH</p>
+                    <span class="logo logo2"></span>
+                </div>
+            </div>
+            <ul class="flex-match">
+                <li class="item">
+                    <div class="left">
+                        <span class="logo logo3"></span>
+                        <p class="name">Genoa</p>
+                    </div>
+                    <div class="mid">
+                        <p>6th March 04:30</p>
+                        <span class="score">-</span>
+                        <p>Spain Copa Del Rey</p>
+                    </div>
+                    <div class="right">
+                        <p class="name">Parma</p>
+                        <span class="logo logo4"></span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="left">
+                        <span class="logo logo5"></span>
+                        <p class="name">Derby County</p>
+                    </div>
+                    <div class="mid">
+                        <p>7th March 20:30</p>
+                        <span class="score">0-3</span>
+                        <p>England FA Cup</p>
+                    </div>
+                    <div class="right">
+                        <p class="name">Manchester Unitedv</p>
+                        <span class="logo logo6"></span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="left">
+                        <span class="logo logo7"></span>
+                        <p class="name">Torino</p>
+                    </div>
+                    <div class="mid">
+                        <p>7th March 20:30</p>
+                        <span class="score">-</span>
+                        <p>Spain Copa Del Rey</p>
+                    </div>
+                    <div class="right">
+                        <p class="name">Udinese</p>
+                        <span class="logo logo8"></span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="left">
+                        <span class="logo logo9"></span>
+                        <p class="name">Mirandes</p>
+                    </div>
+                    <div class="mid">
+                        <p>7th March 20:30</p>
+                        <span class="score">0-1</span>
+                        <p>Spain Copa Del Rey</p>
+                    </div>
+                    <div class="right">
+                        <p class="name">Real Sociedad</p>
+                        <span class="logo logo10"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 行動投注 -->
+    <div class="awesome-app">
+        <div class="container">
+            <div class="context">
+                <h3>Tuyệt Vời</h3>
+                <h2>Ứng Dụng Điện Thoại</h2>
+                <p class="heading-3f">Thông Tin Cực Nhanh, Cược Trực Tuyến Cực Đã</p>
+                <p>CHÚNG TÔI LUÔN LUÔN CAM KẾT CUNG CẤP NHỮNG CHƠI TRÒ CHƠI TỐT NHẤT, BẠN CÓ THỂ NGAY LẬP TỨC CHƠI TRÊN
+                    ĐIỆN THOẠI DI ĐỘNG CỦA BẠN! CÁ CƯỢC THỂ THAO, CHƠI CASINO TRỰC TUYẾN VÀ NHIỀU HƠN THẾ NỮA TRÊN TOÀN
+                    THẾ GIỚI, MỌI LÚC, MỌI NƠI !</p>
+                <span class="qrcode"></span>
+            </div>
+            <div class="img"></div>
+        </div>
+    </div>
+
+
+    <!-- 快捷入口 -->
+    <div class="nav-fluid">
+        <ul class="container">
+            <li class="sport"><a href="javascript:void(0)" onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/sports'} }))"></a>
+                <span>Thể Thao</span></li>
+            <li class="casino"><a href="javascript:void(0)" onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/casino'} }))"></a>
+                <span>Live Casino</span></li>
+            <li class="e-sport"><a href="javascript:void(0)" onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/esports'} }))"></a>
+                <span>Esport</span></li>
+            <li class="slot"><a href="javascript:void(0)" onclick="document.dispatchEvent(new global.CustomEvent('redirect', { detail: { href: '/game'} }))"></a>
+                <span>Slots Game</span></li>
+        </ul>
+    </div>
+
+    <!-- 優勢區塊 -->
+    <div class="adventage">
+        <div class="container">
+            <h3>Hệ Thống Dịch Vụ Chuyên Nghiệp</h3>
+            <h2>An Toàn và Nhanh Chóng</h2>
+            <p class="heading-3f">Cung Cấp Cho Bạn Những Dịch Vụ Tốt Nhất</p>
+            <ul class="services">
+                <li>
+                    <span class="amount thirty"></span>
+                    <p>Trung Bình <br>
+                        <span class="bold">Thời Gian Nạp Tiền</span></b>
+                    </p>
+                </li>
+                <li>
+                    <span class="amount twenty"></span>
+                    <p>Nền Tảng <br>
+                        <span class="bold">Thanh Toán</span></b>
+                    </p>
+                </li>
+                <li>
+                    <span class="amount thirty"></span>
+                    <p>Trung Bình <br>
+                        <span class="bold">Thời Gian Rút Tiền</span></b>
+                    </p>
+                </li>
+                <li>
+                    <span class="amount twenty"></span>
+                    <p>Hệ Thống <br>
+                        <span class="bold">Trò Chơi Đa Dạng</span></b>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 人群裝飾區塊 -->
+    <div class="crowd"></div>
+
+    <!-- qrcode&聯係 -->
+    <div class="app-and-contact">
+        <div class="contact">
+            <a href="" class="tooltip">
+                在线客服
+            </a>
+        </div>
+        <div class="scan">
+            <div class="content">
+                <span class="qrcode"></span>
+                <p>博财手机版
+                    <br>
+                    扫描下载</p>
+            </div>
+        </div>
+        <div class="download-path">
+            <a href="" class="tooltip">
+                APP下载
+            </a>
+        </div>
+        <div class="back-to-top">
+            <div class="content">
+                <span class="top-arrow"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer>
+        <div class="partners">
+            <span class="ag"></span>
+            <span class="onework"></span>
+            <span class="mg"></span>
+            <span class="pt"></span>
+            <span class="bbin"></span>
+            <span class="pinacle"></span>
+            <span class="alipay"></span>
+            <span class="wechat"></span>
+        </div>
+        <div class="container">
+            <ul class="about">
+                <li class="heading">ABOUT</li>
+                <li><a href="javascript:void(0)" onclick="window.open('https://direct.lc.chat/11791200/', 'newwindow', 'width=500,height=600');">Liên lạc với chúng tôi</a></li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/member_maintain/seq1.html" target="_blank">Điều khoản và điều kiện</a></li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/" target="_blank">Chơi game có trách nhiệm</a></li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/member_maintain/seq3.html" target="_blank">Chính sách bảo mật</a></li>
+            </ul>
+            <ul class="help">
+                <li class="heading">HELP</li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/" target="_blank">FAQs</a></li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/member_rule_01/seq1.html" target="_blank">Thể Thao</a></li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/member_rule_01/seq2.html" target="_blank">Live Casino</a></li>
+                <li><a href="https://affiliates.best88.club/vn/" target="_blank">Đại Lý</a></li>
+                <li><a href="https://promotions.best88.club/B88_VIP/" target="_blank">VIP</a></li>
+            </ul>
+            <ul class="payment">
+                <li class="heading">PAYMENT</li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/member_payment/seq1.html" target="_blank">Nạp tiền</a></li>
+                <li><a href="https://promotions.best88.club/help_B88_VN/member_payment/seq2.html" target="_blank">Rút tiền</a></li>
+            </ul>
+            <ul class="statistics">
+                <li class="heading">STATISTICS</li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Statistics</a></li>
+                <li><a href="">Live Calendar</a></li>
+                <li><a href="">Result</a></li>
+            </ul>
+            <ul class="products">
+                <li class="heading">PRODUCTS</li>
+                <li><a href="">Sports</a></li>
+                <li><a href="">Live Casino</a></li>
+                <li><a href="">Casino</a></li>
+                <li><a href="">Poker</a></li>
+                <li><a href="">Games</a></li>
+            </ul>
+            <div class="app-download">
+<!--                 <a href="" class="app ios"></a>
+                <a href="" class="app android"></a> -->
+                <div class="back-top">
+                     <a href="#">
+                        BACK TO TOP
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="toc">
+            <p>B88 is operated by B88 Limited, UK company registration number 167038-AA.</p>
+            <span class="gc"></span>
+        </div>
+        <p class="copyright">
+            Copyright 2020 B88. All rights reserved
+        </p>
+    </footer>
+
+    <!-- Login error message (antd) -->
+    <div>
+        <div class="ant-message" style="top: 300px;">
+            <span>
+                <div class="ant-message-notice">
+                    <div class="ant-message-notice-content">
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

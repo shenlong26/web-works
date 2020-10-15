@@ -1,0 +1,7355 @@
+﻿:root {
+	/*container寬度*/
+	--ctn-width: 1200px;
+	/*登入按鈕*/
+	--signin-color: #ded6ca;
+	--signup-color: #e6cfb7;
+	--sign-hover-color: #ffd941;
+	/*橢圓按鈕*/
+	--main-button-color: linear-gradient(to left, #dd171c, #c00c12);
+	--main-hover-color: linear-gradient(to left, #c00c12, #dd171c);
+	/*主要顏色*/
+	--main-color: #b11418;
+	/*slot按鈕*/
+	--grey-button-color: linear-gradient(#fff, #e5e5e5);
+	--play-color: linear-gradient(to bottom, #dd171c, #c00c12);
+	--go-hover-color: #dd171c;
+	/*主頁按鈕*/
+	--sec-button-color: linear-gradient(to bottom, #dd171c, #c00c12);
+	/*按鈕陰影*/
+	--btn-shadow: 0 3px 15px rgba(255, 65, 65, 0.7);
+}
+
+body {
+	font: 14px/150% "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding-top: 132px;
+	background-color: #fbfbfb;
+	color: #666;
+}
+
+p, a, button, input, li, span, label, h2, h3, h4, h5, h6, div, th, td {
+	letter-spacing: 1px;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+/* antd message for login error */
+
+.ant-message-notice-content {
+	background: rgba(0, 0, 0, 0.75);
+	color: #c5c5c5;
+}
+
+/*語系*/
+
+header .container .default {
+	display: inline-block;
+	width: 34px;
+	height: 20px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	display: none;
+}
+
+header .container .default.cn {
+	background-image: url(../images/index_header-contry-win18.png);
+}
+
+header .container .default.eng {
+	background-image: url(../images/contry-uk.png);
+}
+
+header .container .default.vn {
+	background-image: url(../images/contry-vietnum.jpg);
+}
+
+.region {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 28px;
+	z-index: 9999;
+	background: #fff;
+	border-radius: 5px;
+	color: #666;
+	width: 125px;
+	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+.region li {
+	padding: 10px;
+	cursor: pointer;
+	font-size: 12px;
+	display: block;
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-size: 23px auto;
+	background-position: 10px center;
+	position: relative;
+	border-radius: 5px;
+}
+
+.region li:nth-child(1) {
+	background-image: url(../images/index_header-contry-cn.png);
+}
+
+.region li:nth-child(2) {
+	background-image: url(../images/index_header-contry-vn.png);
+}
+
+.region li:hover {
+	background-color: #f1f1f1;
+	border-radius: 5px;
+}
+
+.region li:first-child::before {
+	content: '';
+	position: absolute;
+	left: 8px;
+	top: -6px;
+	border-style: solid;
+	border-width: 0px 6px 6px 6px;
+	border-color: transparent transparent #fff transparent;
+}
+
+/*頁首*/
+
+header, .logined-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 20;
+	height: 81px;
+	border-bottom: 1px solid #ececec;
+	background-image: linear-gradient(to right, #7e0304 0%, #b11418 50%, #7e0304 100%);
+}
+
+header .container, .logined-header .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 81px;
+	position: relative;
+}
+
+header .container div:first-child {
+	display: flex;
+	align-items: center;
+}
+
+header .container div:first-child span:nth-child(2) {
+	margin-right: 8px;
+}
+
+header .container div:first-child span:nth-child(3) {
+	margin-right: 8px;
+}
+
+header .container a {
+	color: var(--signup-color);
+	transition: color .3s ease-out;
+}
+
+header .container a.home {
+	margin-left: 40px;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 8px;
+}
+
+header .container>div a:hover {
+	color: #fff;
+}
+
+header .container>div input {
+	background: rgba(0, 0, 0, .15);
+	width: 160px;
+	height: 30px;
+	padding-left: 10px;
+	border-radius: 5px;
+	color: #fff;
+	margin-right: 5px;
+	transition: border .2s ease-in;
+}
+
+header .container>div input::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+header .logo, .logined-header .logo {
+	width: 155px;
+	height: 48px;
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+header .logo, .logined-header .logo {
+	background-image: url(../images/logo-b88.png);
+}
+
+header .container>div:last-child {
+	position: relative;
+}
+
+header .container>div span.forget {
+	position: absolute;
+	left: 265px;
+	top: 5px;
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+	transition: color .3s ease-in;
+}
+
+header .container>div span.forget:hover {
+	color: #fff;
+}
+
+header .container>div button {
+	display: inline-block;
+	height: 28px;
+	width: 105px;
+	border-radius: 5px;
+	color: #5e211c;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+header .container>div button.signin {
+	background: var(--signin-color);
+	margin-right: 5px;
+}
+
+header .container>div button.signup {
+	background: var(--signup-color);
+}
+
+header .container>div button:hover {
+	background: var(--sign-hover-color);
+}
+
+header .container>div button:active {
+	transform: translateY(1px);
+}
+
+/*登入header*/
+
+.logined-header .container {
+	color: var(--signup-color);
+}
+
+.logined-header .container div:first-child {
+	display: flex;
+	align-items: center;
+}
+
+.logined-header .container div:first-child span:nth-child(2) {
+	margin-right: 5px;
+}
+
+.logined-header .container span {}
+
+.logined-header .container a {
+	transition: all .2s ease;
+}
+
+.logined-header .container a:hover {}
+
+.logined-header .container a.home {
+	margin-left: 40px;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 8px;
+}
+
+.logined-header .container a.service {}
+
+.logined-header .container>div:last-child {
+	display: flex;
+	align-items: center;
+}
+
+.logined-header .container div:last-child span, .logined-header .container div:last-child p {
+	cursor: pointer;
+	transition: all .2s ease;
+}
+
+.logined-header .container div:last-child span:hover {
+	color: #fff;
+}
+
+.logined-header .container .line {
+	width: 2px;
+	height: 14px;
+	background: #e6cfb7;
+	margin: 0 10px;
+	display: none;
+}
+
+.logined-header .container .name {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.logined-header .container .wallet {
+	cursor: pointer;
+}
+
+.logined-header .container div:last-child span.balance {
+	color: #ecb82b;
+}
+
+.logined-header .container div:last-child p {
+	padding-left: 28px;
+	background: url(../images/icon-header-wallet.png) left center / 22px auto no-repeat;
+}
+
+.logined-header .container .deposit {
+	margin-left: 10px;
+}
+
+.logined-header .container .withdraw {
+	margin: 0 10px;
+}
+
+.logined-header .container .message {
+	color: #fff;
+}
+
+.logined-header .container .logout {
+	margin-left: 10px;
+}
+
+.logined-header .container div:last-child .welcome:hover {
+	cursor: auto;
+	color: #c0c0c0;
+}
+
+/*導覽列*/
+
+nav {
+	width: 100%;
+	z-index: 19;
+	position: fixed;
+	top: 81px;
+	left: 0;
+	/* line-height: 90px; */
+	background: #fff;
+	height: 51px;
+	box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.12);
+}
+
+nav .container {
+	width: 1000px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 51px;
+}
+
+nav .container .container div {
+	height: 45px;
+}
+
+nav .container .logo {
+	width: 141px;
+	height: 59px;
+	background: url(../images/logo.png) center center no-repeat;
+}
+
+nav .container a {
+	color: #666;
+	position: relative;
+	transition: all .3s linear;
+}
+
+nav .container a:hover {
+	color: var(--main-color);
+}
+
+nav .container a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	background: var(--main-color);
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all .3s linear;
+}
+
+nav .container a:hover::after {
+	width: 117px;
+}
+
+nav .container i {
+	display: inline-block;
+	margin-left: 5px;
+	margin-bottom: 3px;
+	border: solid #666;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: 50% 75%;
+	transition: all .3s ease-in;
+}
+
+nav .container>div:hover i {
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	border-color: var(--main-color);
+}
+
+/*下拉選單*/
+
+.panel {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.95);
+	color: #333;
+	position: absolute;
+	top: -320px;
+	left: 0;
+	z-index: 10;
+	transition: all .4s ease-out;
+	box-shadow: 0px 5px 8px rgba(15, 15, 15, 0.2);
+}
+
+.hovered {
+	top: 132px;
+	position: fixed;
+}
+
+.panel .container {
+	max-width: 1200px;
+	height: 300px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+/*體育 下拉選單*/
+
+#panel-sports .container {
+	justify-content: space-around;
+}
+
+#panel-sports .container span:first-child {
+	width: 260px;
+	height: 300px;
+	background-position: center bottom;
+	background-size: 98% auto;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+}
+
+#panel-sports .container span.sbSport {
+	background-image: url(../images/panel-sport-oneworks-b88.png);
+}
+
+#panel-sports .container span.gbSport {
+	background-image: url(../images/panel-sport-gb-b88.png);
+}
+
+#panel-sports .container span.pinacleSport {
+	background-image: url(../images/panel-sport-pinacle-b88.png);
+}
+
+#panel-sports .container span.imSport {
+	background-image: url(../images/panel-sport-imone-b88.png);
+}
+
+#panel-sports .container span.btiSport {
+	background-image: url(../images/panel-sport-bti-b88.png);
+}
+
+#panel-sports .container span:first-child:hover {
+	background-size: 100% auto;
+}
+
+#panel-sports .container div:nth-child(2) .QR-code {
+	width: 116px;
+	height: 116px;
+	margin: 10px 0;
+	display: inline-block;
+	background: url(../images/panel-qrcode.png) no-repeat center center;
+}
+
+#panel-sports .container div:nth-child(2) a {
+	color: var(--main-color);
+	display: block;
+}
+
+#panel-sports .container a p, #panel-sports .container span:last-child {
+	display: none;
+}
+
+#panel-sports .container div:nth-child(3) h2 {
+	font-size: 52px;
+	color: #000;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+#panel-sports .container div:nth-child(3) p {
+	font-size: 20px;
+	color: #666;
+}
+
+#panel-sports .container div:nth-child(3) button {
+	width: 183px;
+	height: 42px;
+	box-shadow: 0 5px 10px 0 rgba(216, 216, 216, 0.5);
+	border-radius: 20px;
+	margin-top: 22px;
+	color: #fff;
+	background: var(--main-button-color);
+	cursor: pointer;
+}
+
+#panel-sports .container div:nth-child(3) button:hover {
+	background: var(--main-hover-color);
+}
+
+#panel-sports .container div:last-child {
+	text-align: left;
+	margin-left: 30px;
+	display: none;
+}
+
+#panel-sports .container div:last-child p {
+	font-size: 20px;
+}
+
+#panel-sports .container div:last-child p.refund {
+	font-size: 17px;
+	color: #666;
+	margin: 5px 0;
+}
+
+#panel-sports .container div:last-child span.rate {
+	background-image: url(../images/panel-number.png);
+	background-repeat: no-repeat;
+	width: 144px;
+	height: 76px;
+	display: block;
+}
+
+/*電競下拉選單*/
+
+#panel-esports .container a {
+	text-align: center;
+	width: 420px;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+#panel-esports .container a:hover {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+#panel-esports .container a h2 {
+	width: 140px;
+	height: 80px;
+	margin: 0px auto 20px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+#panel-esports .container a:nth-child(1) h2 {
+	background-image: url(../images/panel-logo-imone.png);
+}
+
+#panel-esports .container a:nth-child(2) h2 {
+	background-image: url(../images/panel-logo-tfg.png);
+}
+
+#panel-esports .container a p {
+	color: #999;
+	display: none;
+}
+
+#panel-esports .container a span {
+	display: inline-block;
+	width: 420px;
+	height: 172px;
+	background-position: bottom center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#panel-esports .container a:hover span {
+	background-size: 101% auto;
+}
+
+#panel-esports .container a:nth-child(1) span {
+	background-image: url(../images/panel-esport-GAM.png)
+}
+
+#panel-esports .container a:nth-child(2) span {
+	background-image: url(../images/panel-esport02.png)
+}
+
+#panel-esports .container div:last-child {
+	text-align: left;
+	margin-left: 30px;
+	display: none;
+}
+
+#panel-esports .container div:last-child p {
+	font-size: 20px;
+}
+
+#panel-esports .container div:last-child p.refund {
+	font-size: 17px;
+	color: #666;
+	margin: 5px 0;
+}
+
+#panel-esports .container div:last-child span.rate {
+	background-image: url(../images/panel-number.png);
+	background-repeat: no-repeat;
+	width: 144px;
+	height: 76px;
+	display: block;
+}
+
+/*真人娛樂下拉選單*/
+
+#panel-livecasino .container {
+	width: 1050px;
+}
+
+#panel-livecasino .container a span:first-child {
+	width: 160px;
+	height: 300px;
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: inline-block;
+	transition: background-size .2s ease-in;
+}
+
+#panel-livecasino .container a .logo-ag {
+	background-image: url(../images/panel-casino-ag.png);
+}
+
+#panel-livecasino .container a .logo-mg {
+	background-image: url(../images/panel-casino-mg.png);
+}
+
+#panel-livecasino .container a .logo-bbin {
+	background-image: url(../images/panel-casino-bbin.png);
+}
+
+#panel-livecasino .container a .logo-pt {
+	background-image: url(../images/panel-casino-pt.png);
+}
+
+#panel-livecasino .container a .logo-ae {
+	background-image: url(../images/panel-casino-ae.png);
+}
+
+#panel-livecasino .container a .logo-sa {
+	background-image: url(../images/panel-casino-sa.png);
+}
+
+#panel-livecasino .container a span:first-child:hover {
+	background-size: 105% auto;
+	background-color: #fff;
+}
+
+#panel-livecasino .container a p {
+	margin: 6px 0 10px 0;
+	display: none;
+}
+
+#panel-livecasino .container a span:last-child {
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+	display: none;
+}
+
+#panel-livecasino .container div:last-child {
+	text-align: left;
+	margin-left: 30px;
+	display: none;
+}
+
+#panel-livecasino .container div:last-child h3 {
+	font-size: 28px;
+	margin-bottom: 10px;
+	color: var(--main-color);
+}
+
+#panel-livecasino .container div:last-child p {
+	font-size: 20px;
+}
+
+#panel-livecasino .container div:last-child p.refund {
+	font-size: 17px;
+	color: #666;
+	margin: 5px 0;
+}
+
+#panel-livecasino .container div:last-child span.rate {
+	background-image: url(../images/panel-number.png);
+	background-repeat: no-repeat;
+	width: 144px;
+	height: 76px;
+	display: block;
+}
+
+/*彩票 下拉選單*/
+
+#panel-lottery .container a {
+	width: 204px;
+	text-align: center;
+	height: 300px;
+	display: block;
+	color: #333;
+	font-size: 16px;
+}
+
+#panel-lottery .container a:hover {
+	background: #fff;
+}
+
+#panel-lottery .container a span {
+	display: inline-block;
+	width: 113px;
+	height: 39px;
+	margin-top: 20px;
+}
+
+#panel-lottery .container a span.logo-01 {
+	background: url(../images/panel-lottery-logo01.png) no-repeat center center;
+}
+
+#panel-lottery .container a span.logo-02 {
+	background: url(../images/panel-lottery-logo01.png) no-repeat center center;
+}
+
+#panel-lottery .container a span.logo-03 {
+	background: url(../images/panel-lottery-logo01.png) no-repeat center center;
+}
+
+#panel-lottery .container a span.logo-04 {
+	background: url(../images/panel-lottery-logo01.png) no-repeat center center;
+}
+
+#panel-lottery .container a span.logo-05 {
+	background: url(../images/panel-lottery-logo01.png) no-repeat center center;
+}
+
+#panel-lottery .container a p {
+	margin: 15px 0 10px 0;
+}
+
+#panel-lottery .container a img {
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+	transition: all .3s ease;
+}
+
+#panel-lottery .container a:hover img {
+	transform: scale(1.03);
+}
+
+#panel-lottery .container div:last-child {
+	position: absolute;
+	right: 30px;
+	text-align: left;
+}
+
+#panel-lottery .container div:last-child h3 {
+	font-size: 28px;
+	margin-bottom: 10px;
+	color: var(--main-color);
+}
+
+#panel-lottery .container div:last-child p {
+	font-size: 20px;
+}
+
+#panel-lottery .container div:last-child p.refund {
+	font-size: 18px;
+	color: #666;
+	margin: 5px 0;
+}
+
+#panel-lottery .container div:last-child span.rate {
+	background-image: url(../images/panel-number.png);
+	background-repeat: no-repeat;
+	width: 144px;
+	height: 76px;
+	display: block;
+}
+
+/*電子遊戲 下拉選單*/
+
+#panel-slotgame .container a {
+	text-align: center;
+	width: 160px;
+	height: 300px;
+	display: block;
+	color: #333;
+	margin-right: 10px;
+}
+
+#panel-slotgame .container a:nth-last-of-type(1) {
+	margin-right: 0;
+}
+
+#panel-slotgame .container a:hover {
+	background: #fff;
+}
+
+#panel-slotgame .container a span:first-child {
+	display: inline-block;
+	width: 113px;
+	height: 39px;
+	margin-top: 45px;
+	background-position: center;
+	background-size: 113px auto;
+	background-repeat: no-repeat;
+}
+
+#panel-slotgame .container a .logo-bbin {
+	background-image: url(../images/panel-slot-logo-bbin.png);
+}
+
+#panel-slotgame .container a .logo-pt {
+	background-image: url(../images/panel-slot-logo-pt.png);
+}
+
+#panel-slotgame .container a .logo-mg {
+	background-image: url(../images/panel-slot-logo-mg.png);
+}
+
+#panel-slotgame .container a .logo-hb {
+	background-image: url(../images/panel-slot-logo-hb.png);
+}
+
+#panel-slotgame .container a .logo-ag {
+	background-image: url(../images/panel-slot-logo-ag.png);
+}
+
+#panel-slotgame .container a .logo-rtg {
+	background-image: url(../images/panel-slot-logo-rtg.png);
+}
+
+#panel-slotgame .container a .logo-pg {
+	background-image: url(../images/panel-slot-logo-pg.png);
+}
+
+#panel-slotgame .container a .logo-cq9 {
+	background-image: url(../images/panel-slot-logo-cq9.png);
+}
+
+#panel-slotgame .container a p {
+	margin: 7px 0 10px 0;
+	display: none;
+}
+
+#panel-slotgame .container a span:last-child {
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+	background-position: center;
+	background-size: 90% auto;
+	background-repeat: no-repeat;
+}
+
+#panel-slotgame .container a .logo-bbin~span {
+	background-image: url(../images/panel-slotlink-bbin.png);
+}
+
+#panel-slotgame .container a .logo-pt~span {
+	background-image: url(../images/panel-slotlink-pt.png);
+}
+
+#panel-slotgame .container a .logo-mg~span {
+	background-image: url(../images/panel-slotlink-mg.png);
+}
+
+#panel-slotgame .container a .logo-hb~span {
+	background-image: url(../images/panel-slotlink-hb.png);
+}
+
+#panel-slotgame .container a .logo-pt~span {
+	background-image: url(../images/panel-slotlink-pt.png);
+}
+
+#panel-slotgame .container a .logo-rtg~span {
+	background-image: url(../images/panel-slotlink-rtg.png);
+}
+
+#panel-slotgame .container a .logo-pg~span {
+	background-image: url(../images/panel-slotlink-pg.png);
+}
+
+#panel-slotgame .container a .logo-ag~span {
+	background-image: url(../images/panel-slotlink-ag.png);
+}
+
+#panel-slotgame .container a .logo-cq9~span {
+	background-image: url(../images/panel-slotlink-cq9.png);
+}
+
+#panel-slotgame .container a:hover span:last-child {
+	background-size: 92% auto;
+}
+
+#panel-slotgame .container div:last-child {
+	text-align: left;
+	margin-left: 30px;
+	display: none;
+}
+
+#panel-slotgame .container div:last-child h3 {
+	font-size: 28px;
+	margin-bottom: 10px;
+	color: var(--main-color);
+}
+
+#panel-slotgame .container div:last-child p {
+	font-size: 20px;
+}
+
+#panel-slotgame .container div:last-child p.refund {
+	font-size: 17px;
+	color: #666;
+	margin: 5px 0;
+}
+
+#panel-slotgame .container div:last-child span.rate {
+	background-image: url(../images/panel-number.png);
+	background-repeat: no-repeat;
+	width: 144px;
+	height: 76px;
+	display: block;
+}
+
+/*棋牌 下拉選單*/
+
+#panel-chessgame .container {
+	justify-content: center;
+}
+
+#panel-chessgame .container a {
+	text-align: center;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	color: #333;
+	font-size: 16px;
+}
+
+#panel-chessgame .container a:first-child {}
+
+#panel-chessgame .container a span {
+	display: inline-block;
+	width: 177px;
+	height: 300px;
+	margin-right: 15px;
+}
+
+#panel-chessgame .container a:first-child span {
+	background: url(../images/panel-chess01.png) center center / 100% auto no-repeat;
+}
+
+#panel-chessgame .container a:nth-child(2) span {
+	background: url(../images/panel-chess02.png) center center / 100% auto no-repeat;
+}
+
+#panel-chessgame .container a:nth-child(3) span {
+	background: url(../images/panel-chess03.png) center center / 100% auto no-repeat;
+}
+
+#panel-chessgame .container a .item h3 {
+	font-size: 34px;
+	margin-bottom: 10px;
+}
+
+#panel-chessgame .container a .item p:nth-child(2) {
+	color: #666;
+}
+
+#panel-chessgame .container a .item p:nth-child(3) {
+	font-size: 15px;
+	color: #666;
+}
+
+/*APP 下拉選單*/
+
+#panel-app .container .pic {
+	width: 275px;
+	height: 300px;
+	background: url(../images/panel-sport-app.png) no-repeat bottom center;
+	margin-right: 44px;
+}
+
+#panel-app .container .item {
+	font-size: 16px;
+	margin-right: 84px;
+}
+
+#panel-app .container .item h4 {
+	font-size: 24px;
+}
+
+#panel-app .container .item .QR-code {
+	width: 98px;
+	height: 98px;
+	margin: 15px 0;
+}
+
+#panel-app .container .item p:nth-child(4) {
+	font-size: 12px;
+}
+
+#panel-app .container .item a {
+	font-weight: bold;
+	color: var(--main-color);
+	display: block;
+	font-size: 18px;
+}
+
+/*贊助 下拉選單*/
+
+#panel-sponser .container {
+	width: 870px;
+}
+
+#panel-sponser .container a {
+	text-align: center;
+	display: block;
+	color: #333;
+	height: 100%;
+}
+
+#panel-sponser .container a:hover {
+	background: #fff;
+}
+
+#panel-sponser .container a span:first-child {
+	display: inline-block;
+	width: 113px;
+	height: 39px;
+	margin-top: 35px;
+}
+
+#panel-sponser .container a .title {
+	font-size: 18px;
+	color: var(--main-color);
+	margin-bottom: 5px;
+}
+
+#panel-sponser .container a span:first-child {
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+}
+
+#panel-sponser .container a:nth-child(1) span:first-child {
+	background: url(../images/panel-sponser01.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(2) span:first-child {
+	background: url(../images/panel-sponser02.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(3) span:first-child {
+	background: url(../images/panel-sponser03.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(4) span:first-child {
+	background: url(../images/panel-sponser04.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(5) span:first-child {
+	background: url(../images/panel-sponser05.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(6) span:first-child {
+	background: url(../images/panel-sponser06.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:hover span:first-child {
+	background-size: 92% auto;
+}
+
+#panel-sponser .container .item {
+	font-size: 14px;
+}
+
+#panel-sponser .container .item h3 {
+	color: var(--main-color);
+	font-size: 16px;
+}
+
+/*theme100*/
+
+.carousel {
+	position: relative;
+	min-width: 1200px;
+	height: 500px;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.carousel .slide {
+	height: 500px;
+	background: url(../images/banner.jpg) center / cover;
+}
+
+/*theme100*/
+
+.carousel .prev, .carousel .next {
+	display: inline-block;
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 1;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: background-color .1s ease-in;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.carousel .prev {
+	left: 0;
+	clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.carousel .next {
+	right: 0;
+	clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.carousel .prev:hover, .carousel .next:hover {
+	background: var(--main-color);
+}
+
+.carousel .prev::after, .carousel .next::after {
+	content: '';
+	border: solid rgba(255, 255, 255, 0.8);
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 4px;
+	position: absolute;
+	top: 50%;
+}
+
+.carousel .prev::after {
+	transform: translateY(-50%) rotate(135deg);
+	left: 42%;
+}
+
+.carousel .next::after {
+	transform: translateY(-50%) rotate(-45deg);
+	right: 42%;
+}
+
+/*theme100*/
+
+.carousel .indicates {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+}
+
+.carousel .indicates .square {
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.4);
+	width: 100px;
+	height: 10px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.carousel .indicates .square:hover {
+	background: var(--main-color);
+}
+
+.carousel .indicates .active, .carousel .indicates .active:hover {
+	background: var(--main-color);
+}
+
+/*theme100*/
+
+/*跑馬燈*/
+
+.marq {
+	background: #f2f2f2;
+}
+
+.marq .container {
+	width: 1200px;
+	height: 30px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.marq .container .icon-speaker {
+	width: 13px;
+	height: 13px;
+	background-image: url(../images/icon-speaker-anvo.png);
+	background-repeat: no-repeat;
+	background-size: 13px auto;
+}
+
+.marq .container .message {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	padding-left: 10px;
+}
+
+.marq .container .message marquee {
+	display: flex;
+	align-items: center;
+}
+
+.marq .container .icon-service {
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/marq-livechat.png);
+	background-repeat: no-repeat;
+	background-size: 30px auto;
+	margin-right: 5px;
+	position: absolute;
+	right: 62px;
+	top: 2px;
+}
+
+.marq .container .message a {
+	color: #666;
+	margin-right: 135px;
+	display: inline-block;
+}
+
+.marq .container .online-service {
+	cursor: pointer;
+	color: var(--main-color);
+	position: absolute;
+	right: 0;
+	top: 7px;
+}
+
+.marq .container .online-service:hover {
+	color: var(--main-hover-color);
+}
+
+/* 球投 */
+
+.latest-match {
+	margin-top: 85px;
+}
+
+.latest-match .container {
+	width: var(--ctn-width);
+	margin: auto;
+	color: #464646;
+}
+
+.latest-match .container .title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.latest-match .container .item {
+	display: flex;
+	justify-content: space-between;
+	height: 100px;
+	background: #fff;
+	padding: 0 30px;
+	align-items: center;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all .2s ease-out;
+}
+
+.latest-match .container .item span {
+	display: inline-block;
+}
+
+.latest-match .container .item .left, .latest-match .container .item .right {
+	display: flex;
+	align-items: center;
+	width: 33%;
+}
+
+.latest-match .container .item .right {
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.latest-match .container .item .mid {
+	text-align: center;
+	font-size: 12px;
+	width: 34%;
+}
+
+.latest-match .container .item .logo {
+	height: 40px;
+	width: 45px;
+	display: inline-block;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.latest-match .container .item .logo1 {
+	background-image: url(../images/team01.png);
+}
+
+.latest-match .container .item .logo2 {
+	background-image: url(../images/team02.png);
+}
+
+.latest-match .container .item .logo3 {
+	background-image: url(../images/team03.png);
+}
+
+.latest-match .container .item .logo4 {
+	background-image: url(../images/team04.png);
+}
+
+.latest-match .container .item .logo5 {
+	background-image: url(../images/team05.png);
+}
+
+.latest-match .container .item .logo6 {
+	background-image: url(../images/team06.png);
+}
+
+.latest-match .container .item .logo7 {
+	background-image: url(../images/team07.png);
+}
+
+.latest-match .container .item .logo8 {
+	background-image: url(../images/team08.png);
+}
+
+.latest-match .container .item .logo9 {
+	background-image: url(../images/team09.png);
+}
+
+.latest-match .container .item .logo10 {
+	background-image: url(../images/team10.png);
+}
+
+.latest-match .container .item .left .logo {
+	margin-right: 15px;
+}
+
+.latest-match .container .item .right .logo {
+	margin-left: 15px;
+}
+
+.latest-match .container .item .score, .latest-match .container .item .colon {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.latest-match .container .item .colon {
+	margin: 0 5px;
+}
+
+.latest-match .container .item .score {
+	width: 45px;
+	height: 32px;
+	line-height: 32px;
+	background: #111;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.latest-match .container .item .name {
+	font-weight: bold;
+}
+
+.latest-match .container ul {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	border-radius: 5px;
+}
+
+.latest-match .container ul li {
+	width: 592.5px;
+}
+
+.latest-match .container .flex-match .item .mid .score {
+	width: 60px;
+}
+
+.latest-match .container .flex-match .item {
+	position: relative;
+}
+
+.latest-match .container .flex-match .item:nth-child(3)::after, .latest-match .container .flex-match .item:nth-child(4)::after {
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	background: #e3e3e3;
+	left: 0;
+	top: 0;
+}
+
+.latest-match .container .item:hover {
+	color: #fff;
+	background-image: linear-gradient(to bottom, #db1b20, #8c0708);
+	transform: scale(1.02);
+	box-shadow: 0 2px 10px #f3767b;
+	z-index: 1;
+}
+
+.latest-match .container .flex-match .item:hover::after {
+	height: 0px;
+}
+
+/* APP掃描 */
+
+.awesome-app {
+	min-width: var(--ctn-width);
+	background: url(../images/bg-awesome-app.png) center / cover no-repeat;
+	margin-top: 90px;
+}
+
+.awesome-app .container {
+	height: 620px;
+	width: var(--ctn-width);
+	margin: auto;
+	display: flex;
+	align-items: center;
+}
+
+.awesome-app .container .context {
+	width: 585px;
+}
+
+.awesome-app .container .context .qrcode {
+	width: 120px;
+	height: 120px;
+	display: inline-block;
+	background: url(../images/qrcode-app.png) center / cover no-repeat;
+	margin-top: 50px;
+}
+
+.awesome-app .container .img {
+	width: 450px;
+	height: 655px;
+	background: url(../images/img-app-mobile.png) center / contain no-repeat;
+	align-self: flex-end;
+}
+
+.awesome-app h3, .awesome-app h2, .adventage h3, .adventage h2 {
+	font-weight: 900;
+	line-height: 1;
+}
+
+.awesome-app h3, .adventage h3 {
+	font-size: 39px;
+	color: #464646;
+}
+
+.awesome-app h2, .adventage h2 {
+	font-size: 51px;
+	color: var(--main-color);
+	margin: 10px 0 20px 0;
+}
+
+.awesome-app .heading-3f, .adventage .heading-3f {
+	margin-bottom: 35px;
+	font-size: 18px;
+}
+
+/* 快捷入口 */
+
+.nav-fluid {
+	margin-top: 85px;
+}
+
+.nav-fluid .container {
+	display: flex;
+	min-width: var(--ctn-width);
+}
+
+.nav-fluid .container li {
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.nav-fluid .container .sport {
+	background-image: url(../images/nav-fluid-sport.jpg);
+}
+
+.nav-fluid .container .casino {
+	background-image: url(../images/nav-fluid-casino.jpg);
+}
+
+.nav-fluid .container .e-sport {
+	background-image: url(../images/nav-fluid-esport.jpg);
+}
+
+.nav-fluid .container .slot {
+	background-image: url(../images/nav-fluid-slot.jpg);
+}
+
+.nav-fluid .container .sport, .nav-fluid .container .slot {
+	width: 430px;
+}
+
+.nav-fluid .container .casino, .nav-fluid .container .e-sport {
+	width: 530px;
+}
+
+.nav-fluid .container li a {
+	height: 260px;
+	display: block;
+	position: relative;
+}
+
+.nav-fluid .container li span {
+	font-weight: bold;
+	color: #fff;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+
+.nav-fluid .container li a::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 260px;
+	opacity: 0;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, #dd171c 100%);
+	transition: opacity .2s ease-in;
+}
+
+.nav-fluid .container li a:hover::after {
+	opacity: 1;
+}
+
+/*優勢區塊*/
+
+.adventage {
+	min-width: var(--ctn-width);
+	background: url(../images/bg-adventages.png) center / cover no-repeat;
+}
+
+.adventage .container {
+	margin: auto;
+	height: 640px;
+	width: var(--ctn-width);
+	padding: 115px 0;
+	text-align: center;
+}
+
+.adventage .container .services {
+	display: flex;
+	justify-content: space-between;
+	width: 1050px;
+	margin: 65px auto 0 auto;
+}
+
+.adventage .container .services li {
+	width: 210px;
+}
+
+.adventage .container .services li .amount {
+	display: block;
+	margin: auto;
+	width: 165px;
+	height: 97px;
+	background-position: left center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.adventage .container .services li .amount.thirty {
+	background-image: url(../images/adventage-30s.png);
+}
+
+.adventage .container .services li .amount.twenty {
+	background-image: url(../images/adventage-20.png);
+}
+
+.adventage .container .services li p {
+	background: #dcdcdc;
+	height: 120px;
+	text-align: left;
+	padding: 47px 0 30px 30px;
+	clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+	transition: all .3s ease-in;
+	transform: translateY(-30px);
+}
+
+.adventage .container .services li p .bold {
+	font-weight: bold;
+}
+
+.adventage .container .services li:hover .amount {
+	background-position: right center;
+}
+
+.adventage .container .services li:hover p {
+	background-image: linear-gradient(to bottom, #cf1419, #9d0709);
+	color: #fff;
+}
+
+/* 人群 */
+
+.crowd {
+	min-width: var(--ctn-width);
+	height: 240px;
+	background: url(../images/bg-crowd.jpg) center / cover no-repeat;
+}
+
+/* 登入頁 開始 */
+
+article#sign-in {}
+
+article#sign-in .container {
+	padding: 100px 0 150px 0;
+}
+
+article#sign-in .info {
+	width: 450px;
+	margin: auto;
+	padding: 0 40px 40px 40px;
+	border-radius: 10px;
+}
+
+#sign-in .info .infoTop {
+	text-align: center;
+	line-height: 36px;
+	color: #666;
+}
+
+#sign-in .info .infoTop h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#sign-in .info .infoTop span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#sign-in .info .infoTop span:hover {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form {
+	color: #4a4a4a;
+	position: relative;
+}
+
+#sign-in .info form label {
+	display: block;
+	color: #666;
+	position: absolute;
+	left: -6px;
+}
+
+#sign-in .info form label:nth-of-type(1) {
+	top: -23px;
+}
+
+#sign-in .info form label:nth-of-type(2) {
+	top: 52px;
+}
+
+#sign-in .info form input::placeholder {
+	color: #666;
+}
+
+#sign-in .info form input[type='text'], #sign-in .info form input[type='password'] {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	color: #666;
+}
+
+#sign-in .info form input[type='text']:focus, #sign-in .info form input[type='password']:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form .alert {
+	color: #d9534f;
+	font-size: 12px;
+	padding-left: 15px;
+	height: 20px;
+	/* display:none; */
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+
+#sign-in .info form>p:last-of-type {
+	left: 0;
+	bottom: 45px;
+}
+
+#sign-in .info form .wrong {
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left 2px;
+}
+
+#sign-in .info form input[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	color: #fff;
+	font-size: 14px;
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-in .info form input[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-in .info form input[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-in .info form button[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	color: #fff;
+	font-size: 14px;
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-in .info form button[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-in .info form button[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-in .info form .infoBot {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	height: 18px;
+	color: #666;
+}
+
+#sign-in .info form .infoBot .forgotten a {
+	color: var(--main-color);
+}
+
+#sign-in .info form .infoBot .forgotten a:hover {
+	font-weight: bold;
+}
+
+#sign-in .info .contact {
+	margin-top: 15px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#sign-in .info .contact .callus {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form>div {
+	position: relative;
+	height: 65px;
+	margin-bottom: 10px;
+}
+
+/* 註冊頁 開始 */
+
+article#sign-up {}
+
+article#sign-up .container {
+	padding: 100px 0 150px 0;
+}
+
+article#sign-up .info {
+	width: 450px;
+	margin: auto;
+	padding: 0 40px 40px 40px;
+	border-radius: 10px;
+}
+
+#sign-up .info .infoTop {
+	text-align: center;
+	line-height: 36px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+#sign-up .info .infoTop h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#sign-up .info .infoTop span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#sign-up .info .infoTop span:hover {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form {
+	color: #4a4a4a;
+	margin-top: -30px;
+	position: relative;
+}
+
+#sign-up .info form label {
+	display: block;
+	color: #666;
+	position: absolute;
+	left: 0px;
+}
+
+#sign-up .info form label:nth-of-type(1) {
+	top: -23px;
+}
+
+#sign-up .info form label:nth-of-type(2) {
+	top: 47px;
+}
+
+#sign-up .info form label:nth-of-type(3) {
+	top: 112px;
+}
+
+#sign-up .info form label:nth-of-type(4) {
+	top: 177px;
+}
+
+#sign-up .info form label:nth-of-type(5) {
+	top: 242px;
+}
+
+#sign-up .info form label:nth-of-type(6) {
+	top: 307px;
+}
+
+/* #sign-up .info form .label2 {
+	margin-top: 10px;
+}
+
+#sign-up .info form label.icon-account {
+	background-image: url(../images/signin_account.png);
+}
+
+#sign-up .info form label.icon-password {
+	background-image: url(../images/signin_password.png);
+}
+
+#sign-up .info form label.icon-mobile {
+	background-image: url(../images/signin_mobile.png);
+}
+
+#sign-up .info form label.icon-key {
+	background-image: url(../images/signin_key.png);
+}
+
+#sign-up .info form label.icon-email {
+	background-image: url(../images/signin_email.png);
+} */
+
+#sign-up .info form input::placeholder {
+	color: #666;
+}
+
+#sign-up .info form input[type='text'], #sign-up .info form input[type='password'], #sign-up .info form input[type='tel'] {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	color: #666;
+}
+
+#sign-up .info form input[type='text']:focus, #sign-up .info form input[type='password']:focus, #sign-up .info form input[type='tel']:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form .default {
+	color: #d9514f;
+	font-size: 12px;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left 2px;
+	padding-left: 18px;
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+
+#sign-up .info form>.default {
+	bottom: 58px;
+	left: 0;
+}
+
+#sign-up .info form .correct {
+	color: #3cb371;
+	background-image: url(../images/signin_correct.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 18px;
+}
+
+#sign-up .info form span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+}
+
+#sign-up .info form input[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	color: #fff;
+	font-size: 15px;
+	margin-top: 15px;
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-up .info form input[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-up .info form input[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-up .info form button[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	color: #fff;
+	font-size: 15px;
+	margin-top: 15px;
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-up .info form button[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-up .info form button[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-up .info form .infoBot {
+	margin-top: 20px;
+}
+
+#sign-up .info form .infoBot .forgotten a {
+	color: var(--main-color);
+}
+
+#sign-up .info form .infoBot .forgotten a:hover {
+	color: #007676;
+}
+
+#sign-up .info .contact {
+	margin-top: 15px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#sign-up .info .contact .callus {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form>div {
+	position: relative;
+	height: 65px;
+}
+
+/*電子遊戲頁standard 開始*/
+
+#slot-standard {}
+
+#slot-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0;
+}
+
+#slot-standard .container .ranking {
+	width: 290px;
+	background: #fff;
+	padding: 25px;
+	color: #666;
+	border-radius: 10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	display: none;
+}
+
+#slot-standard .container .ranking h2 {
+	text-align: center;
+	color: var(--main-color);
+	font-size: 24px;
+	font-weight: 1000;
+}
+
+#slot-standard .container .ranking .list {
+	display: flex;
+	cursor: pointer;
+	padding: 20px 0;
+	border-bottom: 1px dotted #dfdfdf;
+	color: #666
+}
+
+#slot-standard .container .ranking .list div:last-child p:last-child {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 65px;
+}
+
+#slot-standard .container .ranking .list .rank {
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/slot_star.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 27px 27px;
+	border-radius: 50%;
+	color: #262525;
+	text-align: center;
+	line-height: 40px;
+	align-self: center;
+	font-weight: bold;
+}
+
+#slot-standard .container .ranking .list img {
+	width: 110px;
+	height: auto;
+	margin: 0 10px;
+}
+
+#slot-standard .container .ranking .list .percentage {
+	font-size: 21px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: var(--main-color);
+}
+
+#slot-standard .container .ranking .rank6-10 {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	color: #666;
+}
+
+#slot-standard .container .games {
+	width: 1200px;
+}
+
+#slot-standard .container .games .recommand {
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	background: var(--section-bgcolor);
+	margin-bottom: 20px;
+	padding: 25px;
+	border-radius: 10px;
+	height: 275px;
+}
+
+#slot-standard .container .games .recommand h2 {
+	margin-bottom: 20px;
+	color: var(--main-color);
+	font-weight: 1000;
+	font-size: 21px;
+}
+
+#slot-standard .container .games .recommand .content {
+	display: flex;
+	justify-content: space-between;
+}
+
+#slot-standard .container .games .recommand .dots {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#slot-standard .container .games .recommand .dots .active, #slot-standard .container .games .recommand .dots .active:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+#slot-standard .container .games .recommand .dots span {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: 3px;
+}
+
+#slot-standard .container .games .recommand .dots span:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#slot-standard .container .games .recommand .content .slide {
+	display: flex;
+	overflow: hidden;
+}
+
+#slot-standard .container .games .recommand .content .slide .item {
+	margin-right: 10px;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry {
+	position: relative;
+	width: 199px;
+	height: 133px;
+	overflow: hidden;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	background-color: #d8d8d8;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry img {
+	width: 199px;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .tag {
+	position: absolute;
+	left: 0;
+	top: 20px;
+	padding: 5px 10px;
+	background: var(--signin-color);
+	color: #fff;
+	font-size: 12px;
+	display: none;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+	width: 199px;
+	height: 148px;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a {
+	display: block;
+	border-radius: 5px;
+	padding: 5px 15px;
+	opacity: 0;
+	color: #fff;
+	width: 120px;
+	text-align: center;
+	width: 140px;
+	white-space: nowrap;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover img {
+	transform: scale(1.2);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover a {
+	opacity: 1;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go {
+	background: var(--play-color);
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go:hover {
+	background: var(--go-hover-color);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go:active {
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free {
+	background-image: linear-gradient(180deg, #666, #333);
+	border: 1px solid #333;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free:hover {
+	background: #666;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free:active {
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .recommand .content .slide .name {
+	width: 199px;
+	text-align: center;
+	color: #666;
+	margin-top: 10px;
+}
+
+#slot-standard .container .games .total-games {
+	padding-bottom: 30px;
+	background: #fff;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+}
+
+#slot-standard .container .games .total-games .navbar {
+	background: #efefef;
+	position: relative;
+}
+
+#slot-standard .container .games .total-games .navbar a {
+	display: inline-block;
+	padding: 25px;
+	color: #666;
+	font-weight: bold;
+	position: relative;
+	transition: all .3s ease;
+}
+
+#slot-standard .container .games .total-games .navbar a::after {
+	position: absolute;
+	width: 1px;
+	height: 50%;
+	background: rgba(255, 255, 255, 1);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#slot-standard .container .games .total-games .navbar a::before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 50%;
+	background: rgba(0, 0, 0, 0.1);
+	top: 50%;
+	transform: translateY(-50%);
+	right: -1px;
+}
+
+#slot-standard .container .games .total-games .navbar a:hover {
+	background: var(--main-button-color);
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar .active, #slot-standard .container .games .total-games .navbar .active:hover {
+	background: var(--main-button-color);
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar input {
+	display: inline-block;
+	height: 40px;
+	text-indent: 10px;
+	vertical-align: middle;
+	border-top: 1px solid var(--main-color);
+	border-bottom: 1px solid var(--main-color);
+	border-left: 1px solid var(--main-color);
+	position: absolute;
+	top: 15px;
+	right: 85px;
+	color: #666;
+	background-color: #fff;
+	border-radius: 10px 0 0 10px;
+}
+
+#slot-standard .container .games .total-games .navbar button {
+	border-top: 1px solid var(--main-color);
+	border-bottom: 1px solid var(--main-color);
+	border-right: 1px solid var(--main-color);
+	height: 40px;
+	width: 50px;
+	text-align: center;
+	color: #3c2e02;
+	cursor: pointer;
+	vertical-align: middle;
+	position: absolute;
+	top: 15px;
+	right: 36px;
+	background-position: center;
+	background-size: 40px auto;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	border-radius: 0 10px 10px 0;
+}
+
+#slot-standard .container .games .total-games .navbar button::before {
+	content: '';
+	position: absolute;
+	border: 2px solid var(--main-color);
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .total-games .navbar button::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 10px;
+	background: var(--main-color);
+	transform: rotate(-45deg);
+	right: 13px;
+	bottom: 5px;
+}
+
+#slot-standard .container .games .total-games .content .filter {
+	padding: 5px 0 5px 10px;
+}
+
+#slot-standard .container .games .total-games .content .filter .active, #slot-standard .container .games .total-games .content .filter .active:hover {
+	background: #dd171c;
+	color: #fff;
+	border-color: #dd171c;
+}
+
+#slot-standard .container .games .total-games .content .filter span {
+	display: inline-block;
+	padding: 2px 10px;
+	cursor: pointer;
+	color: #666;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	margin: 10px 10px 10px 0;
+	font-size: 12px;
+}
+
+#slot-standard .container .games .total-games .content .filter span:hover {
+	background: #dd171c;
+	color: #fff;
+	border-color: #dd171c;
+}
+
+#slot-standard .container .games .total-games .content .game-list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 35px;
+	color: #fff;
+	border-radius: 3px;
+}
+
+#slot-standard .container .games .total-games .content .game-list>.item {
+	margin-bottom: 25px;
+	margin-right: 40px;
+}
+
+#slot-standard .container .games .total-games .content .game-list>.item:nth-child(6), #slot-standard .container .games .total-games .content .game-list>.item:nth-child(12), #slot-standard .container .games .total-games .content .game-list>.item:nth-child(18), #slot-standard .container .games .total-games .content .game-list>.item:nth-child(24), #slot-standard .container .games .total-games .content .game-list>.item:nth-child(30) {
+	margin-right: 0;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry {
+	position: relative;
+	width: 153px;
+	height: 104px;
+	overflow: hidden;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	;
+	background-color: #d8d8d8;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry img {
+	width: 155px;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .tag {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding: 5px 10px;
+	background: var(--signin-color);
+	color: #fff;
+	font-size: 12px;
+	display: none;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+	width: 155px;
+	height: 116px;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a {
+	display: block;
+	border-radius: 5px;
+	padding: 5px 20px;
+	opacity: 0;
+	color: #333;
+	white-space: nowrap;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	width: 130px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover img {
+	transform: scale(1.2);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover a {
+	opacity: 1;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go {
+	background: var(--play-color);
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go:hover {
+	background: var(--go-hover-color);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go:active {
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free {
+	background-image: linear-gradient(180deg, #666, #333);
+	border: 1px solid #333;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free:hover {
+	background: #666;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free:active {
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .total-games .content .game-list .name {
+	width: 155px;
+	text-align: center;
+	color: #666;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+
+#slot-standard .container .games .total-games .content .pagination {
+	text-align: center;
+	font-size: 12px;
+}
+
+#slot-standard .container .games .total-games .content .pagination .active, #slot-standard .container .games .total-games .content .pagination .active:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .pagination span {
+	display: inline-block;
+	cursor: pointer;
+}
+
+#slot-standard .container .games .total-games .content .pagination .page {
+	width: 40px;
+	height: 35px;
+	line-height: 40px;
+}
+
+#slot-standard .container .games .total-games .content .pagination span {
+	color: #666;
+	position: relative;
+}
+
+#slot-standard .container .games .total-games .content .pagination span::after {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 0px;
+	background: var(--main-color);
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all .2s ease-in;
+}
+
+#slot-standard .container .games .total-games .content .pagination span:hover::after {
+	height: 1px;
+}
+
+#slot-standard .container .games .total-games .content .pagination .first-page, #slot-standard .container .games .total-games .content .pagination .last-page {
+	width: 80px;
+	line-height: 35px;
+	height: 35px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found {
+	height: 420px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found span {
+	width: 100px;
+	height: 100px;
+	background: url(../images/icon-not-found-101.png) center / cover no-repeat;
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found p {
+	text-align: center;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+/*真人娛樂頁 livecasino*/
+
+.main-page-livecasino {
+	background: url(../images/main-page-bg-esport.jpg) center center / cover no-repeat;
+	height: 680px;
+}
+
+.main-page-livecasino .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0;
+}
+
+.main-page-livecasino .container div:first-child {
+	width: 45%;
+	height: 200px;
+	background: grey;
+}
+
+.main-page-livecasino .container .content {
+	text-align: center;
+}
+
+.main-page-livecasino .container .content .btn {
+	display: inline-block;
+	text-align: center;
+	width: 140px;
+	height: 42px;
+	background: var(--grey-button-color);
+	line-height: 42px;
+	border-radius: 5px;
+	margin-right: 15px;
+	color: #666;
+	transition: all .2s ease;
+}
+
+.main-page-livecasino .container .content .active {
+	background-image: var(--sec-button-color);
+	color: #fff;
+	box-shadow: 0px 0px 20px rgba(150, 201, 61, 0.8);
+}
+
+.main-page-livecasino .container .content .btn:hover {
+	background-image: var(--sec-button-color);
+	color: #fff;
+	box-shadow: 0px 0px 20px rgba(150, 201, 61, 0.8);
+}
+
+.main-page-livecasino .container .content .item a {
+	color: #666;
+}
+
+.main-page-livecasino .container .content a.entry {
+	background: var(--main-button-color);
+	border-radius: 30px;
+	width: 190px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	display: inline-block;
+	font-size: 18px;
+	margin-top: 50px;
+	box-shadow: 0px 0px 20px rgba(150, 201, 61, 0.8);
+}
+
+.main-page-livecasino .container .content a.entry:hover {
+	background-image: var(--main-hover-color);
+	box-shadow: 0px 0px 20px rgba(0, 176, 155, 0.8);
+}
+
+/*真人娛樂主館頁 開始*/
+
+.casino-carousel {
+	height: 400px;
+	background: url(../images/casino-banner.jpg) center center no-repeat;
+}
+
+article#casino .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 80px 0 50px 0;
+}
+
+article#casino .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.4);
+	background: var(--section-bgcolor);
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius: 10px;
+}
+
+article#casino .container .content:nth-child(3), article#casino .container .content:nth-child(6), article#casino .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#casino .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	margin-top: 20px;
+	font-size: 28px;
+	font-weight: 1000;
+}
+
+article#casino .container .content p {
+	width: 160px;
+	line-height: 1.2;
+	color: #666;
+}
+
+article#casino .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+article#casino .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+article#casino .container .content .girl {
+	width: 186px;
+	height: 238px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*真人娛樂頁 standard 開始*/
+
+article#casino-standard {}
+
+.casino-standard-carousel {
+	height: 400px;
+	background: url(../images/casino-banner2.jpg) center center no-repeat;
+}
+
+article#casino-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 80px 0 50px 0;
+}
+
+article#casino-standard .container .content {
+	background: var(--section-bgcolor);
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 30px;
+	width: 280px;
+	border-radius: 10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	height: 427px;
+	margin-right: 15px;
+}
+
+article#casino-standard .container .content .girl {
+	width: 186px;
+	height: 238px;
+}
+
+article#casino-standard .container .content h2 {
+	color: var(--main-color);
+	margin-top: 15px;
+	font-size: 28px;
+	font-weight: 1000;
+	margin-bottom: 15px;
+}
+
+article#casino-standard .container .content p {
+	color: #666;
+	line-height: 1.2;
+}
+
+article#casino-standard .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 62px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+article#casino-standard .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+/* 帳戶總覽 */
+
+#account-mid #account-info {
+	display: flex;
+}
+
+#account-wrapper #account-mid {
+	border-radius: 10px;
+}
+
+#account-mid .account-title {
+	position: relative;
+	padding: 8px 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	color: #4a4a4a;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+#account-mid #account-info {
+	margin: auto auto 20px;
+	justify-content: space-between;
+	width: 100%;
+	background: var(--main-color);
+	color: #fff;
+}
+
+#account-info .profile {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+	margin-left: 40px;
+}
+
+#account-info .profile .avatar {
+	margin: 0 20px 0 0;
+	padding-left: 0;
+	width: 65px;
+	height: 65px;
+	background-image: url(../images/member-avatar.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 65px auto;
+}
+
+#account-info img {
+	margin: 15px 15px 15px 40px;
+	width: 65px;
+	height: auto;
+}
+
+#account-info .profile p:first-child {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	line-height: 25px;
+}
+
+#account-info .profile span {
+	background: #ffd941;
+	padding: 0px 8px;
+	border-radius: 15px;
+	margin-left: 6px;
+	color: #333;
+	font-size: 12px;
+}
+
+#account-info .balance {
+	text-align: right;
+	margin-right: 40px;
+}
+
+#account-info .balance p:first-child {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+#account-info .balance p:last-child {
+	font-size: 19px;
+	margin-top: -7px;
+	font-weight: 800;
+}
+
+#account-info .balance p.sum {
+	color: #fff;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+#account-mid .account-list {
+	width: 650px;
+	margin: auto;
+	justify-content: space-between;
+	padding: 10px 15px;
+	color: #4a4a4a;
+	font-size: 12px;
+	display: flex;
+}
+
+#account-mid .list2 span {}
+
+#account-mid .list2 a img {
+	width: 10px;
+}
+
+#account-mid .list1, #account-mid .list10, #account-mid .list2, #account-mid .list9 {
+	font-weight: 1000;
+	font-size: 16px;
+	display: flex;
+}
+
+#account-mid .account-list div span {
+	font-weight: normal;
+}
+
+#account-mid .account-list div span+a {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/icon-collapse-active.png);
+	background-position: center 2px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: 5px;
+}
+
+#account-mid .account-list div span+a.collapse {
+	background-image: url(../images/icon-collapse.png);
+}
+
+#account-mid .account-list div span+a img {
+	display: none;
+}
+
+#account-mid .account-transfer form {
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	height: 50px;
+}
+
+#account-mid .list-container .account-list:nth-child(odd) {
+	background: #e2e2e2;
+}
+
+#account-mid .list2 a:hover {
+	opacity: 0.6;
+}
+
+#account-mid .account-transfer {
+	background: #e2e2e2;
+	margin: 20px;
+	padding: 20px 0;
+	color: #4a4a4a;
+}
+
+#account-mid .account-transfer form>span {
+	font-weight: 800;
+	margin: 0 15px 0 0;
+}
+
+#account-mid .account-transfer select.options,
+#account-mid .account-transfer select.transfer_account_roll_in,
+#account-mid .account-transfer select.transfer_account_roll_out,
+#account-mid .account-transfer input[type="text"] {
+	border: 1px solid #afafaf;
+	width: 150px;
+	height: 35px;
+	padding: 5px 0;
+}
+
+#account-mid .account-transfer input[type="text"]{
+	text-indent: 5px;
+	background: #fff;
+}
+	 
+#account-mid .account-transfer .trans-pic {
+	margin: 0 10px;
+	padding-left: 0;
+	width: 27px;
+	height: 27px;
+	background: #333;
+	position: relative;
+	border-radius: 50%;
+}
+
+#account-mid .account-transfer .trans-pic::before{
+	content: '';
+	position: absolute;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	padding: 3px;
+	top: 10px;
+	left: 8px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+	 
+#account-mid .account-transfer button {
+	padding: 0 25px;
+	background:var(--main-color);
+	font-size: 10px;
+	line-height: 24px;
+	font-weight: 600;
+	color: #fff;
+	margin-left: 10px;
+	height: 33px;
+}
+	 
+#account-mid .account-transfer button:hover {
+	background:var(--main-color);
+	-webkit-transition: -webkit-transform 0.1s ease-in;
+	-webkit-transition: transform 0.1s ease-in;
+	transition: transform 0.1s ease-in;
+	-webkit-transform: translateY(-1px);
+	-ms-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+#account-mid .account-transfer button:active {
+	transform: translateY(1px);
+}
+
+#account-mid .notice {
+	width: 600px;
+	margin: 0 auto 30px;
+	font-size: 11px;
+	color: #4a4a4a;
+}
+
+#account-mid .settings-fail, #account-mid .settings-success {
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+
+#account-mid .notice span {
+	color: #f70606;
+}
+
+.eQCTZo, .jJExrO, .vw-ck .mya_decheck h4 i, .manage-bank-card, .faxhqR>h4::before, .transaction-timed .timed-active, .transaction-pager-input.pager-btn {
+	background: var(--main-color);
+}
+
+.jiHSZB, .kSOGNS, .jhVUtj, .transaction-log-download-btn {
+	color: var(--main-color);
+}
+
+.btn-2 {
+	border: 1px solid var(--main-color);
+}
+
+.transaction-sub-nav li.active a {
+	background: var(--main-color);
+	border-color: var(--main-color);
+}
+
+.transaction-sub-nav {
+	border-bottom: 1px solid var(--main-color);
+}
+
+/*忘記密碼頁 共用樣式*/
+
+#password-header {
+	border-bottom: 1px solid #999;
+	padding: 10px 10px 10px 20px;
+	color: #999;
+	font-size: 14px;
+}
+
+#password-header span {
+	cursor: pointer;
+}
+
+#password-header img {
+	width: 15px;
+	height: auto;
+	margin: -3px 3px -2px 3px;
+}
+
+#password-header .text-bold {
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+#password-footer {
+	color: #4a4a4a;
+	line-height: 1.5;
+	text-align: center;
+	font-size: 15px;
+}
+
+#password-footer span {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+/*忘記密碼頁 共用樣式*/
+
+/* 忘記密碼頁 首頁 begins*/
+
+article#password-index {
+	padding: 115px 0
+}
+
+#password-index .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 18px;
+}
+
+#password-index .container .content {
+	text-align: center;
+	padding-top: 60px;
+}
+
+#password-index .container .content h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#password-index .container .content form {
+	text-align: left;
+	margin: 0px 0 60px 190px;
+}
+
+#password-index .container .content form label {
+	font-size: 14px;
+	display: block;
+	color: #666;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+#password-index .container .content form input[type='text'] {
+	width: 350px;
+	height: 40px;
+	color: #666;
+	font-size: 14px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+}
+
+#password-index .container .content form input[type='text']:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-index .container .content form input[type='text']::placeholder {
+	color: #666;
+}
+
+#password-index .container .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-index .container .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+	padding-left: 18px;
+}
+
+#password-index .container .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-index .container .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	border-bottom: 0;
+	opacity: 0.9;
+}
+
+#password-index .container .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 首頁 ends*/
+
+/* 忘記密碼頁 线上客服頁 begins*/
+
+article#password-serving {
+	padding-top: 115px;
+	min-height: 550px;
+}
+
+#password-serving .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 16px;
+}
+
+#password-serving .container p {
+	text-align: center;
+	margin: 60px 0 60px 0;
+	line-height: 1.5;
+}
+
+#password-serving .container p span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#password-serving .container p span:hover {
+	font-weight: bold;
+}
+
+/* 忘記密碼頁 线上客服頁 ends*/
+
+/* 忘記密碼頁 三項驗證頁 begins*/
+
+article#password-solution {
+	padding: 115px 0
+}
+
+#password-solution .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution .content {
+	display: flex;
+	justify-content: center;
+	margin: 60px 0;
+}
+
+#password-solution .content a {
+	display: block;
+	border: 2px solid #c5c5c5;
+	width: 130px;
+	height: 130px;
+	color: #666;
+	margin-right: 30px;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 80px;
+}
+
+#password-solution .content a:last-child {
+	margin-right: 0;
+}
+
+#password-solution .content a.verify-qa {
+	background-image: url(../images/forgotpwd_verify-q&a.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-phone {
+	background-image: url(../images/forgotpwd_verify-phone.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-email {
+	background-image: url(../images/forgotpwd_verify-email.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a:hover {
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+}
+
+/* 忘記密碼頁 三項驗證頁 ends*/
+
+/* 忘記密碼頁 安全問題驗證 begins*/
+
+article#password-solution-qa {
+	padding: 115px 0
+}
+
+#password-solution-qa .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 18px;
+}
+
+#password-solution-qa .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-qa .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+#password-solution-qa .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-solution-qa .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-qa .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-qa .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-qa .content form .indicate span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 3px;
+}
+
+#password-solution-qa .content form input {
+	width: 350px;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-qa .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-qa .content form input::placeholder {
+	color: #666;
+}
+
+#password-solution-qa .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	border-bottom: 0;
+}
+
+#password-solution-qa .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 安全問題驗證 ends*/
+
+/* 忘記密碼頁 手機驗證 begins*/
+
+article#password-solution-mobile {
+	padding: 115px 0
+}
+
+#password-solution-mobile .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution-mobile .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mobile .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mobile .content form p.phone {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mobile .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong img {
+	display: none;
+}
+
+#password-solution-mobile .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form input {
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-mobile .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input::placeholder {
+	color: #666;
+}
+
+#password-solution-mobile .content form .code {
+	width: 159px;
+	height: 40px;
+	line-height: 35px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 120px center;
+	text-indent: 12px;
+}
+
+#password-solution-mobile .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mobile .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mobile .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mobile .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 手機驗證 ends*/
+
+/* 忘記密碼頁 郵箱驗證 begins*/
+
+article#password-solution-mail {
+	padding: 115px 0
+}
+
+#password-solution-mail .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution-mail .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mail .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mail .content form p.email {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-mail .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mail .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-mail .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mail .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-mail .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-mail .content form input {
+	border-bottom: 1px solid #666;
+	height: 40px;
+	transition: all .3s ease;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-mail .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mail .content form input::placeholder {
+	color: #666;
+}
+
+#password-solution-mail .content form .code {
+	width: 159px;
+	height: 40px;
+	line-height: 35px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 120px center;
+	text-indent: 12px;
+}
+
+#password-solution-mail .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mail .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mail .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mail .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mail .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 郵箱驗證 ends*/
+
+/* 忘記密碼頁 設定新密碼 begins*/
+
+article#password-reset {
+	padding: 115px 0
+}
+
+#password-reset .container {
+	width: 740px;
+	margin: auto;
+	color: #666;
+}
+
+#password-reset .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-reset .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 18px 18px;
+}
+
+#password-reset .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-reset .content form .indicate {
+	/* display:none; */
+}
+
+#password-reset .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-reset .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form input {
+	border-bottom: 1px solid #666;
+	display: inline-block;
+	transition: all .3s ease-in;
+	height: 40px;
+	color: #666;
+}
+
+#password-reset .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-reset .content form input::placeholder {
+	color: #666;
+}
+
+#password-reset .content form input[type='password'] {
+	width: 350px;
+	margin-bottom: 5px;
+}
+
+#password-reset .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-reset .content form input[type='button']:hover {
+	opacity: 1;
+	;
+}
+
+/* 忘記密碼頁 設定新密碼 ends*/
+
+/* 忘記密碼頁 設定成功 begins*/
+
+article#password-success {
+	padding: 115px 0
+}
+
+#password-success .container {
+	width: 740px;
+	margin: auto;
+	color: #666;
+}
+
+#password-success .container .content {
+	text-align: center;
+	margin: 60px 0;
+}
+
+#password-success .container .content span {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background-image: url(../images/forgotpwd_successpage.png);
+	background-repeat: no-repeat;
+	background-size: 50px auto;
+	margin-bottom: 10px;
+}
+
+#password-success .content h2 {
+	font-size: 14px;
+	margin: 15px 0;
+	color: #333;
+}
+
+#password-success .content input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	padding: 10px;
+}
+
+#password-success .content input:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 設定成功 ends*/
+
+/*帳戶驗證頁 begins*/
+
+#forgotpwd-verify {
+	width: 740px;
+	padding: 50px 100px 50px 100px;
+	margin: 100px 0;
+	background: #fff;
+	border-radius: 10px;
+	box-sizing: border-box;
+	color: #4a4a4a;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	text-align: left;
+	font-size: 15px;
+}
+
+#forgotpwd-verify .title {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #ff601a;
+}
+
+#forgotpwd-verify .callus {
+	color: #ff610a;
+	cursor: pointer;
+	line-height: 24px;
+}
+
+#forgotpwd-verify .text-bold {
+	font-weight: bold;
+}
+
+#forgotpwd-verify .text-right {
+	text-align: right;
+}
+
+#forgotpwd-verify form label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #4a4a4a;
+	margin-bottom: 10px;
+}
+
+#forgotpwd-verify form input {
+	background: #e2e2ee;
+	width: 98%;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#forgotpwd-verify form input[type='submit'] {
+	width: 40%;
+	height: 40px;
+	background-image: linear-gradient(to bottom, #fb7a1b, #ff611a);
+	color: #fff;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 0;
+}
+
+#forgotpwd-verify form input[type='submit']:hover {
+	background-image: linear-gradient(to bottom, #fd8936, #fd6e2c);
+}
+
+/*帳戶驗證頁 ends*/
+
+/*體育主館頁 yabo*/
+
+.titank-sport {
+	background: url(../images/bg-titank-sport.jpg) center center / cover no-repeat;
+}
+
+.titank-sport .container {
+	background: url(../images/bg-titank-sport02.jpg) center center / cover no-repeat;
+	width: 1200px;
+	min-height: 690px;
+	margin: auto;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+	color: #fff;
+}
+
+/*體育主館頁*/
+
+.sport-betting-carousel {
+	height: 400px;
+	background: url(../images/sport-betting-banner.jpg) center center no-repeat;
+}
+
+article#sport-betting .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 80px 0 50px 0;
+}
+
+article#sport-betting .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.4);
+	background: var(--section-bgcolor);
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius: 10px;
+}
+
+article#sport-betting .container .content:nth-child(3), article#sport-betting .container .content:nth-child(6), article#sport-betting .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#sport-betting .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	margin-top: 20px;
+	font-size: 28px;
+	font-weight: 1000;
+}
+
+article#sport-betting .container .content p {
+	width: 160px;
+	line-height: 1.2;
+	color: #666;
+}
+
+article#sport-betting .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+	z-index: 10;
+}
+
+article#sport-betting .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+article#sport-betting .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*電競主館頁*/
+
+.im-esport {
+	background: url(../images/bg-im-esports0418.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.im-esport .container {
+	width: 1200px;
+	min-height: 765px;
+	margin: auto;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	padding-top: 100px;
+}
+
+.im-esport .container button {
+	width: 175px;
+	height: 50px;
+	border-radius: 8px;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	background: var(--sec-button-color);
+	cursor: pointer;
+	margin-top: 50px;
+	font-size: 24px;
+	box-shadow: rgba(0, 176, 155, 0.3) 0px 10px 20px 6px;
+}
+
+.im-esport .container .content .team-IG {
+	background: url(../images/esport-GAM.png) center / cover no-repeat;
+	width: 907px;
+	height: 435px;
+	margin: auto;
+	margin-top: 14px;
+	animation: fadein 2s ease-out;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.im-esport .container .content .logo-im {
+	position: absolute;
+	top: 340px;
+	z-index: 10;
+	display: inline-block;
+	width: 920px;
+	height: 247px;
+	background: url(../images/imone-sport-logo.png) center / cover no-repeat;
+	transform: translateX(-50%);
+	left: 50%;
+}
+
+.im-esport .container .content .entry .play:active {
+	border: 1px solid yellow;
+}
+
+.im-esport .container .content a {
+	top: 69%;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 230px;
+	height: 60px;
+	line-height: 58px;
+	border-radius: 35px;
+	background: yellow;
+	z-index: 12;
+	color: #fff;
+	font-size: 21px;
+	font-weight: bold;
+	background-image: linear-gradient(to bottom, #ffd003 0%, #f08616 75%);
+	box-shadow: 1px 0 5px rgba(255, 255, 255, 0.9) inset;
+	border: 1px solid #d37300;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.im-esport .container .content a:hover {
+	background: #f5932b;
+}
+
+.im-esport .container .content a:active {
+	background-image: linear-gradient(to top, #ffbc03 0%, #f08616 75%);
+}
+
+.im-esport .container .content .game-icon {
+	margin-top: 70px;
+	display: none;
+}
+
+.im-esport .container .content .game-icon i {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(1) {
+	background: url(../images/esport-icon01.png) center center / 100% 100% no-repeat;
+	width: 54px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(2) {
+	background: url(../images/esport-icon02.png) center center / 100% 100% no-repeat;
+	width: 117px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(3) {
+	background: url(../images/esport-icon03.png) center center / 100% 100% no-repeat;
+	width: 112px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(4) {
+	background: url(../images/esport-icon04.png) center center / 100% 100% no-repeat;
+	width: 75px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(5) {
+	background: url(../images/esport-icon05.png) center center / 100% 100% no-repeat;
+	width: 46px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(6) {
+	background: url(../images/esport-icon06.png) center center / 100% 100% no-repeat;
+	width: 42px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(7) {
+	background: url(../images/esport-icon07.png) center center / 100% 100% no-repeat;
+	width: 76px;
+	height: 50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(8) {
+	background: url(../images/esport-icon08.png) center center / 100% 100% no-repeat;
+	width: 53px;
+	height: 50px;
+}
+
+/*電競主館頁 開始*/
+
+.esport-betting-carousel {
+	height: 400px;
+	background: url(../images/esport-banner.jpg) center center no-repeat;
+}
+
+article#esport-betting .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 80px 0 50px 0;
+}
+
+article#esport-betting .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.4);
+	background: var(--section-bgcolor);
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius: 10px;
+}
+
+article#esport-betting .container .content:nth-child(3), article#esport-betting .container .content:nth-child(6), article#esport-betting .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#esport-betting .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	margin-top: 20px;
+	font-size: 28px;
+	font-weight: 1000;
+}
+
+article#esport-betting .container .content p {
+	width: 160px;
+	line-height: 1.2;
+	color: #666;
+}
+
+article#esport-betting .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+article#esport-betting .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+article#esport-betting .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*體育主館頁-多個館別*/
+
+.sportbet {
+	background: url(../images/bg-sportbet.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.sportbet .container {
+	width: 1200px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.sportbet .container .btns {
+	position: absolute;
+	right: 120px;
+	top: 40px;
+	width: 500px;
+	z-index: 2;
+	text-align: center;
+}
+
+.sportbet .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	margin-bottom: 17px;
+	text-align: center;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.sportbet .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.sportbet .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.sportbet .container .left-content {
+	position: absolute;
+	bottom: 40px;
+	opacity: 0;
+}
+
+.sportbet .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.sportbet .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.sportbet .container .left-content .model {
+	width: 536px;
+	height: 717px;
+	z-index: 3;
+}
+
+.sportbet .container #pinSport-left-content .model {
+	background: url(../images/sportbet-player-pin.png) center center no-repeat;
+}
+
+.sportbet .container #sbSport-left-content .model {
+	background: url(../images/sportbet-player-oneworks.png) center center no-repeat;
+}
+
+.sportbet .container #btiSport-left-content .model {
+	background: url(../images/sportbet-player-bti.png) center center no-repeat;
+}
+
+.sportbet .container #imOne-left-content .model {
+	background: url(../images/sportbet-player-imone.png) center center no-repeat;
+}
+
+.sportbet .container #gbSport-left-content .model {
+	background: url(../images/sportbet-player-gb.png) center center no-repeat;
+}
+
+.sportbet .container #tx-left-content .model {
+	background: url(../images/sportbet-player-tx.png) center center no-repeat;
+}
+
+.sportbet .container #cmd-left-content .model {
+	background: url(../images/sportbet-player-cmd.png) center center no-repeat;
+}
+
+.sportbet .container #titank-left-content .model {
+	background: url(../images/sportbet-player-titank.png) center center no-repeat;
+}
+
+.sportbet .container #gb-left-content .model {
+	background: url(../images/sportbet-player-gb.png) center center no-repeat;
+}
+
+.sportbet .container .right-content {
+	position: absolute;
+	top: 148px;
+	opacity: 0;
+}
+
+.sportbet .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.sportbet .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.sportbet .container .right-content .caption {
+	width: 632px;
+	height: 220px;
+	margin-right: 50px;
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.sportbet .container .right-content span {
+	display: block;
+}
+
+.sportbet .container #pinSport-right-content .caption {
+	background-image: url(../images/sportbet-pinnacle-B88.png);
+}
+
+.sportbet .container #sbSport-right-content .caption {
+	background-image: url(../images/sportbet-oneworks-B88.png);
+}
+
+.sportbet .container #btiSport-right-content .caption {
+	background-image: url(../images/sportbet-bti-B88.png);
+}
+
+.sportbet .container #imOne-right-content .caption {
+	background-image: url(../images/sportbet-imone-B88.png);
+}
+
+.sportbet .container #gbSport-right-content .caption {
+	background-image: url(../images/sportbet-gb.png);
+}
+
+.sportbet .container #tx-right-content .caption {
+	background-image: url(../images/sportbet-tx.png);
+}
+
+.sportbet .container #cmd-right-content .caption {
+	background-image: url(../images/sportbet-cmd.png);
+}
+
+.sportbet .container #titank-right-content .caption {
+	background-image: url(../images/sportbet-titank.png);
+}
+
+.sportbet .container #gb-right-content .caption {
+	background-image: url(../images/sportbet-gb.png);
+}
+
+.sportbet .container .right-content .items {
+	width: 632px;
+	height: 91px;
+}
+
+.sportbet .container #pinSport-right-content .items, .sportbet .container #sbSport-right-content .items, .sportbet .container #btiSport-right-content .items, .sportbet .container #imOne-right-content .items, .sportbet .container #gbSport-right-content .items, .sportbet .container #tx-right-content .items, .sportbet .container #cmd-right-content .items, .sportbet .container #gb-right-content .items {
+	background: url(../images/sportbet-item-B88.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btn-shadow);
+	margin: 40px 0 0 220px;
+}
+
+.sportbet .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/*體育投注頁*/
+
+.sportbet-info {
+	background: url(../images/bg-sportbet-info.jpg) center / cover no-repeat;
+}
+
+.sportbet-info .container {
+	width: 1200px;
+	height: 813px;
+	background: #fff;
+	margin: auto;
+	overflow-y: auto;
+}
+
+/*真人娛樂主館頁*/
+
+.real-casino {
+	background: url(../images/bg-real-casino.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.real-casino .container {
+	width: 1200px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.real-casino .container .btns {
+	position: absolute;
+	right: 120px;
+	top: 40px;
+	width: 500px;
+	z-index: 2;
+	text-align: center;
+}
+
+.real-casino .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.real-casino .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.real-casino .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.real-casino .container .left-content {
+	position: absolute;
+	bottom: 0;
+	opacity: 0;
+}
+
+.real-casino .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.real-casino .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.real-casino .container .left-content .model {
+	width: 536px;
+	height: 717px;
+	z-index: 3;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #ag-left-content .model {
+	background-image: url(../images/live-casino-model01.png);
+}
+
+.real-casino .container #hb-left-content .model {
+	background-image: url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #rtg-left-content .model {
+	background-image: url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #mg-left-content .model {
+	background-image: url(../images/live-casino-model03.png);
+}
+
+.real-casino .container #bbin-left-content .model {
+	background-image: url(../images/live-casino-model04.png);
+}
+
+.real-casino .container #pt-left-content .model {
+	background-image: url(../images/live-casino-model05.png);
+}
+
+.real-casino .container #ae-left-content .model {
+	background-image: url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #dg-left-content .model {
+	background-image: url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #sa-left-content .model {
+	background-image: url(../images/live-casino-modelSa.png);
+}
+
+.real-casino .container #ag-left-content .float-left {
+	width: 47px;
+	height: 37px;
+	background: url(../images/float-item-left-ag.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-ag 3s ease infinite alternate;
+}
+
+.real-casino .container #ag-left-content .float-right {
+	width: 62px;
+	height: 42px;
+	background: url(../images/float-item-right-ag.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-ag 3s ease infinite alternate;
+}
+
+@keyframes float-left-ag {
+	0% {
+		top: 310px;
+		left: 30px;
+	}
+	100% {
+		top: 330px;
+		left: 30px;
+	}
+}
+
+@keyframes float-right-ag {
+	0% {
+		top: 150px;
+		left: 400px;
+	}
+	100% {
+		top: 130px;
+		left: 400px;
+	}
+}
+
+.real-casino .container #hb-left-content .float-left {
+	width: 41px;
+	height: 39px;
+	background: url(../images/float-item-left-hb.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-hb 3s ease infinite alternate;
+}
+
+.real-casino .container #hb-left-content .float-right {
+	width: 47px;
+	height: 51px;
+	background: url(../images/float-item-right-hb.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-hb 3s ease infinite alternate;
+}
+
+@keyframes float-left-hb {
+	0% {
+		top: 290px;
+		left: 30px;
+	}
+	100% {
+		top: 270px;
+		left: 30px;
+	}
+}
+
+@keyframes float-right-hb {
+	0% {
+		top: 130px;
+		left: 400px;
+	}
+	100% {
+		top: 110px;
+		left: 400px;
+	}
+}
+
+.real-casino .container #ae-left-content .float-left {
+	width: 41px;
+	height: 39px;
+	background: url(../images/float-item-left-hb.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-rtg 3s ease infinite alternate;
+}
+
+.real-casino .container #ae-left-content .float-right {
+	width: 47px;
+	height: 51px;
+	background: url(../images/float-item-right-hb.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-rtg 3s ease infinite alternate;
+}
+
+@keyframes float-left-rtg {
+	0% {
+		top: 290px;
+		left: 30px;
+	}
+	100% {
+		top: 270px;
+		left: 30px;
+	}
+}
+
+@keyframes float-right-rtg {
+	0% {
+		top: 110px;
+		left: 400px;
+	}
+	100% {
+		top: 130px;
+		left: 400px;
+	}
+}
+
+.real-casino .container #mg-left-content .float-left {
+	width: 47px;
+	height: 37px;
+	background: url(../images/float-item-left-mg.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #mg-left-content .float-right {
+	width: 62px;
+	height: 42px;
+	background: url(../images/float-item-right-mg.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #dg-left-content .float-left {
+	width: 47px;
+	height: 37px;
+	background: url(../images/float-item-left-mg.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #dg-left-content .float-right {
+	width: 62px;
+	height: 42px;
+	background: url(../images/float-item-right-mg.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-mg 3s ease infinite alternate;
+}
+
+@keyframes float-left-mg {
+	0% {
+		top: 310px;
+		left: 30px;
+		transform: rotate(0deg);
+	}
+	100% {
+		top: 330px;
+		left: 30px;
+		transform: rotate(10deg);
+	}
+}
+
+@keyframes float-right-mg {
+	0% {
+		top: 150px;
+		left: 400px;
+	}
+	100% {
+		top: 130px;
+		left: 400px;
+	}
+}
+
+.real-casino .container #bbin-left-content .float-left {
+	width: 64px;
+	height: 68px;
+	background: url(../images/float-item-left-bbin.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-bbin 3s ease infinite alternate;
+}
+
+.real-casino .container #bbin-left-content .float-right {
+	width: 46px;
+	height: 50px;
+	background: url(../images/float-item-right-bbin.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-bbin 3s ease infinite alternate;
+}
+
+@keyframes float-left-bbin {
+	0% {
+		top: 350px;
+		left: 30px;
+	}
+	100% {
+		top: 330px;
+		left: 30px;
+	}
+}
+
+@keyframes float-right-bbin {
+	0% {
+		top: 220px;
+		left: 380px;
+	}
+	100% {
+		top: 240px;
+		left: 380px;
+	}
+}
+
+.real-casino .container #pt-left-content .float-left {
+	width: 69px;
+	height: 101px;
+	background: url(../images/float-item-left-pt.png) center center no-repeat;
+	position: absolute;
+	left: 30px;
+	animation: float-left-pt 3s ease infinite alternate;
+}
+
+.real-casino .container #pt-left-content .float-mid {
+	width: 90px;
+	height: 60px;
+	background: url(../images/float-item-mid-pt.png) center center no-repeat;
+	position: absolute;
+	animation: float-mid-pt 3s ease infinite alternate;
+}
+
+.real-casino .container #pt-left-content .float-right {
+	width: 48px;
+	height: 91px;
+	background: url(../images/float-item-right-pt.png) center center no-repeat;
+	position: absolute;
+	animation: float-right-pt 3s ease infinite alternate;
+}
+
+@keyframes float-left-pt {
+	0% {
+		top: 350px;
+		left: 20px;
+	}
+	100% {
+		top: 330px;
+		left: 20px;
+	}
+}
+
+@keyframes float-mid-pt {
+	0% {
+		bottom: 80px;
+		left: 150px;
+	}
+	100% {
+		bottom: 90px;
+		left: 150px;
+	}
+}
+
+@keyframes float-right-pt {
+	0% {
+		top: 160px;
+		left: 450px;
+	}
+	100% {
+		top: 180px;
+		left: 450px;
+	}
+}
+
+.real-casino .container .right-content {
+	position: absolute;
+	top: 130px;
+	opacity: 0;
+}
+
+.real-casino .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.real-casino .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.real-casino .container .right-content .caption {
+	width: 632px;
+	height: 240px;
+	margin-right: 50px;
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #ag-right-content .caption {
+	background-image: url(../images/live-casino-ag.png);
+}
+
+.real-casino .container #hb-right-content .caption {
+	background-image: url(../images/live-casino-hb.png);
+}
+
+.real-casino .container #mg-right-content .caption {
+	background-image: url(../images/live-casino-mg.png);
+}
+
+.real-casino .container #bbin-right-content .caption {
+	background-image: url(../images/live-casino-bbin.png);
+}
+
+.real-casino .container #pt-right-content .caption {
+	background-image: url(../images/live-casino-pt.png);
+}
+
+.real-casino .container #rtg-right-content .caption {
+	background-image: url(../images/live-casino-rtg.png);
+}
+
+.real-casino .container #ae-right-content .caption {
+	background-image: url(../images/live-casino-ae.png);
+}
+
+.real-casino .container #dg-right-content .caption {
+	background-image: url(../images/live-casino-dg.png);
+}
+
+.real-casino .container #sa-right-content .caption {
+	background-image: url(../images/live-casino-sa.png);
+}
+
+.real-casino .container .right-content .items {
+	width: 632px;
+	height: 91px;
+}
+
+.real-casino .container .right-content .items {
+	background: url(../images/livecasino-types-B88.png) center / 100% auto no-repeat;
+}
+
+.real-casino .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btn-shadow);
+	margin: 40px 0 0 220px;
+}
+
+.real-casino .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/*ky棋牌*/
+
+.chesspoker .container {
+	background-image: url(../images/bg-kypoker02.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 1200px;
+	box-sizing: border-box;
+	padding-top: 50px;
+	position: relative;
+}
+
+.chesspoker .container .btns {
+	text-align: center;
+}
+
+.chesspoker .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.chesspoker .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.chesspoker .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.chesspoker .container .content {
+	width: 1050px;
+	margin: 0px auto 0 auto;
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	min-height: 600px;
+}
+
+.chesspoker .container #kypoker .content {
+	width: 1200px;
+}
+
+#kypoker .mr-0 {
+	margin-right: 0;
+}
+
+#kypoker a {
+	display: block;
+	text-align: center;
+	margin-right: 30px;
+	margin-bottom: 85px;
+	width: 120px;
+	height: 120px;
+}
+
+#kypoker a:nth-child(8), #kypoker a:nth-child(16), #kypoker a:nth-child(24), #kypoker a:nth-child(32), #kypoker a:nth-child(40), #kypoker a:nth-child(48) #kypoker a:last-child {
+	margin-right: 0;
+}
+
+#kypoker a img {
+	width: 120px;
+	height: 120px;
+	transition: all .3s ease;
+}
+
+#kypoker a p {
+	margin-top: 10px;
+	color: #262525;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+#kypoker a:hover img {
+	margin-top: -10px;
+}
+
+#kypoker a:hover p {
+	color: var(--main-color);
+}
+
+/*龍游棋牌*/
+
+#loong-game a {
+	display: block;
+	text-align: center;
+	margin-right: 40px;
+	margin-bottom: 30px;
+}
+
+#loong-game a {
+	display: inline-block;
+}
+
+#loong-game a img {
+	width: 120px;
+	height: 120px;
+	transition: all .2s ease-out;
+}
+
+#loong-game a:nth-child(6), #loong-game a:nth-child(12), #loong-game a:nth-child(18), #loong-game a:last-child {
+	margin-right: 0;
+}
+
+#loong-game a p {
+	color: #262525;
+	font-weight: bold;
+}
+
+#loong-game a:hover img {
+	margin-top: -10px;
+}
+
+#loong-game a:hover p {
+	color: var(--main-color);
+}
+
+/*bolegaming棋牌*/
+
+#bole-game a {
+	display: block;
+	text-align: center;
+	margin-right: 40px;
+	margin-bottom: 85px;
+	width: 120px;
+	height: 120px;
+}
+
+#bole-game a {
+	display: inline-block;
+}
+
+#bole-game a img {
+	width: 120px;
+	height: 120px;
+	transition: all .2s ease-out;
+}
+
+#bole-game a p {
+	color: #262525;
+	font-weight: bold;
+	margin-top: 5px;
+	line-height: 1.2;
+}
+
+#bole-game a:hover img {
+	margin-top: -10px;
+}
+
+#bole-game a:hover p {
+	color: var(--main-color);
+}
+
+/*棋牌主館頁 開始*/
+
+.livepoker-carousel {
+	height: 400px;
+	background: url(../images/livepoker-banner.jpg) center center no-repeat;
+}
+
+article#liverpoker .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 80px 0 50px 0;
+}
+
+article#liverpoker .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.4);
+	background: var(--section-bgcolor);
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius: 10px;
+}
+
+article#liverpoker .container .content:nth-child(3), article#liverpoker .container .content:nth-child(6), article#liverpoker .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#liverpoker .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	margin-top: 20px;
+	font-size: 28px;
+	font-weight: 1000;
+}
+
+article#liverpoker .container .content p {
+	width: 160px;
+	line-height: 1.2;
+	color: #666;
+}
+
+article#liverpoker .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+article#liverpoker .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+article#liverpoker .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*彩票*/
+
+.lottery-gaming {}
+
+.lottery-gaming .container {
+	width: 1200px;
+	height: 830px;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	position: relative;
+}
+
+.lottery-gaming .container .btns {
+	width: 500px;
+	top: 50px;
+	position: absolute;
+	right: -30px;
+	text-align: center;
+}
+
+.lottery-gaming .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	margin-bottom: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.lottery-gaming .container .btns button:last-child {
+	margin-right: 0;
+}
+
+.lottery-gaming .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.lottery-gaming .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btn-shadow);
+}
+
+.lottery-gaming .container .scenery {
+	width: 662px;
+	height: 620px;
+	position: relative;
+}
+
+.lottery-gaming .container .scenery span {
+	display: inline-block;
+	position: absolute;
+}
+
+.lottery-gaming .container .scenery span:nth-child(1) {
+	width: 58px;
+	height: 58px;
+	background: url(../images/float-item-left-lottery.png) center center no-repeat;
+	animation: float-left-lottery 2.5s ease infinite alternate;
+}
+
+.lottery-gaming .container .scenery span:nth-child(2) {
+	width: 662px;
+	height: 620px;
+	background: url(../images/bg-lottery.png) center center no-repeat;
+	left: 0;
+	top: 50px;
+}
+
+.lottery-gaming .container .scenery span:nth-child(3) {
+	width: 62px;
+	height: 62px;
+	background: url(../images/float-item-right-lottery.png) center center no-repeat;
+	animation: float-right-lottery 2.5s ease infinite alternate;
+}
+
+@keyframes float-left-lottery {
+	0% {
+		left: 40px;
+		top: 160px;
+	}
+	100% {
+		left: 40px;
+		top: 180px;
+	}
+}
+
+@keyframes float-right-lottery {
+	0% {
+		right: 40px;
+		bottom: 180px;
+	}
+	100% {
+		right: 40px;
+		bottom: 210px;
+	}
+}
+
+.lottery-gaming .container .content {
+	width: 490px;
+	text-align: center;
+}
+
+.lottery-gaming .container .content h2 {
+	font-size: 42px;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	height: 50px;
+	line-height: 50px;
+	margin: 130px auto 0 auto;
+}
+
+.lottery-gaming .container .content h5 {
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.lottery-gaming .container .content p {
+	margin-top: 50px;
+	line-height: 1.7;
+}
+
+.lottery-gaming .container .content .item {
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+.lottery-gaming .container .content .item span {
+	display: inline-block;
+	cursor: pointer;
+	transition: all .3s ease;
+	width: 73px;
+	height: 70px;
+	background-position: center bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: transform .3s ease-out;
+}
+
+.lottery-gaming .container .content .item .icon-keno {
+	background-image: url(../images/lottery-keno-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-marksix {
+	background-image: url(../images/lottery-sixgame-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-ssc {
+	background-image: url(../images/lottery-everytime-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-pk10 {
+	background-image: url(../images/lottery-pk10-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-k3 {
+	background-image: url(../images/lottery-fast3-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-gti {
+	background-image: url(../images/lottery-gti.png);
+}
+
+.lottery-gaming .container .content .item .icon-bbin {
+	background-image: url(../images/lottery-bbin.png);
+	display: none;
+}
+
+.lottery-gaming .container .content .item span:hover {
+	transform: translateY(-15px);
+}
+
+/*彩票頁 standard 開始*/
+
+article#lottery-standard {}
+
+.lottery-standard-carousel {
+	height: 400px;
+	background: url(../images/lottery-banner.jpg) center center no-repeat;
+}
+
+article#lottery-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	padding: 80px 0 50px 0;
+}
+
+article#lottery-standard .container .content {
+	background: #fff;
+	height: 369px;
+	text-align: center;
+	padding: 40px 20px;
+	margin-bottom: 30px;
+	width: 228px;
+	border-radius: 10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 15px;
+}
+
+article#lottery-standard .container .content .icon {
+	width: 186px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 50px;
+	transition: all .3s ease;
+}
+
+article#lottery-standard .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	margin-top: 125px;
+	font-size: 28px;
+	font-weight: 1000;
+}
+
+article#lottery-standard .container .content p {
+	color: #666;
+	line-height: 1.5;
+}
+
+article#lottery-standard .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 35px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+article#lottery-standard .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+article#lottery-standard .container .content:hover img {
+	top: 40px;
+}
+
+/*精彩活動頁 開始*/
+
+article#promotion {}
+
+article#promotion .container {
+	width: 1210px;
+	margin: auto;
+	padding: 50px 0 50px 0;
+}
+
+article#promotion .container .navbar {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	width: 1210px;
+}
+
+article#promotion .container .navbar span {
+	color: #999;
+	margin: 0 5px;
+	font-size: 14px;
+	display: none;
+}
+
+article#promotion .container .navbar a {
+	color: #666;
+	transition: all 0.3s ease;
+	font-size: 14px;
+	display: inline-block;
+	width: 110px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #e7e7e7;
+	position: relative;
+}
+
+article#promotion .container .navbar a:last-child {
+	margin-right: 0;
+}
+
+article#promotion .container .navbar a::after {
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 110px;
+	height: 0;
+	background: var(--main-color);
+}
+
+article#promotion .container .navbar .active::after, article#promotion .container .navbar .active:hover::after {
+	color: #fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar .active {
+	color: var(--main-color);
+}
+
+article#promotion .container .navbar a:hover::after {
+	color: #fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar a:hover {
+	color: var(--main-color);
+}
+
+article#promotion .container .content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#promotion .container .content>div {
+	width: 392px;
+	background: var(--section-bgcolor);
+	padding: 20px;
+	box-sizing: border-box;
+	margin-right: 11px;
+	margin-bottom: 40px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	border-radius: 5px;
+	transition: all .3s ease-in;
+}
+
+article#promotion .container .content>div:hover {
+	outline: 1px solid #dd171c;
+}
+
+article#promotion .container .content .heading-new {
+	display: flex;
+	justify-content: space-between;
+	line-height: 24px;
+}
+
+article#promotion .container .content .heading-new p:first-child, article#promotion .container .content .heading span {
+	display: inline-block;
+	height: 34px;
+	line-height: 34px;
+	text-align: left;
+	padding-left: 28px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 5px;
+}
+
+article#promotion .container .content .heading-new p:first-child {
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: #666;
+	background-size: 22px auto;
+}
+
+article#promotion .container .content .heading-new p.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-slot {
+	background-image: url(../images/promotion-icon-slot-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-esport {
+	background-image: url(../images/promotion-icon-esport-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-poker {
+	background-image: url(../images/promotion-icon-poker-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-lottery {
+	background-image: url(../images/promotion-icon-lottery-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-funds {
+	background-image: url(../images/promotion-icon-funds-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-vip {
+	background-image: url(../images/promotion-icon-vip-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-hot {
+	background-image: url(../images/promotion-icon-hot-101.png);
+}
+
+article#promotion .container .content .heading span.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-101.png);
+}
+
+article#promotion .container .content .heading span.icon-slot {
+	background-image: url(../images/promotion-icon-slot-101.png);
+}
+
+article#promotion .container .content .heading span.icon-esport {
+	background-image: url(../images/promotion-icon-esport-101.png);
+}
+
+article#promotion .container .content .heading span.icon-poker {
+	background-image: url(../images/promotion-icon-poker-101.png);
+}
+
+article#promotion .container .content .heading span.icon-lottery {
+	background-image: url(../images/promotion-icon-lottery-101.png);
+}
+
+article#promotion .container .content .heading span.icon-funds {
+	background-image: url(../images/promotion-icon-funds-101.png);
+}
+
+article#promotion .container .content .heading p.icon-vip {
+	background-image: url(../images/promotion-icon-vip-101.png);
+}
+
+article#promotion .container .content .heading p.icon-hot {
+	background-image: url(../images/promotion-icon-hot-101.png);
+}
+
+article#promotion .container .content .heading-new p:last-child {
+	color: var(--main-color);
+	padding: 5px 0px;
+	font-weight: bold;
+	display: none;
+}
+
+article#promotion .container .content .banr-mask {
+	width: 352px;
+	height: 210px;
+	overflow: hidden;
+	margin: 10px 0 15px 0;
+	position: relative;
+	border-radius: 3px;
+}
+
+article#promotion .container .content img.banr {
+	width: 352px;
+	height: 210px;
+	transition: all 0.3s ease;
+}
+
+/* article#promotion .container .content .banr-mask:hover img {
+	transform: scale(1.1);
+} */
+
+article#promotion .container .content .banr-mask .curtain {
+	width: 352px;
+	height: 210px;
+	background: rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease;
+}
+
+/* article#promotion .container .content .banr-mask:hover .curtain {
+	background: rgba(0, 0, 0, 0.8);
+} */
+
+article#promotion .container .content .banr-mask a {
+	display: inline-block;
+	padding: 10px 40px;
+	background: var(--main-color);
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0.1s;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+article#promotion .container .content .banr-mask a:hover {
+	border-radius: 20px;
+}
+
+article#promotion .container .content .banr-mask a:focus {
+	background: #b9680b;
+}
+
+/* article#promotion .container .content .banr-mask:hover a {
+	opacity: 1;
+	filter: alpha(opacity=100);
+} */
+
+article#promotion .container .content .foot {
+	display: flex;
+	justify-content: space-between;
+}
+
+article#promotion .container .content .foot .title {
+	width: 249px;
+	font-size: 18px;
+	color: var(--main-color);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+article#promotion .container .content .foot .text {
+	font-size: 14px;
+	color: #666;
+}
+
+article#promotion .container .content .foot a {
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	line-height: 33px;
+	border-radius: 5px;
+	align-self: flex-end;
+	border: 1px solid #efefef;
+	text-align: center;
+}
+
+article#promotion .container .content .foot a:hover {
+	background: var(--main-hover-color);
+	color: #fff;
+}
+
+/*精彩活動頁 结束*/
+
+/*精彩活動頁 standard begins*/
+
+article#promotion-standard {}
+
+article#promotion-standard .container {
+	width: 1210px;
+	margin: auto;
+	padding: 50px 0 50px 0;
+}
+
+article#promotion-standard .container .navbar span {
+	color: #999;
+	margin: 0 5px;
+	font-size: 16px;
+}
+
+article#promotion-standard .container .navbar a {
+	color: #999;
+	padding: 5px 10px;
+	transition: all 0.3s ease;
+	font-size: 16px;
+}
+
+article#promotion-standard .container .navbar a:hover {
+	background: var(--main-color);
+	border-radius: 5px;
+	color: #fff;
+}
+
+article#promotion-standard .container .navbar a.active, article#promotion-standard .container .navbar a.active:hover {
+	background: var(--main-color);
+	border-radius: 5px;
+	color: #fff;
+}
+
+article#promotion-standard .container .navbar {
+	margin-bottom: 20px;
+}
+
+article#promotion-standard .container .flexbox {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#promotion-standard .flexbox .content {
+	display: flex;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	margin-right: 15px;
+}
+
+article#promotion-standard .content .banr {
+	width: 280px;
+	height: 170px;
+	transition: all 0.2s ease;
+}
+
+article#promotion-standard .content .banr-mask {
+	overflow: hidden;
+	position: relative;
+	height: 170px;
+	transition: all 0.2s ease;
+}
+
+article#promotion-standard .content .banr-mask .curtain {
+	position: absolute;
+	width: 280px;
+	height: 170px;
+	background: rgba(0, 0, 0, 0);
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease;
+}
+
+article#promotion-standard .content .banr-mask a {
+	display: inline-block;
+	padding: 10px 40px;
+	background: var(--main-color);
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0.1s;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	font-size: 16px;
+}
+
+article#promotion-standard .content .banr-mask:hover .banr {
+	transform: scale(1.1);
+}
+
+article#promotion-standard .content .banr-mask:hover .curtain {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+article#promotion-standard .content .banr-mask:hover a {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+article#promotion-standard .content a:hover {
+	border-radius: 30px;
+}
+
+article#promotion-standard .content .item {
+	background: var(--section-bgcolor);
+	padding: 15px;
+	width: 310px;
+	position: relative;
+}
+
+article#promotion-standard .content .item>div {
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+article#promotion-standard .content .item>div p img {
+	margin-bottom: -3px;
+	margin-right: 5px;
+}
+
+article#promotion-standard .content .item>div .hot {
+	color: #fff;
+	background-image: linear-gradient(to bottom, rgb(255, 0, 0), rgb(211, 2, 2) 50%, rgb(155, 0, 0) 100%);
+	border-radius: 0 5px 0 5px;
+	padding: 5px 10px;
+	font-size: 13px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+article#promotion-standard .content .item>div p:first-child {
+	color: #666;
+	position: relative;
+	/* margin-left: 20px; */
+}
+
+article#promotion-standard .content .item .title {
+	font-size: 22px;
+	font-weight: bold;
+	color: var(--main-color);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+}
+
+article#promotion-standard .content .item .text {
+	color: #999;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+article#promotion-standard .content .item a img {
+	margin-left: 5px;
+}
+
+article#promotion-standard .content .item a {
+	display: inline-block;
+	width: 150px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	color: #fff;
+	align-self: flex-end;
+	text-align: center;
+	margin-top: 15px;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	color: #fff;
+}
+
+article#promotion-standard .content .item a:hover {
+	background: var(--main-hover-color);
+}
+
+/*維護頁*/
+
+article#fixpage .container {
+	padding: 250px 0;
+	text-align: center;
+}
+
+article#fixpage .container h2 {
+	font-size: 36px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+article#fixpage .container p {
+	font-size: 15px;
+}
+
+article#fixpage .container button {
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+	padding: 13px 40px;
+	border-radius: 50px;
+	background: var(--main-button-color);
+	margin-right: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+	box-shadow: 3px 3px 14px #999999;
+}
+
+article#fixpage .container button:hover {
+	background-image: var(--main-hover-color);
+}
+
+/*頁腳*/
+
+footer {
+	background: #e2e2e2;
+	font-size: 12px;
+}
+
+footer .partners {
+	width: var(--ctn-width);
+	margin: auto;
+	padding-top: 80px;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .partners span {
+	height: 35px;
+	margin-right: 40px;
+	filter: grayscale(100%);
+	transition: filter .3s ease-out;
+	display: inline-block;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+footer .partners span:hover {
+	filter: grayscale(0);
+}
+
+footer .partners span:last-child {
+	margin-right: 0;
+}
+
+footer .partners span.ag {
+	width: 97px;
+	background-image: url(../images/partners-01.png);
+}
+
+footer .partners span.onework {
+	width: 132px;
+	background-image: url(../images/partners-02.png);
+}
+
+footer .partners span.mg {
+	width: 132px;
+	background-image: url(../images/partners-03.png);
+}
+
+footer .partners span.pt {
+	width: 153px;
+	background-image: url(../images/partners-04.png);
+}
+
+footer .partners span.bbin {
+	width: 82px;
+	background-image: url(../images/partners-05.png);
+}
+
+footer .partners span.pinacle {
+	width: 79px;
+	background-image: url(../images/partners-06.png);
+	margin-right: 0;
+}
+
+footer .partners span.alipay {
+	width: 91px;
+	background-image: url(../images/partners-07.png);
+	display: none;
+}
+
+footer .partners span.wechat {
+	width: 123px;
+	background-image: url(../images/partners-08.png);
+	display: none;
+}
+
+footer .container {
+	width: var(--ctn-width);
+	margin: auto;
+	display: flex;
+	position: relative;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #959595;
+	padding-top: 83px;
+}
+
+footer .container .heading {
+	font-size: 15px;
+	color: #444;
+	margin-bottom: 7px;
+	font-weight: bold;
+}
+
+footer .container ul {
+	margin-right: 125px;
+}
+
+footer .container ul li {
+	margin-bottom: 5px;
+}
+
+footer .container ul li a {
+	color: #666;
+	transition: color .15s ease-in;
+	font-size: 12px;
+}
+
+footer .container ul li a:hover {
+	color: var(--main-color);
+}
+
+footer .container .app-download {
+	position: absolute;
+	right: 0;
+	top: 40px;
+}
+
+footer .container .app-download .app {
+	width: 105px;
+	height: 30px;
+	display: inline-block;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+footer .container .app-download .app:active {
+	transform: translateY(1px);
+}
+
+footer .container .app-download .ios {
+	background-image: url(../images/ios.png);
+}
+
+footer .container .app-download .android {
+	background-image: url(../images/android.png);
+}
+
+footer .container .app-download .back-top {
+	text-align: right;
+}
+
+footer .container .app-download .back-top a {
+	display: inline-block;
+	width: 110px;
+	height: 35px;
+	border: 1px solid #959595;
+	line-height: 35px;
+	text-align: center;
+	color: #666;
+	margin-top: 40px;
+	transition: background .3s ease-in;
+}
+
+footer .container .app-download .back-top a:hover {
+	background: #959595;
+	color: #fff;
+}
+
+footer .toc {
+	width: var(--ctn-width);
+	margin: 20px auto 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .toc p {
+	width: 690px;
+}
+
+footer .toc .gc {
+	background: url(../images/icon-gc.png) center / contain no-repeat;
+	width: 120px;
+	height: 60px;
+	display: inline-block;
+}
+
+footer .copyright {
+	background: #bc1317;
+	color: #fff;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	margin-top: 40px;
+}
+
+/*嵌入式區塊*/
+
+/*手機裝置區embedded*/
+
+.mobile-app-1-embedded .mobile-app {
+	margin-top: 80px;
+}
+
+.mobile-app-1-embedded .mobile-app .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.mobile-app-1-embedded .mobile-app .container .bg-mobile {
+	width: 720px;
+	height: 560px;
+	background-image: url(../images/bg-mobile.png);
+	background-repeat: no-repeat;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child {
+	width: 455px;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .active {
+	background: var(--main-button-color);
+	color: #fff;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child h1 {
+	width: 400px;
+	font-size: 48px;
+	font-weight: 300;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding: 15px 0 30px 0;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child h3 {
+	width: 325px;
+	font-size: 21px;
+	margin-bottom: 20px;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-bottom: 5px;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child h3~a {
+	display: inline-block;
+	padding: 18px 60px;
+	font-size: 14px;
+	border-radius: 50px;
+	color: #fff;
+	background: var(--main-button-color);
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	margin-right: 15px;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child h3~a:hover {
+	background-image: var(--main-hover-color);
+	color: #fff;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .text {
+	margin-top: 30px;
+	line-height: 1.5;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .content {
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .content .QR-code, .mobile-app-1-embedded .mobile-app .container>div:last-child .content .entry {
+	width: 133px;
+	height: 133px;
+	display: inline-block;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .content .QR-code {
+	background: url(../images/index-qrcode.png) no-repeat center center;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .content .entry {
+	background: url(../images/index-entry.png) no-repeat center center;
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .content h5 {
+	color: var(--main-color);
+}
+
+.mobile-app-1-embedded .mobile-app .container>div:last-child .content a {
+	color: var(--main-color);
+}
+
+/*體育投注embedded*/
+
+.sport-bet-origin-embedded .sport-bet {
+	margin-top: 80px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container {
+	width: 1200px;
+	margin: auto;
+	background-image: url(../images/bg-sport-bet.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.sport-bet-origin-embedded .sport-bet .match .content .icon-germany {
+	display: inline-block;
+	width: 74px;
+	height: 74px;
+	background-image: url(../images/contry-germany.png);
+	background-repeat: no-repeat;
+}
+
+.sport-bet-origin-embedded .sport-bet .match .content .icon-british {
+	display: inline-block;
+	width: 74px;
+	height: 74px;
+	background-image: url(../images/contry-british.png);
+	background-repeat: no-repeat;
+}
+
+.sport-bet-origin-embedded .sport-bet .match .icon-denmark {
+	display: inline-block;
+	width: 74px;
+	height: 74px;
+	background-image: url(../images/contry-denmark.png);
+	background-repeat: no-repeat;
+}
+
+.sport-bet-origin-embedded .sport-bet .match .icon-italy {
+	display: inline-block;
+	width: 74px;
+	height: 74px;
+	background-image: url(../images/contry-italy.png);
+	background-repeat: no-repeat;
+}
+
+.sport-bet-origin-embedded .sport-bet .match .icon-netherland {
+	display: inline-block;
+	width: 74px;
+	height: 74px;
+	background-image: url(../images/contry-netherland.png);
+	background-repeat: no-repeat;
+}
+
+.sport-bet-origin-embedded .sport-bet .match .icon-sweden {
+	display: inline-block;
+	width: 74px;
+	height: 74px;
+	background-image: url(../images/contry-sweden.png);
+	background-repeat: no-repeat;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton {
+	display: flex;
+	background: #fff;
+	width: 644px;
+	padding: 20px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	border-radius: 10px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container h1 {
+	width: 400px;
+	font-size: 48px;
+	font-weight: 300;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding: 15px 0 30px 0;
+}
+
+.sport-bet-origin-embedded .sport-bet .container h3 {
+	width: 325px;
+	font-size: 21px;
+	margin-bottom: 20px;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-bottom: 5px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .match {
+	text-align: center;
+	width: 47%;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .match h4 {
+	font-size: 18px;
+	color: var(--main-color);
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .match h4+p {
+	margin: 5px 0 20px 0;
+	color: var(--main-color);
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .match .content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .match .content span {
+	font-size: 23px;
+	font-weight: 800;
+	color: grey;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .odds {
+	display: flex;
+	flex-wrap: wrap;
+	width: 49%;
+	margin-left: 20px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .odds div {
+	width: 88px;
+	height: 45px;
+	text-align: center;
+	margin-left: 10px;
+	background-color: #eef2f6;
+	border-radius: 5px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .odds a {
+	background: var(--main-button-color);
+	color: #fff;
+	width: 180px;
+	height: 38px;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 38px;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .odds a:hover {
+	background-image: var(--main-hover-color);
+	box-shadow: 0 0 4px #999;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .main-sectiton .odds .lh-center {
+	line-height: 45px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section {
+	display: flex;
+	width: 644px;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section>div {
+	width: 314px;
+	padding: 20px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .match {
+	display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .match h5 {
+	font-size: 15px;
+	color: var(--main-color);
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .match .date {
+	font-size: 12px;
+	color: var(--main-color);
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .match a {
+	background: var(--main-button-color);
+	color: #fff;
+	padding: 3px 22px;
+	border-radius: 20px;
+	display: inline-block;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .match a:hover {
+	background: var(--main-hover-color);
+	box-shadow: 0 0 4px #999;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .odds {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.sport-bet-origin-embedded .sport-bet .container .bottom-section .odds p {
+	width: 81px;
+	height: 36px;
+	line-height: 36px;
+	background: #eef2f6;
+	text-align: center;
+	border-radius: 5px;
+}
+
+/*翻轉選單emdedded*/
+
+.sec-nav-embedded {
+	margin-top: 100px;
+}
+
+.sec-nav-embedded .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.sec-nav-embedded a {
+	display: block;
+	width: 200px;
+	height: 450px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	transition: all .2s ease;
+}
+
+.sec-nav-embedded a .content {
+	width: 200px;
+	height: 450px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .4s ease-out;
+}
+
+.sec-nav-embedded a .flip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 450px;
+	background: #00b09b;
+	opacity: 0;
+	transition: all .6s ease;
+	transform: scaleX(0.2);
+	background: url(../images/secnav-flip.png) center center / cover no-repeat;
+	text-align: center;
+}
+
+.sec-nav-embedded a .flip .line {
+	width: 105px;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.4);
+	margin: 10px auto;
+}
+
+.sec-nav-embedded a .flip span {
+	display: inline-block;
+	opacity: 1;
+}
+
+.sec-nav-embedded a:hover .flip {
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+.sec-nav-embedded a:hover .flip div:first-child {
+	margin-top: 15px;
+}
+
+.sec-nav-embedded a .flip span:active {
+	opacity: 0.7;
+}
+
+.sec-nav-embedded a:hover .flip div:last-child .line {
+	display: none;
+}
+
+.sec-nav-embedded a .flip .ae {
+	width: 87px;
+	height: 36px;
+	background: url(../images/secnav-flip-ae.png) center center no-repeat;
+	padding-top: 36px;
+}
+
+.sec-nav-embedded a .flip .lng {
+	width: 87px;
+	height: 36px;
+	background: url(../images/secnav-flip-loong.png) center center no-repeat;
+	padding-top: 36px;
+}
+
+.sec-nav-embedded a .flip .bg {
+	width: 87px;
+	height: 27px;
+	background: url(../images/secnav-flip-bolegaming.png) center center no-repeat;
+	padding-top: 36px;
+}
+
+.sec-nav-embedded a .flip .bbin {
+	width: 80px;
+	height: 30px;
+	background: url(../images/secnav-flip-bbin.png) center center no-repeat;
+	padding-top: 30px;
+}
+
+.sec-nav-embedded a .flip .ag {
+	width: 87px;
+	height: 30px;
+	background: url(../images/secnav-flip-ag.png) center center no-repeat;
+	padding-top: 30px;
+}
+
+.sec-nav-embedded a .flip .pt {
+	width: 102px;
+	height: 36px;
+	background: url(../images/secnav-flip-pt.png) center center no-repeat;
+	padding-top: 36px;
+}
+
+.sec-nav-embedded a .flip .imesport {
+	width: 80px;
+	height: 42px;
+	background: url(../images/secnav-flip-im.png) center center no-repeat;
+	padding-top: 42px;
+}
+
+.sec-nav-embedded a .flip .gb {
+	width: 60px;
+	height: 42px;
+	background: url(../images/secnav-flip-gb.png) center center no-repeat;
+	padding-top: 42px;
+}
+
+.sec-nav-embedded a .flip .hb {
+	width: 60px;
+	height: 42px;
+	background: url(../images/secnav-flip-hb.png) center center no-repeat;
+	padding-top: 42px;
+}
+
+.sec-nav-embedded a .flip .ky {
+	width: 60px;
+	height: 42px;
+	background: url(../images/secnav-flip-ky.png) center center no-repeat;
+	padding-top: 42px;
+}
+
+.sec-nav-embedded a .flip .bolegaming {
+	width: 80px;
+	height: 42px;
+	background: url(../images/secnav-flip-bolegaming.png) center center no-repeat;
+	padding-top: 42px;
+}
+
+.sec-nav-embedded a .flip .mg {
+	width: 110px;
+	height: 30px;
+	background: url(../images/secnav-flip-mg.png) center center no-repeat;
+	padding-top: 30px;
+}
+
+.sec-nav-embedded a .flip .onework-sport {
+	width: 65px;
+	height: 24px;
+	background: url(../images/secnav-flip-oneworks.png) center center no-repeat;
+	padding-top: 30px;
+}
+
+.sec-nav-embedded a:hover .content {
+	transform: scaleX(0.2);
+	opacity: 0;
+}
+
+.sec-nav-embedded a.live-casino .content {
+	background-image: url(../images/secnav-livecasino.png);
+}
+
+.sec-nav-embedded a.ele-contest .content {
+	background-image: url(../images/secnav-esport.png);
+}
+
+.sec-nav-embedded a.lottery-game .content {
+	background-image: url(../images/secnav-lottery.png);
+}
+
+.sec-nav-embedded a.video-game .content {
+	background-image: url(../images/secnav-slot.png);
+}
+
+.sec-nav-embedded a.chess-card .content {
+	background-image: url(../images/secnav-chess.png);
+}
+
+.sec-nav-embedded a .content div {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 55px;
+}
+
+.sec-nav-embedded a .content div .icon {
+	width: 46px;
+	height: 46px;
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+
+.sec-nav-embedded a .content div .icon-dice {
+	background-image: url(../images/icon-dice.png);
+}
+
+.sec-nav-embedded a .content div .icon-mouse {
+	background-image: url(../images/icon-mouse.png);
+}
+
+.sec-nav-embedded a .content div .icon-lottery {
+	background-image: url(../images/icon-lottery.png);
+}
+
+.sec-nav-embedded a .content div .icon-slot {
+	background-image: url(../images/icon-slot.png);
+}
+
+.sec-nav-embedded a .content div .icon-chess {
+	background-image: url(../images/icon-poker.png);
+}
+
+.sec-nav-embedded a .content p:last-child {
+	font-size: 12px;
+	width: 120px;
+}
+
+/*titanK優勢*/
+
+.adventage-embedded {
+	margin: 80px 0;
+}
+
+.adventage-embedded .container {
+	width: 1200px;
+	margin: auto;
+}
+
+.adventage-embedded .container h1 {
+	width: 400px;
+	font-size: 48px;
+	text-align: center;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding: 15px 0 30px 0;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	font-weight: 300;
+}
+
+.adventage-embedded .container h3 {
+	width: 325px;
+	font-size: 21px;
+	text-align: center;
+	background: var(--main-button-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-bottom: 5px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+.adventage-embedded .container .content {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.adventage-embedded .container .content .icon-dashboard-01 {
+	width: 131px;
+	height: 115px;
+	display: inline-block;
+	background-image: url(../images/dashboard01.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .content .icon-dashboard-02 {
+	width: 131px;
+	height: 115px;
+	display: inline-block;
+	background-image: url(../images/dashboard02.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .content .icon-dashboard-03 {
+	width: 131px;
+	height: 115px;
+	display: inline-block;
+	background-image: url(../images/dashboard03.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .content .icon-dashboard-04 {
+	width: 131px;
+	height: 115px;
+	display: inline-block;
+	background-image: url(../images/dashboard04.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .content>div {
+	text-align: center;
+}
+
+.adventage-embedded .container .content>div p:nth-child(2) {
+	margin-bottom: -5px;
+}
+
+.adventage-embedded .container .content>div p:nth-child(2), .adventage-embedded .container .content>div p:nth-child(3) {
+	font-size: 12px;
+	color: var(--main-color);
+}
+
+.adventage-embedded .container .info {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 38px;
+	justify-content: space-between;
+}
+
+.adventage-embedded .container .info>div {
+	display: flex;
+	width: 48%;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.adventage-embedded .container .info>div .item {
+	width: 450px;
+}
+
+.adventage-embedded .container .info>div .icon-adventage-01 {
+	width: 80px;
+	height: 78px;
+	display: inline-block;
+	margin-right: 31px;
+	background-image: url(../images/adventage01.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .info>div .icon-adventage-02 {
+	width: 80px;
+	height: 78px;
+	display: inline-block;
+	margin-right: 25px;
+	background-image: url(../images/adventage02.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .info>div .icon-adventage-03 {
+	width: 80px;
+	height: 78px;
+	display: inline-block;
+	margin-right: 31px;
+	background-image: url(../images/adventage03.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .info>div .icon-adventage-04 {
+	width: 80px;
+	height: 78px;
+	display: inline-block;
+	margin-right: 31px;
+	background-image: url(../images/adventage04.png);
+	background-repeat: no-repeat;
+}
+
+.adventage-embedded .container .info>div h5 {
+	font-size: 15px;
+	color: var(--main-color);
+}
+
+/*app下載 & 聯繫*/
+
+.app-and-contact {
+	position: fixed;
+	right: 0;
+	top: 60%;
+	z-index: 20;
+}
+
+.app-and-contact .contact, .app-and-contact .scan, .app-and-contact .back-to-top, .app-and-contact .download-path {
+	width: 38px;
+	height: 38px;
+	border: 1px solid var(--main-color);
+	background-color: rgba(255, 255, 255, 0.95);
+	position: relative;
+	background-position: center;
+	background-size: 25px;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+.app-and-contact .contact, .app-and-contact .back-to-top, .app-and-contact .download-path {
+	cursor: pointer;
+}
+
+.app-and-contact .contact {
+	background-image: url(../images/icon-contact.png);
+}
+
+.app-and-contact .scan {
+	background-image: url(../images/icon-scan.png);
+}
+
+.app-and-contact .download-path {
+	background-image: url(../images/icon-download.png);
+	display: none;
+}
+
+.app-and-contact .contact .tooltip, .app-and-contact .download-path .tooltip {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 50px;
+	background-color: #fff;
+	border: 1px solid var(--main-color);
+	padding: 5px 10px;
+	color: #333;
+	display: none;
+	min-width: 90px;
+}
+
+.app-and-contact .contact .tooltip::after, .app-and-contact .download-path .tooltip::after {
+	content: '';
+	position: absolute;
+	border: solid var(--main-color);
+	border-width: 1px 1px 0 0;
+	background-color: #fff;
+	padding: 3px;
+	right: -4px;
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+.app-and-contact .contact:hover .tooltip, .app-and-contact .download-path:hover .tooltip {
+	display: block;
+	animation: fadeIn 1s ease;
+}
+
+.app-and-contact .scan .content {
+	position: absolute;
+	top: 0;
+	right: 50px;
+	padding: 20px;
+	border: 1px solid var(--main-color);
+	text-align: center;
+	color: #666;
+	display: none;
+	background-color: #fff;
+}
+
+.app-and-contact .scan .content::after {
+	content: '';
+	position: absolute;
+	border: solid var(--main-color);
+	border-width: 1px 1px 0 0;
+	background-color: #fff;
+	padding: 3px;
+	right: -4px;
+	top: 14px;
+	transform: rotate(45deg);
+}
+
+.app-and-contact .scan .content .qrcode {
+	width: 105px;
+	height: 105px;
+	display: inline-block;
+	margin-bottom: 5px;
+	background: url(../images/sidemenu-qrcode-BC.png) center / cover no-repeat !important;
+}
+
+.app-and-contact .scan:hover .content {
+	display: block;
+	animation: fadeIn 1s ease;
+}
+
+.app-and-contact .content .top-arrow {
+	border: solid var(--main-color);
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 5px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	margin-top: 15px
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/*警示紅字*/
+
+.default {}
+
+.saibo_register .wrong {
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.saibo_register .alert {
+	text-align: left;
+	margin-bottom: 10px;
+	color: #d9514f;
+	font-size: 14px;
+	padding-top: 0px;
+	padding-left: 18px;
+	height: 15px;
+	line-height: 15px;
+}
+
+.saibo_register .back {
+	width: 35px;
+	height: 35px;
+	top: 20px;
+	left: 20px;
+	position: absolute;
+	background: url(../images/back.png) no-repeat center top / cover;
+	background-color: #ccc;
+	border-radius: 100px;
+	opacity: 0.4;
+}
+
+/*新轉帳頁0422*/
+.transfer-custom {
+	color: rgba(74, 74, 74, 0.8);
+	padding: 1em;
+	font-size: 14px;
+}
+
+.transfer-custom .transfer-switch {
+	padding: 1em;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+}
+
+.transfer-custom .transfer-switch .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+}
+
+.transfer-custom .transfer-switch .container p .more, .transfer-custom .transfer-switch .container p .help {
+	color: var(--primary);
+	cursor: pointer;
+}
+
+.transfer-custom .transfer-switch .container .btns {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 260px;
+	background-color: #e0e0e0;
+	border-radius: 25px;
+	-webkit-box-shadow: 1px 1px 1px #d6d6d6 inset;
+	box-shadow: 1px 1px 1px #d6d6d6 inset;
+	position: relative;
+	margin-right: 35px;
+}
+
+.transfer-custom .transfer-switch .container .btns a {
+	width: 130px;
+	height: 45px;
+	line-height: 45px;
+	border-radius: 25px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+
+.transfer-custom .transfer-switch .container .btns a.active {
+	background: var(--primary);
+}
+
+.transfer-custom .transfer-switch .container .loading {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.transfer-custom .quick-transfer {
+	margin-top: 30px;
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 30px;
+}
+
+.transfer-custom .quick-transfer form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.transfer-custom .quick-transfer form select, .transfer-custom .quick-transfer form input[type="text"] {
+	height: 45px;
+	width: 190px;
+	border: 1px solid #e6e6e6;
+	background: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-indent: 10px;
+}
+
+.transfer-custom .quick-transfer form .confirm {
+	height: 45px;
+	width: 130px;
+	border-radius: 25px;
+	color: #fff;
+	background: var(--primary);
+	-webkit-transition: background 0.1s ease-in;
+	-o-transition: background 0.1s ease-in;
+	transition: background 0.1s ease-in;
+	cursor: pointer;
+}
+
+.transfer-custom .quick-transfer form .confirm:hover {
+	-webkit-box-shadow: 0 0 10px rgba(177, 20, 24, 0.5);
+	box-shadow: 0 0 10px rgba(177, 20, 24, 0.5);
+}
+
+.transfer-custom .quick-transfer form .confirm:active {
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+}
+
+.transfer-custom .quick-transfer .icon-arrow {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: #4a4a4a;
+	margin-right: 10px;
+	position: relative;
+}
+
+.transfer-custom .quick-transfer .icon-arrow:before {
+	content: "";
+	position: absolute;
+	border-style: solid;
+	border-width: 5px 0 5px 6px;
+	border-color: transparent transparent transparent #fff;
+	top: 50%;
+	left: 55%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.transfer-custom .main-account {
+	margin-top: 30px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.transfer-custom .main-account p {
+	margin-right: 10px;
+}
+
+.transfer-custom .main-account p .balance {
+	font-size: 28px;
+	color: #4a4a4a;
+	font-weight: bold;
+}
+
+.transfer-custom .main-account .transfer-out {
+	padding: 0 15px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 25px;
+	background: var(--primary);
+	color: #fff;
+	display: inline-block;
+	margin-right: 50px;
+	font-size: 12px;
+	cursor: pointer;
+	-webkit-transition: background 0.1s ease-in;
+	-o-transition: background 0.1s ease-in;
+	transition: background 0.1s ease-in;
+}
+
+.transfer-custom .main-account .transfer-out:hover {
+	-webkit-box-shadow: 0 0 10px rgba(177, 20, 24, 0.5);
+	box-shadow: 0 0 10px rgba(177, 20, 24, 0.5);
+}
+
+.transfer-custom .main-account .transfer-out:active {
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+}
+
+.transfer-custom .balance-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-top: 60px;
+}
+
+.transfer-custom .balance-list .item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 200px;
+	height: 100px;
+	background: #f7f7f7;
+	padding: 15px;
+	border-radius: 5px;
+	margin: 0 22px 22px 0;
+	position: relative;
+}
+
+.transfer-custom .balance-list .item .text {
+	color: var(--primary);
+}
+
+.transfer-custom .balance-list .item .bot {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in {
+	line-height: 1;
+	display: block;
+	padding: 5px 7px;
+	border-radius: 15px;
+	font-size: 12px;
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+	border: 1px solid var(--primary);
+	color: var(--primary);
+	-webkit-transition: background 0.1s ease-in;
+	-o-transition: background 0.1s ease-in;
+	transition: background 0.1s ease-in;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in:hover {
+	background-color: var(--primary);
+	color: #fff;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in:active {
+	-webkit-transform: translateY(-4px);
+	-ms-transform: translateY(-4px);
+	transform: translateY(-4px);
+}
+
+.transfer-custom .balance-list .item .bot .balance {
+	color: #4a4a4a;
+	font-weight: bold;
+}
+
+/*隱藏區塊*/
+
+.game-entry, .bet-info, .mobile-app-2, .sport-bet-sportradar, .mobile-app-1+.carousel, .homeIframeContent, .recommended-slot, .logined-header .container a.home, .footer-happywin, .happywin-contact, .logined-header .container div .welcome, .logined-header .container div .withdraw, .sport-bet-origin, .mobile-view, .happywin-contact, .sport-bet, .mobile-app-1, .recommended-slot+.sec-nav, .marq .container .icon-speaker+span, header .container div:first-child span:nth-child(2), header .container div:first-child span:nth-child(3), header .container div:first-child span:nth-child(4), #content-wrapper>.adventage, .marq .container .icon-service, .marq .container .online-service, #loginSection button.signin:nth-last-child(3), #header-wrapper .container .service:nth-of-type(1), .app-and-contact, footer .container .statistics, footer .container .products, header .container a.aff-link, header .container>div input, header .container>div span.forget {
+	display: none;
+}
+
+#header-wrapper {
+	height: 132px;
+}
+
+/*slick套件修改*/
+
+.slick-dot {
+	opacity: 1 !important;
+	background: var(--main-color) !important;
+}
+
+article#sign-up .container, article#sign-in .container, #password-index, article#password-solution, article#password-solution-qa, article#password-reset, article#password-success, article#password-solution-mobile, article#password-solution-mail {
+	background: url(../images/login-bg.jpg) center / cover no-repeat;
+}
+
+.swiper-pagination{
+	bottom: 0 !important;
+}

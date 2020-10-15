@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SIGNIN</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/betdaily-mb.css">
+</head>
+
+<body>
+    <header>
+        <span class="logo-header"></span>
+        <span class="check-in">簽到</span>
+    </header>
+
+
+    <!-- 登入頁 -->
+    <div class="login-wrapper">
+        <div class="login-content">
+            <div class="login-list">
+                <div class="login-list__l">
+                    <h2 class="login-list__title">log in</h2>
+                </div>
+                <div class="login-list__r">
+                    <span class="login-list__text">Welcome!</span>
+                </div>
+            </div>
+
+            <div class="login-list login-list--column">
+                <div class="login-list__l">
+                    <p class="login-list__caption">username</p>
+                </div>
+                <div class="login-list__r">
+                    <input type="text" class="login-list__field" placeholder="Please enter your real name">
+                    <i class="login-list__icon login-list__icon--user"></i>
+                    <p class="alert wrong">&nbsp;6 to 16 characters</p>
+                </div>
+            </div>
+
+            <div class="login-list login-list--column">
+                <div class="login-list__l">
+                    <p class="login-list__caption">Password</p>
+                </div>
+                <div class="login-list__r">
+                    <input type="password" class="login-list__field" placeholder="Please enter 6 to 16 characters">
+                    <i class="login-list__icon login-list__icon--password"></i>
+                    <p class="alert wrong">&nbsp;6 to 16 characters</p>
+                </div>
+            </div>
+
+            <div class="login-list login-list--checkbox login-list--column">
+                <div class="login-list__l"></div>
+                <div class="login-list__r">
+                    <label class="login-check">
+                        <span class="login-check__text">I am over 18 years old.</span>
+                        <input type="checkbox" class="login-check__checkbox" checked="checked">
+                        <span class="login-check__checkmark"></span>
+                        <div class="login-check__warning">
+                            <span class="login-check__close"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="login-list login-list--checkbox login-list--column">
+                <div class="login-list__l"></div>
+                <div class="login-list__r">
+                    <label class="login-check">
+                        <span class="login-check__text">Remember me</span>
+                        <input type="checkbox" class="login-check__checkbox" checked="checked">
+                        <span class="login-check__checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="login-list login-list--column">
+                <div class="login-list__l">
+                </div>
+                <div class="login-list__r">
+                    <p class="alert wrong">account doesn't exist</p>
+                    <button type="button" class="login-list__submit">LOG IN</button>
+                    <button type="button" class="login-list__back">BACK TO INDEX</button>
+                    <a class="login-list__forget">Forgot password?</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer
+        style="padding-bottom:env(safe-area-inset-bottom) constant(safe-area-inset-bottom);margin-bottom:env(safe-area-inset-bottom) constant(safe-area-inset-bottom)">
+        <span class="about" style="position:relative"><a
+                href="/loading?redirectURL=https%3A%2F%2Fpromotions.betdaily.com%2Fhelp_betdaily%2Fmember_maintain%2Fseq8.html"
+                target="_blank"
+                style="display:block;width:100%;height:100%;position:absolute;left:0;top:0"></a>About</span><span
+            class="service" style="position:relative"><a
+                href="/loading?redirectURL=https%3A%2F%2Fsupport.betdaily.com%2F" target="_blank"
+                style="display:block;width:100%;height:100%;position:absolute;left:0;top:0"></a>Live Chat</span><span
+            class="home active">Home</span><span class="signup">Sign up</span><span class="signin">Log in</span>
+    </footer>
+
+
+</body>
+
+</html>

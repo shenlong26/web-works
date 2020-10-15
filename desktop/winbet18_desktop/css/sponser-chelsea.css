@@ -1,0 +1,204 @@
+.sponser-chelsea{
+    color: #fff;
+}
+
+.sponser-chelsea .container .mt-30{
+    margin-top: 30px;
+}
+
+.content-1F,
+.content-2F,
+.content-3F{
+    display: flex;
+    align-items: center;
+}
+
+.content-1F{
+    padding: 200px 0;
+}
+
+.content-2F,
+.content-3F{
+    padding: 100px 0;
+}
+
+.content-1F .container,
+.content-2F .container,
+.content-3F .container{
+    width: 60%;
+    margin: auto;
+}
+
+.content-1F .container h1,
+.content-2F .container h2,
+.content-3F .container h2{
+    font-size: 36px;
+    color: #ffd21e;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.content-1F{
+    background: url(../images/chelsea-bg-1F.jpg) center / cover no-repeat;
+}
+
+.content-2F{
+    background: url(../images/chelsea-bg-2F.jpg) center / cover no-repeat;
+}
+
+.content-3F{
+    background: url(../images/chelsea-bg-3F.jpg) center / cover no-repeat;
+}
+
+.content-1F .container .text-logo{
+    width: 50%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.content-1F .container p{
+    max-width: 550px;
+}
+
+.content-2F .container,
+.content-3F .container{
+    text-align: center;
+}
+
+
+.content-2F .container .logo{
+    width: 125px;
+    height: auto;
+}
+
+.content-3F .container .winning-titles{
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.content-3F .container .winning-titles li{
+    width: 16.6%;
+}
+
+.content-3F .container .winning-titles li .amount{
+    width: 40px;
+    height: 60px;
+    background-position: center top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.content-3F .container .winning-titles li .number-1{
+    background-image: url(../images/chelsea-title-number-1.png);
+}
+
+.content-3F .container .winning-titles li .number-2{
+    background-image: url(../images/chelsea-title-number-2.png);
+}
+
+.content-3F .container .winning-titles li .number-5{
+    background-image: url(../images/chelsea-title-number-5.png);
+}
+
+.content-3F .container .winning-titles li .number-8{
+    background-image: url(../images/chelsea-title-number-8.png);
+}
+
+.content-3F .container .team-players{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-3F .container .team-players .mb-15{
+    margin-bottom: 15px;
+}
+
+.content-3F .container .team-players img{
+    width: 100%;
+    height: auto;
+}
+
+.content-3F .container .team-players .left-content{
+    width: 32%;
+}
+
+.content-3F .container .team-players .right-content{
+    width: 66%;
+}
+
+.content-3F .container .team-players .right-content .top-2players{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.content-3F .container .team-players .right-content .top-2players .img-wrapper{
+    width: 48.5%;
+}
+
+.content-4F .img-bg-4F{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 992px){
+    .content-1F .container .text-logo{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 641px){
+    .content-1F .container,
+    .content-2F .container,
+    .content-3F .container{
+        width: 100%;
+        margin: auto;
+        padding: 0 30px;
+    }
+
+    .content-1F .container h1,
+    .content-2F .container h2,
+    .content-3F .container h2{
+        font-size: 24px;
+    }
+
+    .content-1F{
+        padding: 120px 0;
+    }
+
+    .content-2F,
+    .content-3F{
+        padding: 40px 0;
+    }
+
+    .content-1F .container h1{
+        width: 195px;
+    }
+
+    .content-1F .container p{
+        width: 240px;
+    }
+
+    .content-1F .container .text-logo{
+        width: 75%;
+    }
+
+    .content-2F .container .logo{
+        width: 85px;
+    }
+
+    .content-3F .container .winning-titles li .amount{
+        width: 20px;
+        height: 30px;
+    }
+
+}
+
+@media screen and (max-width:320px){
+    .content-1F .container p{
+        width: 200px;
+    }
+}

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TitanK</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main2.css">
+</head>
+
+<body>
+    <!-- 登入 -->
+    <header>
+        <div class="container">
+            <div>
+                <span>GMT+8</span>
+                <span>2019-06-27</span>
+                <span>16:37:05</span>
+                <a href="" class="home">网站首页</a>
+                <a href="" class="service">在线客服</a>
+            </div>
+            <div>
+                <input type="text" placeholder="帐号">
+                <input type="password" placeholder="密码">
+                <span class="forget">忘记 ?</span>
+                <button type="button" class="signin">登录</button>
+                <button type="button" class="signup">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 導覽列 -->
+    <nav>
+        <div class="container">
+            <div>
+                <a href="">TitanK体育<i></i></a>
+            </div>
+            <div>
+                <a href="">TitanK电竞<i></i></a>
+            </div>
+            <div>
+                <a href="">真人娱乐<i></i></a>
+            </div>
+            <div>
+                <a href="">彩票投注<i></i></a>
+            </div>
+            <div>
+                <a href="">电子游艺<i></i></a>
+            </div>
+            <span class="logo"></span>
+            <div>
+                <a href="">棋牌游戏<i></i></a>
+            </div>
+            <div>
+                <a href="">手機APP<i></i></a>
+            </div>
+            <div>
+                <a href="">赞助专题<i></i></a>
+            </div>
+            <div>
+                <a href="">合营计画<i></i></a>
+            </div>
+            <div>
+                <a href="">优惠活动<i></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 下拉選單 體育-->
+    <div class="panel" id="panel-sport" style="display:none;">
+        <div class="container">
+            <div></div>
+            <div>
+                <p>扫一扫下载APP</p>
+                <i class="QR-code"></i>
+                <a href="" title="www.titanK.app">www.titank.app</a>
+            </div>
+            <div>
+                <h2>TitanK体育</h2>
+                <p>每月提供上万场体育赛事投注</p>
+                <button type="button">立即進入</button>
+            </div>
+            <div>
+                <p>TitanK</p>
+                <p>SPORTS</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 電競-->
+    <div class="panel" id="panel-esport" style="display:none;">
+        <div class="container">
+            <a href="">
+                <h2>TitanK電競</h2>
+                <p>所有賽事一應俱全</p>
+                <img src="./images/panel-esport01.png" alt="">
+            </a>
+            <a href="">
+                <h2>TitanK電競</h2>
+                <p>賽事最多 玩法最多</p>
+                <img src="./images/panel-esport02.png" alt="">
+            </a>
+            <div>
+                <p>ELECTRONIC</p>
+                <p>SPORTS</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 真人娛樂-->
+    <div class="panel" id="panel-livecasino" style="display:none;">
+        <div class="container">
+            <a href="">
+                <span class="logo-01"></span>
+                <p>AG真人</p>
+                <img src="./images/panel-livecasino01.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-02"></span>
+                <p>EBET真人</p>
+                <img src="./images/panel-livecasino02.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-03"></span>
+                <p>OG真人</p>
+                <img src="./images/panel-livecasino03.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-04"></span>
+                <p>GD真人</p>
+                <img src="./images/panel-livecasino04.png" alt="">
+            </a>
+            <div>
+                <h3>真人视讯</h3>
+                <p>LIVE</p>
+                <p>CASINO</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 彩票遊戲-->
+    <div class="panel" id="panel-lottery" style="display:none;">
+        <div class="container">
+            <a href="">
+                <span class="logo-01"></span>
+                <p>双赢彩票</p>
+                <img src="./images/panel-lottery01.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-02"></span>
+                <p>LB彩票</p>
+                <img src="./images/panel-lottery02.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-03"></span>
+                <p>KG彩票</p>
+                <img src="./images/panel-lottery03.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-04"></span>
+                <p>BBIN彩票</p>
+                <img src="./images/panel-lottery04.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-05"></span>
+                <p>TCG彩票</p>
+                <img src="./images/panel-lottery05.png" alt="">
+            </a>
+            <div>
+                <h3>彩票游戏</h3>
+                <p>LOTTERY</p>
+                <p>GAME</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 電子遊戲-->
+    <div class="panel" id="panel-slotgame" style="display:none;">
+        <div class="container">
+            <a href="">
+                <span class="logo-01"></span>
+                <p>PG電子</p>
+                <img src="./images/panel-slot01.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-02"></span>
+                <p>PT電子</p>
+                <img src="./images/panel-slot02.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-03"></span>
+                <p>MG電子</p>
+                <img src="./images/panel-slot03.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-04"></span>
+                <p>PP电子</p>
+                <img src="./images/panel-slot04.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-05"></span>
+                <p>DT电子</p>
+                <img src="./images/panel-slot05.png" alt="">
+            </a>
+            <a href="">
+                <span class="logo-06"></span>
+                <p>捕鱼游戏</p>
+                <img src="./images/panel-slot06.png" alt="">
+            </a>
+            <div>
+                <h3>彩票游戏</h3>
+                <p>LOTTERY</p>
+                <p>GAME</p>
+                <p class="refund">返水最高可达</p>
+                <span class="rate"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 棋牌-->
+    <div class="panel" id="panel-chessgame" style="display:none;">
+        <div class="container">
+            <a href="">
+                <img src="./images/panel-chess01.png" alt="">
+                <div class="item">
+                    <h3>高登棋牌</h3>
+                    <p>玩出运气 赢得惊喜</p>
+                    <p>CHESS GAME</p>
+                </div>
+            </a>
+            <a href="">
+                <img src="./images/panel-chess02.png" alt="">
+                <div class="item">
+                    <h3>双赢棋牌</h3>
+                    <p>真金白银斗阵 其乐无穷</p>
+                    <p>CHESS GAME</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 下拉選單 APP-->
+    <div class="panel" id="panel-app" style="display:none;">
+        <div class="container">
+            <div class="pic"></div>
+            <div class="item">
+                <h4>体育APP</h4>
+                <img class="QR-code" src="./images/panel-qrcode-sport.png" alt="">
+                <p>扫一扫下载体育APP</p>
+                <p>支持IOS & Android等全部移动投资</p>
+                <a href="" title="www.titanK.app">www.titank.app</a>
+            </div>
+            <div class="pic"></div>
+            <div class="item">
+                <h4>全站APP</h4>
+                <img class="QR-code" src="./images/panel-qrcode-home.png" alt="">
+                <p>扫一扫下载体育APP</p>
+                <p>支持IOS & Android等全部移动投资</p>
+                <a href="" title="www.titanK.app">www.titank.app</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉選單 赞助-->
+    <div class="panel" id="panel-sponsor" style="display:none;">
+        <div class="container">
+            <a href="">
+                <img src="./images/panel-sponsor01.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+            <a href="">
+                <img src="./images/panel-sponsor02.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+            <a href="">
+                <img src="./images/panel-sponsor03.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+            <a href="">
+                <img src="./images/panel-sponsor04.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+            <a href="">
+                <img src="./images/panel-sponsor05.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+            <a href="">
+                <img src="./images/panel-sponsor06.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+            <a href="">
+                <img src="./images/panel-sponsor07.png" alt="">
+                <p>义大利甲级联赛</p>
+                <p>全球赞助商</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- 輪播器 -->
+    <div class="carousel">
+        <div class="banner"></div>
+        <span class="prev"></span>
+        <span class="next"></span>
+        <div class="indicate">
+            <div class="slide active"></div>
+            <div class="slide"></div>
+        </div>
+    </div>
+
+    <!-- 跑馬燈 -->
+    <div class="marq">
+        <div class="container">
+            <i class="icon-speaker"></i>
+            <span>TitanK公告：</span>
+            <div class="message">
+                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, delectus </a>
+                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, delectus </a>
+            </div>
+            <i class="icon-service"></i>
+            <span class="online-service">在線客服</span>
+        </div>
+    </div>
+
+    <!-- 贊助商 -->
+    <div class="sponser" style="display:none;">
+        <div class="container">
+            <a href="">
+                <i></i>
+                <div>
+                    <p>意大利甲级联赛</p>
+                    <p>全球赞助商</p>
+                </div>
+            </a>
+            <a href="">
+                <i></i>
+                <div>
+                    <p>意大利甲级联赛</p>
+                    <p>全球赞助商</p>
+                </div>
+            </a>
+            <a href="">
+                <i></i>
+                <div>
+                    <p>意大利甲级联赛</p>
+                    <p>全球赞助商</p>
+                </div>
+            </a>
+            <a href="">
+                <i></i>
+                <div>
+                    <p>意大利甲级联赛</p>
+                    <p>全球赞助商</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 手機app區塊 -->
+    <div class="mobile-app">
+        <div class="container">
+            <div class="bg-mobile"></div>
+            <div>
+                <h1>方寸之间 从容尽显</h1>
+                <h3>业内最顶尖的手机投注APP</h3>
+                <a href="" class="active">體育APP</a>
+                <a href="">全站APP</a>
+                <p class="text">业内赔率最高！覆盖世界各地赛事,让球、大小、半全场、波胆、单双、
+                    总入球、连串过关等多元竞猜。更有动画直播、视频直播，让您体验轻
+                    松聊球，娱乐投注两不误 。</p>
+                <div class="content">
+                    <div>
+                        <i class="QR-code"></i>
+                        <h5>掃描下載APP</h5>
+                        <p>支持iOS & Android 全部移动设备</p>
+                        <a href="">www.titanK.app</a>
+                    </div>
+                    <div>
+                        <i class="entry"></i>
+                        <h5>无需下载直接访问</h5>
+                        <p>无需下载，手机输入网址即可访问</p>
+                        <a href="">www.titanK.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 體育投注區塊 -->
+    <div class="sport-bet">
+        <div class="container">
+            <h1>应有尽有 享你所有</h1>
+            <h3>每天为您提供近千场精彩赛事</h3>
+            <div class="main-sectiton">
+                <div class="match">
+                    <h4>美洲國家盃2019(在巴西)</h4>
+                    <p>2019-06-28 08:30:00</p>
+                    <div class="content">
+                        <div>
+                            <i class="icon-germany"></i>
+                            <p>德國</p>
+                        </div>
+                        <span>VS</span>
+                        <div>
+                            <i class="icon-british"></i>
+                            <p>英国</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="odds">
+                    <div class="lh-center">
+                        <p>勝1.19</p>
+                    </div>
+                    <div class="lh-center">
+                        <p>-1.5/2</p>
+                        <p>1.81</p>
+                    </div>
+                    <div>
+                        <p>大2.5/3</p>
+                        <p>1.91</p>
+                    </div>
+                    <div class="lh-center">
+                        <p>勝1.19</p>
+                    </div>
+                    <div>
+                        <p>-1.5/2</p>
+                        <p>1.81</p>
+                    </div>
+                    <div>
+                        <p>大2.5/3</p>
+                        <p>1.91</p>
+                    </div>
+                    <div>
+                        <p>大2.5/3</p>
+                        <p>1.91</p>
+                    </div>
+                    <a href="">进入投注</a>
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <div>
+                    <div class="match">
+                        <div>
+                            <i class="icon-denmark"></i>
+                            <p>丹麦</p>
+                        </div>
+                        <div>
+                            <h5>女子世界杯2019(在法国)</h5>
+                            <p class="date">
+                                2019-06-28 03:00:00
+                            </p>
+                            <a href="">进入投注</a>
+                        </div>
+                        <div>
+                            <i class="icon-italy"></i>
+                            <p>义大利</p>
+                        </div>
+                    </div>
+                    <div class="odds">
+                        <p>胜3.15</p>
+                        <p>负2.03</p>
+                        <p>平3.20</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="match">
+                        <div>
+                            <i class="icon-netherland"></i>
+                            <p>荷兰</p>
+                        </div>
+                        <div>
+                            <h5>女子世界杯2019(在法国)</h5>
+                            <p class="date">
+                                2019-06-28 03:00:00
+                            </p>
+                            <a href="">进入投注</a>
+                        </div>
+                        <div>
+                            <i class="icon-sweden"></i>
+                            <p>瑞典</p>
+                        </div>
+                    </div>
+                    <div class="odds">
+                        <p>胜3.15</p>
+                        <p>负2.03</p>
+                        <p>平3.20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 翻轉區塊 -->
+    <div class="sec-nav">
+        <div class="container">
+            <a href="" class="live-casino">
+                <div>
+                    <i class="icon-dice"></i>
+                    <p>真人娱乐</p>
+                    <p>LIVE CASINO</p>
+                </div>
+            </a>
+            <a href="" class="ele-contest">
+                <div>
+                    <i class="icon-mouse"></i>
+                    <p>TitanK电竞</p>
+                    <p>ELECTRIC CONTEST</p>
+                </div>
+            </a>
+            <a href="" class="lottery-game">
+                <div>
+                    <i class="icon-lottery"></i>
+                    <p>彩票投注</p>
+                    <p>LOTTERY GAME</p>
+                </div>
+            </a>
+            <a href="" class="video-game">
+                <div>
+                    <i class="icon-slot"></i>
+                    <p>捕鱼电玩</p>
+                    <p>VIEDEO GAME</p>
+                </div>
+            </a>
+            <a href="" class="chess-card">
+                <div>
+                    <i class="icon-chess"></i>
+                    <p>棋牌游戏</p>
+                    <p>CHESS AND CARD</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 優勢區塊 -->
+    <div class="adventage">
+        <div class="container">
+            <h1>凡所应有 无所不有</h1>
+            <h3>亚博为您提供最优质的服务</h3>
+            <div class="content">
+                <div>
+                    <i class="icon-dashboard-01"></i>
+                    <p>TitanK</p>
+                    <P>ADVENTAGE</P>
+                    <P>平均存款时间</P>
+                </div>
+                <div>
+                    <i class="icon-dashboard-02"></i>
+                    <p>TitanK</p>
+                    <P>ADVENTAGE</P>
+                    <P>合作支付平台</P>
+                </div>
+                <div>
+                    <i class="icon-dashboard-03"></i>
+                    <p>TitanK</p>
+                    <P>ADVENTAGE</P>
+                    <P>平均取款时间</P>
+                </div>
+                <div>
+                    <i class="icon-dashboard-04"></i>
+                    <p>TitanK</p>
+                    <P>ADVENTAGE</P>
+                    <P>合作游戏平台</P>
+                </div>
+            </div>
+            <div class="info">
+                <div>
+                    <i class="icon-adventage-01"></i>
+                    <div class="item">
+                        <h5>更专业</h5>
+                        <p>每天为您提供近千场精彩体育赛事，更有真人、彩票、电子游戏等多种娱乐方式 选择，让您拥有完美游戏体验。</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="icon-adventage-02"></i>
+                    <div class="item">
+                        <h5>更安全</h5>
+                        <p>独家开发，采用128位加密技术和严格的安全管理体系，客户资金得到最 完善的保障，让您全情尽享娱乐、赛事投注，无后顾之忧！</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="icon-adventage-03"></i>
+                    <div class="item">
+                        <h5>更便捷</h5>
+                        <p>引领市场的卓越技术，自主研发了全套终端应用，让您畅享 Web、H5，更有 iOS、Android原生App，让您随时随地，娱乐投注随心所欲！7×24小时在线
+                            客服提供最贴心、最优质的服务。</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="icon-adventage-04"></i>
+                    <div class="item">
+                        <h5>更快速</h5>
+                        <p>最新技术自主研发的财务处理系统，真正做到极速存、取、转。独家网络优 化技术，为您提供一流的游戏体验，最大优化网络延迟。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 頁腳 -->
+    <footer>
+        <div class="container">
+            <div class="cooperations">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="statement">
+                <p>亚博拥有欧洲马耳他博彩管理局（MGA）、英国GC监督委员会（Gambling Commission）和菲律宾政府博彩委员会（PAGCOR）颁发的合法执照。
+                    <br>
+                    注册于英属维尔京群岛，是受国际博彩协会认可的合法博彩公司。进行注册并娱乐前，请确保您年满18周岁！
+                </p>
+            </div>
+            <div class="license">
+                <a href="">
+                    <i class="license-01"></i>
+                    <p>英国GC监督委员会</p>
+                </a>
+                <a href="">
+                    <i class="license-02"></i>
+                    <p>马耳他博彩牌照（MGA）认证</p>
+                </a>
+                <a href="">
+                    <i class="license-03"></i>
+                    <p>英属维尔京群岛（BVI）认证</p>
+                </a>
+                <a href="">
+                    <i class="license-04"></i>
+                    <p>菲律宾（PAGCOR）监督博彩牌照</p>
+                </a>
+            </div>
+            <div class="help">
+                <a href="">新手帮助</a>
+                <a href="">博彩责任</a>
+                <a href="">隐私保护</a>
+                <a href="">规则条款</a>
+                <a href="">联系我们</a>
+                <a href="">合营计画</a>
+            </div>
+            <div class="sponser-team">
+                <a href="">
+                    <p>义甲联赛
+                        <br>
+                        全球赞助商
+                    </p>
+                </a>
+                <a href="">
+                    <p>义甲联赛
+                        <br>
+                        全球赞助商
+                    </p>
+                </a>
+                <a href="">
+                    <p>义甲联赛
+                        <br>
+                        全球赞助商
+                    </p>
+                </a>
+                <a href="">
+                    <p>义甲联赛
+                        <br>
+                        全球赞助商
+                    </p>
+                </a>
+            </div>
+            <p class="copyright">版权所有 ©2018-2019亚博 保留所有权</p>
+        </div>
+    </footer>
+</body>
+
+</html>

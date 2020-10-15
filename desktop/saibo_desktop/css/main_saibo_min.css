@@ -1,0 +1,6364 @@
+﻿:root{
+	
+	/*橢圓按鈕*/
+	--main-button-color: #2add4d;
+	--main-hover-color:#20ca42;
+	--main-color:#2add4d;
+	/*方型按鈕*/
+	--sec-button-color:linear-gradient( #2add4d, #11b832);
+	--signin-color:#2add4d;
+	--signup-color:#00b09b;
+	--sign-hover-color:rgb(68, 127, 255);
+	/*灰色按鈕*/
+	--grey-button-color:linear-gradient(#fff, #e5e5e5);
+		
+	/*電子遊戲暫用*/
+	--play-color:linear-gradient(to bottom, #2add4d, #0eaa50);
+	--go-hover-color:#2add4d;
+	--go-active-color:#2add4d;
+
+	/*按鈕陰影*/
+	--btn-shadow: 0 3px 15px rgba(42,221,77,0.7);
+}
+
+a{
+	text-decoration: none !important;
+}
+
+body,input,button{
+	font: 14px/150% "Microsoft YaHei", "Helvetica Neue", Arial, Helvetica, sans-serif !important ;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    padding-top:132px;
+    background-color:#f4f6f9;
+    color:#666 !important; 
+}
+
+p, a, button, input, li, span, label, h2, h3, h4, h5, h6{
+	letter-spacing: 1px;
+}
+
+/* antd message for login error */
+.ant-message-notice-content {
+	background: rgba(0, 0, 0, 0.75);
+	color: #c5c5c5;
+}
+
+/*語系*/
+header .container .default{
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	background-size: contain;
+}
+
+header .container .default.cn {
+	background-image: url(../images/index_header-contry.png);
+}
+
+header .container .default.eng {
+	background-image: url(../images/index_header-contry-eng.png)
+}
+
+header .container .default.vn {
+	background-image: url(../images/contry-vn-round.png)
+}
+
+.region {
+    margin: 0px;
+    padding: 0px;
+	position:absolute;
+    top:44px;
+	z-index:9999;
+	background: #fff;
+    border-radius: 5px;
+    color: #666;
+	width: 115px;
+	box-shadow: 0 4px 5px rgba(0,0,0,0.12);
+}
+
+.region li {
+	padding: 10px;
+	cursor: pointer;
+	font-size: 14px;
+	display: block;
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-size: 25px auto;
+	background-position: 10px center;
+	border-bottom: 1px solid #dfdfdf;
+	position: relative;
+	border-radius: 5px 5px 0 0;
+}
+
+.region li img{
+	width:25px;
+	height:auto;
+	margin-right:10px;
+}
+
+.region li:nth-child(1) {
+	background-image: url(../images/index_header-contry.png);
+}
+
+.region li:nth-child(2) {
+	background-image: url(../images/index_header-contry-eng.png);
+}
+
+.region li:nth-child(3) {
+	background-image: url(../images/contry-vn-round.png);
+}
+
+.region  li:nth-child(1):hover{
+    background-color:#f1f1f1;
+}
+
+.region  li:nth-child(2):hover{
+    background-color:#f1f1f1;
+    border-radius: 5px;
+}
+
+.region li:first-child::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: -6px;
+    border-style: solid;
+    border-width: 0px 6px 6px 6px;
+    border-color: transparent transparent #fff transparent;
+}
+/*語系End*/
+
+/*header*/
+header a{
+	cursor: pointer;
+}
+
+header,
+.logined-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #252c33;
+    z-index: 20;
+    color: #c0c0c0;
+    height: 81px;
+}
+header .container,
+.logined-header .container{
+    width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+	height: 81px;
+	position:relative;
+}
+
+header .container div:first-child{
+	display:flex;
+	align-items:center;
+}
+
+header .container div:first-child span:nth-child(2){
+    margin-right:8px;
+}
+
+header .container div:first-child span:nth-child(3){
+	margin-right: 8px;
+}
+
+header .container a{
+    color:#c0c0c0;
+}
+
+header .container a.home{
+    margin-left:40px;
+    border-right:1px solid #c0c0c0;
+    padding-right:8px;
+}
+
+header .container a.service{
+    padding-left:8px;
+}
+
+header .container a.service:nth-of-type(1){
+	/* display: none; */
+}
+
+header .container > div a:hover{
+    color:#fff;
+}
+
+header .container > div input{
+    border:1px solid #666;
+    width:130px;
+    padding:3px 0 3px 10px;
+    border-radius:5px;
+    color:#c0c0c0;
+	margin-right:5px;
+	transition: border .2s ease-in;
+}
+
+header .container > div input::placeholder{
+	font-size: 12px;
+}
+
+header .logo,
+.logined-header .logo{
+    width:234.5px;
+	height:40px;
+	cursor:pointer;
+    display:inline-block;
+    position:absolute;
+    left:50%;
+	transform:translateX(-50%);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-repeat: no-repeat;
+}
+
+header .logo,
+.logined-header .logo{
+    background-image: url(../images/header-logo-saibo.png);
+}
+
+header .container > div:last-child{
+    position:relative;
+}
+
+header .container > div input::placeholder{
+    color:#c0c0c0;
+}
+
+header .container > div input:focus{
+    border:2px solid #fff;
+}
+
+header .container > div span.forget{
+    position:absolute;
+    left:222px;
+    top:6px;
+    font-size:12px;
+    color:#7d91aa;
+    cursor:pointer;
+}
+
+header .container > div button{
+    display:inline-block;
+    padding:5px;
+    width:72px;
+	border-radius:5px;
+    color:#fff;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+header .container > div button.signin{
+    background:var(--signin-color);
+    margin-right:5px;
+}
+
+header .container > div button.signup{
+	background:var(--signup-color);
+}
+
+header .container > div button:hover{
+    background:var(--sign-hover-color);
+}
+
+/*登入header*/
+.logined-header{
+	color: #fff;
+}
+
+.logined-header .container div:first-child {
+	align-items: center;
+}
+
+.logined-header .container div:first-child span:nth-child(2) {
+	margin-right: 5px;
+}
+
+.logined-header .container span {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.logined-header .container a {
+	transition: all .2s ease;
+}
+
+.logined-header .container a:hover {
+	color: #fff;
+}
+
+.logined-header .container a.home {
+	margin-left: 40px;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 8px;
+}
+
+.logined-header .container a.service {
+	padding-left: 6px;
+}
+
+.logined-header .container>div{
+	position: relative;
+}
+
+.logined-header .container>div:last-child {
+	display: flex;
+	align-items: center;
+}
+
+.logined-header .container .name{
+	position: relative;
+	left: 25px;
+}
+
+.logined-header .container .line {
+	width: 35px;
+    height: 35px;
+    border-radius: 50%;
+	background: url(../images/icon-wallet0828.png) center/22px auto no-repeat;
+    position: relative;
+    right: -40px;
+    z-index: 1;
+} 
+
+.logined-header .container .mail-remind{
+	position: relative;
+	margin-left: 17px;
+	margin-right: 3px;
+	width: 20px;
+	height: 21px;
+	background: url(../images/icon-remind-bell.png) center/18px auto no-repeat;
+	cursor: pointer;
+}
+
+.logined-header .container .mail-remind .dot{
+	position: absolute;
+	top: -3px;
+	right: -5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: #2add4d;
+}
+
+.logined-header .container .wallet {
+	cursor: pointer;
+}
+
+.logined-header .container .balance {
+	color: #ecb82b;
+	visibility: visible;
+}
+
+.logined-header .container .deposit {
+	padding: 5px 15px;
+    background-image: linear-gradient(to bottom, #dddddd, #a2a2a2);
+    color: #262d33;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.8);
+}
+
+.logined-header .container div:last-child p{
+	visibility: hidden;
+}
+
+.logined-header .container .deposit:active{
+	transform: translateY(1px);
+}
+
+.logined-header .container .message {
+	color: #fff;
+}
+
+.logined-header .container .logout {
+	text-indent: -9999px;
+	width: 22px;
+	height: 20px;
+	background: url(../images/icon-logout.png) center/22px auto no-repeat;
+}
+
+.logined-header .container .deposit,
+.logined-header .container .logout{
+	margin-left: 18px;
+}
+
+/*導覽列*/
+nav{
+    width: 100%;
+    z-index: 19;
+    position: fixed;
+    top: 81px;
+    left: 0;
+    background: #fff;
+	height: 51px;
+	box-shadow: 0px 4px 5px rgba(0,0,0,0.12);
+}
+
+nav .container{
+    width:650px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height: 51px;
+}
+
+nav .container .container div{
+    height:45px;
+}
+
+nav .container .logo{
+    width:141px;
+    height:59px;
+    background:url(../images/logo.png) center center no-repeat;
+}
+
+nav .container a{
+    color:#666;
+    position:relative;
+    transition:all .3s linear;
+}
+
+nav .container a:hover{
+    color:var(--main-color);
+}
+
+nav .container a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:var(--main-color);
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    transition:all .3s linear;
+}
+
+nav .container a:hover::after{
+    width:40%;
+}
+
+nav .container i{
+    display:inline-block;
+    margin-left:5px;
+	margin-bottom:3px;
+	border: solid #666;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: 50% 75%;
+	transition: all .3s ease-in;
+}
+
+nav .container > div:hover i{
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	border-color: var(--main-color);
+}
+
+/*下拉選單*/
+
+.panel{
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    color:#333;
+    position:absolute;
+	top:-198px;
+    left:0;
+	z-index:10;
+	transition:all .4s ease-out;
+	box-shadow:0px 5px 8px rgba(15,15,15,0.2);
+}
+
+.panel .container a{
+	margin-right: 15px;
+}
+
+.panel .container a:last-child{
+	margin-right: 0;
+}
+
+.panel .container > div:last-child{
+	display: none;
+}
+
+.hovered{
+	top:132px;
+	position: fixed;
+}
+
+.panel .container{
+    width:1200px;
+    height:300px;
+    margin:auto;
+    display:flex;
+	align-items:center;
+	justify-content: center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+/*體育 下拉選單*/
+
+#panel-sports .container{
+	width: 1100px;
+	justify-content: space-around;
+}
+
+#panel-sports .container span:first-child{
+    width:260px;
+    height:300px;
+	background-position: center bottom;
+	background-size: 98% auto;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+}
+
+#panel-sports .container span.sbSport{
+	background-image:url(../images/panel-sport-oneworks0304.png);
+}
+
+#panel-sports .container span.gbSport{
+	background-image:url(../images/panel-sport-saibo.png);
+}
+
+#panel-sports .container span.pinacleSport{
+	background-image:url(../images/panel-sport-pinacle0304.png);
+}
+
+#panel-sports .container span.btiSport{
+	background-image:url(../images/panel-sport-bti.png);
+}
+
+#panel-sports .container span:first-child:hover{
+	background-size: 100% auto;
+}
+
+#panel-sports .container div:nth-child(2) .QR-code{
+    width:116px;
+    height:116px;
+    margin:10px 0;
+    display:inline-block;
+    background:url(../images/panel-qrcode.png) no-repeat center center;
+}
+
+#panel-sports .container div:nth-child(2) a{
+    color:var(--main-color);
+    display:block;
+}
+
+#panel-sports .container a p,
+#panel-sports .container span:last-child{
+	display: none;
+}
+
+#panel-sports .container div:nth-child(3) h2{
+    font-size:52px;
+    color:#000;
+    margin-bottom:30px;
+    margin-top:10px;
+}
+
+#panel-sports .container div:nth-child(3) p{
+    font-size:20px;
+    color:#666;
+}
+
+#panel-sports .container div:nth-child(3) button{
+    width: 183px;
+    height: 42px;
+    box-shadow: 0 5px 10px 0 rgba(216, 216, 216, 0.5);
+    border-radius: 20px;
+    margin-top: 22px;
+    color:#fff;
+    background:var(--main-button-color);
+    cursor:pointer;
+}
+
+#panel-sports .container div:nth-child(3) button:hover{
+    background:var(--main-hover-color);
+}
+
+/*電競下拉選單*/
+#panel-esports .container a{
+    text-align:center;
+    width:420px;
+    height:300px;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#panel-esports .container a:hover{
+    background:rgba(255,255,255,0.9);
+}
+
+#panel-esports .container a h2{
+	width: 140px;
+    height: 80px;
+	margin: 0px auto 20px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+#panel-esports .container .imone h2{
+	background-image: url(../images/panel-logo-imone.png);
+}
+
+#panel-esports .container .tfg h2{
+	background-image: url(../images/panel-logo-tfg.png);
+}
+
+#panel-esports .container .rg h2{
+	background-image: url(../images/panel-logo-ray.png);
+}
+
+#panel-esports .container a p{
+	color:#999;
+	display: none;
+}
+
+#panel-esports .container a span{
+	display:inline-block;
+    width:420px;
+    height:172px;
+	background-position: bottom center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#panel-esports .container a:hover span{
+	background-size:101% auto;
+}
+
+#panel-esports .container .imone span{
+	background-image:url(../images/panel-esport-ig2020.png)
+}
+
+#panel-esports .container .tfg span{
+	background-image:url(../images/panel-esport02.png)
+}
+
+#panel-esports .container .rg span{
+	background-image:url(../images/panel-esport-fpx.png)
+}
+
+#panel-esports .container div:last-child{
+	text-align:left;
+	margin-left: 30px;
+	display: none;
+}
+
+#panel-esports .container div:last-child p{
+    font-size:20px;
+}
+
+#panel-esports .container div:last-child p.refund{
+    font-size:17px;
+    color:#666;
+    margin:5px 0;
+}
+
+#panel-esports .container div:last-child span.rate{
+    background-image:url(../images/panel-number.png);
+    background-repeat:no-repeat;
+    width:144px;
+    height:76px;
+    display:block;
+}
+
+/*真人娛樂下拉選單*/
+#panel-livecasino .container{
+	width: 1050px;
+
+}
+
+#panel-livecasino .container a span:first-child{
+    width:210px;
+    height:300px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: inline-block;
+}
+
+#panel-livecasino .container a .logo-ag{
+	background-image:url(../images/panel-livecasino-ag0515.png);
+}
+
+#panel-livecasino .container a .logo-mg{
+	background-image:url(../images/panel-livecasino-mg0515.png);
+}
+
+#panel-livecasino .container a .logo-bbin{
+	background-image:url(../images/panel-livecasino-bbin0515.png);
+}
+
+#panel-livecasino .container a .logo-ebet{
+	background-image:url(../images/panel-livecasino-ebet0515.png);
+}
+
+#panel-livecasino .container a span:first-child:hover{
+	background-size: 105% auto;
+}
+
+#panel-livecasino .container a p{
+	margin:6px 0 10px 0;
+	display: none;
+}
+
+#panel-livecasino .container a span:last-child{
+	display:inline-block;
+    width:160px;
+	height:160px;
+	display: none;
+}
+
+#panel-livecasino .container a:nth-child(1) span:last-child{
+	background:url(../images/panel-livecasino01.png) center center / 100% auto no-repeat;
+}
+
+#panel-livecasino .container a:nth-child(2) span:last-child{
+	background:url(../images/panel-livecasino02.png) center center / 100% auto no-repeat;
+}
+
+#panel-livecasino .container a:nth-child(3) span:last-child{
+	background:url(../images/panel-livecasino03.png) center center / 100% auto no-repeat;
+}
+
+#panel-livecasino .container a:nth-child(4) span:last-child{
+	background:url(../images/panel-livecasino04.png) center center / 100% auto no-repeat;
+}
+
+#panel-livecasino .container a:nth-child(5) span:last-child{
+	background:url(../images/panel-livecasino05.png) center center / 100% auto no-repeat;
+}
+
+#panel-livecasino .container a:hover span:last-child{
+	background-size:101% auto;
+}
+
+/*電子遊戲 下拉選單*/
+#panel-slotgame .container a{
+    text-align:center;
+    height:300px;
+    display:block;
+	color:#333;
+	margin-right: 30px;
+}
+
+#panel-slotgame .container a:nth-last-of-type(1){
+	margin-right: 0;
+}
+
+#panel-slotgame .container a:hover{
+    background:#fff;
+}
+
+#panel-slotgame .container a span:first-child{
+    display:inline-block;
+    width:113px;
+    height:39px;
+	margin-top:35px;
+	background-position: center;
+	background-size: 113px auto;
+	background-repeat: no-repeat;
+}
+
+#panel-slotgame .container a .logo-bbin{
+    background-image: url(../images/panel-slot-logo-bbin0827.png);
+}
+
+#panel-slotgame .container a .logo-pt{
+    background-image: url(../images/panel-slot-pt.png);
+}
+
+#panel-slotgame .container a .logo-mg{
+    background-image: url(../images/panel-slot-mg.png);
+}
+
+#panel-slotgame .container a .logo-hb{
+    background-image: url(../images/panel-slot-hb.png);
+}
+
+#panel-slotgame .container a .logo-ag{
+    background-image: url(../images/panel-slot-ag.png);
+}
+
+#panel-slotgame .container a .logo-pg{
+    background-image: url(../images/panel-slot-pg.png);
+}
+
+#panel-slotgame .container a .logo-gamatron{
+    background-image: url(../images/panel-slot-logo-gamatron.png);
+}
+
+#panel-slotgame .container a p{
+    margin:7px 0 10px 0;
+}
+
+#panel-slotgame .container a span:last-child{
+    display:inline-block;
+    width:160px;
+	height:160px;
+	background-size: 90% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#panel-slotgame .container a.logo-bbin span:last-child{
+    background-image: url(../images/panel-slot-bbin0827.png);
+}
+
+#panel-slotgame .container a.logo-pt span:last-child{
+    background-image: url(../images/panel-slot-pt0827.png);
+}
+
+#panel-slotgame .container a.logo-mg span:last-child{
+    background-image: url(../images/panel-slot-mg0827.png);
+}
+
+#panel-slotgame .container a.logo-hb span:last-child{
+    background-image: url(../images/\ panel-slot-hb0827.png);
+}
+
+#panel-slotgame .container a.logo-ag span:last-child{
+    background-image: url(../images/panel-slot-ag0827.png);
+}
+
+#panel-slotgame .container a.logo-pg span:last-child{
+    background-image: url(../images/panel-slot-pg0827.png);
+}
+
+#panel-slotgame .container a.logo-gamatron span:last-child{
+    background-image: url(../images/panel-slot-gamatron.png);
+}
+
+#panel-slotgame .container a:hover span:last-child{
+	background-size:92% auto;
+}
+
+#panel-slotgame .container div:last-child{
+	text-align:left;
+	margin-left: 30px;
+	display: none;
+}
+
+/*棋牌 下拉選單*/
+#panel-chessgame .container{
+    justify-content:center;
+}
+#panel-chessgame .container a{
+    text-align:center;
+    height:300px;
+    display:flex;
+    align-items:center;
+    color:#333;
+    font-size:16px;
+}
+
+#panel-chessgame .container a span{
+	display:inline-block;
+    width:177px;
+    height:300px;
+    margin-right:15px;
+}
+
+#panel-chessgame .container a:first-child span{
+	background:url(../images/panel-chess01.png) center center / 100% auto no-repeat;
+}
+
+#panel-chessgame .container a:nth-child(2) span{
+	background:url(../images/panel-chess02.png) center center / 100% auto no-repeat;
+}
+
+#panel-chessgame .container a:nth-child(3) span{
+	background:url(../images/panel-chess03.png) center center / 100% auto no-repeat;
+}
+
+#panel-chessgame .container a  .item h3{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+#panel-chessgame .container a  .item p:nth-child(2){
+    color:#666;
+}
+
+#panel-chessgame .container a  .item p:nth-child(3){
+    font-size:15px;
+    color:#666;
+}
+
+/*贊助 下拉選單*/
+#panel-sponser .container{
+	width: 870px;
+}
+
+#panel-sponser .container a{
+    text-align:center;
+    display:block;
+	color:#333;
+	height: 100%;
+}
+
+#panel-sponser .container a:hover{
+    background:#fff;
+}
+
+#panel-sponser .container a span:first-child{
+    display:inline-block;
+    width:113px;
+    height:39px;
+    margin-top:35px;
+}
+
+#panel-sponser .container a .title{
+	font-size: 18px;
+	color: var(--main-color);
+	margin-bottom: 5px;
+}
+
+#panel-sponser .container a span:first-child{
+    display:inline-block;
+    width:160px;
+	height:160px;
+}
+
+#panel-sponser .container a:nth-child(1) span:first-child{
+    background: url(../images/panel-sponser01.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(2) span:first-child{
+    background: url(../images/panel-sponser02.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(3) span:first-child{
+    background: url(../images/panel-sponser03.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(4) span:first-child{
+    background: url(../images/panel-sponser04.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(5) span:first-child{
+    background: url(../images/panel-sponser05.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:nth-child(6) span:first-child{
+    background: url(../images/panel-sponser06.png) center center / 90% auto no-repeat;
+}
+
+#panel-sponser .container a:hover span:first-child{
+	background-size:92% auto;
+}
+
+#panel-sponser .container .item{
+    font-size: 14px;
+}
+
+#panel-sponser .container .item h3{
+	color:var(--main-color);
+	font-size: 16px;
+}
+
+/*theme100*/
+.carousel {
+	position: relative;
+	min-width: 1200px;
+	height: 500px;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.carousel .slide{
+	min-width: 1200px;
+	height: 500px;
+}
+
+/*theme100*/
+.carousel .prev,
+.carousel .next{
+    display:inline-block;
+    width:36px;
+    height:72px;
+    background-color:rgba(0,0,0,0.6);
+    position:absolute;
+	cursor:pointer;
+	z-index:1;
+}
+
+.carousel .prev{
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    border-radius:0 5px 5px 0;
+    background-image:url(../images/arrow-prev-carousel.png);
+    background-repeat:no-repeat;
+}
+
+.carousel .next{
+    top:50%;
+    right:0;
+    transform:translateY(-50%);
+    border-radius:5px 0px 0px 5px;
+    background-image:url(../images/arrow-next-carousel.png);
+    background-repeat:no-repeat;
+}
+
+.carousel .indicates {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.carousel .indicates .square {
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.4);
+	width: 50px;
+	height: 7px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.carousel .indicates .square:hover {
+	background: var(--main-color);
+}
+
+.carousel .indicates .active,
+.carousel .indicates .active:hover {
+	background: var(--main-color);
+}
+
+/*跑馬燈*/
+.marq{
+	min-width: 1200px;
+    height:34px;
+    background:#fff;
+}
+.marq .container{
+    width:1200px;
+    height:34px;
+    margin:auto;
+    display:flex;
+	align-items:center;
+	position: relative;
+}
+
+.marq .container .icon-speaker{
+    width:26px;
+    height:26px;
+    background-image:url(../images/marq-speaker.png);
+	background-repeat:no-repeat;
+	background-size: 26px auto;
+}
+
+.marq .container .message{
+    width:1060px;
+    overflow:hidden;
+	white-space:nowrap;
+	margin: 0 9px;
+}
+
+.marq .container .message marquee{
+	display: flex;
+	align-items: center;
+}
+
+.marq .container .icon-service{
+    width:30px;
+    height:30px;
+    background-image:url(../images/marq-livechat.png);
+	background-repeat:no-repeat;
+	background-size: 30px auto;
+	margin-right: 5px;
+	position: absolute;
+	right: 62px;
+	top: 2px;
+}
+
+.marq .container .message a{
+    color:#666;
+	margin-right:135px;
+	display: inline-block;
+}
+
+.marq .container .online-service{
+    cursor:pointer;
+	color:var(--main-color);
+	position: absolute;
+	right: 0;
+	top: 7px;
+}
+
+.marq .container .online-service:hover{
+	color:var(--main-hover-color);
+}
+
+/*贊助區塊*/
+.sponser{
+    margin-top:30px;
+}
+
+.sponser .container {
+	width:1200px;
+    margin:auto;
+    display:flex;
+	justify-content:space-between;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 3px 7px rgba(25, 25, 25, 0.1);
+	overflow: hidden;
+}
+
+.sponser .container a{
+    width:11%;
+    display:block;
+    color:#666;
+    height:78px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+	transition:all .2s ease;
+	position: relative;
+	font-size: 13px;
+}
+
+.sponser .container a:first-child,
+.sponser .container a:last-child{
+	cursor: default;
+}
+
+.sponser .container a::after{
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 30%;
+	background-color: #d4d4d4;
+	right: -4px;
+}
+
+.sponser .container a:last-child::after{
+	width: 0;
+}
+
+.sponser .container a i{
+    width:31px;
+    height:59px;
+    background-repeat: no-repeat;
+    background-position:center center;
+	margin-right:5px;
+	background-size: contain;
+}
+
+.sponser .container a .southampton{
+	background-image: url(../images/sponser-southampton.png);
+}
+
+.sponser .container a .watford{
+	background-image: url(../images/sponser-watford.png);
+}
+
+.sponser .container a .flamengo{
+	background-image: url(../images/sponser-vol.png);
+}
+
+.sponser .container a .rosario-central{
+	background-image: url(../images/sponser-cdbc.png);
+}
+
+.sponser .container a .conifa{
+	background-image: url(../images/sponser-conifa.png);
+}
+
+.sponser .container a .denilson{
+	background-image: url(../images/sponser-brazil.png);
+}
+
+.sponser .container a .imperial{
+	background-image: url(../images/sponser-imperial.png);
+}
+
+.sponser .container a .arsenal,
+.sponser .container a .arsenal-female{
+	background-image: url(../images/sponser-arsena.png);
+}
+
+.sponser .container a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+.sponser .container a:hover::after{
+	width: 0;
+}
+
+/*體育＆遊樂場*/
+.sport-and-casino{
+	width: 1200px;
+	margin: auto;
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.sport-and-casino .container{
+	width: 49%;
+	height: 300px;
+	padding: 40px 50px;
+	background-color: #fff;
+	box-shadow: 0 3px 7px rgba(25, 25, 25, 0.1);
+	border-radius: 5px;
+	position: relative;
+}
+
+.sport-and-casino .container .title{
+	font-size: 36px;
+	color: var(--main-color);
+	line-height: 1;
+	margin-bottom: 50px;
+	font-weight: bold;
+}
+
+.sport-and-casino .container .text{
+	width: 195px;
+}
+
+.sport-and-casino .container a{
+	width: 135px;
+	height: 40px;
+	display: block;
+	background: var(--main-button-color);
+	border-radius: 20px;
+	line-height: 40px;
+	text-indent: 30px;
+	color: #fff;
+	position: absolute;
+	left: 50px;
+	bottom: 40px;
+	transition: left .2s ease-in;
+}
+
+.sport-and-casino .container a:hover{
+	left: 60px;
+	box-shadow: var(--btn-shadow);
+}
+
+.sport-and-casino .container a::before,
+.sport-and-casino .container a::after{
+	content: '';
+	position: absolute;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	padding: 3px;
+	top: 50%;
+	transform: rotate(-45deg) translateY(-50%);
+}
+
+.sport-and-casino .container a::before{
+	right: 28px;
+}
+
+.sport-and-casino .container a::after{
+	right: 34px;
+}
+
+.sport-and-casino .container span{
+	width: 325px;
+	height: 300px;
+	background-position: right center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.sport-and-casino .container .img-computer{
+	background-image: url(../images/sport-and-casino-img-computer.png);
+}
+
+.sport-and-casino .container .img-poker{
+	background-image: url(../images/sport-and-casino-img-poker.png);
+}
+
+/*手機裝置區塊*/
+.mobile-app{
+    margin-top:80px;
+}
+
+.mobile-app .container{
+    width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+.mobile-app .container .bg-mobile{
+    width:720px;
+    height:560px;
+    background-image:url(../images/bg-app-mockup0609.png);
+    background-repeat:no-repeat;
+}
+
+.mobile-app .container > div:last-child{
+	width:455px;
+}
+
+
+.mobile-app .container > div:last-child h1{
+    width:400px;
+    font-size:48px;
+    font-weight:300;
+    background: var(--main-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	padding: 15px 0 30px 0;
+	margin-top: 40px;
+}
+
+.mobile-app .container > div:last-child h3{
+    width:325px;
+    font-size:24px;
+    margin-bottom:20px;
+    background: var(--main-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom:5px;
+}
+
+.mobile-app .container > div:last-child h3 ~ a{
+    display:inline-block;
+	width: 194px;
+	height: 56px;
+	text-align: center;
+	line-height: 56px;
+    border-radius: 50px;
+    color: #fff;
+    background:var(--main-button-color);
+    box-shadow: 0 6px 10px 0px rgba(105, 105, 105, 0.3);
+    margin-right:15px;
+}
+
+.mobile-app .container > div:last-child h3 ~ a:hover{
+    background:var(--main-hover-color);
+    color:#fff;
+}
+
+.mobile-app .container > div:last-child .text{
+    margin-top:30px;
+    line-height:1.5;
+}
+
+.mobile-app .container > div:last-child .content{
+	display:flex;
+	align-items: center;
+	width: 450px;
+	margin-top: 30px;
+}
+
+.mobile-app .container > div:last-child .content i{
+	margin-right: 25px;
+    width:133px;
+    height:133px;
+    display:inline-block;
+}
+
+.mobile-app .container > div:last-child .content .QR-code{
+	background:url(../images/qrcode-sb-0706.png) center / 133px auto no-repeat;
+}
+
+/* .mobile-app .container > div:last-child .content .QR-code.beta{
+	background:url(../images/fast-link-qrcode-saibo0309.png) center / 133px auto no-repeat;
+} */
+
+.mobile-app .container > div:last-child .content .entry{
+    background:url(../images/fast-link-web.png) center / 133px auto no-repeat;
+}
+
+.mobile-app .container > div:last-child .content .qrcode-android {
+    background: url(../images/saibo-android_202003072.png) center / 133px auto no-repeat;
+}
+
+.mobile-app .container > div:last-child .content .qrcode-ios {
+    background: url(../images/saibo-ios_20190306.png) center / 133px auto no-repeat;
+}
+
+.mobile-app .container > div:last-child .content h5{
+	color: #000;
+	font-size: 19px;
+	margin-bottom: 5px;;
+}
+
+.mobile-app .container .content__text{
+	font-size: 13px;
+}
+
+.mobile-app .container .content__btn{
+	display: inline-block;
+	margin-top: 10px;
+	width: 120px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	text-indent: 20px;
+	border-radius: 20px;
+	color: #fff;
+	background-color: var(--main-color);
+	background-size: 23px auto;
+	background-position: 15px center;
+	background-repeat: no-repeat;
+	transition: background-color .3s ease-in-out;
+	cursor: pointer;
+}
+
+.mobile-app .container .content__btn:hover{
+	background-color: var(--main-hover-color);
+}
+
+.mobile-app .container .content__btn--android{
+	background-image: url(../images/icon-android.png);
+	margin-right: 10px;
+}
+
+.mobile-app .container .content__btn--ios{
+	background-image: url(../images/icon-ios.png);
+}
+
+/*體育投注*/
+.sport-bet{
+    margin-top:80px;
+}
+
+.sport-bet .container{
+    width:1200px;
+    margin:auto;
+    background-image:url(../images/bg-sport-bet.png);
+    background-repeat:no-repeat;
+    background-position:right center;
+}
+
+.sport-bet .match .content .icon-germany{
+    display:inline-block;
+    width:74px;
+    height:74px;
+    background-image:url(../images/contry-germany.png);
+    background-repeat:no-repeat;
+}
+
+.sport-bet .match .content .icon-british{
+    display:inline-block;
+    width:74px;
+    height:74px;
+    background-image:url(../images/contry-british.png);
+    background-repeat:no-repeat;
+}
+
+.sport-bet .match .icon-denmark{
+    display:inline-block;
+    width:74px;
+    height:74px;
+    background-image:url(../images/contry-denmark.png);
+    background-repeat:no-repeat;
+}
+
+.sport-bet .match .icon-italy{
+    display:inline-block;
+    width:74px;
+    height:74px;
+    background-image:url(../images/contry-italy.png);
+    background-repeat:no-repeat;
+}
+
+.sport-bet .match .icon-netherland{
+    display:inline-block;
+    width:74px;
+    height:74px;
+    background-image:url(../images/contry-netherland.png);
+    background-repeat:no-repeat;
+}
+
+.sport-bet .match .icon-sweden{
+    display:inline-block;
+    width:74px;
+    height:74px;
+    background-image:url(../images/contry-sweden.png);
+    background-repeat:no-repeat;
+}
+
+.sport-bet .container .main-sectiton{
+    display:flex;
+    background:#fff;
+    width:644px;
+    padding:20px;
+    box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	border-radius:10px;
+}
+
+.sport-bet .container h1{
+    width:400px;
+    font-size:48px;
+    font-weight:300;
+    background: var(--main-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	padding: 15px 0 30px 0;
+}
+
+.sport-bet .container h3{
+    width: 325px;
+    font-size:24px;
+    margin-bottom:20px;
+    background: var(--main-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	padding-bottom:5px;
+}
+
+.sport-bet .container .main-sectiton .match{
+    text-align:center;
+    width:47%;
+}
+
+.sport-bet .container .main-sectiton .match h4{
+    font-size:22px;
+    color:var(--main-color);
+}
+
+.sport-bet .container .main-sectiton .match h4 + p{
+    margin:5px 0 20px 0;
+    color:var(--main-color);
+}
+
+.sport-bet .container .main-sectiton .match .content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.sport-bet .container .main-sectiton .match .content span{
+    font-size:23px;
+    font-weight:800;
+    color:grey;
+}
+
+.sport-bet .container .main-sectiton .odds{
+    display:flex;
+    flex-wrap:wrap;
+    width:49%;
+    margin-left:20px;
+}
+
+.sport-bet .container .main-sectiton .odds div{
+    width:88px;
+    height:45px;
+    text-align: center;
+    margin-left: 10px;
+    background-color: #eef2f6;
+    border-radius: 5px;
+}
+
+.sport-bet .container .main-sectiton .odds a{
+    background: var(--main-button-color);
+    color: #fff;
+    width:180px;
+    height:38px;
+    border-radius: 20px;
+    text-align:center;
+    line-height:38px;
+    margin-left:15px;
+    margin-top:5px;
+}
+
+.sport-bet .container .main-sectiton .odds a:hover{
+    background-image: var(--main-hover-color);
+    box-shadow: 0 0 4px #999;
+}
+
+.sport-bet .container .main-sectiton .odds .lh-center{
+    line-height:45px;
+}
+
+.sport-bet .container .bottom-section{
+    display:flex;
+    width:644px;
+    justify-content:space-between;
+	margin-top:20px;
+}
+
+.sport-bet .container .bottom-section > div{
+    width:314px;
+    padding:20px;
+    box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+    border-radius: 10px;
+    background:rgba(255,255,255,0.9);
+}
+
+.sport-bet .container .bottom-section .match{
+    display:flex;
+    text-align:center;
+    align-items: center;
+}
+
+.sport-bet .container .bottom-section .match h5{
+    font-size:16px;
+    color:var(--main-color);
+}
+
+.sport-bet .container .bottom-section .match .date{
+    font-size:12px;
+    color:var(--main-color);
+}
+
+.sport-bet .container .bottom-section .match a{
+    background: var(--main-button-color);
+    color: #fff;
+    padding: 3px 22px;
+    border-radius: 20px;
+    display:inline-block;
+}
+
+.sport-bet .container .bottom-section .match a:hover{
+    background: var(--main-hover-color);
+    box-shadow: 0 0 4px #999;
+}
+
+.sport-bet .container .bottom-section .odds{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
+
+.sport-bet .container .bottom-section .odds p{
+    width:81px;
+    height:36px;
+    line-height:36px;
+    background:#eef2f6;
+    text-align:center;
+    border-radius:5px;
+}
+
+
+
+/*翻轉選單*/
+.sec-nav{
+	margin-top:100px;
+}
+
+.sec-nav .container{
+    width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+.sec-nav a{
+    display:block;
+    width:200px;
+    height:450px;
+    color:#fff;
+    text-align:center;
+	position:relative;
+	transition:all .2s ease;
+	cursor: default;
+}
+
+.sec-nav a .content{
+    width:200px;
+    height:450px;
+    background-repeat:no-repeat;
+    background-position:center center;
+    position:absolute;
+    top:0;
+    left:0;
+    transition:all .4s ease-out;
+}
+
+.sec-nav a .flip{
+    position: absolute;
+    top:0;
+    left:0;
+    width:200px;
+    height:450px;
+    opacity:0;
+    transition:all .6s ease;
+    transform: scaleX(0.2);
+    background:url(../images/flipnav-bg-saibo.png) center center / cover no-repeat;
+	text-align:center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sec-nav a .flip .line{
+    width:85px;
+    height:1px;
+    background:rgba(255,255,255,0.4);
+	margin:10px auto;
+	display: none;
+}
+
+.sec-nav a .flip span{
+    display:inline-block;
+	opacity:1;
+	width: 130px;
+	height: 24px;
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	padding-top: 24px;
+	margin-bottom: 45px;
+	position: relative;
+	cursor: pointer;
+}
+
+.sec-nav a .flip span::after{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background-color: rgba(255,255,255,0.5);
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sec-nav a .flip span:last-child::after{
+	height: 0;
+}
+
+.sec-nav a .flip span:last-child{
+	margin-bottom: 0;
+}
+
+.sec-nav a:hover .flip{
+    transform: scale(1.1);
+    opacity:1;
+}
+
+.sec-nav a:hover .flip div:first-child{
+	margin-top: 15px;
+}
+
+.sec-nav a .flip .ae{
+    background-image: url(../images/secnav-flip-ae.png);
+}
+
+.sec-nav a .flip .lng{
+    background-image: url(../images/secnav-flip-loong.png);
+}
+
+.sec-nav a .flip .bg{
+    background-image: url(../images/secnav-flip-bolegaming.png);
+}
+
+.sec-nav a .flip .ag{
+    background-image: url(../images/secnav-flip-ag.png);
+}
+
+.sec-nav a .flip .pt{
+    background-image: url(../images/secnav-flip-pt.png);
+}
+
+.sec-nav a .flip .imesport{
+	background-image: url(../images/secnav-flip-im.png);
+	height: 30px;
+	padding-top: 30px;
+}
+
+.sec-nav a .flip .gb{
+	background-image: url(../images/secnav-flip-gb.png);
+	height: 30px;
+	padding-top: 30px;
+}
+
+.sec-nav a .flip .hb{
+	background-image: url(../images/secnav-flip-hb.png);
+	height: 30px;
+	padding-top: 30px;
+}
+
+.sec-nav a .flip .ky{
+	background-image: url(../images/secnav-flip-ky.png);
+}
+
+.sec-nav a .flip .onework-sport{
+	background-image: url(../images/secnav-flip-oneworks.png);
+}
+
+.sec-nav a .flip .saibo{
+    background-image: url(../images/secnav-flip-saibo.png);
+}
+
+.sec-nav a .flip .onework{
+    background-image: url(../images/secnav-flip-oneworks.png);
+}
+
+.sec-nav a .flip .pinnacle{
+    background-image: url(../images/secnav-flip-pinnacle.png);
+}
+
+.sec-nav a .flip .bti{
+    background-image: url(../images/secnav-flip-pinnacle.png);
+}
+
+.sec-nav a .flip .tfg{
+    background-image: url(../images/secnav-flip-tfg.png);
+}
+
+.sec-nav a .flip .rg{
+    background-image: url(../images/secnav-flip-rg0601.png);
+}
+
+.sec-nav a .flip .mg{
+	background-image: url(../images/secnav-flip-mg.png);
+	height: 30px;
+	padding-top: 30px;
+}
+
+.sec-nav a .flip .bbin{
+    background-image: url(../images/secnav-flip-bbin.png);
+}
+
+.sec-nav a .flip .gti{
+	background-image: url(../images/secnav-flip-gti.png);
+}
+
+.sec-nav a .flip .bolegaming{
+    background-image: url(../images/secnav-flip-bolegaming.png);
+}
+
+.sec-nav a .flip .loong{
+    background-image: url(../images/secnav-flip-loong.png);
+}
+
+.sec-nav a .flip .ebet{
+    background-image: url(../images/secnav-flip-ebet.png);
+}
+
+.sec-nav a:hover .content{
+    transform:scaleX(0.2);
+    opacity:0;
+}
+
+.sec-nav a.live-casino .content{
+    background-image: url(../images/flipnav-livecasino-saibo.png);
+}
+
+.sec-nav a.ele-contest .content{
+    background-image: url(../images/flipnav-esport-saibo.png);
+}
+
+.sec-nav a.lottery-game .content{
+    background-image: url(../images/flipnav-lottery-saibo.png);
+}
+
+.sec-nav a.video-game .content{
+    background-image: url(../images/flipnav-slot-saibo.png);
+}
+
+.sec-nav a.chess-card .content{
+    background-image: url(../images/flipnav-chess-saibo.png);
+}
+
+.sec-nav a .content div{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:25px;
+}
+
+.sec-nav a .content div .icon{
+    width:46px;
+    height:46px;
+    display:inline-block;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.sec-nav a .content div .icon-dice{
+    background-image:url(../images/flipnav-icon-dice.png);
+}
+
+.sec-nav a .content div .icon-mouse{
+    background-image:url(../images/flipnav-icon-mouse.png);
+}
+
+.sec-nav a .content div .icon-lottery{
+    background-image:url(../images/flipnav-icon-lottery.png);
+}
+
+.sec-nav a .content div .icon-slot{
+    background-image:url(../images/flipnav-icon-slot.png);
+}
+
+.sec-nav a .content div .icon-chess{
+    background-image:url(../images/flipnav-icon-poker.png);
+}
+
+.sec-nav a .content div .icon-sports{
+    background-image:url(../images/flipnav-icon-sports.png);
+}
+
+.sec-nav a .content p:last-child{
+    font-size:12px;
+    width:150px;
+}
+
+
+
+/*titanK優勢*/
+.adventage{
+    margin:80px 0;
+}
+
+.adventage .container{
+    width:1200px;
+    margin:auto;
+}
+
+.adventage .container h1{
+    width:400px;
+    font-size:48px;
+    text-align:center;
+    background: var(--main-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 15px 0 30px 0;
+    margin-left:50%;
+	transform:translateX(-50%);
+	font-weight: 300;
+}
+
+.adventage .container h3{
+    width:325px;
+    font-size:24px;
+    text-align:center;
+    background: var(--main-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 5px;
+    margin-left:50%;
+    transform:translateX(-50%);
+}
+
+.adventage .container .content{
+    display:flex;
+    justify-content:space-between;
+    margin-top:40px;
+}
+
+.adventage .container .content i{
+	width:131px;
+    height:115px;
+    display:inline-block;
+	background-size: cover;
+	background-position: center;
+    background-repeat:no-repeat;
+}
+
+.adventage .container .content .icon-dashboard-01{
+    background-image:url(../images/adventage-top-icon01-saibo.png);
+}
+
+.adventage .container .content .icon-dashboard-02{
+    background-image:url(../images/adventage-top-icon02-saibo.png);
+}
+
+.adventage .container .content .icon-dashboard-03{
+    background-image:url(../images/adventage-top-icon03-saibo.png);
+}
+
+.adventage .container .content .icon-dashboard-04{
+    background-image:url(../images/adventage-top-icon04-saibo.png);
+}
+
+.adventage .container .content > div {
+    text-align:center;
+}
+
+
+.adventage .container .content > div p:nth-child(2){
+	margin-bottom:-5px;
+	display: none;
+}
+
+.adventage .container .content > div p:nth-child(2),
+.adventage .container .content > div p:nth-child(3){
+    font-size:12px;
+    color:var(--main-color);
+}
+
+.adventage .container .content > div p:nth-child(4){
+    font-size:16px;
+}
+
+.adventage .container .info{
+    display:flex;
+    flex-wrap:wrap;
+	margin-top:38px;
+	justify-content: space-between;
+}
+
+.adventage .container .info > div {
+    display:flex;
+    width:48%;
+	align-items:center;
+	margin-bottom:30px;
+}
+
+.adventage .container .info > div .item{
+    width:450px;
+}
+
+.adventage .container .info > div i{
+	width:80px;
+    height:78px;
+    display:inline-block;
+    margin-right:31px;
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.adventage .container .info > div .icon-adventage-01{
+    background-image:url(../images/adventage-bot-icon01-saibo.png);
+}
+
+.adventage .container .info > div .icon-adventage-02{
+    background-image:url(../images/adventage-bot-icon02-saibo.png);
+}
+
+.adventage .container .info > div .icon-adventage-03{
+    background-image:url(../images/adventage-bot-icon03-saibo.png);
+}
+
+.adventage .container .info > div .icon-adventage-04{
+    background-image:url(../images/adventage-bot-icon04-saibo.png);
+}
+
+.adventage .container .info > div h5{
+    font-size:18px;
+    color:var(--main-color);
+}
+
+/*電子遊戲頁standard 開始*/
+#slot-standard {
+}
+
+#slot-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0;
+}
+
+#slot-standard .container .games {
+    width: 1200px;
+}
+
+#slot-standard .container .games .recommand {
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	background:var(--section-bgcolor);
+	margin-bottom: 20px;
+	padding: 25px;
+	border-radius:10px;
+	height: 275px;
+}
+
+#slot-standard .container .games .recommand h2 {
+	margin-bottom: 20px;
+    color: var(--main-color);
+    font-weight:1000;
+	font-size:21px;
+}
+
+#slot-standard .container .games .recommand .content {
+	display: flex;
+	justify-content: space-between;
+}
+
+#slot-standard .container .games .recommand .dots {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#slot-standard .container .games .recommand .dots .active,
+#slot-standard .container .games .recommand .dots .active:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+#slot-standard .container .games .recommand .dots span {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: 3px;
+}
+
+#slot-standard .container .games .recommand .dots span:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#slot-standard .container .games .recommand .content .slide {
+	display: flex;
+	overflow: hidden;
+}
+
+#slot-standard .container .games .recommand .content .slide .item {
+    margin-right: 10px;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry {
+	position: relative;
+	width: 199px;
+	overflow: hidden;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	height: 133px;
+	background-color: #d8d8d8;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry img {
+	width: 199px;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .tag {
+	position: absolute;
+	left: 0;
+	top: 20px;
+	padding: 5px 10px;
+	background: var(--signin-color);
+	color: #fff;
+	font-size:12px;
+	display: none;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+	width: 199px;
+	height: 148px;
+	transition: all 0.3s ease;
+}
+#slot-standard .container .games .recommand .content .slide .entry .link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a {
+	display: block;
+	border-radius: 5px;
+	padding: 5px 15px;
+	opacity: 0;
+	color: #fff;
+}
+
+
+#slot-standard .container .games .recommand .content .slide .entry:hover img {
+	transform: scale(1.2);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover a {
+	opacity: 1;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go{
+    background: var(--play-color);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+	color:#fff;
+	margin-bottom: 10px;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go:hover{
+	background:var(--go-hover-color);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go:active{
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free{
+    background-image: linear-gradient(180deg, #666, #333);
+    border: 1px solid #333;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free:hover{
+	background: #666;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free:active{
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .recommand .content .slide .name {
+	width: 199px;
+	text-align: center;
+	color: #666;
+	margin-top: 10px;
+}
+
+#slot-standard .container .games .total-games {
+	padding-bottom: 30px;
+	background:#fff;
+    border-radius:0 0 10px 10px;
+    box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+}
+
+#slot-standard .container .games .total-games .navbar {
+	background: #efefef;
+	position: relative;
+}
+
+#slot-standard .container .games .total-games .navbar a {
+	display: inline-block;
+	padding: 25px;
+	color: #666;
+	font-weight: bold;
+	position: relative;
+	transition: all .3s ease;
+}
+
+#slot-standard .container .games .total-games .navbar a::after{
+	content: '';
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    background: rgba(255,255,255,1);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+#slot-standard .container .games .total-games .navbar a::before{
+	content: '';
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    background: rgba(0,0,0,0.1);
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1px;
+}
+
+#slot-standard .container .games .total-games .navbar a:hover {
+	background: var(--main-button-color);
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar .active,
+#slot-standard .container .games .total-games .navbar .active:hover {
+	background: var(--main-button-color);
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar input {
+	display: inline-block;
+	height: 40px;
+	text-indent: 10px;
+    vertical-align:middle;
+	border-top:1px solid var(--main-color);
+	border-bottom:1px solid var(--main-color);
+	border-left:1px solid var(--main-color);
+	position: absolute;
+	top: 15px;
+	right: 85px;
+	color: #666;
+	background-color: #fff;
+	border-radius: 10px 0 0 10px;
+}
+
+#slot-standard .container .games .total-games .navbar button {
+	border-top:1px solid var(--main-color);
+	border-bottom:1px solid var(--main-color);
+	border-right:1px solid var(--main-color);
+	height: 40px;
+	width: 50px;
+	text-align: center;
+	color: #3c2e02;
+	cursor: pointer;
+    vertical-align:middle;
+	position: absolute;
+	top: 15px;
+	right: 36px;
+	background-position: center;
+	background-size: 40px auto;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	border-radius: 0 10px 10px 0;
+}
+
+#slot-standard .container .games .total-games .navbar button::before{
+	content: '';
+    position: absolute;
+    border: 2px solid var(--main-color);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .total-games .navbar button::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: var(--main-color);
+    transform: rotate(-45deg);
+    right: 13px;
+    bottom: 5px;
+}
+
+#slot-standard .container .games .total-games .content .filter{
+	padding: 5px 0 5px 10px;
+}
+
+#slot-standard .container .games .total-games .content .filter .active,
+#slot-standard .container .games .total-games .content .filter .active:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .filter span {
+	display: inline-block;
+	padding: 15px 10px;
+	cursor: pointer;
+	color: #666;
+}
+
+#slot-standard .container .games .total-games .content .filter span:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .game-list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 35px;
+	color: #fff;
+	border-radius: 3px;
+	min-height: 320px;
+}
+
+#slot-standard .container .games .total-games .content .game-list > .item {
+	margin-bottom: 25px;
+	margin-right: 40px;
+}
+
+#slot-standard .container .games .total-games .content .game-list > .item:nth-child(6),
+#slot-standard .container .games .total-games .content .game-list > .item:nth-child(12),
+#slot-standard .container .games .total-games .content .game-list > .item:nth-child(18),
+#slot-standard .container .games .total-games .content .game-list > .item:nth-child(24),
+#slot-standard .container .games .total-games .content .game-list > .item:nth-child(30){
+	margin-right: 0;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry {
+	position: relative;
+	width: 153px;
+	height: 104px;
+	overflow: hidden;
+	background-color: #d8d8d8;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	border-radius: 3px;;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry img {
+	width: 155px;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .tag {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding: 5px 10px;
+	background: var(--signin-color);
+	color: #fff;
+	font-size:12px;
+	display: none;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+	width: 155px;
+	height: 116px;
+	transition: all 0.3s ease;
+}
+#slot-standard .container .games .total-games .content .game-list .entry .link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a {
+	display: block;
+	border-radius: 5px;
+	padding: 5px 20px;
+	opacity: 0;
+	color: #333;
+	white-space:nowrap;
+	color:#fff;
+	font-size:14px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover img {
+	transform: scale(1.2);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover a {
+	opacity: 1;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go{
+	background: var(--play-color);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+	color:#fff;
+	margin-bottom: 10px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go:hover{
+	background:var(--go-hover-color);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go:active{
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free{
+	background-image: linear-gradient(180deg, #666, #333);
+	border: 1px solid #333;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free:hover{
+	background:#666;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free:active{
+	transform: translateY(1px);
+}
+
+#slot-standard .container .games .total-games .content .game-list .name {
+	width: 155px;
+	text-align: center;
+	color: #666;
+	line-height:1.5;
+	margin-top:10px;
+}
+
+#slot-standard .container .games .total-games .content .pagination {
+	text-align: center;
+	font-size: 12px;
+}
+
+#slot-standard .container .games .total-games .content .pagination .active,
+#slot-standard .container .games .total-games .content .pagination .active:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .pagination span {
+	display: inline-block;
+	cursor: pointer;
+}
+
+#slot-standard .container .games .total-games .content .pagination .page {
+	width: 40px;
+	height: 35px;
+	line-height: 40px;
+}
+
+#slot-standard .container .games .total-games .content .pagination span{
+	color: #666;
+	position: relative;
+}
+
+#slot-standard .container .games .total-games .content .pagination span::after{
+	content: '';
+	position: absolute;
+	width :15px;
+	height:	0px;
+	background: var(--main-color);
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all .2s ease-in;
+}
+
+#slot-standard .container .games .total-games .content .pagination span:hover::after {
+	height:	1px;
+}
+
+#slot-standard .container .games .total-games .content .pagination .first-page,
+#slot-standard .container .games .total-games .content .pagination .last-page {
+	width: 80px;
+    line-height: 35px;
+    height: 35px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found{
+	height: 420px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found span{
+	width: 100px;
+	height: 100px;
+	background: url(../images/icon-not-found-101.png) center / cover no-repeat;
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found p{
+	text-align: center;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+/* 帳戶總覽 */
+#account-mid #account-info {
+	display: flex;
+}
+	 
+#account-wrapper #account-mid {
+	border-radius: 10px;
+}
+	 
+#account-mid .account-title {
+	position: relative;
+	padding: 8px 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	color: #4a4a4a;
+	border-bottom: 1px solid #e6e6e6;
+}
+	 
+#account-mid #account-info {
+	margin: auto auto 20px;
+	justify-content: space-between;
+	width: 100%;
+	background:#3fae54;
+	color: #fff;
+}
+	 
+#account-info .profile {
+	padding: 10px 0;
+	display: flex;
+}
+	 
+#account-info .profile .avatar {
+	margin: 15px 15px 15px 40px;
+	padding-left: 0;
+	width: 65px;
+	height: 65px;
+	background-image: url(../images/avatar-saibo.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 65px auto;
+}
+	 
+#account-info img {
+	margin: 15px 15px 15px 40px;
+	width: 65px;
+	height: auto;
+}
+	 
+#account-info .profile p:first-child {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	line-height: 25px;
+}
+	 
+#account-info .profile span {
+	background: #2b9c40;
+    padding: 1px 8px;
+    border-radius: 15px;
+    margin-left: 6px;
+	color: #fff;
+    font-size: 12px;
+}
+	 
+#account-info .balance {
+	text-align: right;
+	margin-right: 40px;
+}
+	 
+#account-info .balance p:first-child {
+	font-size: 18px;
+	font-weight: 800;
+}
+	 
+#account-info .balance p:last-child {
+	font-size: 19px;
+    margin-top: -7px;
+    font-weight: 800;
+}
+	 
+#account-info .balance p.sum {
+	color: #fff;
+	margin-top: 10px;
+	font-size:15px;
+}
+	 
+#account-mid .account-list {
+	width: 650px;
+	margin: auto;
+	justify-content: space-between;
+	padding: 10px 15px;
+	color: #4a4a4a;
+	font-size: 12px;
+	display: flex;
+}
+	 
+#account-mid .list2 span {
+	color: #3fae54;
+}
+	 
+#account-mid .list2 a img {
+	width: 10px;
+}
+	 
+#account-mid .list1,
+#account-mid .list10,
+#account-mid .list2,
+#account-mid .list9 {
+	font-weight: 1000;
+	font-size: 16px;
+	display: flex;
+}
+
+#account-mid .account-list div span{
+	font-weight: normal;
+}
+
+#account-mid .account-list div span + a {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/icon-collapse-active.png);
+	background-position: center 2px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: 5px;
+}
+
+#account-mid .account-list div span + a.collapse{
+	background-image: url(../images/icon-collapse.png);
+}
+
+#account-mid .account-list div span + a img{
+	display: none;
+}
+	 
+#account-mid .account-transfer form {
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	line-height: 30px;
+	white-space: nowrap;
+}
+	 
+#account-mid .list-container .account-list:nth-child(odd) {
+	background: #e2e2e2;
+}
+	 
+#account-mid .list2 a:hover {
+	opacity: 0.6;
+}
+	 
+#account-mid .account-transfer {
+	background: #e2e2e2;
+	margin: 20px;
+	padding: 20px 0;
+	color: #4a4a4a;
+}
+	 
+#account-mid .account-transfer form > span {
+	font-weight: 800;
+	margin: 0 15px 0 0;
+}
+	 
+#account-mid .account-transfer select.options,
+#account-mid .account-transfer select.transfer_account_roll_in,
+#account-mid .account-transfer select.transfer_account_roll_out,
+#account-mid .account-transfer input[type="text"] {
+	border: 1px solid #afafaf;
+	width: 150px;
+	height: 35px;
+	padding: 5px 0;
+}
+
+#account-mid .account-transfer input[type="text"]{
+	text-indent: 5px;
+	background: #fff;
+}
+	 
+#account-mid .account-transfer .trans-pic {
+	margin: 0 10px;
+	padding-left: 0;
+	width: 27px;
+	height: 27px;
+	background: #333;
+	position: relative;
+	border-radius: 50%;
+}
+
+#account-mid .account-transfer .trans-pic::before{
+	content: '';
+	position: absolute;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	padding: 3px;
+	top: 10px;
+	left: 8px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+	 
+#account-mid .account-transfer button {
+	padding: 0 25px;
+	background:#3fae54;
+	font-size: 10px;
+	line-height: 24px;
+	font-weight: 600;
+	color: #fff;
+	margin-left: 10px;
+	height: 33px;
+}
+	 
+#account-mid .account-transfer button:hover {
+	background:var(--main-color);
+	-webkit-transition: -webkit-transform 0.1s ease-in;
+	-webkit-transition: transform 0.1s ease-in;
+	transition: transform 0.1s ease-in;
+	-webkit-transform: translateY(-1px);
+	-ms-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+	 
+#account-mid .notice {
+	width: 600px;
+	margin: 0 auto 30px;
+	font-size: 11px;
+	color: #4a4a4a;
+}
+	 
+#account-mid .settings-fail,
+#account-mid .settings-success {
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+	 
+#account-mid .notice span {
+	color: #f70606;
+}
+
+.eQCTZo, .jJExrO,
+.vw-ck .mya_decheck h4 i,
+.manage-bank-card,
+.faxhqR > h4::before,
+.transaction-timed .timed-active,
+.transaction-pager-input.pager-btn{
+	background:var(--main-color);
+	
+}
+
+.jiHSZB, .kSOGNS, .jhVUtj,
+.transaction-log-download-btn{
+	color:var(--main-color);
+}
+
+.btn-2{
+	border:1px solid var(--main-color);
+}
+
+.transaction-sub-nav li.active a {
+    background: var(--main-color);
+	border-color: var(--main-color);
+}
+
+.transaction-sub-nav{
+	border-bottom: 1px solid var(--main-color);
+}
+
+/*忘記密碼頁 共用樣式*/
+#password-header {
+	border-bottom: 1px solid #999;
+	padding: 10px 10px 10px 20px;
+	color: #999;
+	font-size: 14px;
+}
+
+#password-header span {
+	cursor: pointer;
+}
+
+#password-header img {
+	width: 15px;
+	height: auto;
+	margin: -3px 3px -2px 3px;
+}
+
+#password-header .text-bold {
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+#password-footer {
+	color: #4a4a4a;
+	line-height: 1.5;
+	text-align: center;
+	font-size: 15px;
+}
+
+#password-footer span {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+/*忘記密碼頁 共用樣式*/
+
+/* 忘記密碼頁 首頁 begins*/
+article#password-index {
+	padding: 115px 0
+}
+
+#password-index .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 18px;
+}
+
+#password-index .container .content {
+	text-align: center;
+	padding-top: 60px;
+}
+
+#password-index .container .content h2{
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#password-index .container .content form {
+	text-align: left;
+	margin: 0px 0 60px 190px;
+}
+
+#password-index .container .content form label {
+	font-size: 14px;
+	display: block;
+	color: #666;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+#password-index .container .content form input[type='text'] {
+	width: 350px;
+	height: 40px;
+	color: #666;
+	font-size: 14px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+}
+
+#password-index .container .content form input[type='text']:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-index .container .content form input[type='text']::placeholder{
+	color: #666;
+}
+
+#password-index .container .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-index .container .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+	padding-left: 18px;
+}
+
+#password-index .container .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-index .container .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	border-bottom: 0;
+	opacity: 0.9;
+}
+
+#password-index .container .content form input[type='button']:hover {
+	opacity: 1;
+}
+/* 忘記密碼頁 首頁 ends*/
+
+/* 忘記密碼頁 线上客服頁 begins*/
+article#password-serving {
+	padding-top: 115px;
+	min-height: 550px;
+}
+
+#password-serving .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 16px;
+}
+
+#password-serving .container p {
+	text-align: center;
+	margin: 60px 0 60px 0;
+	line-height: 1.5;
+}
+
+#password-serving .container p span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#password-serving .container p span:hover {
+	font-weight: bold;
+}
+/* 忘記密碼頁 线上客服頁 ends*/
+
+/* 忘記密碼頁 三項驗證頁 begins*/
+article#password-solution {
+	padding: 115px 0
+}
+
+#password-solution .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution .content {
+	display: flex;
+	justify-content: center;
+	margin: 60px 0;
+}
+
+#password-solution .content a {
+	display: block;
+	border: 2px solid #c5c5c5;
+	width: 130px;
+	height: 130px;
+	color: #666;
+	margin-right: 30px;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 80px;
+}
+
+#password-solution .content a:last-child{
+	margin-right: 0;
+}
+
+#password-solution .content a.verify-qa {
+	background-image: url(../images/forgotpwd_verify-q&a.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-phone {
+	background-image: url(../images/forgotpwd_verify-phone.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-email {
+	background-image: url(../images/forgotpwd_verify-email.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a:hover {
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+}
+
+/* 忘記密碼頁 三項驗證頁 ends*/
+
+/* 忘記密碼頁 安全問題驗證 begins*/
+article#password-solution-qa {
+	padding: 115px 0
+}
+
+#password-solution-qa .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 18px;
+}
+
+#password-solution-qa .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-qa .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+#password-solution-qa .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-solution-qa .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-qa .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-qa .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-qa .content form .indicate span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 3px;
+}
+
+#password-solution-qa .content form input {
+	width: 350px;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-qa .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-qa .content form input::placeholder{
+	color: #666;
+}
+
+#password-solution-qa .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	border-bottom: 0;
+}
+
+#password-solution-qa .content form input[type='button']:hover {
+	opacity: 1;
+}
+/* 忘記密碼頁 安全問題驗證 ends*/
+
+/* 忘記密碼頁 手機驗證 begins*/
+article#password-solution-mobile {
+	padding: 115px 0
+}
+
+#password-solution-mobile .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution-mobile .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mobile .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mobile .content form p.phone {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mobile .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong img{
+	display: none;
+}
+
+#password-solution-mobile .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form input {
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-mobile .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input::placeholder{
+	color: #666;
+}
+
+#password-solution-mobile .content form .code {
+	width: 129px;
+	height: 40px;
+	line-height: 35px;
+	padding-left: 20px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 85px center;
+}
+
+#password-solution-mobile .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mobile .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mobile .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mobile .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 手機驗證 ends*/
+
+/* 忘記密碼頁 郵箱驗證 begins*/
+article#password-solution-mail {
+	padding: 115px 0
+}
+
+#password-solution-mail .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution-mail .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mail .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mail .content form p.email {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-mail .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mail .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-mail .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mail .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-mail .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-mail .content form input {
+	border-bottom: 1px solid #666;
+	height: 40px;
+	transition: all .3s ease;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-mail .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mail .content form input::placeholder{
+	color: #666;
+}
+
+#password-solution-mail .content form .code {
+	width: 129px;
+	height: 40px;
+	line-height: 37px;
+	padding-left: 20px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 85px center;
+}
+
+#password-solution-mail .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mail .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mail .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mail .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mail .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 郵箱驗證 ends*/
+
+/* 忘記密碼頁 設定新密碼 begins*/
+article#password-reset {
+	padding: 115px 0
+}
+
+#password-reset .container {
+	width: 740px;
+	margin: auto;
+	color: #666;
+}
+
+#password-reset .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-reset .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 18px 18px;
+
+}
+
+#password-reset .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-reset .content form .indicate {
+	/* display:none; */
+}
+
+#password-reset .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-reset .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form input {
+	border-bottom: 1px solid #666;
+	display: inline-block;
+	transition: all .3s ease-in;
+	height: 40px;
+	color: #666;
+}
+
+#password-reset .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-reset .content form input::placeholder{
+	color: #666;
+}
+
+#password-reset .content form input[type='password'] {
+	width: 350px;
+	margin-bottom: 5px;
+}
+
+#password-reset .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-reset .content form input[type='button']:hover {
+	opacity: 1;;
+}
+/* 忘記密碼頁 設定新密碼 ends*/
+
+/* 忘記密碼頁 設定成功 begins*/
+article#password-success {
+	padding: 115px 0
+}
+
+#password-success .container {
+	width: 740px;
+	margin: auto;
+	color: #666;
+}
+
+#password-success .container .content {
+	text-align: center;
+	margin: 60px 0;
+}
+
+#password-success .container .content span {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background-image: url(../images/forgotpwd_successpage.png);
+	background-repeat: no-repeat;
+	background-size: 50px auto;
+	margin-bottom: 10px;
+}
+
+#password-success .content h2 {
+	font-size: 14px;
+	margin: 15px 0;
+	color: #333;
+}
+
+#password-success .content input[type='button'] {
+	background-image:var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	padding: 10px;
+}
+
+#password-success .content input:hover {
+	opacity: 1;
+}
+/* 忘記密碼頁 設定成功 ends*/
+
+/*帳戶驗證頁 begins*/
+#forgotpwd-verify {
+	width: 740px;
+	padding: 50px 100px 50px 100px;
+	margin: 100px 0;
+	background: #fff;
+	border-radius: 10px;
+	box-sizing: border-box;
+	color: #4a4a4a;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	text-align: left;
+	font-size: 15px;
+}
+
+#forgotpwd-verify .title {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #ff601a;
+}
+
+#forgotpwd-verify .callus {
+	color: #ff610a;
+	cursor: pointer;
+	line-height: 24px;
+}
+
+#forgotpwd-verify .text-bold {
+	font-weight: bold;
+}
+
+#forgotpwd-verify .text-right {
+	text-align: right;
+}
+
+#forgotpwd-verify form label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #4a4a4a;
+	margin-bottom: 10px;
+}
+
+#forgotpwd-verify form input {
+	background: #e2e2ee;
+	width: 98%;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#forgotpwd-verify form input[type='submit'] {
+	width: 40%;
+	height: 40px;
+	background-image: linear-gradient(to bottom, #fb7a1b, #ff611a);
+	color: #fff;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 0;
+}
+
+#forgotpwd-verify form input[type='submit']:hover {
+	background-image: linear-gradient(to bottom, #fd8936, #fd6e2c);
+}
+/*帳戶驗證頁 ends*/
+
+/*體育主館頁 yabo*/
+.titank-sport{
+	background:url(../images/bg-titank-sport.jpg) center center / cover no-repeat;
+}
+
+.titank-sport .container{
+	background:url(../images/bg-titank-sport02.jpg) center center / cover no-repeat;
+	width:1200px;
+	min-height:690px;
+	margin:auto;
+	box-shadow:0px 0px 5px rgba(0, 0, 0, .3);
+	color:#fff;
+}
+
+
+/*電競主館頁 101*/
+.im-esport{
+	background:url(../images/bg-im-esports0527.jpg) center center / cover no-repeat;
+	min-width:1200px;
+}
+
+.im-esport .container{
+	width:1200px;
+	min-height:765px;
+	margin:auto;
+	color:#fff;
+	text-align:center;
+	position:relative;
+	padding-top: 100px;
+}
+
+.im-esport .container button{
+	width:175px;
+	height:50px;
+	border-radius: 8px;
+	color: #fff;
+	text-align:center;
+	line-height:50px;
+	background: var(--sec-button-color);
+	cursor: pointer;
+	margin-top:50px;
+	font-size:24px;
+	box-shadow: rgba(0, 176, 155, 0.3) 0px 10px 20px 6px;
+}
+
+.im-esport .container .content .team-IG{
+	background: url(../images/esport-IG.png) center center no-repeat;
+	width:907px;
+	height:435px;
+	margin:auto;
+	margin-top:6px;
+	animation: fadein 2s ease-out;
+}
+
+@keyframes fadein {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+.im-esport .container .content .logo-im{
+	position:absolute;
+	top:340px;
+	z-index:10;
+	display:inline-block;
+	width:920px;
+	height:247px;
+	background: url(../images/logo-im-esport.png) center center no-repeat;
+	transform: translateX(-50%);
+	left:50%;
+}
+
+.im-esport .container .content .entry .play:active{
+	border:1px solid yellow;
+}
+
+.im-esport .container .content a{
+	top:69%;
+	display:inline-block;
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	width: 230px;
+    height: 60px;
+	line-height:58px;
+	border-radius:35px;
+	background:yellow;
+	z-index:12;
+	color:#fff;
+	font-size:21px;
+	font-weight:bold;
+	background-image: linear-gradient(to bottom, #ffd003 0%, #f08616 75%);
+	box-shadow:1px 0 5px rgba(255,255,255,0.9) inset;
+	border:1px solid #d37300;
+	text-shadow:2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.im-esport .container .content a:hover{
+	background: #f5932b;
+}
+
+.im-esport .container .content a:active{
+	background-image: linear-gradient(to top, #ffbc03 0%, #f08616 75%);
+}
+
+.im-esport .container .content .game-icon{
+	margin-top:70px;
+}
+
+.im-esport .container .content .game-icon i{
+	display:inline-block;
+	margin-right:10px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(1){
+	background:url(../images/esport-icon01.png) center center / 100% 100% no-repeat;
+	width:54px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(2){
+	background:url(../images/esport-icon02.png) center center / 100% 100% no-repeat;
+	width:117px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(3){
+	background:url(../images/esport-icon03.png) center center / 100% 100% no-repeat;
+	width:112px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(4){
+	background:url(../images/esport-icon04.png) center center / 100% 100% no-repeat;
+	width:75px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(5){
+	background:url(../images/esport-icon05.png) center center / 100% 100% no-repeat;
+	width:46px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(6){
+	background:url(../images/esport-icon06.png) center center / 100% 100% no-repeat;
+	width:42px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(7){
+	background:url(../images/esport-icon07.png) center center / 100% 100% no-repeat;
+	width:76px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(8){
+	background:url(../images/esport-icon08.png) center center / 100% 100% no-repeat;
+	width:53px;
+	height:50px;
+}
+
+/*電競主館頁 100 開始*/
+#esport-betting{
+	background: url(../images/bg-im-esports0527.jpg) center bottom / cover no-repeat;
+}
+
+article#esport-betting .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 680px;
+}
+
+article#esport-betting .container .content {
+	margin-bottom: 150px;
+	padding: 20px 40px;
+	color: rgba(255, 255, 255, 0.4);
+	position: relative;
+	width: 40%;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	transition: transform .2s ease-out;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+article#esport-betting .container .content:hover{
+	transform: translateY(-20px);
+}
+
+/* article#esport-betting .container .content:nth-child(1){
+	background-image: url(../images/bg-esport-content-im02.jpg);
+}
+
+article#esport-betting .container .content:nth-child(2){
+	background-image: url(../images/bg-esport-content-rtg02.jpg);
+} */
+
+article#esport-betting .container .content:nth-child(3),
+article#esport-betting .container .content:nth-child(6),
+article#esport-betting .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#esport-betting .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	text-indent: -9999px;
+	width: 140px;
+	height: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+article#esport-betting .container .imOneEsport h2{
+	background-image: url(../images/panel-logo-imone.png);
+	background-position: -20px center;
+}
+
+article#esport-betting .container .tfg h2{
+	background-image: url(../images/panel-logo-tfg.png);
+	background-position: center;
+}
+
+article#esport-betting .container .rg h2{
+	background-image: url(../images/panel-logo-ray.png);
+	background-position: -20px center;
+}
+
+article#esport-betting .container .content p {
+	width: 160px;
+    line-height: 1.5;
+    color:#333;
+}
+
+article#esport-betting .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 40px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius:5px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#esport-betting .container .content a:hover{
+	background:var(--main-hover-color);
+}
+
+article#esport-betting .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-radius: 5px;
+}
+
+/*體育主館頁-101*/
+.sportbet{
+	background: url(../images/bg-sportbet.jpg) center center / cover no-repeat;
+	min-width:1200px;
+}
+
+.sportbet .container{
+	width:1200px;
+	height:813px;
+	margin:auto;
+	position:relative;
+	
+}
+
+.sportbet .container .btns{
+	position:absolute;
+	right:120px;
+	top:40px;
+	width: 500px;
+	z-index: 2;
+	text-align: center;
+}
+
+.sportbet .container .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+	margin-right: 17px;
+	margin-bottom: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+}
+
+.sportbet .container .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.sportbet .container .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.sportbet .container .left-content{
+	position:absolute;
+	bottom:40px;
+	opacity:0;
+}
+
+.sportbet .container .left-content-active{
+	animation:fade-in-left 1s ease-out;
+	opacity:1;
+	left:0;
+}
+
+.sportbet .container .fade-out-left{
+	animation:fade-out-left .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-left{
+	0%{
+		left:-20px;
+		opacity:0;
+	}
+	100%{
+		left:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-left{
+	0%{
+		left:0px;
+		opacity:1;
+	}
+	100%{
+		left:-20px;
+		opacity:0;
+	}
+}
+
+.sportbet .container .left-content .model{
+	width:536px;
+	height:717px;
+	z-index:3;
+}
+
+.sportbet .container #pinSport-left-content .model{
+	background:url(../images/sportbet-player-pinnacle.png) center center no-repeat;
+}
+
+.sportbet .container #sbSport-left-content .model{
+	background:url(../images/sportbet-player-oneworks.png) center center no-repeat;
+}
+
+.sportbet .container #btiSport-left-content .model{
+	background:url(../images/sportbet-player-bti.png) center center no-repeat;
+}
+
+.sportbet .container #imOne-left-content .model{
+	background:url(../images/sportbet-player-imone.png) center center no-repeat;
+}
+
+.sportbet .container #gbSport-left-content .model{
+	background:url(../images/sportbet-player-saibo.png) center center no-repeat;
+}
+
+.sportbet .container #tx-left-content .model{
+	background:url(../images/sportbet-player-tx.png) center center no-repeat;
+}
+
+.sportbet .container #cmd-left-content .model{
+	background:url(../images/sportbet-player-cmd.png) center center no-repeat;
+}
+
+.sportbet .container #titank-left-content .model{
+	background:url(../images/sportbet-player-titank.png) center center no-repeat;
+}
+
+.sportbet .container #gb-left-content .model{
+	background:url(../images/sportbet-player-saibo.png) center center no-repeat;
+}
+
+.sportbet .container .right-content{
+	position:absolute;
+	top:148px;
+	opacity:0;
+}
+
+.sportbet .container .right-content-active{
+	right:0;
+	animation:fade-in-right 1s ease-out;
+	opacity:1;
+}
+
+.sportbet .container .fade-out-right{
+	animation:fade-out-right .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-right{
+	0%{
+		right:-20px;
+		opacity:0;
+	}
+	100%{
+		right:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-right{
+	0%{
+		right:0px;
+		opacity:1;
+	}
+	100%{
+		right:-20px;
+		opacity:0;
+	}
+}
+
+.sportbet .container .right-content .caption{
+	width:632px;
+	height:220px;
+	margin-right:50px;
+}
+
+.sportbet .container .right-content span{
+	display:block;
+}
+
+
+.sportbet .container #pinSport-right-content .caption{
+	background:url(../images/sportbet-pinnacle.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #sbSport-right-content .caption{
+	background:url(../images/sportbet-oneworks.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #btiSport-right-content .caption{
+	background:url(../images/sportbet-bti-0720.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #imOne-right-content .caption{
+	background:url(../images/sportbet-imone.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #gbSport-right-content .caption{
+	background:url(../images/sportbet-gb.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #tx-right-content .caption{
+	background:url(../images/sportbet-tx.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #cmd-right-content .caption{
+	background:url(../images/sportbet-cmd.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #titank-right-content .caption{
+	background:url(../images/sportbet-titank.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container #gb-right-content .caption{
+	background:url(../images/sportbet-saibo.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container .right-content .items{
+	width:632px;
+	height:91px;
+}
+
+.sportbet .container #pinSport-right-content .items,
+.sportbet .container #sbSport-right-content .items,
+.sportbet .container #btiSport-right-content .items,
+.sportbet .container #imOne-right-content .items,
+.sportbet .container #gbSport-right-content .items,
+.sportbet .container #tx-right-content .items,
+.sportbet .container #cmd-right-content .items,
+.sportbet .container #gb-right-content .items{
+	background:url(../images/sportbet-items.png) center / 100% auto no-repeat;
+}
+
+.sportbet .container .right-content a{
+	display:inline-block;
+	width: 188px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background:var(--main-button-color);
+	cursor: pointer;
+	border-radius:25px;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+	margin:40px 0 0 220px;
+}
+
+.sportbet .container #bbin-right-content a:hover{
+	background:var(--main-hover-color);
+}
+
+/*體育投注頁*/
+.sportbet-info{
+	background: url(../images/bg-sportbet-info.jpg) center / cover no-repeat;
+}
+
+.sportbet-info .container{
+	width: 1200px;
+	height: 813px;
+	background: #fff;
+	margin: auto;
+	overflow-y: auto;
+}
+
+/*真人娛樂主館頁*/
+.real-casino{
+	background: url(../images/bg-real-casino.jpg) center center / cover no-repeat;
+	min-width:1200px;
+}
+
+.real-casino .container{
+	width:1200px;
+	height:813px;
+	margin:auto;
+	position:relative;
+	
+}
+
+.real-casino .container .btns{
+	position:absolute;
+	right:0;
+	top:40px;
+	width: 600px;
+	z-index: 2;
+}
+
+.real-casino .container .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+	margin-bottom: 20px;
+}
+
+.real-casino .container .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.real-casino .container .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.real-casino .container .left-content{
+	position:absolute;
+	bottom:0;
+	opacity:0;
+}
+
+.real-casino .container .left-content-active{
+	animation:fade-in-left 1s ease-out;
+	opacity:1;
+	left:0;
+}
+
+.real-casino .container .fade-out-left{
+	animation:fade-out-left .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-left{
+	0%{
+		left:-20px;
+		opacity:0;
+	}
+	100%{
+		left:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-left{
+	0%{
+		left:0px;
+		opacity:1;
+	}
+	100%{
+		left:-20px;
+		opacity:0;
+	}
+}
+
+.real-casino .container .left-content .model{
+	width:536px;
+	height:717px;
+	z-index:3;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #ag-left-content .model{
+	background-image:url(../images/live-casino-model01.png);
+}
+
+.real-casino .container #hb-left-content .model{
+	background-image:url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #rtg-left-content .model{
+	background-image:url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #mg-left-content .model{
+	background-image:url(../images/live-casino-model03.png);
+}
+
+.real-casino .container #bbin-left-content .model{
+	background-image:url(../images/live-casino-model04.png);
+}
+
+.real-casino .container #pt-left-content .model{
+	background-image:url(../images/live-casino-model05.png);
+}
+
+.real-casino .container #ae-left-content .model{
+	background-image:url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #dg-left-content .model{
+	background-image:url(../images/live-casino-model02.png);
+}
+
+.real-casino .container #ebet-left-content .model {
+	background-image: url(../images/live-casino-model06.png) ;
+}
+
+.real-casino .container #ag-left-content .float-left{
+	width:47px;
+	height:37px;
+	background:url(../images/float-item-left-ag.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-ag 3s ease infinite alternate;
+}
+
+.real-casino .container #ag-left-content .float-right{
+	width:62px;
+	height:42px;
+	background:url(../images/float-item-right-ag.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-ag 3s ease infinite alternate;
+}
+
+@keyframes float-left-ag{
+	0%{
+		top:310px;
+		left:30px;
+
+	}
+	100%{
+		top:330px;
+		left:30px;
+	}
+}
+
+@keyframes float-right-ag{
+	0%{
+		top:150px;
+		left:400px;
+	}
+	100%{
+		top:130px;
+		left:400px;
+	}
+}
+
+.real-casino .container #hb-left-content .float-left{
+	width:41px;
+	height:39px;
+	background:url(../images/float-item-left-hb.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-hb 3s ease infinite alternate;
+}
+
+.real-casino .container #hb-left-content .float-right{
+	width:47px;
+	height:51px;
+	background:url(../images/float-item-right-hb.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-hb 3s ease infinite alternate;
+}
+
+@keyframes float-left-hb{
+	0%{
+		top:290px;
+		left:30px;
+		
+	}
+	100%{
+		top:270px;
+		left:30px;
+		
+	}
+}
+
+@keyframes float-right-hb{
+	0%{
+		top:130px;
+		left:400px;
+	}
+	100%{
+		top:110px;
+		left:400px;
+	}
+}
+
+.real-casino .container #ae-left-content .float-left{
+	width:41px;
+	height:39px;
+	background:url(../images/float-item-left-hb.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-rtg 3s ease infinite alternate;
+}
+
+.real-casino .container #ae-left-content .float-right{
+	width:47px;
+	height:51px;
+	background:url(../images/float-item-right-hb.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-rtg 3s ease infinite alternate;
+}
+
+@keyframes float-left-rtg{
+	0%{
+		top:290px;
+		left:30px;
+		
+	}
+	100%{
+		top:270px;
+		left:30px;
+		
+	}
+}
+
+@keyframes float-right-rtg{
+	0%{
+		top:110px;
+		left:400px;
+	}
+	100%{
+		top:130px;
+		left:400px;
+	}
+}
+
+.real-casino .container #mg-left-content .float-left{
+	width:47px;
+	height:37px;
+	background:url(../images/float-item-left-mg.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #mg-left-content .float-right{
+	width:62px;
+	height:42px;
+	background:url(../images/float-item-right-mg.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #dg-left-content .float-left{
+	width:47px;
+	height:37px;
+	background:url(../images/float-item-left-mg.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #dg-left-content .float-right{
+	width:62px;
+	height:42px;
+	background:url(../images/float-item-right-mg.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-mg 3s ease infinite alternate;
+}
+
+@keyframes float-left-mg{
+	0%{
+		top:310px;
+		left:30px;
+		transform:rotate(0deg);
+	}
+	100%{
+		top:330px;
+		left:30px;
+		transform:rotate(10deg);
+	}
+}
+
+@keyframes float-right-mg{
+	0%{
+		top:150px;
+		left:400px;
+	}
+	100%{
+		top:130px;
+		left:400px;
+	}
+}
+
+
+.real-casino .container #bbin-left-content .float-left{
+	width:64px;
+	height:68px;
+	background:url(../images/float-item-left-bbin.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-bbin 3s ease infinite alternate;
+}
+
+.real-casino .container #bbin-left-content .float-right{
+	width:46px;
+	height:50px;
+	background:url(../images/float-item-right-bbin.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-bbin 3s ease infinite alternate;
+}
+
+@keyframes float-left-bbin{
+	0%{
+		top:350px;
+		left:30px;
+	}
+	100%{
+		top:330px;
+		left:30px;
+	}
+}
+
+@keyframes float-right-bbin{
+	0%{
+		top:220px;
+		left:380px;
+	}
+	100%{
+		top:240px;
+		left:380px;
+	}
+}
+
+.real-casino .container #pt-left-content .float-left{
+	width:69px;
+	height:101px;
+	background:url(../images/float-item-left-pt.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-pt 3s ease infinite alternate;
+}
+
+.real-casino .container #pt-left-content .float-mid{
+	width:90px;
+	height:60px;
+	background:url(../images/float-item-mid-pt.png) center center no-repeat;
+	position:absolute;
+	animation:float-mid-pt 3s ease infinite alternate;
+}
+
+.real-casino .container #pt-left-content .float-right{
+	width:48px;
+	height:91px;
+	background:url(../images/float-item-right-pt.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-pt 3s ease infinite alternate;
+}
+
+@keyframes float-left-pt{
+	0%{
+		top:350px;
+		left:20px;
+	}
+	100%{
+		top:330px;
+		left:20px;
+	}
+}
+
+@keyframes float-mid-pt{
+	0%{
+		bottom:80px;
+		left:150px;
+	}
+	100%{
+		bottom:90px;
+		left:150px;
+	}
+}
+
+@keyframes float-right-pt{
+	0%{
+		top:160px;
+		left:450px;
+	}
+	100%{
+		top:180px;
+		left:450px;
+	}
+}
+
+.real-casino .container .right-content{
+	position:absolute;
+	top:170px;
+	opacity:0;
+}
+
+.real-casino .container .right-content-active{
+	right:0;
+	animation:fade-in-right 1s ease-out;
+	opacity:1;
+}
+
+.real-casino .container .fade-out-right{
+	animation:fade-out-right .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-right{
+	0%{
+		right:-20px;
+		opacity:0;
+	}
+	100%{
+		right:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-right{
+	0%{
+		right:0px;
+		opacity:1;
+	}
+	100%{
+		right:-20px;
+		opacity:0;
+	}
+}
+
+.real-casino .container .right-content .caption{
+	width:632px;
+	height:240px;
+	margin-right:50px;
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #ag-right-content .caption{
+	background-image:url(../images/live-casino-ag.png);
+}
+
+.real-casino .container #hb-right-content .caption{
+	background-image:url(../images/live-casino-hb.png);
+}
+
+.real-casino .container #mg-right-content .caption{
+	background-image:url(../images/live-casino-mg.png);
+}
+
+.real-casino .container #bbin-right-content .caption{
+	background-image:url(../images/live-casino-bbin.png);
+}
+
+.real-casino .container #pt-right-content .caption{
+	background-image:url(../images/live-casino-pt.png);
+}
+
+.real-casino .container #rtg-right-content .caption{
+	background-image:url(../images/live-casino-ae.png);
+}
+
+.real-casino .container #ae-right-content .caption{
+	background-image:url(../images/live-casino-ae.png);
+}
+
+.real-casino .container #dg-right-content .caption{
+	background-image:url(../images/live-casino-dg.png);
+}
+
+.real-casino .container #ebet-right-content .caption {
+	background-image: url(../images/live-casino-ebet.png);
+}
+
+.real-casino .container .right-content .items{
+	width:632px;
+	height:91px;
+}
+
+.real-casino .container .right-content .items{
+	background:url(../images/live-casino-bbin-items.png) center / 100% auto no-repeat;
+}
+
+.real-casino .container .right-content a{
+	display:inline-block;
+	width: 188px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background:var(--main-button-color);
+	cursor: pointer;
+	border-radius:25px;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+	margin:40px 0 0 220px;
+}
+
+.real-casino .container .right-content a:hover{
+	background:var(--main-hover-color);
+}
+
+/*ky棋牌 101*/
+#chesspoker{
+
+}
+
+.chesspoker .container{
+    background-image:url(../images/bg-kypoker02.jpg);
+    background-position:center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width:1200px;
+	box-sizing:border-box;
+	padding-top: 50px;
+	position: relative;
+}
+
+.chesspoker .container .btns{
+	text-align:center;
+}
+
+.chesspoker .container .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+}
+
+.chesspoker .container .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.chesspoker .container .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.chesspoker .container #kypoker .content,
+.chesspoker .container #loong-game .content,
+.chesspoker .container #bole-game .content{
+    width:1050px;
+	margin:0px auto 0 auto;
+	padding: 50px 0;
+    display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+
+.chesspoker .container #kypoker .content{
+	width: 1200px;
+}
+
+#kypoker .mr-0{
+    margin-right:0;
+}
+
+#kypoker a{
+    display:block;
+    text-align:center;
+    margin-right:30px;
+    margin-bottom:55px;
+}
+
+#kypoker a:nth-child(8),
+#kypoker a:nth-child(16),
+#kypoker a:nth-child(24),
+#kypoker a:nth-child(32),
+#kypoker a:nth-child(40),
+#kypoker a:nth-child(48)
+#kypoker a:last-child{
+	margin-right: 0;
+}
+
+#kypoker a img{
+    width:120px;
+    height:120px;
+    transition:all .3s ease;
+}
+
+#kypoker a p{
+    margin-top:10px;
+    color:#262525;
+    font-weight:bold;
+}
+
+#kypoker a:hover img{
+	margin-top: -10px;
+}
+
+#kypoker a:hover p{
+    color:var(--main-color);
+}
+
+/*龍游棋牌*/
+#loong-game a{
+    display:block;
+    text-align:center;
+    margin-right:40px;
+    margin-bottom:30px;
+}
+
+#loong-game a {
+	display:inline-block;
+}
+
+#loong-game a img{
+	width: 120px;
+	height: 120px;
+	transition:all .2s ease-out;
+}
+
+#loong-game a:nth-child(6),
+#loong-game a:nth-child(12),
+#loong-game a:nth-child(18),
+#loong-game a:last-child{
+	margin-right: 0;
+}
+
+#loong-game a p{
+    color:#262525;
+    font-weight:bold;
+}
+
+#loong-game a:hover img{
+	margin-top: -10px;
+}
+
+#loong-game a:hover p{
+    color:var(--main-color);
+}
+
+/*bolegaming棋牌*/
+#bole-game a{
+    display:block;
+    text-align:center;
+    margin-right:40px;
+    margin-bottom:30px;
+}
+
+#bole-game a {
+	display:inline-block;
+}
+
+#bole-game a img{
+	width: 120px;
+	height: 120px;
+	transition:all .2s ease-out;
+}
+
+#bole-game a:nth-child(6),
+#bole-game a:nth-child(12),
+#bole-game a:nth-child(18),
+#bole-game a:last-child{
+	margin-right: 0;
+}
+
+#bole-game a p{
+    color:#262525;
+    font-weight:bold;
+}
+
+#bole-game a:hover img{
+	margin-top: -10px;
+}
+
+#bole-game a:hover p{
+    color:var(--main-color);
+}
+
+/*彩票 101*/
+.lottery-gaming{
+
+}
+
+.lottery-gaming .container{
+	width:1200px;
+	height:830px;
+	display:flex;
+	justify-content: space-between;
+	margin:auto;
+	position: relative;
+}
+
+.lottery-gaming .container  .btns{
+	width: 500px;
+	top: 50px;
+	position: absolute;
+	right: -30px;
+	text-align: center;
+}
+
+.lottery-gaming .container  .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+	margin-right: 17px;
+	margin-bottom: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+}
+
+.lottery-gaming .container  .btns button:last-child{
+	margin-right: 0;
+}
+
+.lottery-gaming .container  .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.lottery-gaming .container  .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:0 3px 15px rgba(150, 201, 61, 0.7);
+}
+
+.lottery-gaming .container .scenery{
+	width:712px;
+	height:620px;
+	position: relative;
+}
+
+.lottery-gaming .container .scenery span{
+	display:inline-block;
+	position:absolute;
+}
+
+
+.lottery-gaming .container .scenery span:nth-child(1){
+	width:58px;
+	height:58px;
+	background:url(../images/float-item-left-lottery.png) center center no-repeat;
+	animation:float-left-lottery 2.5s ease infinite alternate;
+}
+
+.lottery-gaming .container .scenery span:nth-child(2){
+	width:712px;
+	height:620px;
+	background:url(../images/bg-lottery.png) center center no-repeat;
+	left:0;
+	top:50px;
+}
+
+.lottery-gaming .container .scenery span:nth-child(3){
+	width:62px;
+	height:62px;
+	background:url(../images/float-item-right-lottery.png) center center no-repeat;
+	animation:float-right-lottery 2.5s ease infinite alternate;
+}
+
+@keyframes float-left-lottery{
+	0%{
+		left:40px;
+		top:160px;
+	}
+	100%{
+		left:40px;
+		top:180px;
+	}
+}
+
+@keyframes float-right-lottery{
+	0%{
+		right:40px;
+		bottom:180px;
+	}
+	100%{
+		right:40px;
+		bottom:210px;
+	}
+}
+
+.lottery-gaming .container .content {
+	width:450px;
+	text-align:center;
+}
+
+.lottery-gaming .container .content h2{
+	font-size:42px;
+	background: var(--main-button-color);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	height:50px;
+	line-height:50px;
+	margin:130px auto 0 auto;
+}
+
+.lottery-gaming .container .content h5{
+	background: var(--main-button-color);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.lottery-gaming .container .content p{
+	margin-top:50px;
+	text-align:justify;
+	line-height:1.7;
+}
+
+.lottery-gaming .container .content .item{
+	margin: 60px auto 0 auto;
+	width: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 60px auto 0 auto;
+}
+
+.lottery-gaming .container .content .item span{
+	display:inline-block;
+	cursor:pointer;
+	transition:all .3s ease;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 73px;
+	height: 70px;
+	margin-bottom: 20px;
+}
+
+.lottery-gaming .container .content .item .icon-keno{
+	background-image:url(../images/lottery-keno-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-marksix{
+	background-image:url(../images/lottery-sixgame-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-ssc{
+	background-image:url(../images/lottery-everytime-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-pk10{
+	background-image:url(../images/lottery-pk10-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-k3{
+	background-image:url(../images/lottery-fast3-gb.png);
+}
+
+.lottery-gaming .container .content .item .icon-gti{
+	background-image:url(../images/lottery-gti.png);
+}
+
+.lottery-gaming .container .content .item .icon-bbin{
+	background-image:url(../images/lottery-bbin.png);
+}
+
+.lottery-gaming .container .content .item span:hover{
+	transform: translateY(-15px);
+}
+
+/*彩票頁 100 開始*/
+article#lottery-standard {
+}
+
+.lottery-standard-carousel{
+	height:400px;
+	background:url(../images/lottery-banner.jpg) center center no-repeat;
+}
+
+article#lottery-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	padding: 80px 0 50px 0;
+}
+
+article#lottery-standard .container .content {
+    background:#fff;
+    height:369px;
+	text-align: center;
+	padding: 40px 20px;
+	margin-bottom: 30px;
+	width: 228px;
+	border-radius:10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+    position:relative;
+    margin-right:15px;
+}
+
+article#lottery-standard .container .content .icon{
+	width:186px;
+	height:100px;
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	top:50px;
+	transition:all .3s ease;
+}
+
+article#lottery-standard .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+    margin-top:125px;
+    font-size:28px;
+    font-weight:1000;
+}
+
+article#lottery-standard .container .content p {
+	color: #666;
+	line-height: 1.5;
+}
+
+article#lottery-standard .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 35px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#lottery-standard .container .content a:hover {
+	background:var(--main-hover-color);
+}
+
+article#lottery-standard .container .content:hover img{
+	top:40px;
+}
+
+/*精彩活動頁 101開始*/
+article#promotion {
+	
+}
+
+article#promotion .container {
+	width: 1210px;
+	margin: auto;
+	padding: 50px 0 50px 0;
+}
+
+article#promotion .container .navbar {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	width: 1210px;
+}
+
+article#promotion .container .navbar span {
+	color: #999;
+    margin: 0 5px;
+	font-size: 14px;
+	display: none;
+}
+
+article#promotion .container .navbar a {
+    color: #666;
+    transition: all 0.3s ease;
+	font-size: 14px;
+	display: inline-block;
+	width: 110px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #e7e7e7;
+	position: relative;
+}
+
+article#promotion .container .navbar a:last-child{
+	margin-right: 0;
+}
+
+article#promotion .container .navbar a::after{
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 110px;
+	height: 0;
+	background: var(--main-color);
+}
+
+article#promotion .container .navbar .active::after,
+article#promotion .container .navbar .active:hover::after {
+	color: #fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar .active{
+	color: var(--main-color);
+}
+
+
+article#promotion .container .navbar a:hover::after {
+	color:#fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar a:hover{
+	color: var(--main-color);
+}
+
+article#promotion .container .content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#promotion .container .content > div {
+	width: 392px;
+	background: var(--section-bgcolor);
+	padding: 20px;
+	box-sizing: border-box;
+	margin-right: 11px;
+	margin-bottom: 40px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	border-radius: 5px;
+}
+
+article#promotion .container .content > div:hover{
+	outline: 2px solid var(--main-color);
+}
+
+article#promotion .container .content .heading-new {
+	display: flex;
+	justify-content: space-between;
+	line-height: 24px;
+}
+
+article#promotion .container .content .heading-new p:first-child,
+article#promotion .container .content .heading span {
+	display: inline-block;
+    width: 110px;
+    height: 34px;
+    line-height: 34px;
+    text-align: left;
+    padding-left: 28px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+article#promotion .container .content .heading-new p:first-child {
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #666;
+    background-size: 22px auto;
+}
+
+article#promotion .container .content .heading-new p.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-slot {
+	background-image: url(../images/promotion-icon-slot-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-esport {
+	background-image: url(../images/promotion-icon-esport-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-poker {
+	background-image: url(../images/promotion-icon-poker-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-lottery {
+	background-image: url(../images/promotion-icon-lottery-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-funds {
+	background-image: url(../images/promotion-icon-funds-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-vip {
+	background-image: url(../images/promotion-icon-vip-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-hot {
+	background-image: url(../images/promotion-icon-hot-101.png);
+}
+
+
+article#promotion .container .content .heading span.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-101.png);
+}
+
+article#promotion .container .content .heading span.icon-slot {
+	background-image: url(../images/promotion-icon-slot-101.png);
+}
+
+article#promotion .container .content .heading span.icon-esport {
+	background-image: url(../images/promotion-icon-esport-101.png);
+}
+
+article#promotion .container .content .heading span.icon-poker {
+	background-image: url(../images/promotion-icon-poker-101.png);
+}
+
+article#promotion .container .content .heading span.icon-lottery {
+	background-image: url(../images/promotion-icon-lottery-101.png);
+}
+
+article#promotion .container .content .heading span.icon-funds {
+	background-image: url(../images/promotion-icon-funds-101.png);
+}
+
+article#promotion .container .content .heading p.icon-vip {
+	background-image: url(../images/promotion-icon-vip-101.png);
+}
+
+article#promotion .container .content .heading p.icon-hot {
+	background-image: url(../images/promotion-icon-hot-101.png);
+}
+
+article#promotion .container .content .heading-new p:last-child {
+	color: var(--main-color);
+	padding: 5px 0px;
+	font-weight: bold;
+	display: none;
+}
+
+article#promotion .container .content .banr-mask {
+	width: 352px;
+	height: 210px;
+	overflow: hidden;
+	margin: 10px 0 20px 0;
+	position: relative;
+}
+
+article#promotion .container .content img.banr {
+	width: 352px;
+	height: 210px;
+	transition: all 0.3s ease;
+}
+
+article#promotion .container .content .banr-mask .curtain {
+	width: 352px;
+	height: 210px;
+	background: rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease;
+}
+
+article#promotion .container .content .banr-mask a {
+	display: none;
+	padding: 10px 40px;
+	background: var(--main-color);
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0.1s;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+article#promotion .container .content .banr-mask a:hover {
+	border-radius: 20px;
+}
+
+article#promotion .container .content .banr-mask a:focus {
+	background: #b9680b;
+}
+
+article#promotion .container .content .foot {
+	display: flex;
+	justify-content: space-between;
+}
+
+article#promotion .container .content .foot .title {
+	width:249px;
+	font-size: 18px;
+	color: var(--main-color);
+	font-weight: bold;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+article#promotion .container .content .foot .text {
+	font-size: 14px;
+	color:#666;
+}
+
+article#promotion .container .content .foot a {
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 20px;
+	color: var(--main-hover-color);
+	align-self: flex-end;
+	border: 1px solid var(--main-color);
+	text-align:center;
+}
+
+article#promotion .container .content .foot a:hover {
+	background: var(--main-hover-color);
+	color: #fff;
+}
+
+/*維護頁*/
+
+article#fixpage .container {
+	padding: 250px 0;
+	text-align: center;
+}
+
+article#fixpage .container  h2{
+	font-size: 36px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+article#fixpage .container p{
+	font-size: 15px;
+}
+
+article#fixpage .container button{
+    color: #fff;
+	text-align: center;
+	display: inline-block;
+    padding: 13px 40px;
+    border-radius: 50px;
+    background: var(--main-button-color);
+	margin-right: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+	box-shadow: 3px 3px 14px #999999;
+}
+
+article#fixpage .container button:hover{
+	background-image: var(--main-hover-color);
+}
+
+/*頁腳*/
+footer{
+	min-width:1200px;
+    background:#353f4b;
+    padding: 30px 0;
+	color:#7c8797;
+}
+
+footer .container{
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #46505d;
+}
+
+footer .container .intro{
+	width: 200px;
+	color: #728696;
+}
+
+footer .container .intro .logo{
+	width: 160px;
+	height: 32px;
+	display: inline-block;
+	background: url(../images/footer-logo.png) center / 160px auto no-repeat;
+	margin-bottom: 7px;
+}
+
+footer .container .link-wrapper .title{
+	font-weight: bold;
+	color: #fff;
+	height: 32px;
+	line-height: 32px;
+	margin-bottom: 15px;
+}
+
+footer .container .link-wrapper .link{
+	margin-bottom: 5px;
+}
+
+footer .container .link-wrapper a{
+	color: #728696;
+	transition: color .2s ease-in;
+}
+
+footer .container .link-wrapper a:hover{
+	color: #fff;
+}
+
+footer .container .follow-us .title{
+	font-weight: bold;
+	color: #fff;
+	height: 32px;
+	line-height: 32px;
+	margin-bottom: 15px;
+}
+
+footer .container .follow-us .social-media {
+	width: 226px;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .container .follow-us .social-media li a{
+	display: inline-block;
+	width: 37px;
+	height: 37px;
+	background-color: rgb(49, 55, 63);
+	border: 1px solid rgb(49, 55, 63);
+	transition: border .3s ease;
+	border-radius: 50%;
+	background-position: center;
+	background-size: 37px auto;
+	background-repeat: no-repeat;
+}
+
+footer .container .follow-us .social-media li a:hover{
+	border-color: var(--main-color);
+}
+
+footer .container .follow-us .social-media li .twitter{
+	background-image: url(../images/footer-icon-twitter.png);
+}
+
+footer .container .follow-us .social-media li .facebook{
+	background-image: url(../images/footer-icon-fb.png);
+}
+
+footer .container .follow-us .social-media li .youtube{
+	background-image: url(../images/footer-icon-yt.png);
+}
+
+footer .container .follow-us .social-media li .bitcoin{
+	background-image: url(../images/footer-icon-bit.png);
+}
+
+footer .container .follow-us .social-media li .instagram{
+	background-image: url(../images/footer-icon-ig.png);
+}
+
+footer .container .follow-us .wechat-weibo{
+	display: flex;
+	text-align: center;
+	margin-top: 10px;
+}
+
+footer .container .follow-us .wechat-weibo li{
+	margin-right: 30px;
+}
+
+footer .container .follow-us .wechat-weibo li:last-child{
+	margin-right: 0;
+}
+
+footer .container .follow-us .wechat-weibo li .qrcode {
+    display: inline-block;
+    height: 95px;
+    width: 95px;
+	text-align: center;
+	margin-bottom: 5px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+footer .container .follow-us .wechat-weibo li .qrcode.weibo{
+	background-image: url(../images/QrCode-weibo.jpg);
+}
+
+footer .container .follow-us .wechat-weibo li .qrcode.wechat{
+	background-image: url(../images/QrCode-wechat.jpg);
+}
+
+footer .partners{
+	width: 1050px;
+	margin: 25px auto 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer .partners li{
+	background-position: left center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+footer .partners li a{
+	display: inline-block;
+	background-position: left center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	-webkit-filter:grayscale(1);
+	filter:grayscale(1);
+	opacity: 0.5;
+	transition: all .3s ease;
+	cursor: default;
+}
+
+footer .partners li a:hover{
+	-webkit-filter:grayscale(0);
+	filter:grayscale(0);
+	opacity: 1;
+}
+
+footer .partners li .ars{
+	background-image: url(../images/footer-partners-arsenal.png);
+	width: 50px;
+	height: 47px;
+}
+
+footer .partners li .sam{
+	background-image: url(../images/footer-partners-southampton.png);
+	width: 50px;
+	height: 47px;
+}
+
+footer .partners li .imp{
+	background-image: url(../images/footer-partners-imperial.png);
+	width: 50px;
+	height: 47px;
+}
+
+footer .partners li .ceg{
+	background-image: url(../images/footer-partners-ceg.png);
+	width: 50px;
+	height: 44px;
+	cursor: pointer;
+}
+
+footer .partners li .res{
+	background-image: url(../images/footer-partners-res.png);
+	width: 50px;
+	height: 52px;
+}
+
+footer .partners li .bit{
+	background-image: url(../images/footer-partners-bitcoin.png);
+	width: 50px;
+	height: 52px;
+}
+
+footer .partners li .ethe{
+	background-image: url(../images/footer-partners-ethereum.png);
+	width: 116px;
+	height: 43px;
+}
+
+footer .partners li .L-payment{
+	background-image: url(../images/footer-partners-litecoin.png);
+	width: 50px;
+	height: 45px;
+}
+
+footer .partners li .tron{
+	background-image: url(../images/footer-partners-tron.png);
+	width: 116px;
+	height: 43px;
+}
+
+footer .partners li .watford{
+	background-image: url(../images/footer-partners-watford.png);
+	width: 50px;
+	height: 48px;
+}
+
+footer .partners li .flamengo{
+	background-image: url(../images/footer-partners-flamengo.png);
+	width: 50px;
+	height: 48px;
+	cursor: pointer;
+}
+
+
+/*0215saibo登入註冊頁*/
+
+.saibo_register{
+	width: 100%;
+	height: 100%;
+    position: relative;
+	background:url('../images/loginpagebg.jpg') no-repeat center top / cover; 
+	background-attachment: fixed;
+} 
+
+.saibo_register .leftInputbg{
+	width: 30%;
+	min-width: 500px;
+	min-height: 100vh;
+	height: 100%;	
+	position: relative;
+    display: block;
+	box-shadow: 1px 0px 7px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 1px 0px 7px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 0px 7px 2px rgba(0,0,0,0.2);
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(223,223,223,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  rgba(223,223,223,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  rgba(223,223,223,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#d2d2d2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	padding-top: 70px;
+}
+
+.saibo_register .container {
+    width: 70%;
+	margin: 0 auto;
+
+	
+}
+
+.saibo_register .saiboLogo{
+	width: 287px;
+	height: 40px;
+	background:url('../images/saibologo_bk.png') no-repeat top center/ contain;
+	padding: auto;
+	margin: auto;
+
+}
+
+.saibo_register  h1 {
+    text-align: center;	
+    font-size: 34px;
+    padding: 70px 0px 15px 0px;
+	font-weight: bold;
+	color:#000;
+}
+
+.saibo_register  p {
+    text-align: center;	
+    padding: 0px 0px 10px 0px;
+}
+
+.saibo_register  a {
+    color: #0EAA50;
+}
+
+.saibo_register  a:hover {
+    color: rgb(255, 136, 0);
+}
+
+.saibo_register form {
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+
+.saibo_register .col-md-12 {
+	padding: 0px 10px 5px 10px;
+	
+} 
+
+.saibo_register .form-control {
+    font-size: 12px;
+    height: 36px;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: none;
+    border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 6px 12px;
+	margin: 0px 0px 5px 0px;
+	width: 100%;
+	
+}
+
+.saibo_register .form-control70 {
+
+	width: 68%;
+	display: inline-block;
+	
+}
+.saibo_register .btnWidth {
+
+	width: 30%;
+	display: inline-block;
+	
+
+	
+}
+
+
+.saibo_register .form-control:hover,
+.saibo_register .form-control:focus {
+    box-shadow: 0 0 5px 1px #bababa;
+    border: 1px solid #bababa;
+}
+
+
+.saibo_register .btn-primary {
+	width: 100%;
+	height: 36px;
+	text-align: center;
+    border-radius: 4px;
+    padding: 8px 0px;
+    font-size: 14px;
+    color: #fff;   
+	border: none;	
+	background: #2ada4d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2ada4d 0%, #0da550 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #2ada4d 0%,#0da550 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #2ada4d 0%,#0da550 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ada4d', endColorstr='#0da550',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+.saibo_register .btn-primary:hover,
+.saibo_register .btn-primary:active,.saibo_register .btn-primary:focus{
+	background: #0da550; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0da550 7%, #2ada4d 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #0da550 7%,#2ada4d 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #0da550 7%,#2ada4d 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0da550', endColorstr='#2ada4d',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+
+.saibo_register .noteText {
+	font-size: 12px;	
+	text-align: center;
+    
+}
+
+.saibo_register .hook {
+	
+		width: 100px;
+		height: 100px;
+		background:url('../images/hook.png') no-repeat top center/ contain;
+		padding: auto;
+		margin: 30px auto;
+	
+	
+    
+}
+
+::placeholder {
+ 
+	font-size:12px;
+	color: #999;
+  
+  }
+
+  @media (max-width: 1600px) {	
+
+	.saibo_register .leftInputbg{
+
+		padding-top: 40px;
+	}
+
+	.saibo_register  h1 {
+
+		padding: 30px 0px 15px 0px;
+	
+	}
+
+	.saibo_register .saiboLogo{
+		
+		height: 35px;
+
+	
+	}
+
+   }
+
+   .saibo_register .textLeft{
+	width: 48%;
+	display: inline-block;
+	text-align: left;
+	padding-left: 10px;
+	
+   }
+
+
+   .saibo_register .textRight{
+	width: 48%;
+	display: inline-block;
+	text-align: right;
+
+   }
+
+   input[type="checkbox"]{
+
+    min-height: 14px;
+	min-width: 14px;
+   }
+	.spaceW{
+		padding-bottom: 10px;
+	}
+
+/*警示紅字*/
+
+.default {
+
+}
+
+.saibo_register .wrong{
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.saibo_register .alert{
+	text-align: left;
+	margin-bottom: 10px;
+    color: #d9514f;
+	font-size: 14px;
+	padding-top: 0px;
+	padding-left: 18px;
+	height: 15px;
+	line-height:15px;
+}
+
+.saibo_register .back {
+    width: 35px;
+    height: 35px;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    background: url(../images/back.png) no-repeat center top / cover;
+    background-color: #ccc;
+    border-radius: 100px;
+    opacity: 0.4;
+}
+
+/*新轉帳頁0422*/
+
+.transfer-custom {
+    color: rgba(74, 74, 74, 0.8);
+    padding: 1em;
+    font-size: 14px;
+}
+
+.transfer-custom .transfer-switch {
+    padding: 1em;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+}
+
+.transfer-custom .transfer-switch .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.transfer-custom .transfer-switch .container p .more, .transfer-custom .transfer-switch .container p .help {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.transfer-custom .transfer-switch .container .btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 260px;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    -webkit-box-shadow: 1px 1px 1px #d6d6d6 inset;
+    box-shadow: 1px 1px 1px #d6d6d6 inset;
+    position: relative;
+    margin-right: 35px;
+}
+
+.transfer-custom .transfer-switch .container .btns a {
+    width: 130px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.transfer-custom .transfer-switch .container .btns a.active {
+    background: var(--primary);
+}
+
+.transfer-custom .transfer-switch .container .loading {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.transfer-custom .quick-transfer {
+    margin-top: 30px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 30px;
+}
+
+.transfer-custom .quick-transfer form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.transfer-custom .quick-transfer form select, .transfer-custom .quick-transfer form input[type="text"] {
+    height: 45px;
+    width: 150px;
+    border: 1px solid #e6e6e6;
+    background: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 10px;
+}
+
+.transfer-custom .quick-transfer form .confirm {
+    height: 45px;
+    width: 130px;
+    border-radius: 25px;
+    color: #fff;
+    background: var(--primary);
+    -webkit-transition: background 0.1s ease-in;
+    -o-transition: background 0.1s ease-in;
+    transition: background 0.1s ease-in;
+    cursor: pointer;
+}
+
+.transfer-custom .quick-transfer form .confirm:hover {
+    background: var(--main-hover-color);
+    -webkit-box-shadow: var(--btn-shadow);
+    box-shadow: var(--btn-shadow);
+}
+
+.transfer-custom .quick-transfer form .confirm:active {
+    -webkit-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    transform: translateY(1px);
+}
+
+.transfer-custom .quick-transfer .icon-arrow {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #4a4a4a;
+    margin-right: 10px;
+    position: relative;
+}
+
+.transfer-custom .quick-transfer .icon-arrow:before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px 0 5px 6px;
+    border-color: transparent transparent transparent #fff;
+    top: 50%;
+    left: 55%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.transfer-custom .main-account {
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.transfer-custom .main-account p {
+    margin-right: 10px;
+}
+
+.transfer-custom .main-account p .balance {
+    font-size: 28px;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+.transfer-custom .main-account .transfer-out {
+    padding: 0 15px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 25px;
+    background: var(--primary);
+    color: #fff;
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-transition: background 0.1s ease-in;
+    -o-transition: background 0.1s ease-in;
+    transition: background 0.1s ease-in;
+}
+
+.transfer-custom .main-account .transfer-out:hover {
+    background: var(--main-hover-color);
+    -webkit-box-shadow: var(--btn-shadow);
+    box-shadow: var(--btn-shadow);
+}
+
+.transfer-custom .main-account .transfer-out:active {
+    -webkit-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    transform: translateY(1px);
+}
+
+.transfer-custom .balance-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.transfer-custom .balance-list .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 200px;
+    height: 100px;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 22px 22px 0;
+    position: relative;
+}
+
+.transfer-custom .balance-list .item .text {
+    color: var(--primary);
+}
+
+.transfer-custom .balance-list .item .bot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in {
+    line-height: 1;
+    display: block;
+    padding: 5px 7px;
+    border-radius: 15px;
+    font-size: 12px;
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    -webkit-transition: background 0.1s ease-in;
+    -o-transition: background 0.1s ease-in;
+    transition: background 0.1s ease-in;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in:active {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+.transfer-custom .balance-list .item .bot .balance {
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+/*簽到按鈕 0526*/
+
+header .container #loginSection{
+	display: flex;
+	align-items: center;
+}
+
+header .container .check-in,
+.logined-header .check-in{
+	position: relative;
+	top: -5px;
+	display: inline-block;
+    width: 180px;
+    height: 61px;
+    background: url(../images/pieceL.gif) center/ contain no-repeat;
+	margin-left: 8px;
+	cursor: pointer;
+	text-indent: -9999px;
+}
+
+/* header .container #loginSection .check-in,
+.logined-header .container div:last-child .check-in{
+	min-width: 70px;
+	height: 25px;
+	padding-left: 30px;
+	padding-right: 10px;
+    display: inline-block;
+    position: relative;
+	cursor: pointer;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 26px;
+	color: #58b650;
+	transition: all .1s ease-in;
+}
+
+header .container #loginSection .check-in{
+	position: relative;
+	top: 1px;
+	right: 10px;
+}
+
+header .container #loginSection .check-in::before,
+.logined-header .container div:last-child .check-in::before{
+	content:'';
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: url(../images/checkin02.png) left center/auto 20px no-repeat;
+	width: 20px;
+	height: 20px;
+	left: 5px;
+}
+
+header .container #loginSection .check-in:hover,
+.logined-header .container div:last-child .check-in:hover{
+	background-color: #58b650;
+	color: #fff;
+}
+
+header .container #loginSection .check-in:active,
+.logined-header .container div:last-child .check-in:active{
+	transform: translateY(1px);
+}
+
+header .container #loginSection .check-in:hover::before,
+.logined-header .container div:last-child .check-in:hover::before{
+	background-position: right center;
+} */
+
+
+  
+/*隱藏區塊*/
+
+.game-entry,
+.bet-info,
+.mobile-app-2,
+.sport-bet-sportradar,
+.mobile-app-1 + .carousel,
+.homeIframeContent,
+.recommended-slot,
+.aff-link,
+header .container > div button[class="signin"]:nth-of-type(1),
+header .container #loginSection input,
+header .container #loginSection .forget,
+.logined-header .container a.home,
+.footer-happywin,
+.happywin-contact,
+.logined-header .container div .welcome,
+.logined-header .container div .withdraw,
+.sport-bet-origin,
+.mobile-view,
+.app-and-contact,
+.happywin-contact,
+.sport-bet,
+.mobile-app-1,
+.recommended-slot + .sec-nav,
+.marq .container .icon-speaker + span,
+header .container div:first-child span:nth-child(2),
+header .container div:first-child span:nth-child(3),
+header .container div:first-child span:nth-child(4),
+#content-wrapper > .adventage,
+.esport-betting-carousel,
+.logined-header .container div:last-child .vip,
+.mobile-app .container>div:last-child h3~a
+{
+	display: none;
+}
+
+/*slick套件修改*/
+.slick-dot {
+    opacity: 1 !important;
+    background: var(--main-color) !important;
+}
+
+.slick-dots li {
+	width: 50px !important;
+}
+
+article#sign-up .container,
+article#sign-in .container,
+#password-index,
+article#password-solution,
+article#password-solution-qa,
+article#password-reset,
+article#password-success,
+article#password-solution-mobile,
+article#password-solution-mail{
+	background: url(../images/login-bg.jpg) center / cover no-repeat;
+}

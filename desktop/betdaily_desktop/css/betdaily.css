@@ -1,0 +1,7317 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+:root {
+	--main-button-color: linear-gradient(to left, #b21318, #e42a25);
+	--main-hover-color: linear-gradient(to left, #e42a25, #b21318);
+	--main-color: #b21318;
+	--sp-button-color: linear-gradient(to right, #e7cf71, #8f4c04);
+	--sp-hover-color: linear-gradient(to right, #8f4c04, #e7cf71);
+	/*sport category panel*/
+	--panel-frame-color: linear-gradient(to left, #b21318, #e42a25);
+	--panel-frame-color-gold: linear-gradient(to right, #e7cf71, #8f4c04);
+	--sec-button-color: linear-gradient(#e42a25, #b21318);
+	--signin-color: #fca41b;
+	--signup-color: #2581e4;
+	--sign-hover-color: #e42a25;
+	--grey-button-color: linear-gradient(#fff, #e5e5e5);
+	--greybutton-color: linear-gradient(180deg, #999, #666);
+	--greybutton-border-color: #262525;
+	--greybutton-hover-color: #999;
+	--greybutton-active-color: linear-gradient(to bottom, #666 0%, #999 100%);
+	--go-hover-color: #e42a25;
+	--go-active-color: #d1241e;
+	/* 
+	  promotion page background */
+	--section-bgcolor: rgba(255, 255, 255, 0.6);
+	/* memeber */
+	--member-color: #bf3337;
+	/*btn shadow*/
+	--btnShadow: 0 3px 15px rgba(205, 18, 18, 0.7);
+	--play-color: #da251f;
+}
+
+a{
+	cursor: pointer !important;
+}
+
+body {
+	padding-top: 157px;
+	font: 14px/150% 'Open Sans', sans-serif !important;
+	color: #666 !important;
+}
+
+/* antd message for login error */
+
+.ant-message-notice-content {
+	background: rgba(0, 0, 0, 0.75);
+	color: #c5c5c5;
+}
+
+.top-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30;
+	width: 100%;
+	height: 35px;
+	background: #740500;
+}
+
+.top-header .container{
+	width: 1120px;
+	margin: auto;
+}
+
+.top-header .container .list{
+	display: flex;
+	align-items: center;
+	height: 35px;
+}
+
+.top-header .container .list .item{
+	position: relative;
+	margin-right: 30px;
+}
+
+.top-header .container .list .item::after{
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: -15px;
+	height: 10px;
+	width: 2px;
+	background: rgb(240, 240, 240);
+	transform: translateY(-50%);
+}
+
+.top-header .container .list .item:last-child::after{
+	width: 0;
+}
+
+.top-header .container .list .link{
+	color: rgb(240, 240, 240);
+}
+
+
+
+/*語系*/
+
+header .container .default {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	background-size: contain;
+}
+
+header .container .default.cn {
+	background-image: url(../images/index_header-contry.png);
+}
+
+header .container .default.eng {
+	background-image: url(../images/index_header-contry-eng.png)
+}
+
+header .container .default.vn {
+	background-image: url(../images/contry-vn-round.png)
+}
+
+.region {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 44px;
+	z-index: 9999;
+	background: #fff;
+	border-radius: 5px;
+	color: #666;
+	width: 115px;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12);
+}
+
+.region li {
+	padding: 10px;
+	cursor: pointer;
+	font-size: 14px;
+	display: block;
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-size: 25px auto;
+	background-position: 10px center;
+	border-bottom: 1px solid #dfdfdf;
+	position: relative;
+	border-radius: 5px 5px 0 0;
+}
+
+.region li img {
+	width: 25px;
+	height: auto;
+	margin-right: 10px;
+}
+
+.region li:nth-child(1) {
+	background-image: url(../images/index_header-contry.png);
+}
+
+.region li:nth-child(2) {
+	background-image: url(../images/index_header-contry-eng.png);
+}
+
+.region li:nth-child(3) {
+	background-image: url(../images/contry-vn-round.png);
+}
+
+.region li:nth-child(1):hover {
+	background-color: #f1f1f1;
+}
+
+.region li:nth-child(2):hover {
+	background-color: #f1f1f1;
+	border-radius: 5px;
+}
+
+.region li:first-child::before {
+	content: '';
+	position: absolute;
+	left: 8px;
+	top: -6px;
+	border-style: solid;
+	border-width: 0px 6px 6px 6px;
+	border-color: transparent transparent #fff transparent;
+}
+
+/*header*/
+
+header, .logined-header {
+	position: fixed;
+	top: 35px;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(to right, rgb(125, 2, 4), rgb(178, 19, 24), rgb(125, 2, 4));
+	;
+	z-index: 20;
+	height: 70px;
+}
+
+header .container, .logined-header .container {
+	position: relative;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 1120px;
+	height: 70px;
+	padding: 0 8px;
+}
+
+header .logo-wrapper,
+.logined-header .logo-wrapper{
+	position: absolute;
+	left: 47%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+}
+
+header .logo, .logined-header .logo {
+	display: inline-block;
+	width: 240px;
+	height: 33px;
+	cursor: pointer;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: 30px;
+}
+
+header .logo, .logined-header .logo {
+	background-image: url(../images/logo-betdaily-0630.png);
+}
+
+header .logo-wrapper .cplt20,
+.logined-header .logo-wrapper .cplt20{
+	display: inline-block;
+	width: 110px;
+	height: 54px;
+	background: url(../images/logo-cplt20.png) center/ contain no-repeat;
+}
+
+header .container>div:last-child {
+	position: relative;
+}
+
+header .container .signin,
+header .container .signup {
+	position: relative;
+	display: inline-block;
+	min-width: 110px;
+	height: 35px;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px;
+	color: rgb(230, 230, 230);
+	padding: 0px 15px;
+	border-radius: 5px;
+	background: radial-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.4));
+	transition: all 0.3s ease-in-out 0s;
+	text-indent: 25px;
+	text-transform: uppercase;
+	overflow: hidden;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+header .container>div .signin::before, header .container>div .signup::before {
+	content: '';
+	position: absolute;
+	top: 7px;
+	left: 15px;
+	width: 22.5px;
+	height: 22.5px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+header .container>div .signin::before {
+	background-image: url(../images/user-client.png);
+}
+
+header .container>div .signup::before {
+	background-image: url(../images/user-client-signup-2.png);
+}
+
+header .container>div .signin:hover,
+header .container>div .signup:hover {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 3px;
+	transform: translateY(-1px);
+}
+
+header .container>div .signin:active,
+header .container>div .signup:active {
+	background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
+/*登入header*/
+
+.logined-header {
+	color: #fff;
+}
+
+.logined-header .container div:first-child {
+	align-items: center;
+}
+
+.logined-header .container div:first-child span:nth-child(2) {
+	margin-right: 5px;
+}
+
+.logined-header .container span {
+	display: inline-block;
+	cursor: pointer;
+	visibility: visible;
+	margin-right: 8px;
+}
+
+.logined-header .container a {
+	transition: all .2s ease;
+}
+
+.logined-header .container a:hover {
+	color: #fff;
+}
+
+.logined-header .container a.home {
+	margin-left: 40px;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 8px;
+}
+
+.logined-header .container a.service {
+	padding-left: 6px;
+}
+
+.logined-header .container>div:last-child {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.logined-header .container .name {
+	position: relative;
+	left: 40px;
+}
+
+.logined-header .container .line {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background: url(../images/icon-wallet0828.png) center/22px auto no-repeat;
+	position: relative;
+	right: -50px;
+	z-index: 1;
+}
+
+.logined-header .container .wallet {
+	cursor: pointer;
+}
+
+.logined-header .container .balance {
+	color: #ecb82b;
+}
+
+.logined-header .container .mail-remind{
+	position: relative;
+	margin-left: 5px;
+	margin-right: 3px;
+	width: 20px;
+	height: 21px;
+	background: url(../images/icon-remind-bell.png) center/18px auto no-repeat;
+	cursor: pointer;
+}
+
+.logined-header .container .mail-remind .dot{
+	position: absolute;
+	top: -3px;
+	right: -5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: #FEE476;
+}
+
+.logined-header .container .deposit {
+	padding: 5px 10px;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .6), #fff);
+	color: rgb(125, 2, 4);
+	border-radius: 3px;
+}
+
+.logined-header .container div:last-child p {
+	visibility: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.logined-header .container .deposit:active {
+	transform: translateY(1px);
+}
+
+.logined-header .container .message {
+	color: #fff;
+}
+
+.logined-header .container .logout {
+	text-indent: -9999px;
+	width: 22px;
+	height: 20px;
+	background: url(../images/icon-logout.png) center/22px auto no-repeat;
+}
+
+.logined-header .container .deposit, .logined-header .container .logout {
+	margin-left: 15px;
+}
+
+.logined-header .balance-toggle{
+	width: 10px;
+	height: 6px;
+	background: url(../images/balance-toggle.png) center bottom / 10px auto no-repeat;
+}
+
+.logined-header .balance-toggle.active{
+	background-position: center top;
+}
+
+.logined-header .balance-refresh{
+	width: 13px;
+	height: 10px;
+	background: url(../images/balance-refresh.png) center / contain no-repeat;
+}
+
+/*帳戶餘額list*/
+.logined-header .container .balance-list {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	top: 52px;
+	left: 40px;
+	background-image: linear-gradient(to bottom, #eeeeee, #fff);
+	width: 330px;
+	border-radius: 0 0 5px 5px;
+	overflow: hidden;
+	box-shadow: 2px 4px 6px rgba(0,0,0,.4);
+}
+
+.logined-header .container .balance-list .item{
+	padding: 20px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: linear-gradient(to bottom, #fff, #eee);
+}
+
+.logined-header .container .balance-list .item:hover{
+}
+
+.logined-header .container .balance-list .item .amount{
+	color: var(--main-color);
+	font-weight: bold;
+}
+
+.logined-header .container div:last-child .balance-list .head{
+	padding: 20px 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logined-header .container div:last-child .balance-list .head p{
+	font-size: 15px;
+	font-weight: bold;
+	color: #111;
+}
+
+.logined-header .container div:last-child .balance-list .head .text{
+	position: relative;
+	padding-left: 25px;
+}
+
+.logined-header .container div:last-child .balance-list .head .text::before{
+	content: '';;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 20px;
+	height: 16px;
+	transform: translateY(-50%);
+	background: url(../images/icon-balance-list-head-coin.png) center/contain no-repeat;
+}
+
+.logined-header .container div:last-child .balance-list p{
+	visibility: visible;
+	color: #333;
+}
+
+.logined-header .container .balance-list .item .transfer{
+	padding: 5px 10px;
+	background: var(--main-color);
+	color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 0px 5px rgba(205, 18, 18, 0.7);
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.logined-header .container .balance-list .item .transfer:hover{
+	background: var(--main-hover-color);
+}
+
+.logined-header .container .balance-list .item .transfer:active{
+	transform: translateY(1px);
+    /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2) inset; */
+    background-image: linear-gradient(to top, #E42A25, #B21318);
+}
+
+.logined-header .container div:last-child .balance-list .maintain{
+	color: #999;
+	display: none;
+}
+
+.logined-header .container .balance-list .item .text.dot{
+	position: relative;
+	padding-left: 15px;
+	
+}
+
+.logined-header .container .balance-list .item .text.dot::after{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 6px;
+	height: 6px;
+	border-radius: 2px;
+	background-image: linear-gradient(-120deg, #e42a25 0%, #B00608 50%, #b00608 100%);
+}
+
+.logined-header .container .balance-list .item .switch {
+	margin: 0;
+	width: 40px;
+	height: 20px;
+	background: #e1e1e1;
+	display: block;
+	border-radius: 20px;
+	display: inline-block;
+	position: relative;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, .5) inset;
+  }
+  
+  .logined-header .container .balance-list .item .switch:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: radial-gradient( #fff, #e3e3e3);
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
+  }
+  
+  .logined-header .container .balance-list .item .switch.active {
+	background: #B00608;
+  }
+  
+  .logined-header .container .balance-list .item .switch.active::after {
+	left: 22px;
+  }
+
+.logined-header .container .balance-list .foot{
+	position: relative;
+	display: block;
+	background-image: var(--main-button-color);
+	text-align: center;
+	padding: 5px;
+	color: #fff;
+}
+
+.logined-header .container .balance-list .foot::before{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: url(../images/icon-balance-list-foot-avatar.png) center/contain no-repeat;
+	left: 105px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logined-header .container .balance-list .foot::after{
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0;
+	position: relative;
+	top: 50%;
+	transform: rotate(45deg) ;
+	width: 0.45em;
+}
+
+/*導覽列*/
+
+nav {
+	width: 100%;
+	z-index: 19;
+	position: fixed;
+	top: 105px;
+	left: 0;
+	background: #fff;
+	height: 52px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+	color: #242629;
+}
+
+nav .container {
+	width: 1120px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 51px;
+}
+
+nav .container .container div {
+	height: 45px;
+}
+
+nav .container .logo {
+	width: 141px;
+	height: 59px;
+	background: url(../images/logo.png) center center no-repeat;
+}
+
+nav .container a {
+	color: inherit;
+	position: relative;
+	transition: all .3s linear;
+	font-size: 16px;
+}
+
+nav .container a:hover {
+	color: var(--main-color);
+}
+
+nav .container a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	background: var(--main-color);
+	left: 50%;
+	bottom: -10px;
+	transition: all .3s linear;
+	transform: translateX(-50%);
+}
+
+nav .container a:hover::after {
+	width: 100%;
+}
+
+nav .container i {
+	display: inline-block;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	border: solid #242629;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform-origin: 50% 75%;
+	transition: all .3s ease-in;
+}
+
+
+/*下拉選單*/
+
+.panel {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.95);
+	color: #333;
+	position: absolute;
+	top: -198px;
+	left: 0;
+	z-index: 10;
+	transition: all .5s ease-out;
+}
+
+/* .panel .container a {
+	margin-right: 15px;
+} */
+
+.panel .container a:last-child {
+	margin-right: 0;
+}
+
+.panel .container>div:last-child {
+	display: none;
+}
+
+.hovered {
+	top: 157px;
+	position: fixed;
+}
+
+.panel .container {
+	width: 1200px;
+	height: 300px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.panel .container a span:first-child {
+	display: inline-block;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.panel .container a p {
+	display: none;
+}
+
+/*體育 下拉選單*/
+
+#panel-_sports .container a span:first-child {
+	width: 400px;
+	height: 250px;
+}
+
+#panel-_sports .container a .logo-exchange {
+	background-image: url(../images/panel-sport-exchange-0909.png);
+}
+
+#panel-_sports .container a .logo-bookmaker {
+	background-image: url(../images/panel-sport-bookmaker-0909.png);
+}
+
+#panel-_sports .container a .logo-fixed_odds {
+	background-image: url(../images/panel-sport-sportsbook.png);
+}
+
+/*POKER 下拉選單*/
+
+#panel-_poker .container a span:first-child {
+	width: 400px;
+	height: 250px;
+}
+
+#panel-_poker .container a .logo-poker {
+	background-image: url(../images/panel-poker-0811.png);
+}
+
+/*CARD GAME 下拉選單*/
+
+#panel-_cardGame .container a span:first-child {
+	width: 420px;
+	height: 179px;
+}
+
+#panel-_cardGame .container a .logo-wacs {
+	background-image: url(../images/panel-cardgame-weAreCasino.png);
+}
+
+#panel-_cardGame .container a .logo-exchange {
+	background-image: url(../images/panel-cardgame-exchange-0812.png);
+}
+
+/*真人娛樂下拉選單*/
+
+#panel-_liveCasino .container{
+	width: 1360px;
+}
+
+#panel-_liveCasino .container a span:first-child {
+	width: 170px;
+	height: 150px;
+}
+
+#panel-_liveCasino .container a .logo-PT-Lobby {
+	background-image: url(../images/panel-casino-pt-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-Betgames {
+	background-image: url(../images/panel-casino-betgames-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-SSG-Lobby {
+	background-image: url(../images/panel-casino-ssg-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-Evolution-Gaming {
+	background-image: url(../images/panel-casino-evo-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-AG-Lobby {
+	background-image: url(../images/panel-casino-asia-gaming-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-MG {
+	background-image: url(../images/panel-casino-mg-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-AE {
+	background-image: url(../images/panel-casino-sexy-0818.png);
+}
+
+#panel-_liveCasino .container a .logo-SAG {
+	background-image: url(../images/panel-casino-sa-0818.png);
+}
+
+/*VIRTUAL SPORTS 下拉選單*/
+
+#panel-_vSports .container a span:first-child {
+	width: 370px;
+	height: 166px;
+}
+
+#panel-_vSports .container a .logo-bti {
+	background-image: url(../images/panel-virtual-sport.png);
+}
+
+/*電競下拉選單*/
+
+#panel-_eSports .container a span:first-child {
+	width: 370px;
+	height: 166px;
+}
+
+#panel-_eSports .container a .logo-bti {
+	background-image: url(../images/panel-esports-0811.png);
+}
+
+/*BINGO & SLOT 下拉選單*/
+
+#panel-_slot_bingo .container a span:first-child {
+	width: 370px;
+	height: 166px;
+}
+
+#panel-_slot_bingo .container a .logo-slotGame {
+	background-image: url(../images/panel-slot-0811.png);
+}
+
+#panel-_slot_bingo .container a .logo-bingo {
+	background-image: url(../images/panel-bingo-0811.png);
+}
+
+/*SPECIAL MARKET 下拉選單*/
+#panel-_special_market .container a span:first-child {
+	width: 400px;
+	height: 250px;
+}
+
+#panel-_special_market .container a .logo-ipl_2020 {
+	background-image: url(../images/panel-sm-ipl2020-0930.png);
+}
+
+#panel-_special_market .container a .logo-bihar_elections {
+	background-image: url(../images/panel-sm-be-0930.png);
+}
+
+#panel-_special_market .container a .logo-big_boss_2020 {
+	background-image: url(../images/panel-sm-bigboss-0930.png);
+}
+
+/*theme100*/
+
+.carousel {
+	position: relative;
+	min-width: 1200px;
+	height: 400px;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.carousel .slide {
+	min-width: 1200px;
+	height: 400px;
+	background: url(../images/banner01.jpg) center/cover no-repeat;
+}
+
+.carousel .prev, .carousel .next {
+	display: inline-block;
+	width: 36px;
+	height: 72px;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.carousel .prev {
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	border-radius: 0 5px 5px 0;
+	background-image: url(../images/arrow-prev-carousel.png);
+	background-repeat: no-repeat;
+}
+
+.carousel .next {
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	border-radius: 5px 0px 0px 5px;
+	background-image: url(../images/arrow-next-carousel.png);
+	background-repeat: no-repeat;
+}
+
+.carousel .indicates {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.carousel .indicates .square {
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.4);
+	width: 50px;
+	height: 7px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.carousel .indicates .square:hover {
+	background: var(--main-color);
+}
+
+.carousel .indicates .active, .carousel .indicates .active:hover {
+	background: var(--main-color);
+}
+
+/*跑馬燈*/
+
+.marq {
+	height: 34px;
+	background: #fff;
+}
+
+.marq .container {
+	width: 1200px;
+	height: 34px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.marq .container .icon-speaker {
+	width: 26px;
+	height: 26px;
+	background-image: url(../images/marq-speaker.png);
+	background-repeat: no-repeat;
+	background-size: 26px auto;
+}
+
+.marq .container .message {
+	width: 1060px;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 9px;
+}
+
+.marq .container .message marquee {
+	display: flex;
+	align-items: center;
+}
+
+.marq .container .icon-service {
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/marq-livechat.png);
+	background-repeat: no-repeat;
+	background-size: 30px auto;
+	margin-right: 5px;
+	position: absolute;
+	right: 62px;
+	top: 2px;
+}
+
+.marq .container .message a {
+	color: #666;
+	margin-right: 135px;
+	display: inline-block;
+}
+
+.marq .container .online-service {
+	cursor: pointer;
+	color: var(--main-color);
+	position: absolute;
+	right: 0;
+	top: 7px;
+}
+
+.marq .container .online-service:hover {
+	color: var(--main-hover-color);
+}
+
+/* official betting partner */
+.obp-wrapper{
+	position: fixed;
+	bottom: 20px;
+	left: 10px;
+	z-index: 10;
+}
+
+.obp{
+	display: block;
+	width: 221px;
+	height: 132px;
+	background: url(../images/obp-img-0813.png) center/contain no-repeat;
+}
+
+.obp-wrapper .close{
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: .5;
+	transition: opacity .2s ease-in;
+}
+
+.obp-wrapper .close:hover{
+	opacity: 1;
+}
+
+.obp-wrapper .close::before,
+.obp-wrapper .close::after{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	content: ' ';
+	height: 20px;
+	width: 2px;
+	background-color: #fff;
+}
+
+.obp-wrapper .close:before {
+	transform: translate(-50%, -50%) rotate(45deg);
+  }
+.obp-wrapper .close:after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+/* casino & promotions & services */
+.promotions-embd{
+	min-width: 1360px;
+	background: url(../images/promotions-bg-embd-0812.jpg) center/cover no-repeat;
+}
+
+.promotions-embd .container{
+	width: 1120px;
+	margin: auto;
+	padding: 100px 0;
+}
+
+.promotions-embd .text-wrapper h2,
+.pro-services .text-wrapper h2,
+.product-embd .text-wrapper h2 {
+	font-size: 35px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 3px;
+	color: #bd1419;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+
+.promotions-embd .text-wrapper h3,
+.pro-services .text-wrapper h3 {
+	font-size: 18px;
+	letter-spacing: 1px;
+	color: #bd1419;
+	text-align: center;
+	margin: 3px 0;
+	letter-spacing: 1px;
+}
+
+.promotions-embd .text-wrapper p,
+.pro-services .text-wrapper p,
+.product-embd .text-wrapper p{
+	text-align: center;
+}
+
+.promotions-embd .content{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.promotions-embd .content .cpl-video{
+	border-radius: 5px;
+	width: 360px;
+	height: 220px;
+	background-color: #000;
+}
+
+.promotions-embd .content a{
+	display: block;
+	width: 360px;
+	height: 220px;
+	background-color: #fff;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	box-shadow: 3px 3px 2px rgba(0,0,0,.2);
+	transition: all .1s ease-in;
+}
+
+.promotions-embd .content a:hover{
+	transform: scale(1.05);
+}
+
+.promotions-embd .content .refer{
+	background-image: url(../images/promotion-refer.jpg);
+}
+
+.promotions-embd .content .welcome-pt{
+	background-image: url(../images/promotion-welcome-pt.jpg);
+}
+
+.promotions-embd .content .welcome-cpl{
+	background-image: url(../images/promotion-welcome-cpl.jpg);
+}
+
+.pro-services{
+	min-width: 1360px;
+	height: 900px;
+	margin-top: 100px;
+	background: url(../images/pro-services-bg.jpg) center bottom / cover no-repeat;
+}
+
+.pro-services .ribbon{
+	display: flex;
+	justify-content: center;
+	width: 840px;
+	height: 142px;
+	margin: 50px auto;
+}
+
+.pro-services .ribbon .item{
+	width: 180px;
+	height: 163px;
+	padding: 20px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.pro-services .ribbon .item--30{
+	background-image: url(../images/pro-services-30.png);
+}
+
+.pro-services .ribbon .item--20{
+	background-image: url(../images/pro-services-20.png);
+}
+
+.pro-services .ribbon .item:not(:last-child){
+	margin-right: 40px;
+}
+
+.pro-services .ribbon .item .title{
+	margin-top: 80px;
+	color: #D7B47C;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.pro-services .ribbon .item .text{
+	color: #fff;
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+.pro-services .warranty{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: auto;
+	width: 1120px;
+}
+
+.pro-services .warranty .item{
+	position: relative;
+	padding: 25px 45px;
+	width: 50%;
+	background-image: linear-gradient(45deg, rgba(230, 230, 230, 0.6), rgba(255,255,255,1), rgba(230, 230, 230, .6));
+}
+
+.pro-services .warranty .item::after{
+	content: '';
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	bottom: -25px;
+	width: 100%;
+	height: 25px;
+	background: url(../images/warranty-shadow.png) center/cover no-repeat;
+}
+
+.pro-services .warranty .item .title{
+	position: relative;
+	margin: 60px 0 35px 0;
+	font-size: 24px;
+	font-weight: bold;
+	color: #111;
+}
+
+.pro-services .warranty .item .title::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 61px;
+	height: 54px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.pro-services .warranty .item .title-icon--ideal::after{
+	background-image: url(../images/warranty-icon-ideal.png);
+}
+
+.pro-services .warranty .item .title-icon--odds::after{
+	background-image: url(../images/warranty-icon-odds.png);
+}
+
+.pro-services .warranty .item .title-icon--deposit::after{
+	background-image: url(../images/warranty-icon-deposit.png);
+}
+
+.pro-services .warranty .item .title-icon--security::after{
+	background-image: url(../images/warranty-icon-security.png);
+}
+
+.product-embd{
+	margin: 100px 0;
+	min-width: 1360px;
+}
+
+.product-embd .container{
+	width: 1120px;
+	margin: auto;
+}
+
+.product-embd .container .navbar{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 35px;
+}
+
+.product-embd .container .navbar .item-btn{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 170px;
+	height: 45px;
+	border-radius: 10px;
+	background-image: linear-gradient(-45deg, #eee, #fff, #eee);
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.product-embd .container .navbar .item-btn:hover{
+	background-image: linear-gradient(to bottom, #E42A25, #B21318);
+	color: #fff;
+}
+
+.product-embd .container .navbar .item-btn:hover .btn-icon{
+	background-position: right center;
+}
+
+.product-embd .container .navbar .item-btn::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 100%;
+	height: 10px;
+	background: url(../images/btn-shadow.png) center/cover no-repeat;
+}
+
+.product-embd .container .navbar .item-btn--active{
+	background-image: linear-gradient(to bottom, #E42A25, #B21318);
+	color: #fff;
+}
+
+.product-embd .container .navbar .btn-icon{
+	display: inline-block;
+	background-position: left center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-right: 10px;
+}
+
+.product-embd .container .navbar .btn-icon--sport{
+	width: 22px;
+	height: 22px;
+	background-image: url(../images/casino-btnicon-sport.png);
+}
+
+.product-embd .container .navbar .btn-icon--esport{
+	width: 30px;
+	height: 18px;
+	background-image: url(../images/casino-btnicon-esport.png);
+}
+
+.product-embd .container .navbar .btn-icon--casino{
+	width: 19px;
+	height: 20px;
+	background-image: url(../images/casino-btnicon-casino.png);
+}
+
+.product-embd .container .navbar .btn-icon--teenpatti{
+	width: 24px;
+	height: 24px;
+	background-image: url(../images/casino-btnicon-teenpatti.png);
+}
+
+.product-embd .container .navbar .btn-icon--slot{
+	width: 22px;
+	height: 22px;
+	background-image: url(../images/casino-btnicon-slot.png);
+}
+
+.product-embd .container .navbar .btn-icon--poker{
+	width: 24px;
+	height: 24px;
+	background-image: url(../images/casino-btnicon-poker.png);
+}
+
+.product-embd .container .navbar .item-btn--active .btn-icon--sport{
+	background-position: right center;
+}
+
+.product-embd .container .navbar .item-btn--active .btn-icon--esport{
+	background-position: right center;
+}
+
+.product-embd .container .navbar .item-btn--active .btn-icon--casino{
+	background-position: right center;
+}
+
+.product-embd .container .navbar .item-btn--active .btn-icon--teenpatti{
+	background-position: right center;
+}
+
+.product-embd .container .navbar .item-btn--active .btn-icon--slot{
+	background-position: right center;
+}
+
+.product-embd .container .navbar .item-btn--active .btn-icon--poker{
+	background-position: right center;
+}
+
+.product-embd .container .tab-wrap{
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 60px;
+	padding-right: 50px;
+	height: 450px;
+	border-radius: 5px;
+	background: url(../images/tab-section-bg.jpg) center/cover no-repeat;
+}
+
+.product-embd .container .tab-section {
+	display: none;
+	position: relative;
+	animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+  }
+
+.product-embd .container .tab-section.active{
+	display: block;
+}
+
+.product-embd .container .tab-section .model {
+	width: 550px;
+	height: 480px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.product-embd .container .tab-section--sport .model{
+	background-image: url(../images/tab-model-sport.png);
+}
+
+.product-embd .container .tab-section--esport .model{
+	background-image: url(../images/tab-model-esport.png);
+}
+
+.product-embd .container .tab-section--casino .model{
+	background-image: url(../images/tab-model-livecasino.png);
+}
+
+.product-embd .container .tab-section--teenpatti .model{
+	background-image: url(../images/tab-model-cardgame.png);
+}
+
+.product-embd .container .tab-section--slot .model{
+	background-image: url(../images/tab-model-slot.png);
+}
+
+.product-embd .container .tab-section--poker .model{
+	background-image: url(../images/tab-model-poker.png);
+	background-size: 77%;
+    background-position: center top;
+}
+
+.product-embd .container .tab-section .content{
+	width: 500px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+
+.product-embd .container .tab-section .content .title{
+	font-size: 60px;
+	margin-bottom: 20px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: linear-gradient(45deg , #EEC874, #AE740F);
+	line-height: 1;
+}
+
+.product-embd .container .tab-section .content .text{
+	margin-bottom: 30px;
+}
+
+.product-embd .container .tab-section .content .list{
+	display: flex;
+}
+
+.product-embd .container .tab-section .content .list .item{
+	margin-right: 10px;
+	width: 80px;
+}
+
+.product-embd .container .tab-section .content .list .item a{
+	transition: transform .2s ease-in-out;
+}
+
+.product-embd .container .tab-section .content .list .item a:hover{
+	transform: translateY(-5px);
+}
+
+.product-embd .container .tab-section .content .list .link{
+	display: block;
+	width: 80px;
+	height: 50px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.product-embd .container .tab-section .content .list .item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 12px;
+}
+
+.product-embd .container .tab-section .content .list .link-sport--exchange{
+	background-image: url(../images/tab-link-sport-exchange.png);
+}
+
+.product-embd .container .tab-section .content .list .link-sport--bookmaker{
+	background-image: url(../images/tab-link-sport-bookmaker.png);
+}
+
+.product-embd .container .tab-section .content .list .link-sport--odds{
+	background-image: url(../images/tab-link-sport-odds.png);
+}
+
+.product-embd .container .tab-section .content .list .link-sport--sportsbook{
+	background-image: url(../images/tab-link-sport-sportsbook.png);
+}
+
+.product-embd .container .tab-section .content .list .link-teenpatti--tpt{
+	background-image: url(../images/tab-link-teenpatti-tpt.png);
+}
+
+.product-embd .container .tab-section .content .list .link-poker--pk{
+	background-image: url(../images/tab-link-poker-pk.png);
+}
+
+.product-embd .container .tab-section .content .list .link-casino--pt{
+	background-image: url(../images/tab-link-casino-pt.png);
+}
+
+.product-embd .container .tab-section .content .list .link-casino--bg{
+	background-image: url(../images/tab-link-casino-bg.png);
+}
+
+.product-embd .container .tab-section .content .list .link-casino--ssd{
+	background-image: url(../images/tab-link-casino-ssd.png);
+}
+
+.product-embd .container .tab-section .content .list .link-casino--evo{
+	background-image: url(../images/tab-link-casino-evo.png);
+}
+
+.product-embd .container .tab-section .content .list .link-casino--ag{
+	background-image: url(../images/tab-link-casino-ag.png);
+}
+
+.product-embd .container .tab-section .content .list .link-casino--mg{
+	background-image: url(../images/tab-link-casino-mg.png);
+}
+
+.product-embd .container .tab-section .content .list .link-esport--es{
+	background-image: url(../images/tab-link-esport-es.png);
+}
+
+.product-embd .container .tab-section .content .list .link-slot--wc{
+	background-image: url(../images/tab-link-slot-wc.png);
+}
+
+.product-embd .container .tab-section .content .list .link-slot--fmc{
+	background-image: url(../images/tab-link-slot-fmc.png);
+}
+
+.product-embd .container .tab-section .content .list .link-slot--pd{
+	background-image: url(../images/tab-link-slot-pd.png);
+}
+
+.product-embd .container .tab-section .content .list .link-slot--ff{
+	background-image: url(../images/tab-link-slot-ff.png);
+}
+
+.product-embd .container .tab-section .content .list .item .text{
+	text-align: center;
+}
+
+/* BBB-體育投注 */
+
+.sports-bet {
+	width: 1120px;
+	margin: auto;
+}
+
+.sports-bet h2 {
+	line-height: 47px;
+	font-size: 35px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #c9151b;
+	font-weight: bold;
+}
+
+.sports-bet h3 {
+	margin: 3px 0;
+	font-size: 18px;
+	color: #bd1419;
+	letter-spacing: 1px;
+}
+
+.sports-bet .content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sports-bet .content iframe {
+	margin-top: 20px;
+	box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 7px;
+}
+
+/* BBB-cash APP */
+
+.mobile-app {
+	background: url(../images/platform-bg-bot0807.jpg) center bottom/100% auto no-repeat;
+	margin-top: 40px;
+	min-width: 1360px;
+	padding-bottom: 100px;
+}
+
+.mobile-app .container {
+	width: 1120px;
+	margin: auto;
+	display: flex;
+}
+
+.mobile-app .container .bg-mobile {
+	width: 575px;
+	height: 448px;
+	background-image: url(../images/bg-mobile_0807.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.mobile-app .container .content {
+	margin: 50px 0 0 10px;
+	color: #000;
+}
+
+.mobile-app .container .content h2 {
+	margin-bottom: 10px;
+	font-size: 35px;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 38px;
+	letter-spacing: 3px;
+	color: #c9151b;
+	white-space: nowrap;
+}
+
+.mobile-app .container .content h3 {
+	width: 325px;
+	font-size: 18px;
+	margin: 5px 0;
+	color: #bd1419;
+	padding-bottom: 5px;
+	letter-spacing: 1px;
+}
+
+.mobile-app .container .content a {
+	position: relative;
+	display: inline-block;
+	padding: 10px 60px;
+	font-size: 14px;
+	border-radius: 50px;
+	color: #fff;
+	margin-right: 15px;
+	margin-top: 10px;
+	transition: all .3s ease-in;
+	background-size: 200% 200%;
+}
+
+.mobile-app .container .content .btn-exchange {
+	background-image: linear-gradient(to right, #b21318, #E42A25);
+}
+
+.mobile-app .container .content .btn-fixed-odds {
+	background-image: linear-gradient(to right, rgb(231, 207, 113), rgb(143, 76, 4));
+}
+
+.mobile-app .container .content .btn-exchange:hover, .mobile-app .container .content .btn-fixed-odds:hover {
+	animation: gradient 2s ease;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.mobile-app .container .content .text {
+	margin-top: 16px;
+	width: 450px;
+	line-height: 1.5;
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.mobile-app .container .content .scan {
+	display: flex;
+	align-items: center;
+}
+
+.mobile-app .container .content .scan .qrcode {
+	width: 148px;
+	height: 148px;
+	display: inline-block;
+	margin-right: 20px;
+	border-radius: 5px;
+	background: url(../images/app-download-bd.jpg)center/cover no-repeat;
+}
+
+.mobile-app .container .content .scan .scan__title {
+	font-size: 20px;
+	color: var(--main-color);
+	font-weight: bold;
+}
+
+.mobile-app .container .content .scan__text {
+	position: relative;
+	margin-top: 13px;
+	font-size: 16px;
+}
+
+.mobile-app .container .content .scan__text::before, .mobile-app .container .content .scan__text::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.mobile-app .container .content .scan__text::before {
+	background-image: url(../images/icon-tablet.png);
+	left: 240px;
+}
+
+.mobile-app .container .content .scan__text::after {
+	background-image: url(../images/icon-mobile.png);
+	left: 260px;
+}
+
+/* BBB-csah 翻轉區塊 */
+
+.sec-nav .container {
+	width: 1120px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 30px;
+}
+
+.sec-nav .text-wrapper {
+	width: 1120px;
+	margin: auto;
+	text-align: center;
+}
+
+.sec-nav .text-wrapper h2 {
+	font-size: 35px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 3px;
+	color: #bd1419;
+	line-height: 40px;
+}
+
+.sec-nav .text-wrapper h3 {
+	font-size: 18px;
+	letter-spacing: 1px;
+	color: #bd1419;
+	text-align: center;
+	margin: 3px 0;
+	letter-spacing: 1px;
+}
+
+.sec-nav a {
+	display: block;
+	width: 135px;
+	height: 305px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	cursor: default;
+}
+
+.sec-nav a .content {
+	width: 135px;
+	height: 305px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	transition: all 0.25s ease-in;
+	-webkit-transition: all 0.25s ease-in;
+	transform: scaleX(1);
+}
+
+.sec-nav a .flip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 135px;
+	height: 305px;
+	background: #00b09b;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+	transform: scaleX(0.2);
+	background: url(../images/flip-flag.png) center center / cover no-repeat;
+	text-align: center;
+	padding: 0px 18px;
+}
+
+.sec-nav a .flip div {
+	transition: all 0.3s ease-in-out;
+}
+
+.sec-nav a:first-of-type .flip {
+	background: url(../images/flip-flag_sp.png) center center / cover no-repeat;
+}
+
+.sec-nav a .flip .line {
+	width: 95px;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.2);
+	margin: 5px auto;
+}
+
+.sec-nav a .flip div:last-child .line {
+	border: 0;
+}
+
+.sec-nav a .flip span {
+	display: block;
+	text-align: center;
+	opacity: 1;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	font-size: 12px;
+	letter-spacing: 0;
+}
+
+.sec-nav a:hover .flip {
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+.sec-nav a .flip span:active {
+	opacity: 0.7;
+}
+
+.sec-nav a .flip div {
+	display: block;
+	padding: 13px 5px;
+	position: relative;
+	text-transform: uppercase;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 56px;
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 1.6;
+	box-sizing: content-box;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.sec-nav a .flip div::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient( to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4));
+	top: 0;
+	left: 0;
+	border-radius: 56px;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+	pointer-events: none;
+}
+
+.sec-nav a .flip div::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(ellipse, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+	top: 0;
+	left: 0;
+	border-radius: 56px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sec-nav a .flip div:hover::before {
+	opacity: 1;
+}
+
+.sec-nav a .flip div:active::before {
+	opacity: 0;
+}
+
+.sec-nav a .flip div:active::after {
+	opacity: 1;
+}
+
+.sec-nav a .flip div:first-child {
+	margin-top: 15px;
+}
+
+.sec-nav a:hover .content {
+	transform: scaleX(0.2);
+	transition: all 0.25s ease-in;
+	opacity: 0;
+}
+
+.sec-nav a.live-casino .content {
+	background-image: url(../images/flag-livecasino.png);
+}
+
+.sec-nav a.card-game .content {
+	background-image: url(../images/flag-cardgame_sp.png);
+}
+
+.sec-nav a.virtual-sport .content {
+	background-image: url(../images/flag-virtual-sports.png);
+}
+
+.sec-nav a.e-sports .content {
+	background-image: url(../images/flag-esports.png);
+}
+
+.sec-nav a.slot-game .content {
+	background-image: url(../images/flag-slot.png);
+}
+
+.sec-nav a.bingo .content {
+	background-image: url(../images/flag-bingo.png);
+	/* æ‰‹æ©Ÿé¡¯ç¤º */
+	margin-right: 15px;
+}
+
+.sec-nav a .content div {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 50px;
+}
+
+.sec-nav a .content div .icon {
+	width: 37px;
+	height: 37px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.sec-nav a .content div .icon-livecasino {
+	background-image: url(../images/icon-livecasino.png);
+}
+
+.sec-nav a .content div .icon-cardgame {
+	background-image: url(../images/icon-cardgame.png);
+}
+
+.sec-nav a .content div .icon-slot {
+	background-image: url(../images/icon-slot.png);
+}
+
+.sec-nav a .content div .icon-sport {
+	background-image: url(../images/icon-sport.png);
+}
+
+.sec-nav a .content div .icon-bingo {
+	background-image: url(../images/icon-bingo.png);
+}
+
+.sec-nav a .content div .icon-esport {
+	background-image: url(../images/icon-esport.png);
+}
+
+.sec-nav a .content p:nth-child(2) {
+	font-size: 16px;
+}
+
+.sec-nav a .content p:last-child {
+	font-size: 15px;
+	width: 130px;
+	letter-spacing: 0;
+}
+
+/* 帳戶總覽 */
+
+#account-mid #account-info {
+	display: flex;
+}
+
+#account-wrapper #account-mid {
+	border-radius: 10px;
+}
+
+#account-mid .account-title {
+	position: relative;
+	padding: 8px 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	color: #4a4a4a;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+#account-mid #account-info {
+	margin: auto auto 20px;
+	justify-content: space-between;
+	width: 100%;
+	background: var(--member-color);
+	color: #fff;
+}
+
+#account-info .profile {
+	padding: 10px 0;
+	display: flex;
+}
+
+#account-info .profile .avatar {
+	margin: 15px 15px 15px 40px;
+	padding-left: 0;
+	width: 65px;
+	height: 65px;
+	background-image: url(../images/avatar-bbb.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 65px auto;
+}
+
+#account-info img {
+	margin: 15px 15px 15px 40px;
+	width: 65px;
+	height: auto;
+}
+
+#account-info .profile p:first-child {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	line-height: 25px;
+}
+
+#account-info .profile span {
+	background: rgba(0, 0, 0, .3);
+	padding: 1px 8px;
+	border-radius: 15px;
+	margin-left: 6px;
+	color: #fff;
+	font-size: 12px;
+}
+
+#account-info .balance {
+	text-align: right;
+	margin-right: 40px;
+}
+
+#account-info .balance p:first-child {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+#account-info .balance p:last-child {
+	font-size: 19px;
+	margin-top: -7px;
+	font-weight: 800;
+}
+
+#account-info .balance p.sum {
+	color: #fff;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+#account-mid .account-list {
+	width: 650px;
+	margin: auto;
+	justify-content: space-between;
+	padding: 10px 15px;
+	color: #4a4a4a;
+	font-size: 12px;
+	display: flex;
+}
+
+#account-mid .list2 span {
+	color: var(--member-color);
+}
+
+#account-mid .list2 a img {
+	width: 10px;
+}
+
+#account-mid .list1, #account-mid .list10, #account-mid .list2, #account-mid .list9 {
+	font-weight: 1000;
+	font-size: 16px;
+	display: flex;
+}
+
+#account-mid .account-list div span {
+	font-weight: normal;
+}
+
+#account-mid .account-list div span+a {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/icon-collapse-active.png);
+	background-position: center 2px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: 5px;
+}
+
+#account-mid .account-list div span+a.collapse {
+	background-image: url(../images/icon-collapse.png);
+}
+
+#account-mid .account-list div span+a img {
+	display: none;
+}
+
+#account-mid .account-transfer form {
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	line-height: 30px;
+	white-space: nowrap;
+}
+
+#account-mid .list-container .account-list:nth-child(odd) {
+	background: #e2e2e2;
+}
+
+#account-mid .list2 a:hover {
+	opacity: 0.6;
+}
+
+#account-mid .account-transfer {
+	background: #e2e2e2;
+	margin: 20px;
+	padding: 20px 0;
+	color: #4a4a4a;
+}
+
+#account-mid .account-transfer form>span {
+	font-weight: 800;
+	margin: 0 15px 0 0;
+}
+
+#account-mid .account-transfer select.options, #account-mid .account-transfer select.transfer_account_roll_in, #account-mid .account-transfer select.transfer_account_roll_out, #account-mid .account-transfer input[type="text"] {
+	border: 1px solid #afafaf;
+	width: 150px;
+	height: 35px;
+	padding: 5px 0;
+}
+
+#account-mid .account-transfer input[type="text"] {
+	text-indent: 5px;
+	background: #fff;
+}
+
+#account-mid .account-transfer .trans-pic {
+	margin: 0 10px;
+	padding-left: 0;
+	width: 27px;
+	height: 27px;
+	background: #333;
+	position: relative;
+	border-radius: 50%;
+}
+
+#account-mid .account-transfer .trans-pic::before {
+	content: '';
+	position: absolute;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	padding: 3px;
+	top: 10px;
+	left: 8px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+#account-mid .account-transfer button {
+	padding: 0 25px;
+	background: var(--member-color);
+	font-size: 10px;
+	line-height: 24px;
+	font-weight: 600;
+	color: #fff;
+	margin-left: 10px;
+	height: 33px;
+}
+
+#account-mid .account-transfer button:hover {
+	background: var(--main-color);
+	-webkit-transition: -webkit-transform 0.1s ease-in;
+	-webkit-transition: transform 0.1s ease-in;
+	transition: transform 0.1s ease-in;
+	-webkit-transform: translateY(-1px);
+	-ms-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+#account-mid .notice {
+	width: 600px;
+	margin: 0 auto 30px;
+	font-size: 11px;
+	color: #4a4a4a;
+}
+
+#account-mid .settings-fail, #account-mid .settings-success {
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+
+#account-mid .notice span {
+	color: #f70606;
+}
+
+.eQCTZo, .jJExrO, .vw-ck .mya_decheck h4 i, .manage-bank-card, .faxhqR>h4::before, .transaction-timed .timed-active, .transaction-pager-input.pager-btn {
+	background: var(--main-color);
+}
+
+.jiHSZB, .kSOGNS, .jhVUtj, .transaction-log-download-btn {
+	color: var(--main-color);
+}
+
+.btn-2 {
+	border: 1px solid var(--main-color);
+}
+
+.transaction-sub-nav li.active a {
+	background: var(--main-color);
+	border-color: var(--main-color);
+}
+
+.transaction-sub-nav {
+	border-bottom: 1px solid var(--main-color);
+}
+
+/*忘記密碼頁 共用樣式*/
+
+#password-header {
+	border-bottom: 1px solid #999;
+	padding: 10px 10px 10px 20px;
+	color: #999;
+	font-size: 14px;
+}
+
+#password-header span {
+	cursor: pointer;
+}
+
+#password-header img {
+	width: 15px;
+	height: auto;
+	margin: -3px 3px -2px 3px;
+}
+
+#password-header .text-bold {
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+#password-footer {
+	color: #4a4a4a;
+	line-height: 1.5;
+	text-align: center;
+	font-size: 15px;
+}
+
+#password-footer span {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+/*忘記密碼頁 共用樣式*/
+
+/* 忘記密碼頁 首頁 begins*/
+
+article#password-index {
+	padding: 115px 0;
+	height: 750px;
+}
+
+#password-index .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 18px;
+}
+
+#password-index .container .content {
+	text-align: center;
+	padding-top: 60px;
+}
+
+#password-index .container .content h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#password-index .container .content form {
+	text-align: left;
+	margin: 0px 0 60px 190px;
+}
+
+#password-index .container .content form label {
+	font-size: 14px;
+	display: block;
+	color: #666;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+#password-index .container .content form input[type='text'] {
+	width: 350px;
+	height: 40px;
+	color: #666;
+	font-size: 14px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+}
+
+#password-index .container .content form input[type='text']:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-index .container .content form input[type='text']::placeholder {
+	color: #666;
+}
+
+#password-index .container .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-index .container .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+	padding-left: 18px;
+}
+
+#password-index .container .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-index .container .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	border-bottom: 0;
+	opacity: 0.9;
+}
+
+#password-index .container .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 线上客服頁 begins*/
+
+article#password-serving {
+	padding-top: 115px;
+	min-height: 550px;
+}
+
+#password-serving .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 16px;
+}
+
+#password-serving .container p {
+	text-align: center;
+	margin: 60px 0 60px 0;
+	line-height: 1.5;
+}
+
+#password-serving .container p span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#password-serving .container p span:hover {
+	font-weight: bold;
+}
+
+/* 忘記密碼頁 三項驗證頁 begins*/
+
+article#password-solution {
+	padding: 115px 0
+}
+
+#password-solution .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution .content {
+	display: flex;
+	justify-content: center;
+	margin: 60px 0;
+}
+
+#password-solution .content a {
+	display: block;
+	border: 2px solid #c5c5c5;
+	width: 130px;
+	height: 130px;
+	color: #666;
+	margin-right: 30px;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 80px;
+}
+
+#password-solution .content a:last-child {
+	margin-right: 0;
+}
+
+#password-solution .content a.verify-qa {
+	background-image: url(../images/forgotpwd_verify-q&a.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-phone {
+	background-image: url(../images/forgotpwd_verify-phone.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-email {
+	background-image: url(../images/forgotpwd_verify-email.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a:hover {
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+}
+
+/* 忘記密碼頁 安全問題驗證 begins*/
+
+article#password-solution-qa {
+	padding: 115px 0
+}
+
+#password-solution-qa .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+	font-size: 18px;
+}
+
+#password-solution-qa .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-qa .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+#password-solution-qa .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-solution-qa .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-qa .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-qa .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-qa .content form .indicate span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 3px;
+}
+
+#password-solution-qa .content form input {
+	width: 350px;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-qa .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-qa .content form input::placeholder {
+	color: #666;
+}
+
+#password-solution-qa .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	border-bottom: 0;
+}
+
+#password-solution-qa .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 手機驗證 begins*/
+
+article#password-solution-mobile {
+	padding: 115px 0
+}
+
+#password-solution-mobile .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution-mobile .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mobile .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mobile .content form p.phone {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mobile .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong img {
+	display: none;
+}
+
+#password-solution-mobile .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form input {
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-mobile .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input::placeholder {
+	color: #666;
+}
+
+#password-solution-mobile .content form .code {
+	width: 129px;
+	height: 40px;
+	line-height: 35px;
+	padding-left: 20px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 85px center;
+}
+
+#password-solution-mobile .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mobile .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mobile .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mobile .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 郵箱驗證 begins*/
+
+article#password-solution-mail {
+	padding: 115px 0
+}
+
+#password-solution-mail .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #666;
+}
+
+#password-solution-mail .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mail .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mail .content form p.email {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-mail .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mail .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-mail .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mail .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-mail .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-mail .content form input {
+	border-bottom: 1px solid #666;
+	height: 40px;
+	transition: all .3s ease;
+	/* display:inline-block; */
+	color: #666;
+}
+
+#password-solution-mail .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mail .content form input::placeholder {
+	color: #666;
+}
+
+#password-solution-mail .content form .code {
+	width: 129px;
+	height: 40px;
+	line-height: 37px;
+	padding-left: 20px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 85px center;
+}
+
+#password-solution-mail .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mail .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mail .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mail .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mail .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 設定新密碼 begins*/
+
+article#password-reset {
+	padding: 115px 0
+}
+
+#password-reset .container {
+	width: 740px;
+	margin: auto;
+	color: #666;
+}
+
+#password-reset .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-reset .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 18px 18px;
+}
+
+#password-reset .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-reset .content form .indicate {
+	/* display:none; */
+}
+
+#password-reset .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-reset .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form input {
+	border-bottom: 1px solid #666;
+	display: inline-block;
+	transition: all .3s ease-in;
+	height: 40px;
+	color: #666;
+}
+
+#password-reset .content form input:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-reset .content form input::placeholder {
+	color: #666;
+}
+
+#password-reset .content form input[type='password'] {
+	width: 350px;
+	margin-bottom: 5px;
+}
+
+#password-reset .content form input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-reset .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 設定成功 begins*/
+
+article#password-success {
+	padding: 115px 0
+}
+
+#password-success .container {
+	width: 740px;
+	margin: auto;
+	color: #666;
+}
+
+#password-success .container .content {
+	text-align: center;
+	margin: 60px 0;
+}
+
+#password-success .container .content span {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background-image: url(../images/forgotpwd_successpage.png);
+	background-repeat: no-repeat;
+	background-size: 50px auto;
+	margin-bottom: 10px;
+}
+
+#password-success .content h2 {
+	font-size: 14px;
+	margin: 15px 0;
+	color: #333;
+}
+
+#password-success .content input[type='button'] {
+	background-image: var(--sec-button-color);
+	border-bottom: 0;
+	color: #fff;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	padding: 10px;
+}
+
+#password-success .content input:hover {
+	opacity: 1;
+}
+
+/*帳戶驗證頁 begins*/
+
+#forgotpwd-verify {
+	width: 740px;
+	padding: 50px 100px 50px 100px;
+	margin: 100px 0;
+	background: #fff;
+	border-radius: 10px;
+	box-sizing: border-box;
+	color: #4a4a4a;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	text-align: left;
+	font-size: 15px;
+}
+
+#forgotpwd-verify .title {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #ff601a;
+}
+
+#forgotpwd-verify .callus {
+	color: #ff610a;
+	cursor: pointer;
+	line-height: 24px;
+}
+
+#forgotpwd-verify .text-bold {
+	font-weight: bold;
+}
+
+#forgotpwd-verify .text-right {
+	text-align: right;
+}
+
+#forgotpwd-verify form label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #4a4a4a;
+	margin-bottom: 10px;
+}
+
+#forgotpwd-verify form input {
+	background: #e2e2ee;
+	width: 98%;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#forgotpwd-verify form input[type='submit'] {
+	width: 40%;
+	height: 40px;
+	background-image: linear-gradient(to bottom, #fb7a1b, #ff611a);
+	color: #fff;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 0;
+}
+
+#forgotpwd-verify form input[type='submit']:hover {
+	background-image: linear-gradient(to bottom, #fd8936, #fd6e2c);
+}
+
+/*電競主館頁 101*/
+
+.im-esport {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.im-esport .container {
+	width: 1120px;
+	height: 813px;
+	margin: auto;
+	color: #fff;
+	position: relative;
+}
+
+.im-esport .container .content{
+	position: relative;
+	width: 1120px;
+	height: 813px;
+	padding-top: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.im-esport .container .content .team-IG {
+	background: url(../images/esport-model-lol0805.png) center/contain no-repeat;
+	width: 600px;
+	height: 600px;
+	z-index: 3;
+	
+}
+
+.im-esport .container .content .logo-im {
+	display: inline-block;
+	width: 450px;
+	height: 133px;
+	margin-top: 120px;
+	background: url(../images/esport-introduction.png) center/cover no-repeat;
+}
+
+.im-esport .container .content a {
+	position: absolute;
+	bottom: 340px;
+	right: 130px;
+	display: inline-block;
+    width: 188px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background: var(--main-button-color);
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: var(--btnShadow);
+}
+
+.im-esport .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+
+.im-esport .container .content .game-icon {
+	margin-top: 70px;
+	display: none;
+}
+
+/*電競主館頁 100 開始*/
+
+#esport-betting {
+	background: url(../images/bg-im-esports0527.jpg) center bottom / cover no-repeat;
+}
+
+article#esport-betting .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 680px;
+}
+
+article#esport-betting .container .content {
+	margin-bottom: 150px;
+	padding: 20px 40px;
+	color: rgba(255, 255, 255, 0.4);
+	position: relative;
+	width: 40%;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	transition: transform .2s ease-out;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+article#esport-betting .container .content:hover {
+	transform: translateY(-20px);
+}
+
+/* article#esport-betting .container .content:nth-child(1){
+	background-image: url(../images/bg-esport-content-im02.jpg);
+}
+
+article#esport-betting .container .content:nth-child(2){
+	background-image: url(../images/bg-esport-content-rtg02.jpg);
+} */
+
+article#esport-betting .container .content:nth-child(3), article#esport-betting .container .content:nth-child(6), article#esport-betting .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#esport-betting .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+	text-indent: -9999px;
+	width: 140px;
+	height: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+article#esport-betting .container .imOneEsport h2 {
+	background-image: url(../images/panel-logo-imone.png);
+	background-position: -20px center;
+}
+
+article#esport-betting .container .tfg h2 {
+	background-image: url(../images/panel-logo-tfg.png);
+	background-position: center;
+}
+
+article#esport-betting .container .rg h2 {
+	background-image: url(../images/panel-logo-ray.png);
+	background-position: -20px center;
+}
+
+article#esport-betting .container .content p {
+	width: 160px;
+	line-height: 1.5;
+	color: #333;
+}
+
+article#esport-betting .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 40px;
+	bottom: 20px;
+	background: var(--main-button-color);
+	border-radius: 5px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+article#esport-betting .container .content a:hover {
+	background: var(--main-hover-color);
+}
+
+article#esport-betting .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-radius: 5px;
+}
+
+/*體育主館頁-101*/
+
+.sportbet {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.sportbet .container {
+	width: 1200px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.sportbet .container .btns {
+	position: absolute;
+	right: 0;
+	top: 40px;
+	width: 500px;
+	z-index: 2;
+	text-align: center;
+}
+
+.sportbet .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	margin-bottom: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.sportbet .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.sportbet .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.sportbet .container .left-content {
+	position: absolute;
+	bottom: 40px;
+	opacity: 0;
+}
+
+.sportbet .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.sportbet .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.sportbet .container .left-content .model {
+	width: 717px;
+	height: 717px;
+	z-index: 3;
+	background-position: center top;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sportbet .container #exchange-left-content .model {
+	background-image: url(../images/sport-player-exchange.png);
+}
+
+.sportbet .container #bookmaker-left-content .model {
+	background-image: url(../images/sport-player-bookmaker.png);
+}
+
+.sportbet .container #fixedOdds-left-content .model {
+	background-image: url(../images/sport-player-fixedodds.png);
+}
+
+.sportbet .container .right-content {
+	position: absolute;
+	top: 148px;
+	margin-right: 80px;
+	opacity: 0;
+	text-align: center;
+}
+
+.sportbet .container #fixedOdds-right-content {
+	margin-right: -20px;
+}
+
+.sportbet .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.sportbet .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 80px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.sportbet .container .right-content .caption {
+	width: 355px;
+	height: 238px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sportbet .container .right-content span {
+	display: block;
+}
+
+.sportbet .container #exchange-right-content .caption {
+	background-image: url(../images/sport-caption-exchange.png);
+}
+
+.sportbet .container #bookmaker-right-content .caption {
+	background-image: url(../images/sport-caption-bookmaker.png);
+}
+
+.sportbet .container #fixedOdds-right-content .caption {
+	background-image: url(../images/sport-caption-sportsbook.png);
+	width: 550px;
+}
+
+.sportbet .container .right-content a {
+	position: relative;
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btnShadow);
+	margin: 40px 0 0 0;
+}
+
+.sportbet .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/*體育投注頁*/
+
+.sportbet-info {
+	background: url(../images/bg-sportbet-info.jpg) center / cover no-repeat;
+}
+
+.sportbet-info .container {
+	width: 1200px;
+	height: 813px;
+	background: #fff;
+	margin: auto;
+	overflow-y: auto;
+}
+
+/*真人娛樂主館頁*/
+
+.real-casino {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.real-casino .container {
+	width: 1200px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.real-casino .container .btns {
+	position: absolute;
+	right: 0px;
+	top: 40px;
+	width: 500px;
+	z-index: 2;
+}
+
+.real-casino .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.real-casino .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.real-casino .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.real-casino .container .left-content {
+	position: absolute;
+	bottom: 0;
+	opacity: 0;
+}
+
+.real-casino .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.real-casino .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.real-casino .container .left-content .model {
+	width: 717px;
+	height: 717px;
+	z-index: 3;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #SA-Lobby-left-content .model {
+	background-image: url(../images/casino-ag-bd.png);
+}
+
+.real-casino .container #AG-Lobby-left-content .model {
+	background-image: url(../images/casino-ag-bd.png);
+}
+
+.real-casino .container #Betgames-left-content .model {
+	background-image: url(../images/casino-bt-bd.png);
+}
+
+.real-casino .container #SSG-Lobby-left-content .model {
+	background-image: url(../images/casino-sps-bd.png);
+}
+
+.real-casino .container #Evolution-Gaming-left-content .model {
+	background-image: url(../images/casino-evo-bd.png);
+}
+
+.real-casino .container #mg-left-content .model {
+	background-image: url(../images/casino-mg-bd.png);
+}
+
+.real-casino .container #PT-Lobby-left-content .model {
+	background-image: url(../images/casino-pt-bd.png);
+	background-position: left center;
+	background-size: 90% auto;
+}
+
+.real-casino .container #AE-left-content .model {
+	background-image: url(../images/casino-sexy-bd.png);
+}
+
+.real-casino .container #sag-left-content .model {
+	background-image: url(../images/casino-sa-bd.png);
+}
+
+.real-casino .container .right-content {
+	position: absolute;
+	top: 270px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+.real-casino .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.real-casino .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.real-casino .container .right-content .caption {
+	width: 400px;
+	height: 92px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #AG-Lobby-right-content .caption {
+	background-image: url(../images/casino-brand-ag-bd.png);
+}
+
+.real-casino .container #Betgames-right-content .caption {
+	background-image: url(../images/casino-brand-bg-bd.png);
+}
+
+.real-casino .container #SSG-Lobby-right-content .caption {
+	background-image: url(../images/casino-brand-sps-bd.png);
+}
+
+.real-casino .container #Evolution-Gaming-right-content .caption {
+	background-image: url(../images/casino-brand-evo-bd.png);
+}
+
+.real-casino .container #mg-right-content .caption {
+	background-image: url(../images/casino-brand-mg-bd.png);
+}
+
+.real-casino .container #PT-Lobby-right-content .caption {
+	background-image: url(../images/casino-brand-pt-bd.png);
+}
+
+.real-casino .container #AE-right-content .caption {
+	background-image: url(../images/casino-brand-sexy-bd-0818.png);
+}
+
+.real-casino .container #sag-right-content .caption {
+	background-image: url(../images/casino-brand-sa-bd-0818.png);
+}
+
+
+.real-casino .container .right-content .items {
+	width: 550px;
+	height: 110px;
+	margin: 20px 0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.real-casino .container #AG-Lobby-right-content .items {
+	background-image: url(../images/casino-gametype-ag0807.png);
+}
+
+.real-casino .container #Betgames-right-content .items {
+	background-image: url(../images/casino-gametype-bg0807.png);
+}
+
+.real-casino .container #SSG-Lobby-right-content .items {
+	background-image: url(../images/casino-gametype-sps0807.png);
+}
+
+.real-casino .container #Evolution-Gaming-right-content .items {
+	background-image: url(../images/casino-gametype-evo0807.png);
+}
+
+.real-casino .container #mg-right-content .items {
+	background-image: url(../images/casino-gametype-mg0810.png);
+}
+
+.real-casino .container #PT-Lobby-right-content .items {
+	background-image: url(../images/casino-gametype-pt0807.png);
+}
+
+.real-casino .container #AE-right-content .items {
+	background-image: url(../images/casino-gametype-sexy.png);
+}
+
+.real-casino .container #sag-right-content .items {
+	background-image: url(../images/casino-gametype-sexy.png);
+}
+
+.real-casino .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btnShadow);
+	margin: 40px 0 0 0;
+}
+
+.real-casino .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/* SLOT */
+.slotgame {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.slotgame .container {
+	width: 1200px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.slotgame .container .btns {
+	position: absolute;
+	right: -20px;
+	top: 40px;
+	width: 500px;
+	z-index: 2;
+}
+
+.slotgame .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.slotgame .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.slotgame .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.slotgame .container .left-content {
+	position: absolute;
+	bottom: 30px;
+	opacity: 0;
+}
+
+.slotgame .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.slotgame .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.slotgame .container .left-content .model {
+	width: 717px;
+	height: 717px;
+	z-index: 3;
+	background-image: url(../images/slotgame-model.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.slotgame .container .right-content {
+	position: absolute;
+	top: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+.slotgame .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.slotgame .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.slotgame .container .right-content .caption {
+	width: 512px;
+	height: 56px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.slotgame .container #WildCat-right-content .caption {
+	background-image: url(../images/slotgame-caption-wc.png);
+}
+
+.slotgame .container #Poseidong-right-content .caption {
+	background-image: url(../images/slotgame-caption-ps.png);
+}
+
+.slotgame .container #FruitMonster-right-content .caption {
+	background-image: url(../images/slotgame-caption-fmc.png);
+	width: 536px;
+	height: 166px;
+}
+
+.slotgame .container #FruitFarm-right-content .caption {
+	background-image: url(../images/slotgame-caption-ff.png);
+}
+
+
+.slotgame .container .right-content .items {
+	width: 470px;
+	height: 90px;
+	margin: 20px 0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+.slotgame .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btnShadow);
+	margin: 170px 0 0 0;
+}
+
+.slotgame .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/* BINGO 內頁 */
+.bingogame {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.bingogame .container {
+	width: 1200px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.bingogame .container .btns {
+	position: absolute;
+	right: -20px;
+	top: 40px;
+	width: 460px;
+	z-index: 2;
+}
+
+.bingogame .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.bingogame .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.bingogame .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.bingogame .container .left-content {
+	position: absolute;
+	bottom: 0;
+	opacity: 0;
+}
+
+.bingogame .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.bingogame .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.bingogame .container .left-content .model {
+	width: 717px;
+	height: 717px;
+	z-index: 3;
+	background-image: url(../images/bingogame-model.png);
+	background-position: center;
+	background-size: 90% auto;
+	background-repeat: no-repeat;
+}
+
+.bingogame .container .right-content {
+	position: absolute;
+	top: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+.bingogame .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.bingogame .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.bingogame .container .right-content .caption {
+	width: 556.5px;
+	height: 46px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.bingogame .container #BingoMachine-right-content .caption {
+	background-image: url(../images/bingogame-caption-bm.png);
+}
+
+.bingogame .container #TheGoldenEgg-right-content .caption {
+	background-image: url(../images/bingogame-caption-tge.png);
+}
+
+
+.bingogame .container .right-content .items {
+	width: 470px;
+	height: 90px;
+	margin: 20px 0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+.bingogame .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btnShadow);
+	margin: 170px 0 0 0;
+}
+
+.bingogame .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/* POKER 內頁 */
+.pokergame {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.pokergame .container {
+	width: 1020px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.pokergame .container .btns {
+	position: absolute;
+	right: -20px;
+	top: 40px;
+	width: 460px;
+	z-index: 2;
+	display: none;
+}
+
+.pokergame .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.pokergame .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.pokergame .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.pokergame .container .left-content {
+	position: absolute;
+	bottom: 50px;
+	opacity: 0;
+}
+
+.pokergame .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.pokergame .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.pokergame .container .left-content .model {
+	width: 717px;
+	height: 717px;
+	z-index: 3;
+	background-image: url(../images/pokergame-model.png);
+	background-position: center;
+	background-size: 80% auto;
+	background-repeat: no-repeat;
+}
+
+.pokergame .container .right-content {
+	position: absolute;
+	top: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+.pokergame .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.pokergame .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.pokergame .container .right-content .caption {
+	width: 300px;
+	height: 50px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.pokergame .container .right-content .caption {
+	background-image: url(../images/pokergame-caption.png);
+}
+
+.pokergame .container .right-content .items {
+	width: 470px;
+	height: 90px;
+	margin: 20px 0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+.pokergame .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btnShadow);
+	margin: 170px 0 0 0;
+}
+
+.pokergame .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/* CARDGAME 內頁 */
+.cardgame {
+	background: url(../images/bg-sportbet-bd.jpg) center center / cover no-repeat;
+	min-width: 1200px;
+}
+
+.cardgame .container {
+	width: 1120px;
+	height: 813px;
+	margin: auto;
+	position: relative;
+}
+
+.cardgame .container .btns {
+	position: absolute;
+	right: -20px;
+	top: 40px;
+	width: 460px;
+	z-index: 2;
+	display: none;
+}
+
+.cardgame .container .btns button {
+	width: 140px;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 17px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.cardgame .container .btns button:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.cardgame .container .btns .active {
+	background: var(--sec-button-color);
+	color: #fff;
+	box-shadow: var(--btnShadow);
+}
+
+.cardgame .container .left-content {
+	position: absolute;
+	bottom: 0;
+	opacity: 0;
+}
+
+.cardgame .container .left-content-active {
+	animation: fade-in-left 1s ease-out;
+	opacity: 1;
+	left: 0;
+}
+
+.cardgame .container .fade-out-left {
+	animation: fade-out-left .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-left {
+	0% {
+		left: -20px;
+		opacity: 0;
+	}
+	100% {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-left {
+	0% {
+		left: 0px;
+		opacity: 1;
+	}
+	100% {
+		left: -20px;
+		opacity: 0;
+	}
+}
+
+.cardgame .container .left-content .model {
+	width: 717px;
+	height: 717px;
+	z-index: 3;
+	background-image: url(../images/cardgame-model.png);
+	background-position: center;
+	background-size: 90% auto;
+	background-repeat: no-repeat;
+}
+
+.cardgame .container .right-content {
+	position: absolute;
+	top: 180px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+.cardgame .container .right-content-active {
+	right: 0;
+	animation: fade-in-right 1s ease-out;
+	opacity: 1;
+}
+
+.cardgame .container .fade-out-right {
+	animation: fade-out-right .8s ease-out;
+	opacity: 0;
+}
+
+@keyframes fade-in-right {
+	0% {
+		right: -20px;
+		opacity: 0;
+	}
+	100% {
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-right {
+	0% {
+		right: 0px;
+		opacity: 1;
+	}
+	100% {
+		right: -20px;
+		opacity: 0;
+	}
+}
+
+.cardgame .container .right-content .caption {
+	width: 448px;
+	height: 119px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.cardgame .container .right-content .caption {
+	background-image: url(../images/exchange-caption.png);
+}
+
+
+.cardgame .container .right-content .items {
+	width: 390px;
+	height: 110px;
+	margin: 20px 0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../images/teenpatti-items.png);
+}
+
+.cardgame .container .right-content a {
+	display: inline-block;
+	width: 188px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	background: var(--main-button-color);
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: var(--btnShadow);
+	margin: 120px 0 0 0;
+}
+
+.cardgame .container .right-content a:hover {
+	background: var(--main-hover-color);
+}
+
+/*精彩活動頁 101開始*/
+
+article#promotion .container {
+	width: 1210px;
+	margin: auto;
+	padding: 50px 0 50px 0;
+	min-height: 750px;
+}
+
+article#promotion .container .navbar {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	width: 1210px;
+}
+
+article#promotion .container .navbar span {
+	color: #999;
+	margin: 0 5px;
+	font-size: 14px;
+	display: none;
+}
+
+article#promotion .container .navbar a {
+	color: #666;
+	transition: all 0.3s ease;
+	font-size: 14px;
+	display: inline-block;
+	width: 110px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #e7e7e7;
+	position: relative;
+}
+
+article#promotion .container .navbar a:last-child {
+	margin-right: 0;
+}
+
+article#promotion .container .navbar a::after {
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 110px;
+	height: 0;
+	background: var(--main-color);
+}
+
+article#promotion .container .navbar .active::after, article#promotion .container .navbar .active:hover::after {
+	color: #fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar .active {
+	color: var(--main-color);
+}
+
+article#promotion .container .navbar a:hover::after {
+	color: #fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar a:hover {
+	color: var(--main-color);
+}
+
+article#promotion .container .content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#promotion .container .content>div {
+	width: 392px;
+	background: var(--section-bgcolor);
+	padding: 20px;
+	box-sizing: border-box;
+	margin-right: 11px;
+	margin-bottom: 40px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	border-radius: 5px;
+	border: 2px solid #fff;
+	transition: border .2s ease-in-out;
+}
+
+article#promotion .container .content>div:hover {
+	border-color: var(--main-color);
+}
+
+article#promotion .container .content .heading-new {
+	display: flex;
+	justify-content: space-between;
+	line-height: 24px;
+}
+
+article#promotion .container .content .heading-new p:first-child, article#promotion .container .content .heading span {
+	display: inline-block;
+	width: 110px;
+	height: 34px;
+	line-height: 34px;
+	text-align: left;
+	padding-left: 28px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 5px;
+}
+
+article#promotion .container .content .heading-new p:first-child {
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: #666;
+	background-size: 22px auto;
+}
+
+article#promotion .container .content .heading-new p.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-slot {
+	background-image: url(../images/promotion-icon-slot-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-esport {
+	background-image: url(../images/promotion-icon-esport-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-poker {
+	background-image: url(../images/promotion-icon-poker-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-lottery {
+	background-image: url(../images/promotion-icon-lottery-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-funds {
+	background-image: url(../images/promotion-icon-funds-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-vip {
+	background-image: url(../images/promotion-icon-vip-101.png);
+}
+
+article#promotion .container .content .heading-new p.icon-hot {
+	background-image: url(../images/promotion-icon-hot-101.png);
+}
+
+article#promotion .container .content .heading span.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-101.png);
+}
+
+article#promotion .container .content .heading span.icon-slot {
+	background-image: url(../images/promotion-icon-slot-101.png);
+}
+
+article#promotion .container .content .heading span.icon-esport {
+	background-image: url(../images/promotion-icon-esport-101.png);
+}
+
+article#promotion .container .content .heading span.icon-poker {
+	background-image: url(../images/promotion-icon-poker-101.png);
+}
+
+article#promotion .container .content .heading span.icon-lottery {
+	background-image: url(../images/promotion-icon-lottery-101.png);
+}
+
+article#promotion .container .content .heading span.icon-funds {
+	background-image: url(../images/promotion-icon-funds-101.png);
+}
+
+article#promotion .container .content .heading p.icon-vip {
+	background-image: url(../images/promotion-icon-vip-101.png);
+}
+
+article#promotion .container .content .heading p.icon-hot {
+	background-image: url(../images/promotion-icon-hot-101.png);
+}
+
+article#promotion .container .content .heading-new p:last-child {
+	color: var(--main-color);
+	padding: 5px 0px;
+	font-weight: bold;
+	display: none;
+}
+
+article#promotion .container .content .banr-mask {
+	width: 100%;
+	height: 210px;
+	overflow: hidden;
+	margin: 0px 0 10px 0;
+	position: relative;
+	border-radius: 3px;
+}
+
+article#promotion .container .content img.banr {
+	width: 352px;
+	height: 210px;
+	transition: all 0.3s ease;
+}
+
+article#promotion .container .content .banr-mask .curtain {
+	width: 352px;
+	height: 210px;
+	background: rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease;
+}
+
+article#promotion .container .content .banr-mask a {
+	display: none;
+	padding: 10px 40px;
+	background: var(--main-color);
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0.1s;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+article#promotion .container .content .banr-mask a:hover {
+	border-radius: 20px;
+}
+
+article#promotion .container .content .banr-mask a:focus {
+	background: #b9680b;
+}
+
+article#promotion .container .content .foot {
+	display: flex;
+	justify-content: space-between;
+}
+
+article#promotion .container .content .foot .title {
+	width: 249px;
+	font-size: 18px;
+	color: var(--main-color);
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+article#promotion .container .content .foot .text {
+	font-size: 14px;
+	color: #666;
+}
+
+article#promotion .container .content .foot a {
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	line-height: 34px;
+	border-radius: 20px;
+	color: var(--main-hover-color);
+	align-self: flex-end;
+	border: 1px solid var(--main-color);
+	text-align: center;
+}
+
+article#promotion .container .content .foot a:hover {
+	background: var(--main-hover-color);
+	color: #fff;
+}
+
+/*維護頁*/
+
+article#fixpage .container {
+	padding: 250px 0;
+	text-align: center;
+}
+
+article#fixpage .container h2 {
+	font-size: 36px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+article#fixpage .container p {
+	font-size: 15px;
+}
+
+article#fixpage .container button {
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+	padding: 13px 40px;
+	border-radius: 50px;
+	background: var(--main-button-color);
+	margin-right: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+	box-shadow: 3px 3px 14px #999999;
+}
+
+article#fixpage .container button:hover {
+	background-image: var(--main-hover-color);
+}
+
+/* BBB-cash footer */
+
+/* .footer-embedded {
+	min-width: 1200px;
+	background-color: #373b3f;
+}
+
+.footer__list {
+	width: 1120px;
+	margin: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.footer__copyright {
+	color: #808080;
+}
+
+.footer__tac {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.footer__icon {
+	display: inline-block;
+	width: 22.5px;
+	height: 22.5px;
+	margin-right: 9px;
+	background: url(../images/18-plus-color-footer.png) center/22.5px auto no-repeat;
+}
+
+.footer__text {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__link {
+	position: relative;
+	color: rgba(255, 255, 255, 0.8);
+	margin-left: 20px;
+}
+
+.footer__link:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: -10px;
+	width: 1px;
+	height: 15px;
+	background-color: rgba(255, 255, 255, 0.4);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.footer__link:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 0;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.4);
+	-webkit-transition: width .2s ease-in;
+	-o-transition: width .2s ease-in;
+	transition: width .2s ease-in;
+}
+
+.footer__link:hover {
+	color: #fff;
+}
+
+.footer__link:hover:after {
+	width: 100%;
+}
+
+.footer__statement {
+	position: relative;
+	padding: 20px 0;
+}
+
+.footer__statement:before, .footer__statement:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+}
+
+.footer__statement:before {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.footer__statement:after {
+	top: 1px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.footer__statement-text {
+	width: 1120px;
+	margin: auto;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 12px;
+	line-height: 2;
+} */
+
+.game-providers{
+	min-width: 1360px;
+	background-color: #4d5156;
+}
+
+.game-providers .container{
+	height: 95px;
+	width: 1120px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.game-providers .container .item{
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.game-providers .container .item-bbb{
+	width: 100px;
+	height: 24px;
+	background-image: url(../images/provider-items-bbb.png)
+}
+
+.game-providers .container .item-bf{
+	width: 105px;
+	height: 18px;
+	background-image: url(../images/provider-items-bf.png)
+}
+
+.game-providers .container .item-bti{
+	width: 92px;
+	height: 36px;
+	background-image: url(../images/provider-items-bti.png)
+}
+
+.game-providers .container .item-pt{
+	width: 105px;
+	height: 22px;
+	background-image: url(../images/provider-items-pt.png)
+}
+
+.game-providers .container .item-ag{
+	width: 79px;
+	height: 26px;
+	background-image: url(../images/provider-items-ag.png)
+}
+
+.game-providers .container .item-spm{
+	width: 104px;
+	height: 50px;
+	background-image: url(../images/provider-items-spm.png)
+}
+
+.game-providers .container .item-evg{
+	width: 131px;
+	height: 15px;
+	background-image: url(../images/provider-items-eg.png)
+}
+
+.game-providers .container .item-ssd{
+	width: 115px;
+	height: 27px;
+	background-image: url(../images/provider-items-ssd.png)
+}
+
+.game-providers .container .item-excg{
+	width: 95px;
+	height: 28px;
+	background-image: url(../images/provider-items-excg.png)
+}
+
+footer {
+	background: #383B3F;
+	font-size: 12px;
+	padding-bottom: 30px;
+	min-width: 1360px;
+}
+
+footer .container {
+	width: 1120px;
+	margin: auto;
+	display: flex;
+	position: relative;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #959595;
+	padding-top: 33px;
+}
+
+footer .container .heading {
+	font-size: 16px;
+	color: #D7D7D8;
+	margin-bottom: 7px;
+	font-weight: bold;
+}
+
+footer .container ul {
+	margin-right: 92px;
+}
+
+footer .container ul li {
+	margin-bottom: 5px;
+}
+
+footer .container ul li a {
+	position: relative;
+	color: #D7D7D8;
+	font-size: 12px;
+	letter-spacing: 1px;
+	white-space: nowrap;
+}
+
+footer .container ul li a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	height: 1px;
+	width: 0;
+	background: #D7D7D8;
+	transition: all .2s ease-in-out;
+}
+
+footer .container ul li a:hover::after {
+	width: 100%;
+}
+
+footer .container .heading--hidden {
+	visibility: hidden;
+}
+
+footer .container .collaboration {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	height: 40px;
+}
+
+footer .container .collaboration span {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	border: 1px solid #60656b;
+	margin-bottom: 8px;
+	border-radius: 5px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+footer .container .collaboration span {
+	margin-right: 18px;
+}
+
+footer .container .collaboration span:nth-child(3), 
+footer .container .collaboration span:nth-child(6),
+footer .container .collaboration span:nth-child(9),
+footer .container .collaboration span:nth-child(12) {
+	margin-right: 0;
+}
+
+footer .container .collaboration .bt {
+	background-image: url(../images/collaboration-bt-0811.png);
+	background-size: 70px auto;
+}
+
+footer .container .collaboration .mc {
+	background-image: url(../images/collaboration-mc-0720.png);
+	background-size: 38px auto;
+}
+
+footer .container .collaboration .vs {
+	background-image: url(../images/collaboration-vs-0720.png);
+	background-size: 60px auto;
+}
+
+footer .container .collaboration .sk {
+	background-image: url(../images/collaboration-sk-0720.png);
+	background-size: 49px auto;
+}
+
+footer .container .collaboration .nt {
+	background-image: url(../images/collaboration-nt-0720.png);
+	background-size: 88px auto;
+}
+
+footer .container .collaboration .ap {
+	background-image: url(../images/collaboration-ap-0720.png);
+	background-size: 68px auto;
+}
+
+footer .container .collaboration .bhim {
+	background-image: url(../images/collaboration-bhim.png);
+	background-size: contain;
+}
+
+footer .container .collaboration .paytm {
+	background-image: url(../images/collaboration-paytm.png);
+	background-size: contain;
+}
+
+footer .container .collaboration .phonepe {
+	background-image: url(../images/collaboration-phonepe.png);
+	background-size: contain;
+}
+
+footer .container .collaboration .mobik {
+	background-image: url(../images/collaboration-mobik.png);
+	background-size: contain;
+}
+
+footer .container .collaboration .gpay {
+	background-image: url(../images/collaboration-gpay.png);
+	background-size: contain;
+}
+
+footer .container .collaboration .upi {
+	background-image: url(../images/collaboration-upi.png);
+	background-size: contain;
+}
+
+
+footer .toc {
+	width: 1120px;
+	margin: 20px auto 0 auto;
+	display: flex;
+	justify-content: space-between;
+	color: #999;
+}
+
+footer .toc p {
+	width: 940px;
+}
+
+footer .toc .gc {
+	background: url(../images/icon-gc-0720.png) center / contain no-repeat;
+	width: 139px;
+	height: 72px;
+	display: inline-block;
+	
+}
+
+footer .copyright {
+	width: 1120px;
+	margin: 30px auto 0 auto;
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	color: #999;
+}
+
+footer .copyright span {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+footer .copyright .icon-gce {
+	width: 95px;
+	height: 27px;
+	background: url(../images/icon-gce.png) center/95px auto no-repeat;
+}
+
+footer .copyright .icon-bga {
+	width: 119px;
+	height: 12px;
+	background: url(../images/icon-bga.png) center/119px auto no-repeat;
+}
+
+footer .copyright .icon-gs {
+	width: 77px;
+	height: 14px;
+	background: url(../images/icon-gs.png) center/77px auto no-repeat;
+}
+
+footer .copyright .icon-18 {
+	width: 25px;
+	height: 25px;
+	background: url(../images/icon-18plus.png) center/25px auto no-repeat;
+}
+
+/* 登入頁 開始 */
+article#sign-in {}
+
+article#sign-in .container {
+	padding: 100px 0 150px 0;
+}
+
+article#sign-in .info {
+	width: 450px;
+	margin: auto;
+	padding: 0 40px 40px 40px;
+	border-radius: 10px;
+}
+
+#sign-in .info .infoTop {
+	text-align: center;
+	line-height: 36px;
+	color: #666;
+}
+
+#sign-in .info .infoTop h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#sign-in .info .infoTop span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#sign-in .info .infoTop span:hover {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form {
+	color: #4a4a4a;
+	position: relative;
+}
+
+#sign-in .info form label {
+	display: block;
+	color: #666;
+	position: absolute;
+	left: -6px;
+}
+
+#sign-in .info form label:nth-of-type(1) {
+	top: -23px;
+}
+
+#sign-in .info form label:nth-of-type(2) {
+	top: 52px;
+}
+
+#sign-in .info form input::placeholder {
+	color: #666;
+}
+
+#sign-in .info form input[type='text'], #sign-in .info form input[type='password'] {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	color: #666;
+}
+
+#sign-in .info form input[type='text']:focus, #sign-in .info form input[type='password']:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form .alert {
+	color: #d9534f;
+	font-size: 12px;
+	padding-left: 15px;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+#sign-in .info form .wrong {
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left 1px;
+}
+
+#sign-in .info form input[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	color: #fff;
+	font-size: 14px;
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-in .info form input[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-in .info form input[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-in .info form button[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	color: #fff;
+	font-size: 14px;
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-in .info form button[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-in .info form button[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-in .info form .infoBot {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	height: 18px;
+	color: #666;
+}
+
+#sign-in .info form .infoBot .forgotten a {
+	color: var(--main-color);
+}
+
+#sign-in .info form .infoBot .forgotten a:hover {
+	font-weight: bold;
+}
+
+#sign-in .info .contact {
+	margin-top: 15px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#sign-in .info .contact .callus {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form>div {
+	position: relative;
+	height: 65px;
+	margin-bottom: 10px;
+}
+
+/* 註冊頁 開始 */
+article#sign-up {}
+
+article#sign-up .container {
+	padding: 100px 0 150px 0;
+}
+
+article#sign-up .info {
+	width: 450px;
+	margin: auto;
+	padding: 0 40px 40px 40px;
+	border-radius: 10px;
+}
+
+#sign-up .info .infoTop {
+	text-align: center;
+	line-height: 36px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+#sign-up .info .infoTop h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+#sign-up .info .infoTop span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#sign-up .info .infoTop span:hover {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form {
+	color: #4a4a4a;
+	margin-top: -30px;
+	position: relative;
+}
+
+#sign-up .info form label {
+	display: block;
+	color: #666;
+	position: absolute;
+	left: 0px;
+}
+
+#sign-up .info form label:nth-of-type(1) {
+	top: -23px;
+}
+
+#sign-up .info form label:nth-of-type(2) {
+	top: 47px;
+}
+
+#sign-up .info form label:nth-of-type(3) {
+	top: 112px;
+}
+
+#sign-up .info form label:nth-of-type(4) {
+	top: 177px;
+}
+
+#sign-up .info form label:nth-of-type(5) {
+	top: 242px;
+}
+
+#sign-up .info form label:nth-of-type(6) {
+	top: 307px;
+}
+
+/* #sign-up .info form .label2 {
+	margin-top: 10px;
+}
+
+#sign-up .info form label.icon-account {
+	background-image: url(../images/signin_account.png);
+}
+
+#sign-up .info form label.icon-password {
+	background-image: url(../images/signin_password.png);
+}
+
+#sign-up .info form label.icon-mobile {
+	background-image: url(../images/signin_mobile.png);
+}
+
+#sign-up .info form label.icon-key {
+	background-image: url(../images/signin_key.png);
+}
+
+#sign-up .info form label.icon-email {
+	background-image: url(../images/signin_email.png);
+} */
+
+#sign-up .info form input::placeholder {
+	color: #666;
+}
+
+#sign-up .info form input[type='text'], #sign-up .info form input[type='password'], #sign-up .info form input[type='tel'] {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #666;
+	transition: all .3s ease-in;
+	color: #666;
+}
+
+#sign-up .info form input[type='text']:focus, #sign-up .info form input[type='password']:focus, #sign-up .info form input[type='tel']:focus {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form .default {
+	color: #d9514f;
+	font-size: 12px;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left 2px;
+	padding-left: 18px;
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+
+#sign-up .info form>.default {
+	bottom: 58px;
+	left: 0;
+}
+
+#sign-up .info form .correct {
+	color: #3cb371;
+	background-image: url(../images/signin_correct.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 18px;
+}
+
+#sign-up .info form span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+}
+
+#sign-up .info form input[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	color: #fff;
+	font-size: 15px;
+	margin-top: 15px;
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-up .info form input[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-up .info form input[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-up .info form button[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	color: #fff;
+	font-size: 15px;
+	margin-top: 15px;
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+#sign-up .info form button[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-up .info form button[type='submit']:active {
+	transform: translateY(1px);
+}
+
+#sign-up .info form .infoBot {
+	margin-top: 20px;
+}
+
+#sign-up .info form .infoBot .forgotten a {
+	color: var(--main-color);
+}
+
+#sign-up .info form .infoBot .forgotten a:hover {
+	color: #007676;
+}
+
+#sign-up .info .contact {
+	margin-top: 15px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#sign-up .info .contact .callus {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form>div {
+	position: relative;
+	height: 65px;
+}
+
+/*新轉帳頁0422*/
+
+.transfer-custom {
+	color: rgba(74, 74, 74, 0.8);
+	padding: 1em;
+	font-size: 14px;
+}
+
+.transfer-custom .transfer-switch {
+	padding: 1em;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+}
+
+.transfer-custom .transfer-switch .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+}
+
+.transfer-custom .transfer-switch .container p .more, .transfer-custom .transfer-switch .container p .help {
+	color: var(--primary);
+	cursor: pointer;
+}
+
+.transfer-custom .transfer-switch .container p .help{
+	display: none;
+}
+
+.transfer-custom .transfer-switch .container .btns {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 260px;
+	background-color: #e0e0e0;
+	border-radius: 25px;
+	-webkit-box-shadow: 1px 1px 1px #d6d6d6 inset;
+	box-shadow: 1px 1px 1px #d6d6d6 inset;
+	position: relative;
+	margin-right: 35px;
+}
+
+.transfer-custom .transfer-switch .container .btns a {
+	width: 130px;
+	height: 45px;
+	line-height: 45px;
+	border-radius: 25px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+
+.transfer-custom .transfer-switch .container .btns a.active {
+	background: var(--primary);
+}
+
+.transfer-custom .transfer-switch .container .loading {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.transfer-custom .quick-transfer {
+	margin-top: 30px;
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 30px;
+}
+
+.transfer-custom .quick-transfer form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.transfer-custom .quick-transfer form select, .transfer-custom .quick-transfer form input[type="text"] {
+	height: 45px;
+	width: 150px;
+	border: 1px solid #e6e6e6;
+	background: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-indent: 10px;
+}
+
+.transfer-custom .quick-transfer form .confirm {
+	height: 45px;
+	width: 130px;
+	border-radius: 25px;
+	color: #fff;
+	background: var(--primary);
+	-webkit-transition: background 0.1s ease-in;
+	-o-transition: background 0.1s ease-in;
+	transition: background 0.1s ease-in;
+	cursor: pointer;
+}
+
+.transfer-custom .quick-transfer form .confirm:hover {
+	background: var(--main-hover-color);
+	-webkit-box-shadow: var(--btn-shadow);
+	box-shadow: var(--btn-shadow);
+}
+
+.transfer-custom .quick-transfer form .confirm:active {
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+}
+
+.transfer-custom .quick-transfer .icon-arrow {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: #4a4a4a;
+	margin-right: 10px;
+	position: relative;
+}
+
+.transfer-custom .quick-transfer .icon-arrow:before {
+	content: "";
+	position: absolute;
+	border-style: solid;
+	border-width: 5px 0 5px 6px;
+	border-color: transparent transparent transparent #fff;
+	top: 50%;
+	left: 55%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.transfer-custom .main-account {
+	margin-top: 30px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.transfer-custom .main-account p {
+	margin-right: 10px;
+}
+
+.transfer-custom .main-account p .balance {
+	font-size: 28px;
+	color: #4a4a4a;
+	font-weight: bold;
+}
+
+.transfer-custom .main-account .transfer-out {
+	padding: 0 15px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 25px;
+	background: var(--primary);
+	color: #fff;
+	display: inline-block;
+	margin-right: 50px;
+	font-size: 12px;
+	cursor: pointer;
+	-webkit-transition: background 0.1s ease-in;
+	-o-transition: background 0.1s ease-in;
+	transition: background 0.1s ease-in;
+}
+
+.transfer-custom .main-account .transfer-out:hover {
+	background: var(--main-hover-color);
+	-webkit-box-shadow: var(--btn-shadow);
+	box-shadow: var(--btn-shadow);
+}
+
+.transfer-custom .main-account .transfer-out:active {
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+}
+
+.transfer-custom .balance-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-top: 60px;
+}
+
+.transfer-custom .balance-list .item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 200px;
+	height: 100px;
+	background: #f7f7f7;
+	padding: 15px;
+	border-radius: 5px;
+	margin: 0 22px 22px 0;
+	position: relative;
+}
+
+.transfer-custom .balance-list .item .text {
+	color: var(--primary);
+}
+
+.transfer-custom .balance-list .item .bot {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in {
+	line-height: 1;
+	display: block;
+	padding: 5px 7px;
+	border-radius: 15px;
+	font-size: 12px;
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+	border: 1px solid var(--primary);
+	color: var(--primary);
+	-webkit-transition: background 0.1s ease-in;
+	-o-transition: background 0.1s ease-in;
+	transition: background 0.1s ease-in;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in:hover {
+	background-color: var(--primary);
+	color: #fff;
+}
+
+.transfer-custom .balance-list .item .bot .transfer-in:active {
+	-webkit-transform: translateY(-4px);
+	-ms-transform: translateY(-4px);
+	transform: translateY(-4px);
+}
+
+.transfer-custom .balance-list .item .bot .balance {
+	color: #4a4a4a;
+	font-weight: bold;
+}
+
+/* BetDaily內頁 */
+
+.game-wrapper {
+	padding: 35px 0;
+	min-width: 1200px;
+	min-height: 900px;
+	background: url(../images/casino_bg.jpg) center/cover no-repeat;
+}
+
+.game-container {
+	width: 1120px;
+	margin: auto;
+}
+
+.game-title {
+	position: relative;
+	padding-left: 45.5px;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-family: Montserrat, sans-serif;
+	color: #777;
+}
+
+.game-title::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 32.5px;
+	height: 32.5px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transform: translateY(-50%);
+}
+
+.game-title--cardgame::before {
+	background-image: url(../images/card-game-sidebar.png);
+}
+
+.game-title--casino::before {
+	background-image: url(../images/live-casino-sidebar.png);
+}
+
+.game-title--slot::before {
+	background-image: url(../images/slot-game-sidebar.png);
+}
+
+.game-title--bingo::before {
+	background-image: url(../images/bingo-sidebar.png);
+}
+
+.game-nav {
+	display: flex;
+	justify-content: space-between;
+	width: 1100px;
+	margin: auto;
+	color: #777e88;
+	padding-bottom: 20px;
+    border-bottom: 1px solid #bfb9b9;
+}
+
+.game-nav__text {
+    font-style: italic;
+    line-height: 1.5;
+	margin-top: 15px;
+	width: 470px;
+}
+
+.game-nav__aside {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.game-nav__list {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.game-nav__btn {
+    min-width: 115px;
+    height: 42px;
+    padding: 0 28px;
+    line-height: 42px;
+    text-align: center;
+    background: linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204));
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
+    color: rgb(133, 139, 148);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all .2s ease-in-out 0;
+}
+
+.game-nav__btn--active,
+.game-nav__btn:hover {
+    background: linear-gradient(to left, rgb(178, 19, 24), rgb(228, 42, 37));
+    color: #fff;
+}
+
+.game-nav__btn--all {
+	background-image: url(../images/provider-all.png);
+}
+
+.game-nav__btn--pt {
+	background-image: url(../images/provider-pt.png);
+}
+
+.game-nav__btn--bet {
+	background-image: url(../images/provider-bet.png);
+}
+
+.game-nav__btn--ss {
+	background-image: url(../images/provider-superspade.png);
+}
+
+.game-nav__btn--evo {
+	background-image: url(../images/provider-evolution.png);
+}
+
+.game-nav__btn--ecg {
+	background-image: url(../images/provider-exchange.png);
+}
+
+.game-nav__btn--ag {
+	background-image: url(../images/provider-ag.png);
+}
+
+
+.game-item {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 30px;
+}
+
+.game-item__list {
+	padding: 15px;
+    margin: 0 11px 16px 0;
+    width: 19%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .8);
+    transition: box-shadow .3s ease;
+}
+
+.game-item__list:nth-child(5),
+.game-item__list:nth-child(10),
+.game-item__list:nth-child(15),
+.game-item__list:nth-child(20){
+	margin-right: 0;
+}
+
+.game-item__brand {
+    margin-bottom: 10px;
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(231, 30, 36);
+    text-transform: uppercase;
+}
+
+.game-item__content {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: url(../images/cardgame/Baccarat.jpg) center/auto 100% no-repeat;
+    text-align: center;
+    transition: background .3s ease-in-out;
+}
+
+.game-item__content--2{
+	background: url(../images/cardgame/Baccarat.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__content--3{
+	background: url(../images/cardgame/Baccarat\ 2.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__content--4{
+	background: url(../images/cardgame/tp-2020.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__content--5{
+	background: url(../images/cardgame/betgames_400x400.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__content--6{
+	background: url(../images/cardgame/Dragon\ Tiger.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__content--7{
+	background: url(../images/cardgame/Speed\ Andar\ Bahar.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__content--8{
+	background: url(../images/cardgame/teenpatti.jpg) center/auto 100% no-repeat;
+}
+
+.game-item__name {
+    margin-top: 15px;
+    font-size: 15px;
+    text-align: center;
+    transition: color .3s ease-in-out;
+    color: #777e88;
+}
+
+.game-item__list:hover .game-item__content {
+	background-size: auto 105%;
+}
+
+.game-item__btn {
+	display: block;
+	cursor: pointer;
+	max-width: 150px;
+	width: 60%;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(255, 255, 255);
+	margin-bottom: 10px;
+	padding: 0.5em;
+	border-radius: 40px;
+	background: linear-gradient(rgb(178, 19, 24), rgb(228, 42, 37));
+	opacity: 0;
+	transition: opacity .1s ease-in-out .1s;
+}
+
+.game-item__btn--play {
+	margin-bottom: 10px;
+}
+
+.game-item__list:hover {
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+.game-item__list:hover .game-item__btn {
+	opacity: 1;
+}
+
+/* 浮動選單 */
+
+.fixed-nav {
+	position: fixed;
+	z-index: 20;
+	bottom: 75px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 5px 0 0 5px;
+	
+}
+
+.fixed-nav__link {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin-bottom: 10px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-color: rgba(255,255,255, .75);
+	border-radius: 50% 5px 50% 50%;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, .4);
+}
+
+.fixed-nav__link:hover .fixed-nav__icon{
+	background-position: right center;
+}
+
+.fixed-nav__icon{
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-size: auto 30px;
+}
+
+.fixed-nav__icon--help {
+	background-image: url(../images/fixed-nav-help.png);
+}
+
+.fixed-nav__icon--app {
+	background-image: url(../images/fixed-nav-app.png);
+}
+
+.fixed-nav__tooltip {
+	position: absolute;
+	left: -105px;
+	top: 15px;
+	width: 90px;
+	height: 35px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 3px;
+	line-height: 35px;
+	text-align: center;
+	color: #111;
+	visibility: hidden;
+	box-shadow: 0 0 8px #bdbdbd;
+}
+
+.fixed-nav__tooltip::after {
+	content: '';
+	right: -7px;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 5px 0 5px 7px;
+	border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+}
+
+.fixed-nav__link--help .fixed-nav__tooltip {
+	left: -113px;
+}
+
+.fixed-nav__tooltip--scan {
+	padding: 10px;
+	width: 150px;
+	height: 175px;
+	top: -110px;
+	left: -165px;
+	line-height: 1;
+}
+
+.fixed-nav__tooltip--scan::after {
+	top: 140px;
+}
+
+.fixed-nav__link:hover .fixed-nav__tooltip {
+	visibility: visible;
+}
+
+.fixed-nav__qrcode {
+	display: inline-block;
+	margin-top: 10px;
+	width: 130px;
+	height: 130px;
+	background: url(../images/app-download-bd.jpg) center/cover no-repeat;
+}
+
+/* app-download 頁面 */
+.app-bg {
+	position: relative;
+	background-color: #DADADA;
+}
+
+.app-wrapper {
+	position: relative;
+	background: url(../images/app-wrapper-bg.jpg) center/cover no-repeat;
+}
+
+.a-inner {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 400px;
+	max-width: 1120px;
+	margin: auto;
+}
+
+.a-content {
+	flex: 4;
+	text-transform: uppercase;
+	line-height: 1;
+	color: #fff;
+}
+
+.a-content__title {
+	margin-top: 60px;
+	font-size: 66px;
+	font-weight: bold;
+	text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+}
+
+.a-content__subtitle {
+	font-size: 24px;
+	color: #E9CF96;
+	margin-top: 10px;
+	letter-spacing: 1px;
+}
+
+.a-content__link {
+	display: inline-block;
+	color: #fff;
+	width: 175px;
+	height: 40px;
+	margin-top: 60px;
+	text-indent: 35px;
+	line-height: 40px;
+	background: grey;
+	border-radius: 20px;
+}
+
+.a-content__link--ios {
+	margin-right: 20px;
+	background: url(../images/icon-ios.png) 15px center/15px auto no-repeat, linear-gradient(to bottom, #eec874, #AE740F);
+}
+
+.a-content__link--android {
+	background: url(../images/icon-android.png) 15px center/15px auto no-repeat, linear-gradient(to bottom, #E4E4E4, #9B9B9B);
+}
+
+.a-install-text {
+	display: flex;
+	align-items: center;
+	margin-top: 15px;
+}
+
+.a-install-text__icon {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	margin-right: 10px;
+	background: url(../images/icon-app-arrow.png) left center/26px auto no-repeat;
+}
+
+.a-install-text__text {
+	display: inline-block;
+}
+
+.a-scan-content {
+	flex: 6;
+	align-self: flex-end;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.a-scan-content__qrcode {
+	margin-right: 300px;
+	margin-top: 90px;
+	width: 110px;
+	height: 110px;
+	background: url(../images/qrcode-app-download.png)center/cover no-repeat;
+}
+
+.a-scan-content__mockup {
+	width: 285px;
+	height: 380px;
+	background: url(../images/app-mockup.png) center/contain no-repeat;
+}
+
+.a-triangle {
+	position: absolute;
+	bottom: -60px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 60px 40px 0 40px;
+	border-color: #01050f transparent transparent transparent;
+}
+
+.features-heading {
+	max-width: 1120px;
+	margin: 130px auto 50px auto;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #B00609;
+}
+
+.feature-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 1120px;
+	margin: auto;
+}
+
+.f-content {
+	display: flex;
+	align-items: center;
+	margin-bottom: 40px;
+	width: 49%;
+}
+
+.f-content__icon {
+	margin-right: 20px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	flex-shrink: 0;
+}
+
+.f-content__icon--use {
+	width: 60px;
+	height: 64px;
+	background-image: url(../images/icon-features-use.png);
+}
+
+.f-content__icon--security {
+	width: 60px;
+	height: 51px;
+	background-image: url(../images/icon-features-security.png);
+}
+
+.f-content__icon--transaction {
+	width: 60px;
+	height: 54px;
+	background-image: url(../images/icon-features-transaction.png);
+}
+
+.f-content__icon--support {
+	width: 60px;
+	height: 54px;
+	background-image: url(../images/icon-features-support.png);
+}
+
+.f-content__title {
+	font-size: 24px;
+	font-weight: bold;
+	color: #111;
+	margin-bottom: 10px;
+}
+
+.steps-wrapper {
+	max-width: 1120px;
+	margin: 100px auto auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.s-content {
+	width: 30%;
+	margin-bottom: 40px;
+}
+
+.s-content__img {
+	width: 230px;
+	height: 230px;
+	margin: 0 auto 5px auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.s-content__img--01 {
+	background-image: url(../images/download-order-01.png);
+}
+
+.s-content__img--02 {
+	background-image: url(../images/download-order-02.png);
+}
+
+.s-content__img--03 {
+	background-image: url(../images/download-order-03.png);
+}
+
+.s-content__img--04 {
+	background-image: url(../images/download-order-04.png);
+}
+
+.s-content__img--05 {
+	background-image: url(../images/download-order-05.png);
+}
+
+.s-content__img--06 {
+	background-image: url(../images/download-order-06.png);
+}
+
+.s-content__text {
+	width: 230px;
+	margin: auto;
+	color: #111;
+}
+
+@media screen and (max-width: 641px) {
+	.a-inner {
+		justify-content: center;
+	}
+	.a-content {
+		text-align: center;
+	}
+	.a-content__title {
+		margin-top: 80px;
+		font-size: 36px;
+	}
+	.a-content__subtitle {
+		margin-bottom: 40px;
+		font-size: 14px;
+	}
+	.a-content__link {
+		display: block;
+		margin: 10px auto 0 auto;
+		width: 190px;
+		text-indent: 25px;
+		background-position: 25px;
+	}
+	.a-content__link--android {
+		margin-top: 20px;
+	}
+	.a-install-text {
+		margin-top: 20px;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.a-install-text__icon {
+		transform: rotate(90deg);
+		margin-bottom: 15px;
+	}
+	.a-scan-content {
+		justify-content: center;
+	}
+	.a-scan-content__qrcode {
+		margin: 0 10px 0 0;
+	}
+	.a-scan-content__mockup {
+		width: 170px;
+		height: 240px;
+		margin-top: 30px;
+	}
+	.a-triangle {
+		transform: scale(.5);
+		transform-origin: center top;
+		left: 10%;
+	}
+	.features-heading {
+		margin-top: 80px;
+		text-align: center;
+		font-size: 24px;
+	}
+	.f-content {
+		width: 100%;
+		flex-direction: column;
+	}
+	.f-content__item {
+		text-align: center;
+	}
+	.f-content__title {
+		margin: 5px 0;
+		font-size: 19px;
+	}
+	.f-content__text {
+		width: 80%;
+		margin: auto;
+	}
+	.steps-wrapper {
+		align-items: center;
+		margin-top: 40px;
+	}
+	.s-content {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.s-content__text {
+		text-align: center;
+		width: 80%;
+	}
+}
+
+/*登入popup*/
+.modaloverlay{
+	position: fixed; 
+	z-index: 31; 
+	padding-top: 100px; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+	top: 0;
+	left: 0;
+	margin: auto;
+	width: 480px;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 3em 4em;
+	border-radius: 10px;
+}
+
+.modal-content__head {
+	font-family: Montserrat, sans-serif;
+	font-size: 1.75em;
+	text-transform: uppercase;
+	color: rgb(178, 19, 24);
+	margin-bottom: 0.75em;
+	width: 100%;
+	text-align: center;
+}
+
+.modal-content__text {
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 2em;
+	width: 100%;
+	color: rgb(128, 128, 128);
+	text-align: center;
+}
+
+.modal-content .form-list {
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 1.5em;
+}
+
+.form-list__text {
+	margin-bottom: 0.25em;
+	display: inline-flex;
+	color: var(--main-color);
+}
+
+.form-list__field {
+	font-size: 16px;
+	width: 100%;
+	caret-color: rgb(178, 19, 24);
+	background-color: rgba(255, 255, 255, 0.85);
+	text-transform: none;
+	color: rgb(36, 38, 41);
+	margin-top: 0.3em;
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+	padding: 1em 1.25em;
+	border-radius: 5px;
+}
+
+.form-list__field::placeholder {
+	color: #999;
+	font-style: italic;
+}
+
+.form-list__field:focus {
+	box-shadow: rgb(225, 101, 98) 0px 0px 5px;
+	outline: 0px;
+}
+
+.checkbox-wrapper{
+	margin-bottom: 1.5em;
+	position: relative;
+	display: block;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-wrapper input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkbox-wrapper .text{
+	position: relative;
+	top: 0;
+	left: 25px;
+	color: rgb(48, 51, 55);
+}
+  
+  /* Create a custom checkbox */
+.checkbox-wrapper  .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-wrapper  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkbox-wrapper input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox-wrapper .checkmark:after {
+	content: "";
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    left: 0px;
+    top: 0px;
+    transform: rotate(-45deg);
+    opacity: 1;
+    border-left: 4px solid rgb(178, 19, 24);
+    border-bottom: 4px solid rgb(178, 19, 24);
+  }
+
+.modal-content__submit {
+	font-family: Montserrat, sans-serif;
+	text-transform: uppercase;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: rgb(178, 19, 24);
+	background-image: linear-gradient(to right top, rgb(173, 19, 23), rgb(228, 42, 37));
+	color: rgb(255, 255, 255);
+	line-height: 48px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	text-align: center;
+	text-shadow: rgba(0, 0, 0, 0.25) 0px 2px 1px;
+	opacity: 1;
+	padding: 0px 1em;
+	border-radius: 5px;
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+}
+
+.modal-content__submit:hover {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 3px;
+}
+
+.modal-content__submit:active {
+	transform: translateY(1px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2) inset;
+    background-image: linear-gradient(to top, #E42A25, #B21318);
+}
+
+.modal-content__forgot{
+	position: relative;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    display: inline-block;
+    text-align: center;
+    color: #303337;
+}
+
+.modal-content .warning{
+	position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 100%;
+    width: 400px;
+    min-height: 100px;
+    color: rgb(255, 255, 255);
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 15px)) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: rgba(0, 0, 0, 0.12) -1px 5px 12px, rgba(0, 0, 0, 0.08) 1px 8px 18px;
+    padding: 20px 25px;
+    background: rgb(36, 38, 41);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.modal-content .warning::before{
+	content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: -10px;
+    left: 50px;
+    border-style: solid;
+    border-width: 10px 10px 0px;
+    border-color: rgb(36, 38, 41) transparent transparent;
+}
+
+.modal-content .warning .close{
+	position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-content .warning .close::before,
+.modal-content .warning .close::after{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 20px;
+	background: #b21318;
+}
+
+.modal-content .warning .close::before{
+	transform: rotate(45deg);
+}
+
+.modal-content .warning .close::after{
+	transform: rotate(-45deg);
+}
+
+@media screen and (max-width:641px) {
+	.modal-content{
+		width: calc(100% - 2em);
+		margin-bottom: 0.5em;
+		padding: 1.25em;
+	}
+	.form-list__field {
+		margin-top: 0px;
+		padding: 13px;
+	}
+	.modal-content__submit{
+		height: 44px;
+	}
+	.checkbox-wrapper__label{
+		margin-bottom: 1em;
+	}
+}
+
+/* deposit popup*/
+.modal-deposit{
+	display: block;
+	width: 600px;
+	height: 570px;
+	margin: auto;
+	background: url(../images/modal-deposit.png) center/contain no-repeat;
+}
+
+.modal-deposit-btn{
+	display: block;
+	margin: auto;
+	font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(178, 19, 24);
+    background-image: linear-gradient(to right top, rgb(173, 19, 23), rgb(228, 42, 37));
+    color: rgb(255, 255, 255);
+    line-height: 36px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 2px 1px;
+    opacity: 1;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+	border-image: initial;
+}
+
+.modal-deposit-btn:hover{
+	background-image: linear-gradient(to right top, rgb(228, 42, 37), rgb(228, 42, 37));
+}
+
+.modal-deposit-btn:active{
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2) inset;
+    background-image: linear-gradient(to top, #E42A25, #B21318);
+}
+
+@media screen and (max-width: 641px){
+	.modal-deposit{
+		height: 300px;
+	}
+
+	.modal-deposit-btn{
+		width: 60%;
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 321px){
+	.modal-deposit{
+		height: 250px;
+	}
+}
+
+/*新登入註冊頁*/
+.login-wrapper{
+	min-width: 1200px;
+	color: #111;
+	background: url(../images/signup-bg-wrapper.jpg) center bottom/cover no-repeat;
+}
+
+.login-wrapper .container{
+	width: 1120px;
+	min-height: 890px;
+	margin: auto;
+	display: flex;
+}
+
+.login-wrapper .athelete{
+	flex: 5;
+	background: url(../images/athelete-model.png) left top 60px/contain no-repeat;
+}
+
+.login-content{
+	flex: 5;
+	margin-top: 50px;
+	padding-left: 50px;
+}
+
+.login-list{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.login-list__l{
+	flex: 3;
+}
+
+.login-list__r{
+	flex: 7;
+	position: relative;
+}
+
+.login-list__title{
+	background-image: linear-gradient(to bottom, #E42A25, #B00609);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-transform: uppercase;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.login-list__text{
+	font-size: 12px;
+	margin-right: 10px;
+}
+
+.login-list__link{
+	padding-right: 22px;
+	background: url(../images/login-arrow.png) right center/16px auto no-repeat;
+	color: var(--main-color);
+	font-size: 12px;
+
+}
+
+.login-list__caption{
+	text-transform: capitalize;
+}
+
+.login-list__field{
+	font-size: 16px;
+    width: 100%;
+    caret-color: rgb(178, 19, 24);
+    background-color: rgba(255, 255, 255, 0.85);
+    text-transform: none;
+    color: rgb(36, 38, 41);
+    margin-top: 0.3em;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    padding: 1em 1.25em;
+    border-radius: 5px;
+}
+
+.login-list__field:focus{
+	box-shadow: rgb(225, 101, 98) 0px 0px 5px;
+    outline: 0px;
+}
+
+.login-list__field::placeholder{
+	font-size: 15px;
+	font-style: italic;
+	color: #b8b8b8;
+}
+
+.login-list__icon{
+	position: absolute;
+	top: 25px;
+	right: 10px;
+	width: 15px;
+	height: 15px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.login-list .alert{
+	position: relative;
+	top: 5px;
+	left: 0;
+    color: var(--main-color);
+    font-size: 12px;
+	padding-left: 18px;
+	line-height: 15px;
+	
+}
+
+.login-list .wrong{
+	background-image: url(../images/icon-alert.png);
+    background-repeat: no-repeat;
+	background-position: left center;
+	background-size: auto 15px;
+}
+
+.login-list__field + .alert{
+	position: absolute;
+	left: 0;
+	top: 60px;
+}
+
+
+/* checkbox 勾選項目*/
+.login-list__icon--user{
+	background-image: url(../images/signup-icon-user.png);
+}
+
+.login-list__icon--password{
+	background-image: url(../images/signup-icon-password.png);
+}
+
+.login-list__icon--mail{
+	background-image: url(../images/signup-icon-mail.png);
+}
+
+.login-list__icon--mobile{
+	background-image: url(../images/signup-icon-mobile.png);
+}
+
+.login-list__icon--affiliate{
+	background-image: url(../images/signup-icon-affiliate.png);
+}
+
+.login-list--checkbox{
+	margin-bottom: 15px;
+}
+
+.login-check{
+	position: relative;
+	display: block;
+}
+
+
+.login-check__checkbox {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.login-check__text{
+	position: relative;
+	top: 0;
+	left: 25px;
+	color: rgb(48, 51, 55);
+}
+  
+.login-check__checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+}
+  
+.login-check__checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+  
+.login-check__checkmark:after {
+	content: "";
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    left: 0px;
+    top: 0px;
+    transform: rotate(-45deg);
+    opacity: 1;
+    border-left: 4px solid rgb(178, 19, 24);
+    border-bottom: 4px solid rgb(178, 19, 24);
+}
+
+.login-check__checkbox:checked ~ .login-check__checkmark:after {
+	display: block;
+}
+
+/* 18歲提示區塊 */
+.login-check__warning{
+	position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 100%;
+    width: 400px;
+    min-height: 100px;
+    color: rgb(255, 255, 255);
+    bottom: 0px;
+    left: 0;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: rgba(0, 0, 0, 0.12) -1px 5px 12px, rgba(0, 0, 0, 0.08) 1px 8px 18px;
+    padding: 20px 25px;
+    background: rgb(36, 38, 41);
+	transition: all 0.2s ease-in-out 0s;
+	display: none;
+}
+
+  .login-check__warning::before{
+	content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: -10px;
+    left: 50px;
+    border-style: solid;
+    border-width: 10px 10px 0px;
+    border-color: rgb(36, 38, 41) transparent transparent; 
+}
+
+  .login-check__close{
+	position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-list__submit{
+	font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+	width: 100%;
+	margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(178, 19, 24);
+    background-image: linear-gradient(to right top, rgb(173, 19, 23), rgb(228, 42, 37));
+    color: rgb(255, 255, 255);
+    line-height: 48px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 2px 1px;
+    opacity: 1;
+    padding: 0px 1em;
+    border-radius: 5px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+.login-list__submit:hover{
+	box-shadow: rgb(225, 101, 98) 0px 0px 5px;
+}
+
+.login-list__submit:active{
+	transform: translateY(1px);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2) inset;
+	background-image: linear-gradient(to top, #E42A25, #B21318);
+}
+
+.login-list__forget{
+	position: relative;
+	left: 50%;
+	top: 10px;
+	transform: translateX(-50%);
+	display:inline-block;
+	text-align: center;
+	color: #303337;
+}
+
+/*贊助頁*/
+/* .cpl{
+	min-width: 1200px;
+	background: url(../images/platform_bg.jpg) center center/cover no-repeat;
+}
+
+.cpl .container{
+	width: 1120px;
+	margin: auto;
+	display: flex;
+}
+
+.cpl .cpl-player{
+	position: relative;
+	width: auto;
+	margin-top: 40px;
+	height: 750px;
+	flex: 5;
+	align-self: flex-end;
+}
+
+.cpl .content{
+	position: relative;
+	margin: 40px 0;
+	flex: 5;
+}
+
+.cpl .content .cpl-logo{
+	width: auto;
+	height: 185px;
+	margin: 0 0 45px 40px;
+}
+
+.cpl .betting-partner{
+	padding: 30px;
+	background: rgba(255,255,255, .8);
+	border-radius: 10px;
+	color: #111;
+}
+
+.cpl .betting-partner .title{
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.cpl .betting-partner .text{
+	margin-bottom: 30px;
+}
+
+.cpl .betting-partner .bot{
+	margin-top: 60px;
+	position: relative;
+	top: 15px;
+	width: 100%;
+	height: 50px;
+} */
+
+/*分享連結 0504新增*/
+
+.share-links {
+	padding-top: 38px;
+	padding-left: 23px;
+	color: #4a4a4a;
+	font-size: 14px;
+}
+
+.share-links .title {
+	font-size: 21px;
+	margin-bottom: 40px;
+}
+
+.share-links .content {
+	margin: 20px 0;
+}
+
+.share-links .content .link {
+	height: 50px;
+	width: 60%;
+	background: #efefef;
+	border-radius: 5px;
+	overflow: auto;
+	white-space: nowrap;
+	text-indent: 12px;
+	font-size: 16px;
+}
+
+.share-links .content button {
+	width: 120px;
+	height: 50px;
+	background: var(--main-color);
+	border-radius: 5px;
+	color: #fff;
+	margin-left: 5px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.share-links .content button:active {
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+}
+
+.share-links .remind {
+	color: #9b9b9b;
+	position: relative;
+	padding-left: 24px;
+}
+
+.share-links .remind:before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #9b9b9b;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	color: #fff;
+}
+
+.share-links .remind:after {
+	content: '!';
+	color: #fff;
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 7px;
+}
+
+/*隱藏區塊*/
+
+.game-entry, 
+.bet-info, 
+.mobile-app-2, 
+.sport-bet-sportradar, 
+.mobile-app-1+.carousel, 
+.homeIframeContent, 
+.recommended-slot, 
+header .container #loginSection .forget, 
+.logined-header .container a.home, 
+.footer-happywin, 
+.happywin-contact, 
+.logined-header .container div .welcome, 
+.logined-header .container div .withdraw, 
+.sport-bet-origin, 
+.mobile-view, 
+.app-and-contact, 
+.happywin-contact, 
+.sport-bet, 
+.mobile-app-1, 
+.recommended-slot+.sec-nav, 
+.marq .container .icon-speaker+span, 
+#content-wrapper>.adventage, 
+.esport-betting-carousel, 
+.logined-header .container div:last-child .vip, 
+.footer__statement, 
+#sign-in .container .info .infoTop p, 
+.aff-link {
+	display: none;
+}
+
+#header-wrapper {
+	height: 157px;
+}
+
+/*slick套件修改*/
+.slick-dot {
+	opacity: 1 !important;
+	background: var(--main-color) !important;
+}
+
+.slick-dots li {
+	width: 50px !important;
+}
+
+article#sign-up .container, article#sign-in .container, #password-index, article#password-solution, article#password-solution-qa, article#password-reset, article#password-success, article#password-solution-mobile, article#password-solution-mail, #password-serving {
+	background: url(../images/login-bg-dk.jpg) center / cover no-repeat;
+}
+
+

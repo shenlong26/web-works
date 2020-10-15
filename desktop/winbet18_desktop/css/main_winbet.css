@@ -1,0 +1,6491 @@
+:root{
+	/*橢圓按鈕*/
+	--main-button-color:linear-gradient(to right, #9feeff 0%, #4996a7 50%, #4996a7 100%);
+	--main-hover-color:linear-gradient(to left, #9feeff 0%, #4996a7 50%, #4996a7 100%);
+	--main-color:#9feeff;
+	--second-color:#1078dc;
+	/*方型按鈕*/
+	--sec-button-color:linear-gradient( #8fd2e1, #57afc2);
+	--signin-color:linear-gradient(to right, #c6723a, #f1a46a);
+	--signup-color:linear-gradient(to left, #d98d50, #d9bb50);
+	--signup-hover:linear-gradient(to right, #d98d50, #d9bb50);
+	/*灰色按鈕*/
+	--grey-button-color:linear-gradient(#fff, #e5e5e5);
+	
+	/*舊主館頁暫用*/
+	--greybutton-color:linear-gradient(180deg,#999,#666);
+	--greybutton-border-color:#262525;
+	--greybutton-hover-color:#999;
+	--greybutton-active-color:linear-gradient(to bottom, #666 0%,  #999 100%);
+		
+	/*電子遊戲暫用*/
+	--go-hover-color:#9feeff;
+	--go-active-color:#82d0e2;
+
+	/*按鈕陰影*/
+	--btn-shadow:0 3px 15px #1ed7ff;
+
+	/*content color*/
+	--section-bgcolor:#101d3e;
+}
+
+body{
+    padding-top: 95px;
+    position: relative;
+}
+
+body, input, button{
+	font: 14px/150% "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif !important ;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-index{
+    background: url(../images/bg-body.jpg) center / cover no-repeat;
+    background-color: #0c0d0f;
+}
+
+p, a, button, input, li, span, h2, h3, h4, h5, h6{
+	letter-spacing: 1px;
+}
+
+/*語系*/
+header .container .default.cn {
+	display: inline-block;
+	width: 43px;
+	height: 55px;
+	cursor: pointer;
+	background-image: url(../images/index_header-contry-win18.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	position: relative;
+	background-size: 30px auto;
+	margin-left: 20px;
+}
+
+header .container .default.cn::after {
+    position: absolute;
+    content: '';
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    border-color: #c8c8cc transparent transparent transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+}
+
+header .container .default.eng {
+	display: inline-block;
+	width: 43px;
+	height: 55px;
+	cursor: pointer;
+	background-image: url(../images/index_header-contry-eng-win18.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	position: relative;
+	background-size: 30px auto;
+	margin-left: 20px;
+}
+
+header .container .default.eng::after {
+    position: absolute;
+    content: '';
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    border-color: #c8c8cc transparent transparent transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+}
+
+header .container .default.th {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+	background-image: url(../images/index_header-contry-th-win18.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+}
+
+.region {
+	position:absolute;
+    top:55px;
+    right: 0;
+	z-index:99;
+	background: #0d0e13;
+    color: #fff;
+	width: 115px;
+	transform-origin: center top;
+    display: none;
+    opacity: 0;
+	transition: all .3s ease-in;
+	border: 1px solid var(--main-color);
+}
+
+.region li{
+	padding:10px;
+	cursor:pointer;
+	font-size:14px;
+}
+
+.region li img{
+	width:25px;
+	height:auto;
+	margin-right:10px;
+}
+
+.region li:nth-child(1){
+	display: block;
+	padding-left:45px;
+	background-image:url(../images/index_header-contry-win18.png);
+	background-repeat:no-repeat;
+	background-size:28px auto;
+	background-position:10px center;
+	position: relative;
+}
+
+.region li:nth-child(2){
+	display: block;
+	padding-left:45px;
+	background-image:url(../images/index_header-contry-eng-win18.png);
+	background-repeat:no-repeat;
+	background-size:28px auto;
+	background-position:10px center;
+	border-radius: 0 0 5px 5px;
+}
+
+.region  li:nth-child(1):hover{
+    background-color:#1e212c;
+}
+
+.region  li:nth-child(2):hover{
+    background-color:#1e212c;
+}
+
+header .container .default:hover .region{
+	animation: sildeDownRegion .3s ease-in ;
+	display: block;
+	opacity: 1;
+}
+
+@keyframes sildeDownRegion{
+	0%{
+		transform: scaleY(0.3);
+		opacity: 0;
+		right: 0;
+	}
+	100%{
+		transform: scaleY(1);
+		opacity: 1;
+		right: 0;
+	}
+}
+
+
+
+/* 登入頁 開始 */
+article#sign-in {
+	
+}
+
+article#sign-in .container {
+	padding: 100px 0 150px 0;
+}
+
+article#sign-in .info {
+	width: 450px;
+	margin: auto;
+	padding: 0 40px 40px 40px;
+	border-radius: 10px;
+}
+
+#sign-in .info .infoTop {
+	text-align: center;
+	line-height: 36px;
+	color: #999999;
+}
+
+#sign-in .info .infoTop h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#sign-in .info .infoTop span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#sign-in .info .infoTop span:hover {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form {
+	color: #4a4a4a;
+	position: relative;
+}
+
+#sign-in .info form label {
+	display: block;
+	color: #c7c7c7;
+	position: absolute;
+	left: -6px;
+}
+
+#sign-in .info form label:nth-of-type(1){
+	top: -23px;
+}
+
+#sign-in .info form label:nth-of-type(2){
+	top: 52px;
+}
+
+/* #sign-in .info form .label2 {
+	margin-top: 15px;
+} */
+
+/* #sign-in .info form label.icon-account {
+	background-image: url(../images/signin_account.png);
+	background-repeat: no-repeat;
+}
+
+#sign-in .info form label.icon-password {
+	background-image: url(../images/signin_password.png);
+	background-repeat: no-repeat;
+} */
+
+#sign-in .info form input::placeholder{
+	color: #c7c7c7;
+}
+
+#sign-in .info form input[type='text'],
+#sign-in .info form input[type='password'] {
+	width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #7c839f;
+	transition: all .3s ease-in;
+	color: #fff;
+}
+
+#sign-in .info form input[type='text']:focus,
+#sign-in .info form input[type='password']:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form .alert {
+	color: #d9534f;
+	font-size: 12px;
+	padding-left: 15px;
+	height: 20px;
+	/* display:none; */
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+
+#sign-in .info form > p:last-of-type{
+	left:0;
+	bottom: 45px;
+}
+
+
+#sign-in .info form .wrong {
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left 2px;
+}
+
+#sign-in .info form input[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	color: #101013;
+	font-size: 14px;
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	cursor:pointer;
+	opacity: 0.9;
+}
+
+#sign-in .info form input[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-in .info form input[type='submit']:active{
+	transform: translateY(1px);
+}
+
+#sign-in .info form button[type='submit'] {
+	width: 100%;
+	height: 40px;
+	background: var(--sec-button-color);
+	color: #101013;
+	font-size: 14px;
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+	cursor:pointer;
+	opacity: 0.9;
+}
+
+#sign-in .info form button[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-in .info form button[type='submit']:active{
+	transform: translateY(1px);
+}
+
+#sign-in .info form .infoBot {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	height: 18px;
+	color: #c7c7c7;
+}
+
+#sign-in .info form .infoBot .forgotten a {
+	color: var(--main-color);
+}
+
+#sign-in .info form .infoBot .forgotten a:hover {
+	font-weight:bold;
+}
+
+#sign-in .info .contact {
+	margin-top: 15px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#sign-in .info .contact .callus {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-in .info form > div{
+	position: relative;
+	height: 65px;
+	margin-bottom: 10px;
+}
+
+/* #sign-in .info form div::before{
+	position: absolute;
+	left:0;
+	top: 31%;
+	color: #c7c7c7;
+	transform: translateY(-50%);
+}
+
+#sign-in .info form > div:nth-of-type(1)::before{
+	content: '用户名';
+}
+
+#sign-in .info form > div:nth-of-type(2)::before{
+	content: '密码';
+} */
+
+/* 註冊頁 開始 */
+article#sign-up {
+}
+
+article#sign-up .container {
+	padding: 50px 0;
+}
+
+article#sign-up .info {
+	width: 450px;
+	margin: auto;
+	padding: 0 40px 40px 40px;
+	border-radius: 10px;
+}
+
+#sign-up .info .infoTop {
+	text-align: center;
+	line-height: 36px;
+	color: #999999;
+	margin-bottom: 10px;
+}
+
+#sign-up .info .infoTop h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#sign-up .info .infoTop span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#sign-up .info .infoTop span:hover {
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form {
+	color: #4a4a4a;
+	margin-top: -30px;
+	position: relative;
+}
+
+#sign-up .info form label {
+	display: block;
+	color: #c7c7c7;
+	position: absolute;
+	left: 0px;
+}
+
+#sign-up .info form label:nth-of-type(1){
+	top: -23px;
+}
+
+#sign-up .info form label:nth-of-type(2){
+	top: 47px;
+}
+
+#sign-up .info form label:nth-of-type(3){
+	top: 112px;
+}
+
+#sign-up .info form label:nth-of-type(4){
+	top: 177px;
+}
+
+#sign-up .info form label:nth-of-type(5){
+	top: 242px;
+}
+
+#sign-up .info form label:nth-of-type(6){
+	top: 307px;
+}
+
+/* #sign-up .info form .label2 {
+	margin-top: 10px;
+}
+
+#sign-up .info form label.icon-account {
+	background-image: url(../images/signin_account.png);
+}
+
+#sign-up .info form label.icon-password {
+	background-image: url(../images/signin_password.png);
+}
+
+#sign-up .info form label.icon-mobile {
+	background-image: url(../images/signin_mobile.png);
+}
+
+#sign-up .info form label.icon-key {
+	background-image: url(../images/signin_key.png);
+}
+
+#sign-up .info form label.icon-email {
+	background-image: url(../images/signin_email.png);
+} */
+
+#sign-up .info form input::placeholder{
+	color: #c7c7c7;
+}
+
+#sign-up .info form input[type='text'],
+#sign-up .info form input[type='password'],
+#sign-up .info form input[type='tel'] {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #7c839f;
+	transition: all .3s ease-in;
+	color: #fff;
+}
+
+#sign-up .info form input[type='text']:focus,
+#sign-up .info form input[type='password']:focus,
+#sign-up .info form input[type='tel']:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form .default {
+	color: #d9514f;
+	font-size: 12px;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left 2px;
+	padding-left: 18px;
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+
+#sign-up .info form > .default{
+	bottom: 58px;
+	left: 0;
+}
+
+#sign-up .info form .correct {
+	color: #3cb371;
+	background-image: url(../images/signin_correct.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 18px;
+}
+
+#sign-up .info form span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+}
+
+#sign-up .info form input[type='submit'] {
+	width: 100%;
+    height: 40px;
+    background: var(--sec-button-color);
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+    color: #101013;
+    font-size: 15px;
+    margin-top: 15px;
+	cursor:pointer;
+	opacity: 0.9;
+}
+
+#sign-up .info form input[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-up .info form input[type='submit']:active{
+	transform: translateY(1px);
+}
+
+#sign-up .info form button[type='submit'] {
+	width: 100%;
+    height: 40px;
+    background: var(--sec-button-color);
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, .3);
+    color: #101013;
+    font-size: 15px;
+    margin-top: 15px;
+	cursor:pointer;
+	opacity: 0.9;
+}
+
+#sign-up .info form button[type='submit']:hover {
+	opacity: 1;
+}
+
+#sign-up .info form button[type='submit']:active{
+	transform: translateY(1px);
+}
+
+#sign-up .info form .infoBot {
+	margin-top: 20px;
+}
+
+#sign-up .info form .infoBot .forgotten a {
+	color: var(--main-color);
+}
+
+#sign-up .info form .infoBot .forgotten a:hover {
+	color: #007676;
+}
+
+#sign-up .info .contact {
+	margin-top: 15px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#sign-up .info .contact .callus {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+
+#sign-up .info form > div{
+	position: relative;
+	height: 65px;
+}
+
+/* #sign-up .info form div::before{
+	position: absolute;
+	left:0;
+	top: 31%;
+	color: #c7c7c7;
+	transform: translateY(-50%);
+}
+
+#sign-up .info form div:nth-of-type(1)::before{
+	content: '用户名';
+}
+
+#sign-up .info form div:nth-of-type(2)::before{
+	content: '密码';
+}
+
+#sign-up .info form div:nth-of-type(3)::before{
+	content: '确认密码';
+}
+
+#sign-up .info form div:nth-of-type(4)::before{
+	content: '邮箱';
+}
+
+#sign-up .info form div:nth-of-type(5)::before{
+	content: '手机';
+}
+
+#sign-up .info form div:nth-of-type(6)::before{
+	content: '代理代码';
+} */
+
+/*電子遊戲頁 開始*/
+article#slot {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+article#slot .container {
+	min-width: 1200px;
+	display: flex;
+	margin: 50px 0 100px 0;
+	justify-content: space-between;
+}
+
+article#slot .container .games-section {
+	width: 880px;
+}
+
+/*推薦遊戲區塊 begins*/
+article#slot .games-section .recommand-games {
+	background:var(--section-bgcolor);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+}
+
+article#slot .games-section .recommand-games h3 {
+	font-size: 24px;
+	color: var(--main-color);
+	margin-bottom: 20px;
+	font-weight:bold;
+}
+
+article#slot .games-section .recommand-games h3 img {
+	width: 30px;
+	margin-top: -4px;
+	margin-right: 10px;
+}
+
+article#slot .games-section .recommand-games .games-slideshow {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+article#slot .games-section .recommand-games .games-slideshow div p {
+	color: #cdcdcd;
+	font-size: 16px;
+	margin-top: 15px;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game {
+	overflow: hidden;
+	position: relative;
+	width: 199px;
+	height: 148px;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game:hover .bg-dark {
+	top: 0;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game:hover .entry {
+	top: 40px;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game:hover .no-free {
+	top: 55px;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game:hover img {
+	transform: scale(1.2);
+	transition: all 0.3s ease;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game .bg-dark {
+	position: absolute;
+	width: 200px;
+	height: 150px;
+	background: rgba(0, 0, 0, 0.7);
+	top: 200px;
+	left: 0;
+	transition: all 0.3s ease;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game img {
+	width: 199px;
+	height: 148px;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game .entry {
+	position: absolute;
+	left: 5px;
+	top: 200px;
+	transition: all 0.6s ease;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game .no-free {
+	position: absolute;
+	left: 40px;
+	top: 200px;
+	transition: all 0.6s ease;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a {
+	display: inline-block;
+	color: #fff;
+	padding: 5px 30px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	white-space:nowrap;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a.go {
+	background: var(--main-color);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+	color:#fff;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a.go:hover {
+	background: var(--go-hover-color);
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a.go:active {
+	background: var(--go-active-color);
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a.free {
+	background-image: linear-gradient(180deg, #666, #333);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+    border: 1px solid #333;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a.free:hover {
+	background:#666;
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game a.free:active {
+	background-image: linear-gradient(180deg, #333, #666);
+}
+
+article#slot .games-section .recommand-games .games-slideshow .game .label {
+	background: var(--main-color);
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding: 10px 5px;
+	color: #fff;
+	font-size: 14px;
+}
+
+article#slot .games-section .recommand-games .dotarea {
+	width: 80px;
+	margin: 20px auto 0 auto;
+}
+
+article#slot .games-section .recommand-games .dot {
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	margin: 0 5px;
+	background-color: rgba(255, 255, 255, .3);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.3s ease;
+}
+
+article#slot .games-section .recommand-games .dot:hover{
+    background-color: rgba(255, 255, 255, .4);
+}
+
+article#slot .games-section .recommand-games .active,
+article#slot .games-section .recommand-games .dot:hover {
+	background-color: rgba(255, 255, 255, .4);
+}
+/*推薦遊戲區塊 ends*/
+
+/*主導覽列 begins*/
+article#slot .container .games-section .game-nav {
+	margin-top: 40px;
+	background: #999;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	align-items: center;
+}
+
+article#slot .container .games-section .game-nav a {
+	display: inline-block;
+	padding: 20px;
+	margin-right: -4px;
+	transition: all 0.2s ease;
+	font-size: 16px;
+	color: #fff;
+}
+
+article#slot .container .games-section .game-nav a:hover {
+	background: rgba(0,0,0,0.1);
+}
+
+article#slot .container .games-section .game-nav .active,
+article#slot .container .games-section .game-nav .active:hover {
+	background: var(--main-color);
+	color:#fff;
+}
+
+article#slot .container .games-section .game-nav a:first-child {
+	border-radius: 10px 0 0 0;
+}
+
+article#slot .container .games-section .game-nav .search {
+	width: 218px;
+	background-image: url(../images/slot_search.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	margin-left: 15px;
+}
+
+article#slot .container .games-section .game-nav input {
+	height: 35px;
+	border-radius: 20px 0 0 20px;
+	transition: all 0.3s ease;
+	text-indent: 15px;
+	box-shadow: inset 1px 1px 3px #7c8391;
+	width: 175px;
+	font-size: 14px;
+	background: #fff;
+}
+
+article#slot .container .games-section .game-nav img {
+	margin-left: -3px;
+	cursor: pointer;
+	width: 43px;
+	height: 35px;
+	margin-bottom: -12px;
+}
+/*主導覽列 begins*/
+
+/*全部遊戲 begins*/
+article#slot .container .games-section .all-games {
+	background:var(--section-bgcolor) ;
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	position: relative;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+}
+
+article#slot .container .games-section .all-games .secondary-nav a {
+	display: inline-block;
+	padding: 0 15px 0 15px;
+	border-right: 1px solid #434343;
+	color: #cdcdcd;
+	font-size: 14px;
+}
+
+article#slot .container .games-section .all-games .secondary-nav a:last-child {
+	border-right: none;
+}
+
+article#slot .container .games-section .all-games .secondary-nav a:hover {
+	color:var(--main-color);
+}
+
+article#slot .container .games-section .all-games .secondary-nav .active,
+article#slot .container .games-section .all-games .secondary-nav .active:hover {
+	color: var(--main-color);
+}
+
+article#slot .container .games-section .all-games .games-content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#slot .container .games-section .all-games .games-content .item {
+	margin-right: 13px;
+	margin-bottom: 15px;
+}
+
+article#slot .container .games-section .all-games .games-content .item:nth-child(5),
+article#slot .container .games-section .all-games .games-content .item:nth-child(10),
+article#slot .container .games-section .all-games .games-content .item:nth-child(15) {
+	margin-right: 0;
+}
+
+article#slot .container .games-section .all-games .games-content p {
+	font-size: 16px;
+	text-align: center;
+	color: #cdcdcd;
+	margin-top: 10px;
+	width: 155px;
+	line-height: 1.5;
+}
+
+article#slot .container .games-section .all-games .game {
+	overflow: hidden;
+	position: relative;
+	width: 155px;
+	height: 116px;
+}
+
+article#slot .container .games-section .all-games .game:hover .bg-dark {
+	top: 0;
+}
+
+article#slot .container .games-section .all-games .game:hover .entry {
+	top: 25px;
+}
+
+article#slot .container .games-section .all-games .game:hover .no-free {
+	top: 40px;
+}
+
+article#slot .container .games-section .all-games .game:hover img {
+	transform: scale(1.2);
+	transition: all 0.3s ease;
+}
+
+article#slot .container .games-section .all-games .game .bg-dark {
+	position: absolute;
+	width: 160px;
+	height: 120px;
+	background: rgba(0, 0, 0, 0.7);
+	top: 150px;
+	left: 0;
+	transition: all 0.3s ease;
+}
+
+article#slot .container .games-section .all-games .game img {
+	width: 155px;
+	height: 116px;
+}
+
+article#slot .container .games-section .all-games .game .entry {
+	position: absolute;
+	left: 20px;
+	top: 200px;
+	transition: all 0.6s ease;
+}
+
+article#slot .container .games-section .all-games .game a {
+	display: inline-block;
+	color: #fff;
+	padding: 5px 30px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+article#slot .container .games-section .all-games .game a.go {
+	background: var(--main-color);
+	background-image: var(--button-color);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+	color:#fff;
+}
+
+article#slot .container .games-section .all-games .game a.go:hover {
+	background: var(--go-hover-color);
+}
+
+article#slot .container .games-section .all-games .game a.go:active {
+	background: var(--go-active-color);
+}
+
+article#slot .container .games-section .all-games .game a.free {
+	background-image: linear-gradient(180deg, #666, #333);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+    border: 1px solid #333;
+}
+
+article#slot .container .games-section .all-games .game a.free:hover {
+	background: #666;
+}
+
+article#slot .container .games-section .all-games .game a.free:active {
+	background-image: linear-gradient(180deg, #333, #666);
+}
+
+article#slot .container .games-section .all-games .game .label {
+	background: var(--main-color);
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding: 5px;
+	color: #fff;
+	font-size: 14px;
+}
+
+article#slot .container .games-section .all-games .page {
+	text-align: center;
+}
+
+article#slot .container .games-section .all-games .page a {
+	display: inline-block;
+	width: 40px;
+	height: 45px;
+	border: 1px solid #535353;
+	font-size: 14px;
+	border-radius: 5px;
+	color: #cdcdcd;
+	text-align: center;
+	line-height: 45px;
+	margin-right: 5px;
+}
+
+article#slot .container .games-section .all-games .page a.first {
+	width: 70px;
+}
+
+article#slot .container .games-section .all-games .page a.last {
+	width: 70px;
+}
+
+article#slot .container .games-section .all-games .page a:hover {
+	background-color: var(--main-color);
+	color: #fff;
+}
+
+article#slot .container .games-section .all-games .page a.prev {
+	background-image: url(../images/slot_prev-winbet.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+article#slot .container .games-section .all-games .page a.next {
+	background-image: url(../images/slot_next-winbet.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+article#slot .container .games-section .all-games .page .active,
+article#slot .container .games-section .all-games .page .active:hover {
+	background: var(--main-color);
+	border: 1px solid var(--main-color);
+	color:#fff;
+}
+/*全部遊戲 ends*/
+
+/*排名區  begins*/
+article#slot .container .adv-ranking .advertising {
+	width: 290px;
+	height: 211px;
+	background: #fff;
+	margin-bottom: 203px;
+	border-radius: 10px;
+	overflow: hidden;
+	background-image: url(../images/slot_adv.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+article#slot .container .adv-ranking .rank {
+	padding: 20px 33px 40px 33px;
+	background: var(--section-bgcolor);
+	font-size: 14px;
+	border-radius: 0 0 10px 10px;
+	position: relative;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+}
+
+article#slot .container .adv-ranking .rank div.heading {
+	position: absolute;
+	top: -152px;
+	left: -15px;
+	width: 320px;
+	height: 152px;
+	background-image: url(../images/top10-winbet.png);
+}
+
+article#slot .container .adv-ranking .rank div.head{
+	text-align:center;
+	color:rgba(255, 255, 255, 0.6);
+}
+
+article#slot .container .adv-ranking .rank div.head h2{
+	font-size:32px;
+	color:rgb(255, 255, 0);
+}
+
+article#slot .container .adv-ranking .rank div.head p:last-child{
+	background:#00e6e6;
+	padding:5px;
+}
+
+article#slot .container .adv-ranking .rank img.title {
+	width: 320px;
+	height: auto;
+	position: absolute;
+	top: -139px;
+	left: -15px;
+}
+
+article#slot .container .adv-ranking .rank .line {
+	height: 1px;
+	background: #434343;
+	margin: 15px 0;
+}
+
+article#slot .container .adv-ranking .rank .top5 {
+	display: flex;
+	color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    color:#cdcdcd;
+}
+
+article#slot .container .adv-ranking .rank .top5 .star {
+	display: flex;
+	align-items: center;
+	margin-right:15px;
+}
+
+article#slot .container .adv-ranking .rank .top5 .star span {
+	display: block;
+}
+
+article#slot .container .adv-ranking .rank .top5 .star span:first-child {
+	background-image: url(../images/slot_star.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	line-height: 33px;
+	width: 33px;
+	height: 33px;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 10px;
+	color: #0f151f;
+}
+
+article#slot .container .adv-ranking .rank .top5 .star img {
+	width: 69px;
+	height: auto;
+	margin-top: 5px;
+}
+
+article#slot .container .adv-ranking .rank .top5 .percentage {
+	font-size: 24px;
+	color: #ff9e00;
+	margin-bottom: 10px;
+}
+
+article#slot .container .adv-ranking .rank .last5 {
+	display: flex;
+	justify-content: space-between;
+	font-size: 15px;
+	color: #cdcdcd;
+	cursor: pointer;
+}
+
+article#slot .container .adv-ranking .rank .last5 span {
+	font-weight: bold;
+}
+
+/*電子遊戲頁 结束*/
+
+/*電子遊戲頁standard 開始*/
+#slot-standard {
+	min-width: 1200px;
+}
+
+#slot-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0;
+}
+
+#slot-standard .container .ranking {
+	width: 290px;
+	background:var(--section-bgcolor);
+	padding: 25px;
+	color: #cdcdcd;
+    border-radius: 10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	display: none;
+}
+
+#slot-standard .container .ranking h2 {
+	text-align: center;
+	color: var(--main-color);
+    font-size:24px;
+    font-weight:1000;
+}
+
+#slot-standard .container .ranking .list {
+	display: flex;
+	cursor: pointer;
+	padding: 20px 0;
+	border-bottom: 1px dotted #666;
+	color:#cdcdcd;
+}
+
+#slot-standard .container .ranking .list .rank {
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/slot_star.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:27px 27px;
+	border-radius: 50%;
+	color: #262525;
+	text-align: center;
+	line-height: 40px;
+	align-self:center;
+	font-weight:bold;
+}
+
+#slot-standard .container .ranking .list img {
+	width: 110px;
+	height: auto;
+	margin: 0 10px;
+}
+
+#slot-standard .container .ranking .list .percentage {
+	font-size: 21px;
+	font-weight: bold;
+    margin-bottom:10px;
+    color: var(--main-color);
+}
+
+#slot-standard .container .ranking .list div:last-child p:last-child {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 65px;
+}
+
+#slot-standard .container .ranking .rank6-10 {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	color: #cdcdcd;
+}
+
+#slot-standard .container .games {
+    width: 1200px;
+}
+
+#slot-standard .container .games .recommand {
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	background: rgb(13, 13, 14, 0.6);
+	margin-bottom: 20px;
+	padding: 25px 30px;
+	border-radius:3px;
+	height: 275px;
+}
+
+#slot-standard .container .games .recommand h2 {
+	margin-bottom: 20px;
+    color: var(--main-color);
+    font-weight:1000;
+	font-size:24px;
+}
+
+#slot-standard .container .games .recommand .content {
+	display: flex;
+	justify-content: space-between;
+}
+
+#slot-standard .container .games .recommand .dots {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#slot-standard .container .games .recommand .dots .active,
+#slot-standard .container .games .recommand .dots .active:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+#slot-standard .container .games .recommand .dots span {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: 3px;
+}
+
+#slot-standard .container .games .recommand .dots span:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#slot-standard .container .games .recommand .content .slide {
+	display: flex;
+	overflow: hidden;
+}
+
+#slot-standard .container .games .recommand .content .slide .item {
+    margin-right: 20px;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry {
+	position: relative;
+	width: 199px;
+	height: 133px;
+	overflow: hidden;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .52);
+	background: #d8d8d8;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry img {
+	width: 199px;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .tag {
+	position: absolute;
+	left: 0;
+	top: 20px;
+	padding: 5px 10px;
+	background: var(--second-color);
+	color: #fff;
+	font-size:12px;
+	display: none;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+	width: 199px;
+	height: 148px;
+	transition: all 0.3s ease;
+}
+#slot-standard .container .games .recommand .content .slide .entry .link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a {
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	opacity: 0;
+	color: #fff;
+	width: 100px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+}
+
+
+#slot-standard .container .games .recommand .content .slide .entry:hover img {
+	transform: scale(1.2);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry:hover a {
+	opacity: 1;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go{
+	background: var(--sec-button-color);
+	color:#101013;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go:hover{
+	background:var(--go-hover-color);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.go:active{
+	background:var(--go-active-color);
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free{
+    background-image: linear-gradient(180deg, #666, #333);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+    border: 1px solid #333;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free:hover{
+	background: #666;
+}
+
+#slot-standard .container .games .recommand .content .slide .entry .link a.free:active{
+	background-image: linear-gradient(180deg, #333, #666);
+}
+
+#slot-standard .container .games .recommand .content .slide .name {
+	width: 199px;
+	text-align: center;
+	color: #cdcdcd;
+	margin-top: 10px;
+}
+
+#slot-standard .container .games .total-games {
+	padding-bottom: 30px;
+	background: rgb(13, 13, 14, 0.6);
+	border-radius:0 0 3px 3px;
+	height: 1050px;
+}
+
+#slot-standard .container .games .total-games .navbar {
+	background: #0f1012;
+	position: relative;
+}
+
+#slot-standard .container .games .total-games .navbar a {
+	display: inline-block;
+	padding: 25px;
+	color: #fff;
+	font-weight: bold;
+	position: relative;
+	transition: all .3s ease;
+}
+
+#slot-standard .container .games .total-games .navbar a::after{
+	content: '';
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    background: rgba(255,255,255,0.1);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+#slot-standard .container .games .total-games .navbar a:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar .active,
+#slot-standard .container .games .total-games .navbar .active:hover {
+	background: var(--sec-button-color);
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar input {
+	display: inline-block;
+	height: 40px;
+	text-indent: 10px;
+    vertical-align:middle;
+	border-top:1px solid var(--main-color);
+	border-bottom:1px solid var(--main-color);
+	border-left:1px solid var(--main-color);
+	position: absolute;
+	top: 15px;
+	right: 85px;
+	color: #fff;
+}
+
+#slot-standard .container .games .total-games .navbar button {
+	border-top:1px solid var(--main-color);
+	border-bottom:1px solid var(--main-color);
+	border-right:1px solid var(--main-color);
+	height: 40px;
+	width: 50px;
+	text-align: center;
+	color: #3c2e02;
+	cursor: pointer;
+    vertical-align:middle;
+	position: absolute;
+	top: 15px;
+	right: 36px;
+	background-image: url(../images/icon-slot-search-win18.png);
+	background-position: center;
+	background-size: 40px auto;
+	background-repeat: no-repeat;
+}
+
+#slot-standard .container .games .total-games .navbar button:active{
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .12) inset; 
+}
+
+#slot-standard .container .games .total-games .content .filter{
+	padding: 5px 0 5px 10px;
+}
+
+#slot-standard .container .games .total-games .content .filter .active,
+#slot-standard .container .games .total-games .content .filter .active:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .filter span {
+	display: inline-block;
+	padding: 15px 10px;
+	cursor: pointer;
+	color: #b6b6b6;
+	font-size: 14px;
+}
+
+#slot-standard .container .games .total-games .content .filter span:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .game-list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 30px;
+	color: #fff;
+}
+
+/* #slot-standard .container .games .total-games .content .game-list .ml-15 {
+	margin-right: 10px;
+} */
+
+#slot-standard .container .games .total-games .content .game-list .item {
+	margin-bottom: 30px;
+	margin-right: 34px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .item > .item{
+	margin: 0;
+}
+
+#slot-standard .container .games .total-games .content .game-list .item:nth-child(6),
+#slot-standard .container .games .total-games .content .game-list .item:nth-child(12),
+#slot-standard .container .games .total-games .content .game-list .item:nth-child(18),
+#slot-standard .container .games .total-games .content .game-list .item:nth-child(24),
+#slot-standard .container .games .total-games .content .game-list .item:nth-child(30){
+	margin-right: 0;
+}
+
+
+#slot-standard .container .games .total-games .content .game-list .entry {
+	position: relative;
+	width: 161px;
+	height: 109px;
+	background: #d8d8d8;
+	overflow: hidden;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .52);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry img {
+	width: 164px;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .tag {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding: 5px 10px;
+	background: var(--main-color);
+	color: #fff;
+	font-size:12px;
+	display: none;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+	width: 164px;
+	height: 109px;
+	transition: all 0.3s ease;
+}
+#slot-standard .container .games .total-games .content .game-list .entry .link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a {
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	opacity: 0;
+	white-space:nowrap;
+	color:#fff;
+	width: 100px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover img {
+	transform: scale(1.2);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry:hover a {
+	opacity: 1;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go{
+	background: var(--sec-button-color);
+	color:#101013;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go:hover{
+	background:var(--go-hover-color);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.go:active{
+	background:var(--go-active-color);
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free{
+	background-image: linear-gradient(180deg, #666, #333);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,.05);
+    border: 1px solid #333;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free:hover{
+	background:#666;
+}
+
+#slot-standard .container .games .total-games .content .game-list .entry .link a.free:active{
+	background-image: linear-gradient(180deg, #333, #666);
+}
+
+#slot-standard .container .games .total-games .content .game-list .name {
+	width: 155px;
+	text-align: center;
+	color: #cdcdcd;
+	line-height:1.5;
+	margin-top:10px;
+}
+
+#slot-standard .container .games .total-games .content .pagination {
+	text-align: center;
+	font-size: 12px;
+}
+
+#slot-standard .container .games .total-games .content .pagination .active,
+#slot-standard .container .games .total-games .content .pagination .active:hover {
+	color: var(--main-color);
+}
+
+#slot-standard .container .games .total-games .content .pagination span {
+	display: inline-block;
+	cursor: pointer;
+}
+
+#slot-standard .container .games .total-games .content .pagination .page {
+	width: 40px;
+	height: 35px;
+	line-height: 40px;
+}
+
+#slot-standard .container .games .total-games .content .pagination span{
+	color: #fff;
+	position: relative;
+}
+
+#slot-standard .container .games .total-games .content .pagination span::after{
+	content: '';
+	position: absolute;
+	width :15px;
+	height:	0px;
+	background: var(--main-color);
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all .2s ease-in;
+}
+
+#slot-standard .container .games .total-games .content .pagination span:hover::after {
+	height:	1px;
+}
+
+#slot-standard .container .games .total-games .content .pagination .first-page,
+#slot-standard .container .games .total-games .content .pagination .last-page {
+	width: 80px;
+    line-height: 35px;
+    height: 35px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found{
+	height: 420px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found span{
+	width: 100px;
+	height: 100px;
+	background: url(../images/icon-not-found.png) center / cover no-repeat;
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#slot-standard .container .games .total-games .content .game-list .not-found p{
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+/*真人娛樂頁 livecasino*/
+.main-page-livecasino{
+    background: url(../images/main-page-bg-esport.jpg) center center / cover no-repeat;
+    height:680px;
+}
+
+.main-page-livecasino .container{
+    width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    padding:50px 0;
+}
+
+.main-page-livecasino .container div:first-child{
+    width:45%;
+    height:200px;
+    background:grey;
+}
+
+.main-page-livecasino .container .content{
+    text-align:center;
+}
+
+.main-page-livecasino .container .content .btn{
+    display:inline-block;
+    text-align:center;
+    width:140px;
+    height:42px;
+    background: var(--grey-button-color);
+    line-height:42px;
+    border-radius:5px;
+    margin-right:15px;
+    color:#666;
+    transition:all .2s ease;
+}
+
+.main-page-livecasino .container .content .active{
+    background-image:var(--sec-button-color);
+    color:#fff;
+    box-shadow:0px 0px 20px rgba(150, 201, 61, 0.8);
+}
+
+.main-page-livecasino .container .content .btn:hover{
+    background-image:var(--sec-button-color);
+    color:#fff;
+    box-shadow:0px 0px 20px rgba(150, 201, 61, 0.8);
+}
+
+.main-page-livecasino .container .content .item a{
+    color:#666;
+}
+
+.main-page-livecasino .container .content a.entry{
+    background-image: var(--main-button-color);
+    border-radius:30px;
+    width:190px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    color:#fff;
+    display:inline-block;
+    font-size:18px;
+    margin-top:50px;
+    box-shadow:0px 0px 20px rgba(150, 201, 61, 0.8);
+}
+
+.main-page-livecasino .container .content a.entry:hover{
+    background-image: var(--main-hover-color);
+    box-shadow:0px 0px 20px rgba(0, 176, 155, 0.8);
+}
+
+/*真人娛樂主館頁 開始*/
+.casino-carousel{
+	height:400px;
+	background:url(../images/banner-livecasino.jpg) center center no-repeat;
+}
+
+article#casino .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+    padding: 80px 0 50px 0;
+    
+}
+
+article#casino .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.8);
+	background: #47474c;
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius:10px;
+}
+
+article#casino .container .content:nth-child(3),
+article#casino .container .content:nth-child(6),
+article#casino .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#casino .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+    margin-top:20px;
+    font-size:24px;
+    font-weight:1000;
+}
+
+article#casino .container .content p {
+	width: 160px;
+    line-height: 1.5;
+}
+
+article#casino .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background-image:var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#casino .container .content a:hover{
+	background:var(--main-hover-color);
+}
+
+article#casino .container .content .girl {
+	width: 186px;
+	height: 238px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*真人娛樂頁 standard 開始*/
+article#casino-standard {
+}
+
+.casino-standard-carousel{
+	height:400px;
+	background:url(../images/casino-banner2.jpg) center center no-repeat;
+}
+
+article#casino-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 80px 0 50px 0;
+}
+
+article#casino-standard .container .content {
+	background:var(--section-bgcolor) ;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 30px;
+	width: 280px;
+	border-radius:10px;
+    box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+    position:relative;
+    height:427px;
+	margin-right:15px;
+}
+
+article#casino-standard .container .content .girl{
+	width:186px;
+	height:238px;
+}
+
+article#casino-standard .container .content h2 {
+	color: var(--main-color);
+    margin-top:15px;
+    font-size:28px;
+    font-weight:1000;
+    margin-bottom:15px;
+}
+
+article#casino-standard .container .content p {
+	color: #cdcdcd;
+    line-height: 1.5;
+    
+}
+
+article#casino-standard .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 62px;
+	bottom: 20px;
+	background-image:var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#casino-standard .container .content a:hover {
+	background:var(--main-hover-color);
+}
+
+/* 帳戶總覽 */
+#account-mid #account-info {
+	display: flex;
+}
+	 
+#account-wrapper #account-mid {
+	border-radius: 10px;
+}
+	 
+#account-mid .account-title {
+	position: relative;
+	padding: 8px 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	color: #4a4a4a;
+	border-bottom: 1px solid #e6e6e6;
+}
+	 
+#account-mid #account-info {
+	margin: auto auto 20px;
+	justify-content: space-between;
+	width: 100%;
+	background: #374b84;
+	color: #fff;
+}
+	 
+#account-info .profile {
+	padding: 10px 0;
+	display: flex;
+}
+	 
+#account-info .profile .avatar {
+	margin: 15px 15px 15px 40px;
+	padding-left: 0;
+	width: 65px;
+	height: 65px;
+	background-image: url(../images/avatar-winbet.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 65px auto;
+}
+	 
+#account-info img {
+	margin: 15px 15px 15px 40px;
+	width: 65px;
+	height: auto;
+}
+	 
+#account-info .profile p:first-child {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	line-height: 25px;
+}
+	 
+#account-info .profile span {
+	background: #22305d;
+    padding: 0px 6px;
+    border-radius: 15px;
+    margin-left: 6px;
+	color: #fff;
+    font-size: 12px;
+}
+	 
+#account-info .balance {
+	text-align: right;
+	margin-right: 40px;
+}
+	 
+#account-info .balance p:first-child {
+	font-size: 18px;
+	font-weight: 800;
+}
+	 
+#account-info .balance p:last-child {
+	font-size: 19px;
+    margin-top: -7px;
+    font-weight: 800;
+}
+	 
+#account-info .balance p.sum {
+	color: #fff;
+	margin-top: 10px;
+	font-size:15px;
+}
+	 
+#account-mid .account-list {
+	width: 650px;
+	margin: auto;
+	justify-content: space-between;
+	padding: 10px 15px;
+	color: #4a4a4a;
+	font-size: 12px;
+	display: flex;
+}
+
+	 
+#account-mid .list2 span {
+	color: var(--primary);
+}
+	 
+#account-mid .list2 a img {
+	width: 10px;
+}
+	 
+#account-mid .list1,
+#account-mid .list10,
+#account-mid .list2,
+#account-mid .list9 {
+	font-weight: 1000;
+	font-size: 16px;
+	display: flex;
+}
+
+#account-mid .account-list div span{
+	font-weight: normal;
+}
+
+#account-mid .account-list div span + a {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/icon-collapse-active.png);
+	background-position: center 2px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left: 5px;
+}
+
+#account-mid .account-list div span + a.collapse{
+	background-image: url(../images/icon-collapse.png);
+}
+
+#account-mid .account-list div span + a img{
+	display: none;
+}
+	 
+#account-mid .account-transfer form {
+	padding: 0 20px;
+	display: flex;
+	font-size: 12px;
+	line-height: 30px;
+	justify-content: center;
+}
+	 
+#account-mid .list-container .account-list:nth-child(odd) {
+	background: #e2e2e2;
+}
+	 
+#account-mid .list2 a:hover {
+	opacity: 0.6;
+}
+	 
+#account-mid .account-transfer {
+	background: #e2e2e2;
+	margin: 20px;
+	padding: 20px 0;
+	color: #4a4a4a;
+}
+	 
+#account-mid .account-transfer form > span {
+	font-weight: 800;
+	margin: 0 15px 0 0;
+}
+	 
+#account-mid .account-transfer select.options,
+#account-mid .account-transfer select.transfer_account_roll_in,
+#account-mid .account-transfer select.transfer_account_roll_out {
+	border: 1px solid #afafaf;
+	width: 110px;
+	padding: 5px 0;
+}
+	 
+#account-mid .account-transfer .trans-pic {
+	width: 27px;
+	height: auto;
+	margin: 3px 5px 0 5px;
+	padding-left: 0;
+	width: 27px;
+	height: 27px;
+	background-image: url(../images/transfer-arrow.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 27px auto;
+}
+	 
+#account-mid .account-transfer input[type="text"] {
+	border: 1px solid #afafaf;
+	width: 128px;
+	padding: 5px 0;
+	background-color: white;
+	text-indent: 7px;
+}
+	 
+#account-mid .account-transfer button {
+	padding: 0 25px;
+	background:var(--primary);
+	background: #314a88;
+	font-size: 10px;
+	line-height: 24px;
+	font-weight: 600;
+	color: #fff;
+	margin-left: 10px;
+	border-radius: 3px;
+}
+	 
+#account-mid .account-transfer button:hover {
+	background: #647cc3;
+	-webkit-transition: -webkit-transform 0.1s ease-in;
+	-webkit-transition: transform 0.1s ease-in;
+	transition: transform 0.1s ease-in;
+	-webkit-transform: translateY(-1px);
+	-ms-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+	 
+#account-mid .notice {
+	width: 600px;
+	margin: 0 auto 30px;
+	font-size: 11px;
+	color: #4a4a4a;
+}
+	 
+#account-mid .settings-fail,
+#account-mid .settings-success {
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+	 
+#account-mid .notice span {
+	color: #f70606;
+}
+
+.eQCTZo, .jJExrO,
+.vw-ck .mya_decheck h4 i,
+.manage-bank-card,
+.faxhqR > h4::before,
+.transaction-timed .timed-active,
+.transaction-pager-input.pager-btn{
+	background:var(--main-color);
+	
+}
+
+.jiHSZB, .kSOGNS, .jhVUtj,
+.transaction-log-download-btn{
+	color:var(--main-color);
+}
+
+.btn-2{
+	border:1px solid var(--main-color);
+}
+
+.transaction-sub-nav li.active a {
+    background: var(--main-color);
+	border-color: var(--main-color);
+}
+
+.transaction-sub-nav{
+	border-bottom: 1px solid var(--main-color);
+}
+
+/*忘記密碼頁 共用樣式*/
+#password-header {
+	border-bottom: 1px solid #e6e6e6;
+	padding: 10px 10px 10px 20px;
+	color: #9b9b9b;
+	font-size: 14px;
+}
+
+#password-header span {
+	cursor: pointer;
+}
+
+#password-header img {
+	width: 15px;
+	height: auto;
+	margin: -3px 3px -2px 3px;
+}
+
+#password-header .text-bold {
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+#password-footer {
+	color: #4a4a4a;
+	line-height: 1.5;
+	text-align: center;
+	font-size: 15px;
+}
+
+#password-footer span {
+	color: var(--main-color);
+	cursor: pointer;
+	border-bottom: 1px solid var(--main-color);
+}
+/*忘記密碼頁 共用樣式*/
+
+/* 忘記密碼頁 首頁 begins*/
+article#password-index {
+	padding: 115px 0
+}
+
+#password-index .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #c7c7c7;
+	font-size: 18px;
+}
+
+#password-index .container .content {
+	text-align: center;
+	padding-top: 60px;
+}
+
+#password-index .container .content h2{
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#password-index .container .content form {
+	text-align: left;
+	margin: 0px 0 60px 190px;
+}
+
+#password-index .container .content form label {
+	font-size: 14px;
+	display: block;
+	color: #c7c7c7;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+#password-index .container .content form input[type='text'] {
+	width: 350px;
+	height: 40px;
+	color: #fff;
+	font-size: 14px;
+	border-bottom: 1px solid #7c839f;
+	transition: all .3s ease-in;
+}
+
+#password-index .container .content form input[type='text']:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-index .container .content form input[type='text']::placeholder{
+	color: #c7c7c7;
+}
+
+#password-index .container .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-index .container .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+	padding-left: 18px;
+}
+
+#password-index .container .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/signin_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-index .container .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	color: #101013;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 15px;
+	padding: 10px;
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	opacity: 0.9;
+}
+
+#password-index .container .content form input[type='button']:hover {
+	opacity: 1;
+}
+/* 忘記密碼頁 首頁 ends*/
+
+/* 忘記密碼頁 线上客服頁 begins*/
+article#password-serving {
+	padding-top: 115px;
+	min-height: 550px;
+}
+
+#password-serving .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #c7c7c7;
+	font-size: 16px;
+}
+
+#password-serving .container p {
+	text-align: center;
+	margin: 60px 0 60px 0;
+	line-height: 1.5;
+}
+
+#password-serving .container p span {
+	color: var(--main-color);
+	cursor: pointer;
+}
+
+#password-serving .container p span:hover {
+	font-weight: bold;
+}
+/* 忘記密碼頁 线上客服頁 ends*/
+
+/* 忘記密碼頁 三項驗證頁 begins*/
+article#password-solution {
+	padding: 115px 0
+}
+
+#password-solution .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #c7c7c7;
+}
+
+#password-solution .content {
+	display: flex;
+	justify-content: center;
+	margin: 60px 0;
+}
+
+#password-solution .content a {
+	display: block;
+	border: 2px solid #e4e4e4;
+	width: 130px;
+	height: 130px;
+	color: #c7c7c7;
+	margin-right: 30px;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 80px;
+}
+
+#password-solution .content a:last-child{
+	margin-right: 0;
+}
+
+#password-solution .content a.verify-qa {
+	background-image: url(../images/forgotpwd_verify-q&a.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-phone {
+	background-image: url(../images/forgotpwd_verify-phone.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a.verify-email {
+	background-image: url(../images/forgotpwd_verify-email.png);
+	background-repeat: no-repeat;
+	background-position: center 15px;
+}
+
+#password-solution .content a:hover {
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+}
+
+/* 忘記密碼頁 三項驗證頁 ends*/
+
+/* 忘記密碼頁 安全問題驗證 begins*/
+article#password-solution-qa {
+	padding: 115px 0
+}
+
+#password-solution-qa .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #c7c7c7;
+	font-size: 18px;
+}
+
+#password-solution-qa .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-qa .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+#password-solution-qa .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-solution-qa .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-qa .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-qa .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-qa .content form .indicate span img {
+	width: 15px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 3px;
+}
+
+#password-solution-qa .content form input {
+	width: 350px;
+	height: 40px;
+	border-bottom: 1px solid #7c839f;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #fff;
+}
+
+#password-solution-qa .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-qa .content form input::placeholder{
+	color: #c7c7c7;
+}
+
+#password-solution-qa .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	color: #101013;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 15px;
+	opacity: 0.9;
+}
+
+#password-solution-qa .content form input[type='button']:hover {
+	opacity: 1;
+}
+/* 忘記密碼頁 安全問題驗證 ends*/
+
+/* 忘記密碼頁 手機驗證 begins*/
+article#password-solution-mobile {
+	padding: 115px 0
+}
+
+#password-solution-mobile .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #c7c7c7;
+}
+
+#password-solution-mobile .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mobile .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mobile .content form p.phone {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mobile .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mobile .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-qa .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-qa .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .wrong img{
+	display: none;
+}
+
+#password-solution-mobile .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mobile .content form input {
+	height: 40px;
+	border-bottom: 1px solid #7c839f;
+	transition: all .3s ease-in;
+	/* display:inline-block; */
+	color: #fff;
+}
+
+#password-solution-mobile .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input::placeholder{
+	color: #c7c7c7;
+}
+
+#password-solution-mobile .content form .code {
+	width: 129px;
+	height: 40px;
+	line-height: 35px;
+	padding-left: 20px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 85px center;
+}
+
+#password-solution-mobile .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mobile .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mobile .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mobile .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	color: #101013;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 15px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mobile .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 手機驗證 ends*/
+
+/* 忘記密碼頁 郵箱驗證 begins*/
+article#password-solution-mail {
+	padding: 115px 0
+}
+
+#password-solution-mail .container {
+	width: 740px;
+	margin: auto;
+	border-radius: 10px;
+	color: #c7c7c7;
+}
+
+#password-solution-mail .container .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-solution-mail .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#password-solution-mail .content form p.email {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p.confirm {
+	margin-top: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#password-solution-mail .content form p img {
+	width: 25px;
+	height: auto;
+	margin-bottom: -2px;
+	margin-right: 5px;
+}
+
+#password-solution-mail .content form .indicate {
+	/* display:none; */
+	margin-top: 5px;
+}
+
+#password-solution-mail .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-solution-mail .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 17px auto;
+	padding-left: 20px;
+}
+
+#password-solution-mail .content form .indicate .success {
+	color: #5cb85c;
+}
+
+#password-solution-mail .content form .indicate .default {
+	color: #4a4a4a;
+}
+
+#password-solution-mail .content form input {
+	border-bottom: 1px solid #7c839f;
+	height: 40px;
+	transition: all .3s ease;
+	/* display:inline-block; */
+	color: #fff;
+}
+
+#password-solution-mail .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-solution-mail .content form input::placeholder{
+	color: #c7c7c7;
+}
+
+#password-solution-mail .content form .code {
+	width: 129px;
+	height: 40px;
+	line-height: 37px;
+	padding-left: 20px;
+	font-size: 12px;
+	display: inline-block;
+	border: 2px solid #e2e2e2;
+	background: #fff;
+	color: #4a4a4a;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	margin-left: 5px;
+	margin-top: -15px;
+	cursor: pointer;
+	background-image: url(../images/forgotpwd_code.png);
+	background-repeat: no-repeat;
+	background-position: 85px center;
+}
+
+#password-solution-mail .content form .code:hover {
+	border: 2px solid var(--main-color);
+}
+
+#password-solution-mail .content form input.enter-pw {
+	width: 350px;
+}
+
+#password-solution-mail .content form input.confirm-pw {
+	width: 210px;
+}
+
+#password-solution-mail .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	color: #101013;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-solution-mail .content form input[type='button']:hover {
+	opacity: 1;
+}
+
+/* 忘記密碼頁 郵箱驗證 ends*/
+
+/* 忘記密碼頁 設定新密碼 begins*/
+article#password-reset {
+	padding: 115px 0
+}
+
+#password-reset .container {
+	width: 740px;
+	margin: auto;
+	color: #c7c7c7;
+}
+
+#password-reset .content {
+	margin: 60px 0 60px 190px;
+	text-align: left;
+}
+
+#password-reset .content form p {
+	font-weight: bold;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 18px 18px;
+
+}
+
+#password-reset .content form p.confirm {
+	margin-top: 20px;
+}
+
+#password-reset .content form .indicate {
+	/* display:none; */
+}
+
+#password-reset .content form .indicate span {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#password-reset .content form .indicate .wrong {
+	color: #d9514f;
+	background-image: url(../images/forgotpwd-wrong.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .success {
+	color: #5cb85c;
+	background-image: url(../images/forgotpwd-success.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form .indicate .default {
+	color: #4a4a4a;
+	background-image: url(../images/forgotpwd_default.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 16px 16px;
+	padding-left: 20px;
+}
+
+#password-reset .content form input {
+	border-bottom: 1px solid #7c839f;
+	display: inline-block;
+	transition: all .3s ease-in;
+	height: 40px;
+	color: #fff;
+}
+
+#password-reset .content form input:focus{
+	border-bottom: 1px solid var(--main-color);
+}
+
+#password-reset .content form input::placeholder{
+	color: #c7c7c7;
+}
+
+#password-reset .content form input[type='password'] {
+	width: 350px;
+	margin-bottom: 5px;
+}
+
+#password-reset .content form input[type='button'] {
+	background-image:var(--sec-button-color);
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	color: #101013;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 15px;
+	padding: 10px;
+	opacity: 0.9;
+}
+
+#password-reset .content form input[type='button']:hover {
+	opacity: 1;;
+}
+/* 忘記密碼頁 設定新密碼 ends*/
+
+/* 忘記密碼頁 設定成功 begins*/
+article#password-success {
+	padding: 115px 0
+}
+
+#password-success .container {
+	width: 740px;
+	margin: auto;
+	color: #c7c7c7;
+}
+
+#password-success .container .content {
+	text-align: center;
+	margin: 60px 0;
+}
+
+#password-success .container .content span {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background-image: url(../images/forgotpwd_successpage.png);
+	background-repeat: no-repeat;
+	background-size: 50px auto;
+	margin-bottom: 10px;
+}
+
+#password-success .content h2 {
+	font-size: 14px;
+	margin: 15px 0;
+	color: #fff;
+}
+
+#password-success .content input[type='button'] {
+	background-image:var(--sec-button-color);
+	box-shadow: 0 6px 10px 6px rgba(0, 0, 0, .3);
+	color: #101013;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 10px;
+	opacity: 0.9;
+	padding: 10px;
+}
+
+#password-success .content input:hover {
+	opacity: 1;
+}
+/* 忘記密碼頁 設定成功 ends*/
+
+
+
+/*帳戶驗證頁 begins*/
+#forgotpwd-verify {
+	width: 740px;
+	padding: 50px 100px 50px 100px;
+	margin: 100px 0;
+	background: #fff;
+	border-radius: 10px;
+	box-sizing: border-box;
+	color: #4a4a4a;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+	text-align: left;
+	font-size: 15px;
+}
+
+#forgotpwd-verify .title {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #ff601a;
+}
+
+#forgotpwd-verify .callus {
+	color: #ff610a;
+	cursor: pointer;
+	line-height: 24px;
+}
+
+#forgotpwd-verify .text-bold {
+	font-weight: bold;
+}
+
+#forgotpwd-verify .text-right {
+	text-align: right;
+}
+
+#forgotpwd-verify form label {
+	display: block;
+	font-size: 15px;
+	font-weight: 600;
+	color: #4a4a4a;
+	margin-bottom: 10px;
+}
+
+#forgotpwd-verify form input {
+	background: #e2e2ee;
+	width: 98%;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#forgotpwd-verify form input[type='submit'] {
+	width: 40%;
+	height: 40px;
+	background-image: linear-gradient(to bottom, #fb7a1b, #ff611a);
+	color: #fff;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 0;
+}
+
+#forgotpwd-verify form input[type='submit']:hover {
+	background-image: linear-gradient(to bottom, #fd8936, #fd6e2c);
+}
+/*帳戶驗證頁 ends*/
+
+/*體育主館頁 yabo*/
+.titank-sport{
+	background:url(../images/bg-titank-sport.jpg) center center / cover no-repeat;
+}
+
+.titank-sport .container{
+	background:url(../images/bg-titank-sport02.jpg) center center / cover no-repeat;
+	width:1200px;
+	min-height:690px;
+	margin:auto;
+	box-shadow:0px 0px 5px rgba(0, 0, 0, .3);
+	color:#fff;
+}
+
+/*體育主館頁*/
+.sport-betting-carousel{
+	height:400px;
+	background:url(../images/banner-sportbet.jpg) center center no-repeat;
+}
+
+article#sport-betting .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+    padding-top: 110px;
+    
+}
+
+article#sport-betting .container .content {
+	margin-bottom: 90px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.8);
+	background:var(--section-bgcolor);
+	background-color: #47474c;
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius:10px;
+}
+
+article#sport-betting .container .content:nth-child(3),
+article#sport-betting .container .content:nth-child(6),
+article#sport-betting .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#sport-betting .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+    margin-top:20px;
+    font-size:24px;
+    font-weight:1000;
+}
+
+article#sport-betting .container .content p {
+	width: 160px;
+    line-height: 1.5;
+}
+
+article#sport-betting .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background-image:var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+	text-align:center;
+	z-index: 10;
+}
+
+article#sport-betting .container .content a:hover{
+	background:var(--main-hover-color);
+}
+
+article#sport-betting .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*電競主館頁*/
+.im-esport{
+	background:url(../images/bg-im-esport.jpg) center center / cover no-repeat;
+	min-width:1200px;
+}
+
+.im-esport .container{
+	width:1200px;
+	min-height:765px;
+	margin:auto;
+	color:#fff;
+	text-align:center;
+	position:relative;
+	padding-top: 100px;
+}
+
+.im-esport .container button{
+	width:175px;
+	height:50px;
+	border-radius: 8px;
+	color: #fff;
+	text-align:center;
+	line-height:50px;
+	background: var(--sec-button-color);
+	cursor: pointer;
+	margin-top:50px;
+	font-size:24px;
+	box-shadow: rgba(0, 176, 155, 0.3) 0px 10px 20px 6px;
+}
+
+.im-esport .container .content .team-IG{
+	background: url(../images/esport-IG.png) center center no-repeat;
+	width:907px;
+	height:435px;
+	margin:auto;
+	margin-top:6px;
+	animation: fadein 2s ease-out;
+}
+
+@keyframes fadein {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+.im-esport .container .content .logo-im{
+	position:absolute;
+	top:340px;
+	z-index:10;
+	display:inline-block;
+	width:920px;
+	height:247px;
+	background: url(../images/logo-im-esport.png) center center no-repeat;
+	transform: translateX(-50%);
+	left:50%;
+}
+
+.im-esport .container .content .entry .play:active{
+	border:1px solid yellow;
+}
+
+.im-esport .container .content a{
+	top:69%;
+	display:inline-block;
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	width: 230px;
+    height: 60px;
+	line-height:58px;
+	border-radius:35px;
+	background:yellow;
+	z-index:12;
+	color:#fff;
+	font-size:21px;
+	font-weight:bold;
+	background-image: linear-gradient(to bottom, #ffd003 0%, #f08616 75%);
+	box-shadow:1px 0 5px rgba(255,255,255,0.9) inset;
+	border:1px solid #d37300;
+	text-shadow:2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.im-esport .container .content a:hover{
+	background: #f5932b;
+}
+
+.im-esport .container .content a:active{
+	background-image: linear-gradient(to top, #ffbc03 0%, #f08616 75%);
+}
+
+.im-esport .container .content .game-icon{
+	margin-top:70px;
+}
+
+.im-esport .container .content .game-icon i{
+	display:inline-block;
+	margin-right:10px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(1){
+	background:url(../images/esport-icon01.png) center center / 100% 100% no-repeat;
+	width:54px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(2){
+	background:url(../images/esport-icon02.png) center center / 100% 100% no-repeat;
+	width:117px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(3){
+	background:url(../images/esport-icon03.png) center center / 100% 100% no-repeat;
+	width:112px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(4){
+	background:url(../images/esport-icon04.png) center center / 100% 100% no-repeat;
+	width:75px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(5){
+	background:url(../images/esport-icon05.png) center center / 100% 100% no-repeat;
+	width:46px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(6){
+	background:url(../images/esport-icon06.png) center center / 100% 100% no-repeat;
+	width:42px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(7){
+	background:url(../images/esport-icon07.png) center center / 100% 100% no-repeat;
+	width:76px;
+	height:50px;
+}
+
+.im-esport .container .content .game-icon i:nth-child(8){
+	background:url(../images/esport-icon08.png) center center / 100% 100% no-repeat;
+	width:53px;
+	height:50px;
+}
+
+/*電競主館頁 開始*/
+.esport-betting-carousel{
+	height:400px;
+	background:url(../images/esport-banner.jpg) center center no-repeat;
+}
+
+article#esport-betting .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+    padding: 80px 0 50px 0;
+    
+}
+
+article#esport-betting .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.8);
+	background-color: #47474c;
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius:10px;
+}
+
+article#esport-betting .container .content:nth-child(3),
+article#esport-betting .container .content:nth-child(6),
+article#esport-betting .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#esport-betting .container .content h2 {
+	color: var(--main-color);
+	margin-bottom: 15px;
+    margin-top:20px;
+    font-size:28px;
+    font-weight:1000;
+}
+
+article#esport-betting .container .content p {
+	width: 160px;
+    line-height: 1.5;
+}
+
+article#esport-betting .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background-image:var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#esport-betting .container .content a:hover{
+	background:var(--main-hover-color);
+}
+
+article#esport-betting .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*體育主館頁-多個館別*/
+.sportbet{
+	background: url(../images/bg-sportbet.jpg) center center / cover no-repeat;
+	min-width:1200px;
+}
+
+.sportbet .container{
+	width:1200px;
+	height:813px;
+	margin:auto;
+	position:relative;
+	
+}
+
+.sportbet .container .btns{
+	position:absolute;
+	right:0;
+	top:40px;
+}
+
+.sportbet .container .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+}
+
+.sportbet .container .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:var(--btn-shadow);
+}
+
+.sportbet .container .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:var(--btn-shadow);
+}
+
+.sportbet .container .left-content{
+	position:absolute;
+	bottom:0;
+	opacity:0;
+}
+
+.sportbet .container .left-content-active{
+	animation:fade-in-left 1s ease-out;
+	opacity:1;
+	left:0;
+}
+
+.sportbet .container .fade-out-left{
+	animation:fade-out-left .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-left{
+	0%{
+		left:-20px;
+		opacity:0;
+	}
+	100%{
+		left:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-left{
+	0%{
+		left:0px;
+		opacity:1;
+	}
+	100%{
+		left:-20px;
+		opacity:0;
+	}
+}
+
+.sportbet .container .left-content .model{
+	width:536px;
+	height:717px;
+	z-index:3;
+}
+
+.sportbet .container #pinSport-left-content .model{
+	background:url(../images/sportbet-player-pin.png) center center no-repeat;
+}
+
+.sportbet .container #sbSport-left-content .model{
+	background:url(../images/sportbet-player-oneworks.png) center center no-repeat;
+}
+
+.sportbet .container #btiSport-left-content .model{
+	background:url(../images/sportbet-player-bti.png) center center no-repeat;
+}
+
+.sportbet .container #imOne-left-content .model{
+	background:url(../images/sportbet-player-imone.png) center center no-repeat;
+}
+
+.sportbet .container #gbSport-left-content .model{
+	background:url(../images/sportbet-player-gb.png) center center no-repeat;
+}
+
+.sportbet .container .right-content{
+	position:absolute;
+	top:130px;
+	opacity:0;
+}
+
+.sportbet .container .right-content-active{
+	right:0;
+	animation:fade-in-right 1s ease-out;
+	opacity:1;
+}
+
+.sportbet .container .fade-out-right{
+	animation:fade-out-right .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-right{
+	0%{
+		right:-20px;
+		opacity:0;
+	}
+	100%{
+		right:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-right{
+	0%{
+		right:0px;
+		opacity:1;
+	}
+	100%{
+		right:-20px;
+		opacity:0;
+	}
+}
+
+.sportbet .container .right-content .caption{
+	width:632px;
+	height:220px;
+	margin-right:50px;
+}
+
+.sportbet .container .right-content span{
+	display:block;
+}
+
+
+.sportbet .container #pinSport-right-content .caption{
+	background:url(../images/sportbet-pin.png) center center no-repeat;
+}
+
+.sportbet .container #sbSport-right-content .caption{
+	background:url(../images/sportbet-oneworks.png) center center no-repeat;
+}
+
+.sportbet .container #btiSport-right-content .caption{
+	background:url(../images/sportbet-bti.png) center center no-repeat;
+}
+
+.sportbet .container #imOne-right-content .caption{
+	background:url(../images/sportbet-imone.png) center center no-repeat;
+}
+
+.sportbet .container #gbSport-right-content .caption{
+	background:url(../images/sportbet-gb.png) center center no-repeat;
+}
+
+.sportbet .container .right-content .items{
+	width:632px;
+	height:91px;
+}
+
+.sportbet .container #pinSport-right-content .items,
+.sportbet .container #sbSport-right-content .items,
+.sportbet .container #btiSport-right-content .items,
+.sportbet .container #imOne-right-content .items,
+.sportbet .container #gbSport-right-content .items{
+	background:url(../images/sportbet-items.png) center center no-repeat;
+}
+
+.sportbet .container .right-content a{
+	display:inline-block;
+	width: 188px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background:var(--main-button-color);
+	cursor: pointer;
+	border-radius:25px;
+	box-shadow:var(--btn-shadow);
+	margin:40px 0 0 190px;
+}
+
+.sportbet .container #bbin-right-content a:hover{
+	background:var(--main-hover-color);
+}
+
+/*真人娛樂主館頁*/
+.real-casino{
+	background: url(../images/bg-real-casino.jpg) center center / cover no-repeat;
+	min-width:1200px;
+}
+
+.real-casino .container{
+	width:1200px;
+	height:813px;
+	margin:auto;
+	position:relative;
+	
+}
+
+.real-casino .container .btns{
+	position:absolute;
+	right:0;
+	top:40px;
+}
+
+.real-casino .container .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+}
+
+.real-casino .container .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:var(--btn-shadow);
+}
+
+.real-casino .container .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:var(--btn-shadow);
+}
+
+.real-casino .container .left-content{
+	position:absolute;
+	bottom:0;
+	opacity:0;
+}
+
+.real-casino .container .left-content-active{
+	animation:fade-in-left 1s ease-out;
+	opacity:1;
+	left:0;
+}
+
+.real-casino .container .fade-out-left{
+	animation:fade-out-left .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-left{
+	0%{
+		left:-20px;
+		opacity:0;
+	}
+	100%{
+		left:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-left{
+	0%{
+		left:0px;
+		opacity:1;
+	}
+	100%{
+		left:-20px;
+		opacity:0;
+	}
+}
+
+.real-casino .container .left-content .model{
+	width:536px;
+	height:717px;
+	z-index:3;
+}
+
+.real-casino .container #ag-left-content .model{
+	background:url(../images/live-casino-model01.png) center center no-repeat;
+}
+
+.real-casino .container #hb-left-content .model{
+	background:url(../images/live-casino-model02.png) center center no-repeat;
+}
+
+.real-casino .container #mg-left-content .model{
+	background:url(../images/live-casino-model03.png) center center no-repeat;
+}
+
+.real-casino .container #bbin-left-content .model{
+	background:url(../images/live-casino-model04.png) center center no-repeat;
+}
+
+.real-casino .container #pt-left-content .model{
+	background:url(../images/live-casino-model05.png) center center no-repeat;
+}
+
+
+.real-casino .container #ag-left-content .float-left{
+	width:47px;
+	height:37px;
+	background:url(../images/float-item-left-ag.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-ag 3s ease infinite alternate;
+}
+
+.real-casino .container #ag-left-content .float-right{
+	width:62px;
+	height:42px;
+	background:url(../images/float-item-right-ag.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-ag 3s ease infinite alternate;
+}
+
+@keyframes float-left-ag{
+	0%{
+		top:310px;
+		left:30px;
+
+	}
+	100%{
+		top:330px;
+		left:30px;
+	}
+}
+
+@keyframes float-right-ag{
+	0%{
+		top:150px;
+		left:400px;
+	}
+	100%{
+		top:130px;
+		left:400px;
+	}
+}
+
+.real-casino .container #hb-left-content .float-left{
+	width:41px;
+	height:39px;
+	background:url(../images/float-item-left-hb.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-hb 3s ease infinite alternate;
+}
+
+.real-casino .container #hb-left-content .float-right{
+	width:47px;
+	height:51px;
+	background:url(../images/float-item-right-hb.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-hb 3s ease infinite alternate;
+}
+
+@keyframes float-left-hb{
+	0%{
+		top:290px;
+		left:30px;
+		
+	}
+	100%{
+		top:270px;
+		left:30px;
+		
+	}
+}
+
+@keyframes float-right-hb{
+	0%{
+		top:130px;
+		left:400px;
+	}
+	100%{
+		top:110px;
+		left:400px;
+	}
+}
+
+.real-casino .container #mg-left-content .float-left{
+	width:47px;
+	height:37px;
+	background:url(../images/float-item-left-mg.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-mg 3s ease infinite alternate;
+}
+
+.real-casino .container #mg-left-content .float-right{
+	width:62px;
+	height:42px;
+	background:url(../images/float-item-right-mg.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-mg 3s ease infinite alternate;
+}
+
+@keyframes float-left-mg{
+	0%{
+		top:310px;
+		left:30px;
+		transform:rotate(0deg);
+	}
+	100%{
+		top:330px;
+		left:30px;
+		transform:rotate(10deg);
+	}
+}
+
+@keyframes float-right-mg{
+	0%{
+		top:150px;
+		left:400px;
+	}
+	100%{
+		top:130px;
+		left:400px;
+	}
+}
+
+
+.real-casino .container #bbin-left-content .float-left{
+	width:64px;
+	height:68px;
+	background:url(../images/float-item-left-bbin.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-bbin 3s ease infinite alternate;
+}
+
+.real-casino .container #bbin-left-content .float-right{
+	width:46px;
+	height:50px;
+	background:url(../images/float-item-right-bbin.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-bbin 3s ease infinite alternate;
+}
+
+@keyframes float-left-bbin{
+	0%{
+		top:350px;
+		left:30px;
+	}
+	100%{
+		top:330px;
+		left:30px;
+	}
+}
+
+@keyframes float-right-bbin{
+	0%{
+		top:220px;
+		left:380px;
+	}
+	100%{
+		top:240px;
+		left:380px;
+	}
+}
+
+.real-casino .container #pt-left-content .float-left{
+	width:69px;
+	height:101px;
+	background:url(../images/float-item-left-pt.png) center center no-repeat;
+	position:absolute;
+	left:30px;
+	animation:float-left-pt 3s ease infinite alternate;
+}
+
+.real-casino .container #pt-left-content .float-mid{
+	width:90px;
+	height:60px;
+	background:url(../images/float-item-mid-pt.png) center center no-repeat;
+	position:absolute;
+	animation:float-mid-pt 3s ease infinite alternate;
+}
+
+.real-casino .container #pt-left-content .float-right{
+	width:48px;
+	height:91px;
+	background:url(../images/float-item-right-pt.png) center center no-repeat;
+	position:absolute;
+	animation:float-right-pt 3s ease infinite alternate;
+}
+
+@keyframes float-left-pt{
+	0%{
+		top:350px;
+		left:20px;
+	}
+	100%{
+		top:330px;
+		left:20px;
+	}
+}
+
+@keyframes float-mid-pt{
+	0%{
+		bottom:80px;
+		left:150px;
+	}
+	100%{
+		bottom:90px;
+		left:150px;
+	}
+}
+
+@keyframes float-right-pt{
+	0%{
+		top:160px;
+		left:450px;
+	}
+	100%{
+		top:180px;
+		left:450px;
+	}
+}
+
+.real-casino .container .right-content{
+	position:absolute;
+	top:130px;
+	opacity:0;
+}
+
+.real-casino .container .right-content-active{
+	right:0;
+	animation:fade-in-right 1s ease-out;
+	opacity:1;
+}
+
+.real-casino .container .fade-out-right{
+	animation:fade-out-right .8s ease-out;
+	opacity:0;
+}
+
+@keyframes fade-in-right{
+	0%{
+		right:-20px;
+		opacity:0;
+	}
+	100%{
+		right:0px;
+		opacity:1;
+	}
+}
+
+@keyframes fade-out-right{
+	0%{
+		right:0px;
+		opacity:1;
+	}
+	100%{
+		right:-20px;
+		opacity:0;
+	}
+}
+
+.real-casino .container .right-content .caption{
+	width:632px;
+	height:260px;
+	margin-right:50px;
+}
+
+.real-casino .container #ag-right-content .caption{
+	background:url(../images/live-casino-ag.png) center center no-repeat;
+}
+
+.real-casino .container #hb-right-content .caption{
+	background:url(../images/live-casino-hb.png) center center no-repeat;
+}
+
+.real-casino .container #mg-right-content .caption{
+	background:url(../images/live-casino-mg.png) center center no-repeat;
+}
+
+.real-casino .container #bbin-right-content .caption{
+	background:url(../images/live-casino-bbin.png) center center no-repeat;
+}
+
+.real-casino .container #pt-right-content .caption{
+	background:url(../images/live-casino-pt.png) center center no-repeat;
+}
+
+.real-casino .container .right-content .items{
+	width:632px;
+	height:91px;
+	margin-top:20px;
+}
+
+.real-casino .container #ag-right-content .items{
+	background:url(../images/live-casino-bbin-items.png) center center no-repeat;
+}
+
+.real-casino .container #hb-right-content .items{
+	background:url(../images/live-casino-bbin-items.png) center center no-repeat;
+}
+
+.real-casino .container #mg-right-content .items{
+	background:url(../images/live-casino-bbin-items.png) center center no-repeat;
+}
+
+.real-casino .container #bbin-right-content .items{
+	background:url(../images/live-casino-bbin-items.png) center center no-repeat;
+}
+
+.real-casino .container #pt-right-content .items{
+	background:url(../images/live-casino-bbin-items.png) center center no-repeat;
+}
+
+.real-casino .container .right-content a{
+	display:inline-block;
+	width: 188px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background:var(--main-button-color);
+	cursor: pointer;
+	border-radius:25px;
+	box-shadow:var(--btn-shadow);
+	margin:40px 0 0 190px;
+}
+
+.real-casino .container #bbin-right-content a:hover{
+	background:var(--main-hover-color);
+}
+
+/*ky棋牌*/
+.chesspoker{
+	margin-top: -51px;
+}
+
+.chesspoker .container{
+    /* background-image:url(../images/bg-chesspoker-loong.jpg); */
+    background-position:center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 1200px;
+    min-height: 780px;
+    box-sizing: border-box;
+    padding-top: 100px;
+	position: relative;
+}
+
+.chesspoker .container .btns{
+	text-align:center;
+}
+
+.chesspoker .container .btns button{
+	width: 140px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 17px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    background-image: var(--grey-button-color);
+	border-radius: 6px;
+	cursor:pointer;
+}
+
+.chesspoker .container .btns button:hover{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:var(--btn-shadow);
+}
+
+.chesspoker .container .btns .active{
+	background:var(--sec-button-color);
+	color:#fff;
+	box-shadow:var(--btn-shadow);
+}
+
+.chesspoker .container #kypoker .content,
+.chesspoker .container #loong-game .content,
+.chesspoker .container #bole-game .content{
+    width:1050px;
+	margin:0px auto 0 auto;
+	padding-top:50px;
+    display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+
+.chesspoker .container #kypoker .content{
+	width: 1200px;
+}
+
+#kypoker .mr-0{
+    margin-right:0;
+}
+
+#kypoker a{
+    display:block;
+    text-align:center;
+    font-size:15px;
+    margin-right:40px;
+    margin-bottom:55px;
+}
+
+#kypoker a:nth-child(7),
+#kypoker a:nth-child(14),
+#kypoker a:nth-child(21),
+#kypoker a:nth-child(28),
+#kypoker a:last-child{
+	margin-right: 0;
+}
+
+#kypoker a img{
+    width:120px;
+    height:120px;
+    transition:all .3s ease;
+}
+
+#kypoker a p{
+    margin-top:10px;
+    color:#b6b6b6;
+    font-weight:bold;
+}
+
+#kypoker a:hover img{
+	margin-top: -10px;
+}
+
+#kypoker a:hover p{
+    color:var(--main-color);
+}
+
+/*龍游棋牌*/
+#loong-game a{
+    display:block;
+    text-align:center;
+    font-size:15px;
+    margin-right:40px;
+    margin-bottom:30px;
+}
+
+#loong-game a {
+	display:inline-block;
+}
+
+#loong-game a img{
+	width: 120px;
+	height: 120px;
+	transition:all .2s ease-out;
+}
+
+#loong-game a:nth-child(6),
+#loong-game a:nth-child(12),
+#loong-game a:nth-child(18),
+#loong-game a:last-child{
+	margin-right: 0;
+}
+
+#loong-game a p{
+    color:#b6b6b6;
+	font-weight:bold;
+	margin-top: 10px;
+}
+
+#loong-game a:hover img{
+	margin-top: -10px;
+}
+
+#loong-game a:hover p{
+    /* color:var(--main-color); */
+}
+
+/*bolegaming棋牌*/
+#bole-game a{
+    display:block;
+    text-align:center;
+    font-size:15px;
+    margin-right:40px;
+    margin-bottom:30px;
+}
+
+#bole-game a {
+	display:inline-block;
+}
+
+#bole-game a img{
+	width: 120px;
+	height: 120px;
+	transition:all .2s ease-out;
+}
+
+#bole-game a:nth-child(6),
+#bole-game a:nth-child(12),
+#bole-game a:nth-child(18),
+#bole-game a:last-child{
+	margin-right: 0;
+}
+
+#bole-game a p{
+    color:#b6b6b6;
+	font-weight:bold;
+	margin-top: 10px;
+}
+
+#bole-game a:hover img{
+	margin-top: -10px;
+}
+
+#bole-game a:hover p{
+    color:var(--main-color);
+}
+
+/*棋牌主館頁 開始*/
+.livepoker-carousel{
+	height:400px;
+	background:url(../images/livepoker-banner.jpg) center center no-repeat;
+}
+
+article#liverpoker .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+    padding: 80px 0 50px 0;
+    
+}
+
+article#liverpoker .container .content {
+	margin-bottom: 50px;
+	padding: 20px;
+	color: rgba(255, 255, 255, 0.4);
+	background:var(--section-bgcolor);
+	position: relative;
+	width: 380px;
+	height: 250px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	position: relative;
+	margin-right: 25px;
+	border-radius:10px;
+}
+
+article#liverpoker .container .content:nth-child(3),
+article#liverpoker .container .content:nth-child(6),
+article#liverpoker .container .content:nth-child(9) {
+	margin-right: 0;
+}
+
+article#liverpoker .container .content h2 {
+	color: var(--main-color);
+    margin-bottom: 15px;
+    margin-top: 0px;
+    font-size: 28px;
+    font-weight: 1000;
+    width: 150px;
+    line-height: 32px;
+}
+
+article#liverpoker .container .content p {
+	width: 160px;
+    line-height: 1.5;
+    color:#cdcdcd;
+}
+
+article#liverpoker .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background-image:var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#liverpoker .container .content a:hover{
+	background:var(--main-button-color);
+}
+
+article#liverpoker .container .content .girl {
+	width: 240px;
+	height: 307px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/*彩票*/
+.lottery-gaming{
+
+}
+
+.lottery-gaming .container{
+	width:1200px;
+	height:830px;
+	display:flex;
+	justify-content: space-between;
+	margin:auto;
+}
+
+.lottery-gaming .container .scenery{
+	width:712px;
+	height:620px;
+	position: relative;
+}
+
+.lottery-gaming .container .scenery span{
+	display:inline-block;
+	position:absolute;
+}
+
+
+.lottery-gaming .container .scenery span:nth-child(1){
+	width:58px;
+	height:58px;
+	background:url(../images/float-item-left-lottery.png) center center no-repeat;
+	animation:float-left-lottery 2.5s ease infinite alternate;
+}
+
+.lottery-gaming .container .scenery span:nth-child(2){
+	width:712px;
+	height:620px;
+	background:url(../images/bg-lottery.png) center center no-repeat;
+	left:0;
+	top:50px;
+}
+
+.lottery-gaming .container .scenery span:nth-child(3){
+	width:62px;
+	height:62px;
+	background:url(../images/float-item-right-lottery.png) center center no-repeat;
+	animation:float-right-lottery 2.5s ease infinite alternate;
+}
+
+@keyframes float-left-lottery{
+	0%{
+		left:40px;
+		top:160px;
+	}
+	100%{
+		left:40px;
+		top:180px;
+	}
+}
+
+@keyframes float-right-lottery{
+	0%{
+		right:40px;
+		bottom:180px;
+	}
+	100%{
+		right:40px;
+		bottom:210px;
+	}
+}
+
+.lottery-gaming .container .content {
+	width:450px;
+	text-align:center;
+}
+
+.lottery-gaming .container .content h2{
+	font-size:42px;
+	background: var(--main-button-color);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	height:50px;
+	line-height:50px;
+	width:160px;
+	margin:130px auto 0 auto;
+}
+
+.lottery-gaming .container .content h5{
+	background: var(--main-button-color);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.lottery-gaming .container .content p{
+	margin-top:50px;
+	text-align:left;
+	line-height:1.7;
+	font-size:15px;
+}
+
+.lottery-gaming .container .content .item{
+	margin-top: 60px;
+}
+
+.lottery-gaming .container .content .item span{
+	display:inline-block;
+	cursor:pointer;
+	transition:all .3s ease;
+}
+
+.lottery-gaming .container .content .item .icon-keno{
+	width:83px;
+	height:93px;
+	background:url(../images/lottery-keno-gb.png) center center no-repeat;
+}
+
+.lottery-gaming .container .content .item .icon-marksix{
+	width:86px;
+	height:93px;
+	background:url(../images/lottery-sixgame-gb.png) center center no-repeat;
+}
+
+.lottery-gaming .container .content .item .icon-ssc{
+	width:86px;
+	height:93px;
+	background:url(../images/lottery-everytime-gb.png) center center no-repeat;
+}
+
+.lottery-gaming .container .content .item .icon-pk10{
+	width:86px;
+	height:93px;
+	background:url(../images/lottery-pk10-gb.png) center center no-repeat;
+}
+
+.lottery-gaming .container .content .item .icon-k3{
+	width:86px;
+	height:93px;
+	background:url(../images/lottery-fast3-gb.png) center center no-repeat;
+}
+
+.lottery-gaming .container .content .item span:hover{
+	background-position: top center;
+}
+
+/*彩票頁 standard 開始*/
+article#lottery-standard {
+}
+
+.lottery-standard-carousel{
+	height:400px;
+	background:url(../images/banner-lottery.jpg) center center no-repeat;
+}
+
+article#lottery-standard .container {
+	width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 0 50px 0;
+}
+
+article#lottery-standard .container .content {
+    background:#fff;
+    height:300px;
+	text-align: center;
+	padding: 40px 20px;
+	margin-bottom: 30px;
+	width: 228px;
+	border-radius:10px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+    position:relative;
+    margin-right:15px;
+}
+
+article#lottery-standard .container .content .icon{
+	width:186px;
+	height:100px;
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	top:30px;
+	transition:all .3s ease;
+}
+
+article#lottery-standard .container .content h2 {
+	color: var(--second-color);
+	margin-bottom: 15px;
+    margin-top:105px;
+    font-size:24px;
+    font-weight:1000;
+}
+
+article#lottery-standard .container .content p {
+	color: #666;
+	line-height: 1.5;
+}
+
+article#lottery-standard .container .content a {
+	display: inline-block;
+	position: absolute;
+	left: 35px;
+	bottom: 20px;
+	background-image:var(--main-button-color);
+	border-radius:20px;
+	color: #fff;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	padding: 10px;
+    text-align:center;
+}
+
+article#lottery-standard .container .content a:hover {
+	background:var(--main-hover-color);
+}
+
+article#lottery-standard .container .content:hover img{
+	top:20px;
+}
+
+/*精彩活動頁 開始*/
+article#promotion {
+	
+}
+
+article#promotion .container {
+	width: 1210px;
+	margin: auto;
+	padding: 50px 0 50px 0;
+}
+
+article#promotion .container .navbar {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	width: 1210px;
+}
+
+article#promotion .container .navbar span {
+	color: #999;
+    margin: 0 5px;
+	font-size: 14px;
+	display: none;
+}
+
+article#promotion .container .navbar a {
+    color: #c7c7c7;
+    transition: all 0.3s ease;
+	font-size: 14px;
+	display: inline-block;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #26292d;
+	position: relative;
+}
+
+article#promotion .container .navbar a:last-child{
+	margin-right: 0;
+}
+
+article#promotion .container .navbar a::after{
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 150px;
+	height: 0;
+	background: var(--main-color);
+}
+
+article#promotion .container .navbar .active::after,
+article#promotion .container .navbar .active:hover::after {
+	color: #fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar .active{
+	color: var(--main-color);
+}
+
+
+article#promotion .container .navbar a:hover::after {
+	color:#fff;
+	height: 2px;
+}
+
+article#promotion .container .navbar a:hover{
+	color: var(--main-color);
+}
+
+article#promotion .container .content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#promotion .container .content > div {
+	width: 392px;
+	background-color: rgba(13,13,14,0.6);
+	padding: 20px;
+	box-sizing: border-box;
+	margin-right: 11px;
+	margin-bottom: 40px;
+	border-radius: 3px;
+	box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+	transition: all .3s ease-in;
+	cursor: pointer;
+}
+
+article#promotion .container .content > div:hover{
+	outline: 2px solid var(--main-color);
+}
+
+article#promotion .container .content .heading-new {
+	display: flex;
+	justify-content: space-between;
+	line-height: 24px;
+}
+
+article#promotion .container .content .heading-new p:first-child,
+article#promotion .container .content .heading span {
+	display: inline-block;
+	width: 110px;
+	height: 34px;
+	line-height: 34px;
+	text-align: left;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 14px;
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	background-size: 20px auto;
+	color:#cdcdcd;
+	padding-left: 24px;
+}
+
+article#promotion .container .content .heading-new p.icon-soccer {
+	background-image: url(../images/promotion-icon-soccer-winbet.png);
+}
+
+article#promotion .container .content .heading-new p.icon-slot {
+	background-image: url(../images/promotion-icon-slot-winbet.png);
+}
+
+article#promotion .container .content .heading-new p.icon-esport {
+	background-image: url(../images/promotion-icon-esport-winbet.png);
+}
+
+article#promotion .container .content .heading-new p.icon-poker {
+	background-image: url(../images/promotion-icon-livepoker-winbet.png);
+}
+
+article#promotion .container .content .heading-new p.icon-lottery {
+	background-image: url(../images/promotion-icon-bingo-winbet.png);
+}
+
+article#promotion .container .content .heading-new p.icon-funds {
+	background-image: url(../images/promotion-icon-fund-winbet.png);
+}
+
+article#promotion .container .content .heading-new p:last-child {
+	color: var(--main-color);
+	padding: 5px 0px;
+	font-size: 18px;
+	font-weight: bold;
+	display: none;
+}
+
+article#promotion .container .content .banr-mask {
+	width: 352px;
+	height: 210px;
+	overflow: hidden;
+	margin: 10px 0 20px 0;
+	position: relative;
+}
+
+article#promotion .container .content img.banr {
+	width: 352px;
+	height: 210px;
+	transition: all 0.3s ease;
+}
+
+/* article#promotion .container .content .banr-mask:hover img {
+	transform: scale(1.1);
+} */
+
+article#promotion .container .content .banr-mask .curtain {
+	width: 352px;
+	height: 210px;
+	background: rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease;
+}
+
+/* article#promotion .container .content .banr-mask:hover .curtain {
+	background: rgba(0, 0, 0, 0.8);
+} */
+
+article#promotion .container .content .banr-mask a {
+	display: inline-block;
+	padding: 10px 40px;
+	background: var(--main-color);
+	color: #0d0f0e;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0.1s;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	font-size: 14px;
+}
+
+/* article#promotion .container .content .banr-mask a:hover {
+	border-radius: 20px;
+} */
+
+article#promotion .container .content .banr-mask a:focus {
+	background: #b9680b;
+}
+
+/* article#promotion .container .content .banr-mask:hover a {
+	opacity: 1;
+	filter: alpha(opacity=100);
+} */
+
+article#promotion .container .content .foot {
+	display: flex;
+	justify-content: space-between;
+}
+
+article#promotion .container .content .foot .title {
+	width:249px;
+	font-size: 18px;
+	color: var(--main-color);
+	font-weight: bold;
+	margin-bottom: 5px;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 23px;
+}
+
+article#promotion .container .content .foot .text {
+	font-size: 14px;
+	color:#cdcdcd;
+}
+
+article#promotion .container .content .foot a {
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	color: var(--main-color);
+	align-self: flex-end;
+	text-align:center;
+	border: 1px solid var(--main-color);
+	border-radius: 20px;
+}
+
+article#promotion .container .content .foot a:hover {
+}
+
+/*精彩活動頁 结束*/
+
+/*精彩活動頁 standard begins*/
+article#promotion-standard {
+	
+}
+
+article#promotion-standard .container {
+	width: 1210px;
+	margin: auto;
+	padding: 50px 0 50px 0;
+}
+
+article#promotion-standard .container .navbar span {
+	color: #999;
+	margin: 0 5px;
+	font-size: 16px;
+}
+
+article#promotion-standard .container .navbar a {
+	color: #999;
+	padding: 5px 10px;
+	transition: all 0.3s ease;
+	font-size: 16px;
+}
+
+article#promotion-standard .container .navbar a:hover {
+	background: var(--main-color);
+    border-radius: 5px;
+    color:#fff;
+}
+
+article#promotion-standard .container .navbar a.active,
+article#promotion-standard .container .navbar a.active:hover {
+	background: var(--main-color);
+    border-radius: 5px;
+    color:#fff;
+}
+
+article#promotion-standard .container .navbar {
+	margin-bottom: 20px;
+}
+
+article#promotion-standard .container .flexbox {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article#promotion-standard .flexbox .content {
+	display: flex;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	overflow: hidden;
+    box-shadow: 0 2px 27px 6px rgba(0, 0, 0, .12);
+    margin-right:15px;
+}
+
+article#promotion-standard .content .banr {
+	width: 280px;
+	height: 170px;
+	transition: all 0.2s ease;
+}
+
+article#promotion-standard .content .banr-mask {
+	overflow: hidden;
+	position: relative;
+	height: 170px;
+	transition: all 0.2s ease;
+}
+
+article#promotion-standard .content .banr-mask .curtain {
+	position: absolute;
+	width: 280px;
+	height: 170px;
+	background: rgba(0, 0, 0, 0);
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease;
+}
+
+article#promotion-standard .content .banr-mask a {
+	display: inline-block;
+	padding: 10px 40px;
+	background: var(--main-color);
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0.1s;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	font-size: 16px;
+}
+
+article#promotion-standard .content .banr-mask:hover .banr {
+	transform: scale(1.1);
+}
+
+article#promotion-standard .content .banr-mask:hover .curtain {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+article#promotion-standard .content .banr-mask:hover a {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+article#promotion-standard .content a:hover {
+	border-radius: 30px;
+}
+
+article#promotion-standard .content .item {
+	background:var(--section-bgcolor) ;
+	padding: 15px;
+	width: 310px;
+	position:relative;
+}
+
+article#promotion-standard .content .item > div {
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-top:10px;
+}
+
+article#promotion-standard .content .item > div p img {
+	margin-bottom: -3px;
+	margin-right: 5px;
+}
+
+article#promotion-standard .content .item > div .hot {
+	color: #fff;
+	background-image:linear-gradient(to bottom, rgb(255,0,0),rgb(211, 2, 2) 50%, rgb(155, 0, 0) 100%);
+	border-radius: 0 5px 0 5px;
+	padding: 5px 10px;
+	font-size: 13px;
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+article#promotion-standard .content .item > div p:first-child {
+	color: #666;
+	position: relative;
+	/* margin-left: 20px; */
+}
+
+article#promotion-standard .content .item .title {
+	font-size: 22px;
+	font-weight: bold;
+	color: var(--main-color);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+}
+
+article#promotion-standard .content .item .text {
+	color: #999;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+article#promotion-standard .content .item a img {
+	margin-left: 5px;
+}
+
+article#promotion-standard .content .item a {
+	display: inline-block;
+	width: 150px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	color: #fff;
+	align-self: flex-end;
+	text-align: center;
+	margin-top: 15px;
+	background-image: var(--main-button-color);
+    border-radius: 20px;
+    color: #fff;
+}
+
+article#promotion-standard .content .item a:hover {
+	background:var(--main-hover-color);
+}
+
+/*維護頁*/
+
+article#fixpage .container {
+	padding: 250px 0;
+	text-align: center;
+}
+
+article#fixpage .container  h2{
+	font-size: 36px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	color: #fadb7d;
+}
+
+article#fixpage .container p{
+	font-size: 15px;
+}
+
+article#fixpage .container button{
+    color: #fff;
+	text-align: center;
+	display: inline-block;
+    padding: 13px 40px;
+    border-radius: 50px;
+    background-image: var(--main-button-color);
+	margin-right: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+article#fixpage .container button:hover{
+	background-image: var(--main-hover-color);
+}
+
+
+
+
+/*隱藏區塊*/
+.panel,
+.sport-bet,
+.sec-nav,
+.homeIframeContent,
+footer .container .license,
+footer .help,
+footer .sponser-team,
+.mobile-app-1,
+.aff-link,
+header .container > div button[class="signin"]:nth-of-type(2),
+.logined-header .container a.home,
+.footer-happywin,
+.happywin-contact,
+.logined-header .container div .welcome,
+.logined-header .container div .withdraw,
+.mobile-view,
+.game-entry,
+.mobile-app-2,
+.adventage,
+.happywin-contact{
+	display: none;
+}
+
+article#casino,
+article#casino-standard,
+article#sport-betting,
+article#slot,
+article#lottery,
+article#lottery-standard,
+article#liverpoker,
+article#promotion-standard
+{
+	background-color: #1d1d22;
+}
+
+.slick-dots li{
+	width: 15px !important;
+}
+
+#header-wrapper{
+	height: 95px;
+}
+
+
+
+
+/*改版後新增＆修改樣式*/
+/*跑馬燈*/
+.marq{
+    height:34px;
+	background:#16161d;
+}
+
+.marq .container{
+    width:1360px;
+    height:34px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+}
+
+.marq .container .icon-speaker{
+    width:40px;
+    height:26px;
+    background-image:url(../images/icon-marq-winbet18.png);
+    background-repeat:no-repeat;
+    background-position: center;
+    margin-right: 5px;
+    display: none;
+}
+
+.marq .container .icon-speaker + span{
+    color: #9feeff;
+	font-size: 13px;
+	width: 34px;
+	height: 34px;
+	display: inline-block;
+	background: url(../images/icon-thunder-marq.png) center / 21px auto no-repeat;
+}
+
+.marq .container .message{
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.marq .container .icon-service{
+    width:30px;
+    height:30px;
+    background-image:url(../images/icon-service.png);
+	background-repeat:no-repeat;
+	display: none;
+}
+
+.marq .container .message marquee{
+	display: flex;
+	align-items: center;
+}
+
+.marq .container .message a{
+    color:#d0d0d0;
+	margin-right:135px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.marq .container .online-service{
+    font-size:16px;
+    cursor:pointer;
+	color:var(--main-color);
+	display: none;
+}
+
+.marq .container .online-service:hover{
+	color:#96c93d;
+}
+
+/* 登入前header */
+header{
+    background-image:linear-gradient(to bottom, rgba(16,16,19,0.95), rgba(16,16,19,0.6)) ;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0;
+	z-index: 20;
+	height: 95px;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header .container{
+    max-width: 1360px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+header .container nav{
+    height: 95px;
+    display: flex;
+    align-items: center;
+}
+
+header .container nav .main-logo{
+    display: block;
+    width: 110px;
+    height: 50px;
+    background: url(../images/logo-winbet18.png) center / cover no-repeat;
+	margin-right: 35px;
+	margin-left: -7px;
+	cursor: pointer;
+}
+
+header .container nav .link{
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    padding: 15px 20px 15px 0;
+    margin-right: 20px;
+}
+
+header .container nav .link.arrow{
+	margin-right: 30px;
+}
+
+header .container nav .link.arrow::after{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: #fff transparent transparent transparent;
+    top: 50%;
+    transform: translateY(-50%);
+	right: 6px;
+	transition: all .3s ease-in;
+}
+
+header .container nav .link:hover{
+    color: #9feeff;
+}
+
+header .container nav .link.arrow:hover::after{
+    border-color: #9feeff transparent transparent transparent;
+}
+
+header .container nav .link.arrow:hover::after{
+    transform: translateY(-50%) rotate(180deg);
+}
+
+header .container nav .link .submenu{
+    position: absolute;
+    top: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    text-align: center;
+    border: 1px solid #9feeff;
+    background-color: #0d0e13;
+    color: #fff;
+	transform-origin: center top;
+	display: none;
+	opacity: 0;
+	transition: all .3s ease-in;
+}
+
+header .container nav .link .submenu .sublink{
+    height: 45px;
+	line-height: 45px;
+	position: relative;
+}
+
+header .container nav .link .submenu .sublink:hover{
+    background-color: #1e212c;
+    color: #9feeff;
+}
+
+header .container nav .link:hover .submenu{
+	animation: sildeDown .3s ease-in ;
+	display: block;
+	opacity: 1;
+}
+
+header .container nav .link .submenu .pin-sport::after,
+header .container nav .link .submenu .ag-livecasino::after{
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 50%;
+	right: 17px;
+	transform: translateY(-50%);
+	background: url(../images/icon-hot.png) center / auto 15px no-repeat;
+}
+
+@keyframes sildeDown{
+	0%{
+		transform: translateX(-50%) scaleY(0.3);
+		opacity: 0;
+	}
+	100%{
+		transform: translateX(-50%) scaleY(1);
+		opacity: 1;
+	}
+}
+
+header .container .login-container{
+	display: flex;
+	align-items: center;
+}
+
+header .container .login-container .login,
+header .container .login-container .signup{
+    display: inline-block;
+    width: 83px;
+    height: 70px;
+    background-position: left center;
+    background-size: 166px 35px;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 1px;
+	cursor: pointer;
+}
+
+header .container .login-container .login{
+    background-image: url(../images/btn-login-hover.png);
+    margin-right: 10px;
+    color: #e7d6b6;
+    position: relative;
+}
+
+header .container .login-container .login .login-btn{
+	width: 83px;
+	height: 35px;
+	display: inline-block;
+	line-height: 35px;
+}
+
+header .container .login-container .signup{
+    background-image: url(../images/btn-signin-hover.png);
+    color: #b6e7e6;
+}
+
+header .container .login-container .login:hover,
+header .container .login-container .signup:hover{
+	background-position: right center;
+}
+
+header .container .login-container .signup:active{
+    transform: translateY(1px);
+}
+
+header .container .login-container .login form{
+    position: absolute;
+    width: 250px;
+    padding: 35px;
+    background-color: #121419;
+    top: 63px;
+    right: -12px;
+	line-height: 1;
+	border-radius: 5px;
+	display: none;
+}
+
+header .container .login-container .login form .close{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+header .container .login-container .login form .close::before,
+header .container .login-container .login form .close::after{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 13px;
+	background: #999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+header .container .login-container .login form .close::before{
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+header .container .login-container .login form .close::after{
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+header .container .login-container .login form input{
+    border: 1px solid #d0be9c;
+    padding: 6px;
+    width: 100%;
+	color: #d0be9c;
+	text-indent: 10px;
+}
+
+header .container .login-container .login form input::placeholder{
+    font-size: 12px;
+}
+
+header .container .login-container .login form .account{
+    margin-bottom: 10px;
+    display: block;
+}
+
+header .container .login-container .login form .forgot{
+    text-align: right;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+header .container .login-container .login form .remind{
+	color: #f53737;
+	text-align: left;
+	letter-spacing: 0;
+	position: relative;
+}
+
+/* header .container .login-container .login form .remind::before,
+header .container .login-container .login form .remind::after{
+	position: absolute;
+	content: '';
+	width: 2px;
+	height: 10px;
+	background-color: #f53737;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+header .container .login-container .login form .remind::before{
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+header .container .login-container .login form .remind::after{
+	transform: translate(-50%, -50%) rotate(-45deg);
+} */
+
+header .container .login-container .login form .forgot span{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+header .container .login-container .login form .forgot span:hover{
+    color: #fff;
+}
+
+header .container .login-container .login form .confirm{
+    display: block;
+    width: 100%;
+    padding-top: 3px;
+    color: #e7d6b6;
+    background: url(../images/btn-login-long.png) center / 100% 100% no-repeat;
+    margin-top: 10px;
+    cursor: pointer;
+    height: 35px;
+}
+
+header .container .login-container .login form .confirm:active{
+    transform: translateY(1px);
+}
+
+
+/* 登入後 */
+header .container .account-info{
+    display: flex;
+    align-items: center;
+}
+
+header .container .account-info .balance{
+    font-size: 18px;
+	color: #f9aa00;
+	margin-right: 20px;
+}
+
+header .container .account-info .recharge{
+    width: 83px;
+    height: 35px;
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+    background: url(../images/btn-recharge.png) center / cover no-repeat;
+    color: #b6e7e6;
+}
+
+header .container .account-info .recharge:active{
+    transform: translateY(1px);
+}
+
+header .container .account-info .info{
+    position: relative;
+}
+
+header .container .account-info .info .avatar{
+    display: inline-block;
+    width: 30px;
+    height: 70px;
+    background: url(../images/header-account-profile.png) center 22px / 30px auto no-repeat;
+    margin-left: 20px;
+    cursor: pointer;
+	position: relative;
+	opacity: 0.6;
+}
+
+header .container .account-info .info .avatar:hover{
+	opacity: 1;
+}
+
+header .container .account-info .info .avatar::after{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 5px 0px 5px;
+    border-color: #9feeff transparent transparent transparent;
+    top: 50%;
+    transform: translateY(-50%);
+	right: 0px;
+	display: none;
+}
+
+header .container .account-info .info .avatar .reddot{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 15px;
+    right: -2px;
+    background: rgb(255, 0, 0);
+    border-radius: 50%;
+}
+
+header .container .account-info .info .drop-content{
+    position: absolute;
+    background-color: #121419;
+    padding: 25px 15px 15px 15px;
+    right: 0;
+    top: 70px;
+	display: none;
+	transition: all .3s ease-in;
+	opacity: 0;
+	border-radius: 5px;
+	box-shadow: 0 5px 10px rgba(10,10,10,0.8);
+}
+
+header .container .account-info .info .drop-content .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+header .container .account-info .info .drop-content .heading div:nth-child(2){
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
+}
+
+header .container .account-info .info .drop-content .heading .vip{
+    background-color: #9feeff;
+    padding: 1px 6px;
+    font-size: 12px;
+    color: #101313;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+header .container .account-info .info .drop-content .heading .bal{
+    color: #f9aa00;
+    margin-right: 10px;
+}
+
+header .container .account-info .info .drop-content .heading .logout{
+    display: inline-block;
+    background-color: #0c0e11;
+	color: #9feeff;
+	border: 1px solid #333;
+	border-radius: 3px;
+	background-image: url(../images/header-logout.png);
+	background-position: 5px center;
+	background-size: 16px auto;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	transition: all .3s ease;
+	padding: 2px 5px 2px 26px;
+}
+
+header .container .account-info .info .drop-content .heading .logout:hover{
+	opacity: 1;
+}
+
+header .container .account-info .info .drop-content .heading .logout:active{
+    transform: translateY(1px);
+}
+
+header .container .account-info .info .drop-content .btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+header .container .account-info .info .drop-content .btns a{
+    width: 32%;
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #22252d;
+    color: #9feeff;
+    transition: color .2s ease;
+    position: relative;
+}
+
+header .container .account-info .info .drop-content .btns a .reddot{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+    right: 8px;
+    top: 8px;
+}
+
+header .container .account-info .info .drop-content .btns a:active{
+    transform: translateY(1px);
+}
+
+header .container .account-info .info:hover .drop-content{
+	display: block;
+	opacity: 1;
+	animation: fadeInDrop .2s ease-in;
+}
+
+@keyframes fadeInDrop{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.member-header{
+    top: 318px;
+}
+
+/* 輪播器 */
+.slideshow{
+    height: 650px;
+    background: #0c0c0e;
+    margin-top: 30px;
+	position: relative;
+	overflow: hidden;
+}
+
+.slideshow .slide{
+    height: 650px;
+    background-image: url(../images/banner.jpg);
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.slideshow .prev,
+.slideshow .next{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center;
+    background-size: 100% auto;
+	background-repeat: no-repeat;
+	z-index: 4;
+}
+
+.slideshow .prev{
+    background-image: url(../images/slick-prev.png);
+    left: 12.5%;
+}
+
+.slideshow .next{
+    background-image: url(../images/slick-next.png);
+    right: 12.5%;
+}
+
+.slideshow .prev:active,
+.slideshow .next:active{
+	margin-top: 1px;
+}
+
+/*球投*/
+.score-board{
+	background-color: #111113;
+	box-shadow: 0 15px 30px rgba(6,6,6, .5);
+	z-index: 10;
+	position: absolute;
+	width: 100%;
+}
+
+.score-board .container{
+	width: 1200px;
+	margin: auto;
+	text-align: center;
+	color: var(--main-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 211px;
+}
+
+.score-board .container .score-wrapper{
+	position: relative;
+	height: 400px;
+	display: flex;
+	align-items: center;/* 
+	clip-path: polygon(50% 20%, 100% 25%, 100% 75%, 50% 80%, 0% 75%, 0% 25%);
+	-webkit-clip-path: polygon(50% 20%, 100% 25%, 100% 75%, 50% 80%, 0% 75%, 0% 25%); */
+	transition: all .2s ease-in;
+}
+
+
+.score-board .container .score-wrapper.active .entry{
+	display: block;
+	
+}
+
+.score-board .container .score-wrapper:nth-child(1){
+	justify-content: flex-start;
+	width: 20%;
+}
+
+.score-board .container .score-wrapper:nth-child(2){
+	justify-content: center;
+	width: 60%;
+}
+
+.score-board .container .score-wrapper:nth-child(3){
+	justify-content: flex-end;
+	width: 20%;
+}
+
+.score-board .container .score-wrapper.active{
+	background-color: #16171b;
+	transform: scale(1.1);
+	background: url(../images/score-board-active.png) center -8px / 86% auto no-repeat;
+	justify-content: center;
+}
+
+.score-board .score-wrapper .content{
+	width: 270px;
+}
+
+.score-board .score-wrapper .content p:first-child{
+	font-size: 12px;
+}
+
+.score-board .container .score-wrapper.active .content{
+	width: 250px;
+}
+
+.score-board .score-wrapper .content .match{
+	display: flex;
+	justify-content: space-between;
+}
+
+.score-board .score-wrapper .content .match .team-left,
+.score-board .score-wrapper .content .match .team-right{
+	width: 94px;
+}
+
+.score-board .score-wrapper .content .match .team-left .team-logo,
+.score-board .score-wrapper .content .match .team-right .team-logo{
+	width: 60px;
+	height: auto;
+	margin: 12px 0;
+}
+
+.score-board .score-wrapper .content .match .team-left p,
+.score-board .score-wrapper .content .match .team-right p{
+	line-height: 1.2;
+}
+
+.score-board .score-wrapper .content .match .vs{
+	width: 30px;
+	height: 93px;
+	background:	url(../images/match-vs.png) center 28px / 100% auto no-repeat;
+}
+
+.score-board .score-wrapper .content .entry{
+	display: block;
+    background: url(../images/btn-more-hover.png) left center / 225px auto no-repeat;
+    color: #b6e7e6;
+    width: 112.5px;
+    height: 31.5px;
+    line-height: 35px;
+	text-align: center;
+	display: none;
+	margin: 20px auto 0 auto;
+}
+
+.score-board .score-wrapper .content .entry:hover{
+	background-position: right center;
+}
+
+/* .score-board .score-wrapper:hover .entry{
+	display: block;
+} */
+
+/* 背景區塊 */
+.sword-section{
+    height: 108px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+	min-width: 1200px;
+	margin-top: 300px;
+}
+
+.sword-section .icon-sword{
+    width: 62px;
+    height: 60px;
+    background: url(../images/icon-sword.png) center / cover no-repeat;
+    margin-bottom: 20px;
+}
+
+/*精選遊戲區塊*/
+.recommended-slot{
+	min-width: 1200px;
+    padding-bottom: 60px;
+}
+
+.recommended-slot h2{
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 22px;
+    transform: scaleY(1.2);
+    color: #9feeff;
+    padding-top: 5px;
+    position: relative;
+    width: 1200px;
+	margin: auto;
+	padding-left: 20px;
+}
+
+.recommended-slot h2::before,
+.recommended-slot h2::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 450px;
+    top: 0;
+}
+
+.recommended-slot h2::before{
+    background-image: linear-gradient(to left, rgba(80, 77, 80, 1) 0%, rgba(80, 77, 80, 0.1) 100%);
+    left: 0;
+}
+
+.recommended-slot h2::after{
+    background-image: linear-gradient(to right, rgba(80, 77, 80, 1) 0%, rgba(80, 77, 80, 0.1) 100%);
+    right: 0;
+}
+
+.recommended-slot .more{
+	width: 1200px;
+	margin: auto;
+	text-align: right;
+	margin-bottom: 15px;
+}
+
+.recommended-slot .more a{
+	display: inline-block;
+	background: url(../images/btn-more-hover.png) left center / 250px auto no-repeat;
+	color: #b6e7e6;
+	width: 125px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.recommended-slot .more a:hover{
+	background-position: right center;
+}
+
+.recommended-slot .more a:active{
+    transform: translateY(1px);
+}
+
+.recommended-slot .container{
+	display: flex;
+	justify-content: space-between;
+	width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.recommended-slot .container  .prev,
+.recommended-slot .container  .next{
+	width: 55px;
+	height: 55px;
+	cursor: pointer;
+	background-position: center;
+    background-size: 55px auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+.recommended-slot .container  .prev:active,
+.recommended-slot .container  .next:active{
+	margin-top: 1px;
+}
+
+.recommended-slot .container .prev{
+    background-image: url(../images/slick-prev.png);
+    left: -22px;
+}
+
+.recommended-slot .container .next{
+    background-image: url(../images/slick-next.png);
+    right: -22px;
+}
+
+.recommended-slot .container .content{
+	width: 1200px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.recommended-slot .container .content .item{
+    display: block;
+    width: 277.5px;
+	height: 284px;
+	margin-right: 30px;
+	border: 1px solid #7fcada;
+}
+
+.recommended-slot .container .content .item:nth-child(4),
+.recommended-slot .container .content .item:nth-child(8){
+    margin-right: 0;
+}
+
+.recommended-slot .container .content .item .heading{
+	height: 212px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.recommended-slot .container .content .item:nth-child(1) .heading{
+	background-image: url(../images/slot-test01.jpg);
+}
+
+.recommended-slot .container .content .item:nth-child(2) .heading{
+	background-image: url(../images/slot-test02.jpg);
+}
+
+.recommended-slot .container .content .item:nth-child(3) .heading{
+	background-image: url(../images/slot-test03.jpg);
+}
+
+.recommended-slot .container .content .item:nth-child(4) .heading{
+	background-image: url(../images/slot-test04.jpg);
+}
+
+.recommended-slot .container .content .item .foot{
+	height: 70px;
+	background: #101218;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    padding: 0 10px;
+    position: relative;
+}
+
+.recommended-slot .container .content .item .foot p{
+    color: #7fcada;
+    margin-top: 25px;
+}
+
+.recommended-slot .container .content .item span{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    display: block;
+    background: url(../images/icon-slot-pg.png) center / cover no-repeat;
+    top: -34px;
+    border-radius: 50%;
+}
+
+
+/* 背景區塊 */
+.scepter-section{
+    height: 108px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+	min-width: 1200px;
+	margin-top: 20px;
+}
+
+.scepter-section .icon-scepter{
+    width: 62px;
+    height: 60px;
+    background: url(../images/icon-scepter.png) center / cover no-repeat;
+    margin-bottom: 20px;
+}
+
+/* 優惠活動 */
+.campaign{
+	min-width: 1200px;
+	padding-bottom: 37px;
+}
+
+.campaign .title{
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 18px;
+    transform: scaleY(1.2);
+    color: #9feeff;
+    padding-top: 5px;
+    position: relative;
+    width: 1200px;
+	margin: auto;
+	padding-left: 20px;
+}
+
+.campaign .title::before,
+.campaign .title::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 450px;
+    top: 0;
+}
+
+.campaign .title::before{
+    background-image: linear-gradient(to left, rgba(80, 77, 80, 1) 0%, rgba(80, 77, 80, 0.1) 100%);
+    left: 0;
+}
+
+.campaign .title::after{
+    background-image: linear-gradient(to right, rgba(80, 77, 80, 1) 0%, rgba(80, 77, 80, 0.1) 100%);
+    right: 0;
+}
+
+.campaign .more{
+	width: 1200px;
+	margin: auto;
+	text-align: right;
+	margin-bottom: 15px;
+}
+
+.campaign .more a{
+	display: inline-block;
+	background: url(../images/btn-more-hover.png) left center / 250px auto no-repeat;
+	color: #b6e7e6;
+	width: 125px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.campaign .more a:hover{
+	background-position: right center;
+}
+
+.campaign .more a:active{
+    transform: translateY(1px);
+}
+
+.campaign .content{
+    display: block;
+    margin: auto;
+    width: 1200px;
+    border: 1px solid #7fcada;
+    height: 260px;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0,0,0,0.9);
+	margin-bottom: 37px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all .1s ease-in;
+}
+
+.campaign .content:nth-of-type(1){
+	background-image: url(../images/campaign_01.jpg);
+}
+
+.campaign .content:nth-of-type(2){
+	background-image: url(../images/campaign_02.jpg);
+}
+
+.campaign .content:nth-of-type(3){
+	background-image: url(../images/campaign_03.jpg);
+}
+
+.campaign .content img{
+    width: 1113px;
+    height: 258px;
+}
+
+.campaign .content:hover{
+    outline: 2px solid #9feeff;
+}
+
+.campaign .content .cornor-color{
+    display: block;
+    width: 68px;
+    height: 8px;
+    background: url(../images/campaign-cornor.png) center / cover no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.campaign .content .join{
+    position: absolute;
+    right: 115px;
+    bottom: 50px;
+    display: inline-block;
+	background: url(../images/btn-more.png) center / cover no-repeat;
+	color: #b6e7e6;
+	width: 125px;
+	height: 35px;
+	line-height: 35px;
+    text-align: center;
+	transition: all .3s ease;
+	display: none;
+}
+
+/* 赞助信息 */
+.spokesperson{
+	min-width: 1200px;
+}
+
+.spokesperson .title{
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 22px;
+    transform: scaleY(1.2);
+    color: #9feeff;
+    padding-top: 5px;
+    position: relative;
+    width: 1200px;
+	margin: auto;
+	padding-left: 20px;
+}
+
+.spokesperson .title::before,
+.spokesperson .title::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 450px;
+    top: 0;
+}
+
+.spokesperson .title::before{
+    background-image: linear-gradient(to left, rgba(80, 77, 80, 1) 0%, rgba(80, 77, 80, 0.1) 100%);
+    left: 0;
+}
+
+.spokesperson .title::after{
+    background-image: linear-gradient(to right, rgba(80, 77, 80, 1) 0%, rgba(80, 77, 80, 0.1) 100%);
+    right: 0;
+}
+
+.spokesperson .more{
+	width: 1200px;
+	margin: auto;
+	text-align: right;
+	margin-bottom: 15px;
+}
+
+.spokesperson .more a{
+	display: inline-block;
+	background: url(../images/btn-more-hover.png) left center / 250px auto no-repeat;
+	color: #b6e7e6;
+	width: 125px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.spokesperson .more a:hover{
+	background-position: right center;
+}
+
+.spokesperson .more a:active{
+    transform: translateY(1px);
+}
+
+.spokesperson .content{
+    display: block;
+    margin: auto;
+    width: 1200px;
+    border: 1px solid #7fcada;
+    height: 260px;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0,0,0,0.9);
+	margin-bottom: 37px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all .1s ease-in;
+	margin-top: 45px;
+}
+
+.spokesperson .content:hover{
+    outline: 2px solid #9feeff;
+}
+
+.spokesperson .content .cornor-color{
+    display: block;
+    width: 68px;
+    height: 8px;
+    background: url(../images/campaign-cornor.png) center / cover no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.spokesperson .content:nth-of-type(1){
+	background-image: url(../images/Spokesperson.jpg);
+}
+
+.spokesperson .content:nth-of-type(2){
+	background-image: url(../images/sponser-fnatic.jpg);
+}
+
+/*彩票頁*/
+.bingo-page{
+    background: url(../images/bg-bingo-page.jpg) center top / auto 553px no-repeat;
+    background-color: #0e162f;
+    padding-top: 500px;
+    min-width: 1200px;
+    position: relative;
+}
+
+.bingo-page .container{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    width: 1200px;
+}
+
+.bingo-page .container .bingo-link{
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    padding-top: 185px;
+    width: 185px;
+}
+
+.bingo-page .container .bingo-link .ball{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 185px;
+    height: 185px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 185px auto;
+    background-repeat: no-repeat;
+    transition: all .3s ease-out;
+}
+
+.bingo-page .container .bingo-link .ball.keno{
+    background-image: url(../images/bingo-link-keno.png);
+}
+
+.bingo-page .container .bingo-link .ball.marksix{
+    background-image: url(../images/bingo-link-marksix.png);
+}
+
+.bingo-page .container .bingo-link .ball.pk10{
+    background-image: url(../images/bingo-link-pk10.png);
+}
+
+.bingo-page .container .bingo-link .ball.ssc{
+    background-image: url(../images/bingo-link-lottery.png);
+}
+
+.bingo-page .container .bingo-link .ball.k3{
+    background-image: url(../images/bingo-link-fast3.png);
+}
+
+.bingo-page .container .bingo-link .ball.gti{
+    background-image: url(../images/bingo-link-gti.png);
+}
+
+.bingo-page .container .bingo-link .title{
+    font-size: 14px;
+    color: #1dcffc;
+    text-shadow: 0 0 8px rgba(29, 207, 252, 0.2);
+    margin: 15px 0 10px 0;
+}
+
+.bingo-page .container .bingo-link .shadow{
+    width: 143px;
+    height: 55px;
+    background: url(../images/bingo-shadow.png) center / cover no-repeat;
+    margin: auto;
+    transition: all .3s ease;
+}
+
+.bingo-page .container .bingo-link:hover .ball{
+    top: -50px;
+    border: 2px solid #04dffc;
+    box-shadow: 0 0 20px #04dffc;
+}
+
+.bingo-page .container .bingo-link:hover .shadow{
+    transform: scale(0.6);
+}
+
+/*app下載 & 聯繫*/
+.app-and-contact{
+    position: fixed;
+    right: 0;
+	top: 60%;
+	z-index: 20;
+}
+
+.app-and-contact .contact,
+.app-and-contact .scan,
+.app-and-contact .back-to-top,
+.app-and-contact .download-path{
+    width: 38px;
+    height: 38px;
+    border: 1px solid #9feeff;
+    background-color: #0f0f0f;
+    position: relative;
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+	text-align: center;
+}
+
+.app-and-contact .contact,
+.app-and-contact .back-to-top,
+.app-and-contact .download-path{
+	cursor: pointer;
+}
+
+.app-and-contact .contact{
+	background-image: url(../images/icon-contact.png);
+}
+
+.app-and-contact .scan{
+    background-image: url(../images/icon-scan.png);
+}
+
+.app-and-contact .download-path{
+    background-image: url(../images/icon-download.png);
+}
+
+.app-and-contact .contact .tooltip,
+.app-and-contact .download-path .tooltip{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    background-color: #0f0f0f;
+    border: 1px solid #9feeff;
+    padding: 5px 10px;
+    color: #fff;
+	display: none;
+	min-width: 90px;
+}
+
+.app-and-contact .contact .tooltip::after,
+.app-and-contact .download-path .tooltip::after{
+    content: '';
+    position: absolute;
+    border: solid #9feeff;
+    border-width: 1px 1px 0 0;
+    background-color: #0f0f0f;
+    padding: 3px;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.app-and-contact .contact:hover .tooltip,
+.app-and-contact .download-path:hover .tooltip{
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+.app-and-contact .scan .content{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    padding: 20px;
+    border: 1px solid #9feeff;
+    text-align: center;
+    color: #9feeff;
+    display: none;
+	background-color: #0f0f0f;
+}
+
+.app-and-contact .scan .content::after{
+    content: '';
+    position: absolute;
+    border: solid #9feeff;
+    border-width: 1px 1px 0 0;
+    background-color: #0f0f0f;
+    padding: 3px;
+    right: -4px;
+    top: 14px;
+    transform: rotate(45deg);
+}
+
+.app-and-contact .scan .content .qrcode{
+    width: 105px;
+    height: 105px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.app-and-contact .scan:hover .content{
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+.app-and-contact .content .top-arrow{
+	border: solid var(--main-color);
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 5px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	margin-top: 15px
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+/* 頁腳 */
+footer{
+    text-align: center;
+    color: #8e929d;
+	padding: 35px 0;
+	background-color: #111114;
+	font-size: 12px;
+}
+
+footer .container{
+    display: flex;
+    justify-content: center;
+}
+
+footer .container li{
+    padding-left: 50px;
+    background-position: left center;
+    background-size: 35px auto;
+    background-repeat: no-repeat;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 30px;
+}
+
+footer .container li:last-child{
+    margin-right: 0;
+}
+
+footer .container .dota{
+    background-image: url(../images/footer-icon-dota.png);
+}
+
+footer .container .lol{
+    background-image: url(../images/footer-icon-lol.png);
+}
+
+footer .container .cs{
+    background-image: url(../images/footer-icon-cs.png);
+}
+
+footer .container .starcraft{
+    background-image: url(../images/footer-icon-starcraft.png);
+}
+
+footer .icon-gc-gaming{
+	display: inline-block;
+	width: 120px;
+	height: 60px;
+	background: url(../images/icon-gc.png) center / 100% auto no-repeat;
+	margin-top: 30px;
+}
+
+footer .copyright{
+	margin-top: 10px;
+}
+
+footer .gc-text{
+	line-height: 1.3;
+	margin-bottom: 21px;
+}
+
+footer .help-center{
+	margin-top: 10px;
+}
+
+footer .help-center a{
+	display: inline-block;
+	margin-right: 20px;
+	color: #8e929d;
+	position: relative;
+	transition: all .3s ease;
+	font-size: 14px;
+}
+
+footer .help-center a:hover{
+	color: #fff;
+}
+
+footer .help-center a::after{
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 80%;
+	background-color: #8e929d;
+	top: 50%;
+	transform: translateY(-50%);
+	right: -12px;
+}
+
+footer .help-center a:last-child::after{
+	width: 0;
+}
+
+footer.bg-color-bingo{
+    background-color: #0e162f;
+    min-width: 1200px;
+}
+
+
+/*slick套件修改*/
+.slick-dot {
+    opacity: 1 !important;
+    background-color: var(--main-color) !important;
+}
+
+.slick-slide{
+	opacity: 0.2;
+}
+
+@media screen and (max-width:1450px){
+	.slideshow .prev{
+		left: 1%;
+	}
+	
+	.slideshow .next{
+		right: 1%;
+	}
+}
+  
